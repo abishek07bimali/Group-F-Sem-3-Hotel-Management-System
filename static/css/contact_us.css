@@ -1,0 +1,249 @@
+ /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	display: grid;
+	align-items: center;
+	font-family: 'Poppins', sans-serif;
+}
+.contact-main-wrap{
+	font-family: 'Poppins', sans-serif;
+
+}
+.contact-us{
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.main-contact{
+	text-align: left;
+	margin-left: 10%;
+	margin-right: 20%;
+	margin-bottom: 60px;
+}
+.main-contact h2{
+	font-size: 40px;
+	font-weight: 600;
+	color: rgb(224, 197, 73);
+	margin-bottom: 20px;
+}
+
+.contact-wrap {
+	width: 80%;
+	height: auto;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.contact-in {
+	padding: 40px 30px;
+}
+
+
+.contact-in:nth-child(1) {
+	flex: 30%;
+	background: rgb(95 99 104);
+}
+
+.contact-in:nth-child(2) {
+	flex: 15%;
+	/* background: url(../images/1.jpg); */
+	background-color: #292D33;
+	color: white;
+	font-weight: bold;
+}
+
+
+.contact-in:nth-child(3) {
+	flex: 30%;
+	padding: 0;
+}
+
+.contact-in h1 {
+	font-size: 24px;
+	color: #F1C50E;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.contact-in h2 {
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 15px;
+	color: #F1C50E;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/* .contact-in h2 i {
+	font-size: 16px;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	background: #f5f5f5;
+	border-radius: 50px;
+	line-height: 40px;
+	text-align: center;
+} */
+
+.contact-in p {
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.contact-in ul {
+	padding: 0;
+	margin: 0;
+}
+
+.contact-in ul li {
+	list-style: none;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 5px;
+	margin-top: 100px;
+}
+@media (min-width: 1668px){
+	.contact-in ul li {
+		list-style: none;
+		display: inline-block;
+		margin-left: 10px;
+		margin-right: 5px;
+		margin-top: 10px;
+	}
+	
+}
+
+.contact-in ul li a {
+	display: block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background: #fff;
+	border-radius: 50px;
+}
+
+.contact-in ul li a img {
+	/* line-height: 30px; */
+	width: 30px;
+	height: 30px;	
+	border-radius: 50px;
+}
+
+.contact-in ul li a i {
+	font-size: 14px;
+	line-height: 30px;
+	color: #000;
+}
+
+.contact-in form {
+	width: 100%;
+	height: auto;
+}
+
+.contact-in-input {
+	width: 100%;
+	height: 40px;
+	margin-bottom: 20px;
+	border: 1px solid #fff;
+	border-top: transparent;
+	border-left: transparent;
+	border-right: transparent;
+	outline: none;
+	padding-left: 5px;
+	background: transparent;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 300;
+	font-family: 'Poppins', sans-serif;
+}
+
+.contact-in-input::placeholder {
+	color: #fff;
+}
+
+.contact-in-textarea {
+	width: 100%;
+	height: 140px;
+	margin-bottom: 20px;
+	border: 1px solid #fff;
+	outline: none;
+	padding-top: 5px;
+	padding-left: 5px;
+	background: transparent;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 300;
+	font-family: 'Poppins', sans-serif;
+}
+
+.contact-in-textarea::placeholder {
+	color: #fff;
+}
+
+.contact-in-btn {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #fff;
+	outline: none;
+	background: #F1C50E;
+	color: black;
+	font-size: 16px;
+	font-weight: bolder;
+	font-family: 'Poppins', sans-serif;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.contact-in iframe {
+	width: 100%;
+	height: 100%;
+	/* background-image: url(bg_img.jpg); */
+}
+@media (max-width:611px) {
+	.contact-in iframe {
+		width: 100%;
+		height: 200%;
+	}
+}
+
+@media only screen and (max-width:480px) {
+	.contact-in:nth-child(1) {
+		flex: 50%;
+	}
+
+	.contact-in:nth-child(2) {
+		flex: 50%;
+	}
+
+	.contact-in:nth-child(3) {
+		flex: 100%;
+	}
+
+}
+
+@media only screen and (max-width:360px) {
+	.contact-in:nth-child(1) {
+		flex: 50%;
+	}
+
+	.contact-in:nth-child(2) {
+		flex: 50%;
+	}
+
+	.contact-in:nth-child(3) {
+		flex: 100%;
+	}
+
+}
