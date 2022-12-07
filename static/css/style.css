@@ -1,23 +1,22 @@
-.main-wrapper{
+/* .whole-body{
     position: relative;
-    top: 19%;
-    left: 7%;
-    width: 1200px;
-    height: 720px;
-    background: #413C3C;
-}
+} */
 .wrapper-left{
     position: absolute;
     top: 12%;
-    left: 5%;
+    left: 12.5%;
     height: 540px;
     width: 730px;
     border-radius: 0px;
     background: #000000;
 }
+.login-image{
+    height: 540px;
+    width: 730px;
+}
 .wrapper-right{
     position: absolute;
-    right: 5%;
+    right: 14%;
     top: 12%;
     height: 540px;
     width: 350px;
