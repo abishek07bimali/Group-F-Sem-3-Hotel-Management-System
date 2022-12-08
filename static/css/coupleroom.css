@@ -1,0 +1,150 @@
+.body{
+    height:100vh;
+    margin:0px;
+}
+
+.Main-wrapper{
+   
+    height:100vh;
+    display:flex;
+    flex: 100%;
+    flex-direction: column;
+}
+ @media (min-width: 700px) {
+    .Main-wrapper{
+        flex: 100%;
+
+    }
+}
+@media (min-width: 300px) {
+    .Main-wrapper{
+        flex: 40%;
+    }
+}
+@media (min-width: 200px) {
+    .Main-wrapper{
+        flex: 20%;
+       
+        
+    }
+} 
+
+
+
+.wrapper-top{
+   height:78%;
+    display: flex;
+}
+.top-left{
+    flex-grow: 3;
+    display:flex;
+    background-image: url("../images/image3.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 100%,100%;
+}
+.prev{
+    margin-right:200px;
+}
+.next{
+    /* margin-left:60px; */
+    margin-left:400px;
+}
+.left-arrow{
+   margin-right:200px;
+   
+}
+.right-arrow{
+    margin-left:200px;
+   
+}
+.top-right{
+    flex-grow: 1;
+}
+button{
+   size:60%,60%;
+    border-radius: 70%;
+    background-color: white;
+    font-size: 50px;
+    color: black;
+    border:none;
+    margin-top:80%;
+    
+}
+.wrapper-bottom{
+    margin-top:10px;
+    /* flex-grow:1; */
+    height:22%;
+    display:flex;
+    background-color: rgba(20, 39, 74, 0.61);
+
+}
+
+.top-right{
+    display:flex;
+    flex-direction: column;
+   
+}
+.up{
+    font-size: 22px;
+    font-weight: bold;
+    color:black;
+}
+.down{
+    font-size: 15px;
+    color:black;
+}
+.right-first{
+    margin-top:20px;
+    margin-left: 26px;
+}
+.right-second{
+    margin-top:23px;
+   
+    margin-left: 26px;
+}
+.right-third{
+    margin-top:23px;
+    margin-left: 26px;
+}
+.right-last{
+    margin-top:31px;
+    margin-left: 26px;
+}
+.Image1{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-image: url("../images/image1.jpg"); 
+    background-size: 100%,100%;
+    flex-grow: 1;
+}
+.Image2{
+    background-image: url("../images/image2.jpg"); 
+    background-size: 100%,100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+.Image3{
+    background-image: url("../images/image0.jpg"); 
+    background-size: 100%,100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+.Image4{
+    background-image: url("../images/image4.jpg"); 
+    background-size: 100%,100%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-grow: 1;
+} 
+
+
