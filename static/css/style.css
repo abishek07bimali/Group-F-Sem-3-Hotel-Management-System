@@ -118,7 +118,7 @@ label{
 @media (min-width: 900px){
 	.split-screen{
 		flex-direction: row;
-		height: 100vh;
+		height: 50vh;
 	}
 	.left{
 		display: flex;
