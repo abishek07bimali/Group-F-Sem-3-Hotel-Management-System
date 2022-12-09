@@ -64,9 +64,13 @@
 .btn3{
     margin-left:50px;
     background-color:transparent; 
-    color:white;
+   
     border:none;
+  
+ }
+ .btn3 a{
     font-size: 16px;
+    color:white;
  }
 
  .btn4{

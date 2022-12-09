@@ -242,7 +242,7 @@ p{
 .button0:hover{
     border-style: solid;
    }
-.button{
+/* .button{
     position:absolute;
     color:white;
     font-size: 20px;
@@ -255,9 +255,9 @@ p{
     
     
 }
-.button:hover{
+.button2:hover{
     border-style: solid;
-   }
+   } */
 .button1{
     position:absolute;
     color:white;
@@ -270,6 +270,18 @@ p{
     font-style: oblique;
     
 }
+/* .button2{
+    position:absolute;
+    color:white;
+    font-size: 20px;
+    font-weight: 200;
+   border:none;
+   background-color: transparent;
+   height:39px;
+   width:200px;
+    font-style: oblique;
+    
+} */
 .button1:hover{
     border-style: solid;
    }
@@ -278,7 +290,7 @@ p{
     left:0px;
 
 }
-.up-right .button{
+.up-right .button0{
     bottom:0px;
     left:0px;
 
@@ -298,6 +310,17 @@ p{
     left:0px;
 
 }
+.button1 a{
+    color:white;
+    font-size: 20px;
+    font-weight: 200;
+}
+.button0 a{
+    color:white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
 
 
 
