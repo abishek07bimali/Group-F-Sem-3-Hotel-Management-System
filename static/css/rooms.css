@@ -1,326 +1,138 @@
-body{
-    margin:0px;
-    height:100vh;
-    /* width:1000px; */
+*{
+    font-style: oblique;
 }
-.Main-Wrapper{
-    width:1000px;
-    height:100vh;
-    display:flex;
-    flex: 100%;
-    flex-direction: column;
-}
- /* @media (min-width: 700px) {
-    .extra{
-        display: flex;
-        
-* {
-    box-sizing:border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .container {
-    padding: 64px;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both
-  }
-  
-  .column-66 {javascript:void(0);
-    float: left;
-    width: 66.66666%;
-    padding: 20px;
-  }
-  
-  .column-33 {
-    float: left;
-    width: 33.33333%;
-    padding: 20px;
-  }
-  
-  .large-font {
-    font-size: 48px;
-  }
-  
-  .xlarge-font {
-    font-size: 64px
-  }
-  
-  .button {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #04AA6D;
-  }
-  
-  img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  } */
-  
-  /* @media screen and (max-width: 1000px) {
-    .column-66,
-    .column-33 {
-      width: 100%;
-      text-align: center;
-    }
-    img {
-      margin: auto;
-    }
-  }
-    }
 
+.Main-Wrapper{
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
 }
-@media (max-width: 380px) {
-    .Main-Wrapper{
-        flex: 40%;
-    }
-    .bottom-up{
-        flex-direction: column;
-        flex-wrap: nowrap;
-        flex-grow: stre;
-        width: 30%;
-    }
-    .bottom-down{
-        flex-direction: column;
-    }
-} */
 
 .Wrapper-top{
-  height:130px;
     display: flex;
-    
-    
+    justify-content: space-between;
+    flex-wrap: wrap; 
 }
 .top-left{
     flex-grow: 2;
-    margin-left: 25px;
     margin-top:30px;
  
 }
-.top-up{
+.top-left h2{
     color:rgba(53, 1, 1, 0.718);
     font-size: 20px;
-    font-style: oblique;
 }
-.top-down{
+
+.top-left h3{
     color:rgba(53, 1, 1, 0.718);
     font-size: 37px;
     font-weight: bold;
     margin-top:13px;
     font-style: oblique;
+    text-transform: capitalize;
 }
+
 .top-right{
     font-size: 17px;
     font-style:oblique;
     width:400px;
-    flex-grow: 1;
     margin-top:30px;
-  
-  
 }
-p{
-    margin-left:90px;
-}
+
 .Wrapper-bottom{
-    margin-left: 25px;
     margin-top:13px;
-    flex-grow:2;
     display:flex;
-    flex-direction: column;
+    flex-wrap: wrap;  
+    justify-content: center;  
 }
 .bottom-up{
-    flex-grow: 2;
-   display:flex;
-    
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/coupleroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-.up-left{
-    flex-grow: 1;
-    position: relative;
-     background-image: url("../images/coupleroom.jpg"); 
-    background-size: 100%,100%;
-   
-    
-}
-.up-right{
-    flex-grow: 2;
-    position: relative;
+.bottom-up1{
+    width: 48%;
+    margin: 5px;
     background-image: url("../images/Luxeroom.jpg");
-   background-size: 100%,100%;
-    margin-left:13px;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-
-
-.bottom-down{
-    flex-grow: 1;
-   display:flex;
-   margin-top:13px;
-}
-
-.down-left{
-    position: relative;
-    flex-grow: 1;
-    margin-right:13px;
-    background-color:rgba(20, 39, 74, 0.61);
-    background-image: url("../images/Premiumroom.jpg");
-    background-size: 100%,100%;
-
-}
-.down-right{
-    position: relative;
-    flex-grow: 1;
+.bottom-up2{
+    width: 48%;
+    margin: 5px;
     background-image: url("../images/Familyroom.jpg");
-   background-size: 100%,100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-.down-middle{
-    position: relative;
-    flex-grow: 1;
-    margin-right:13px;
+.bottom-up3{
+    width: 48%;
+    margin: 5px;
     background-image: url("../images/Masterroom.jpg");
-   background-size: 100%,100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-
-
-
-
-
-
-
-    /* background-image: url("Premiumroom.jpg");
-    background-size:10%;
-    background-repeat: no-repeat; */
-    /* width: 10%; 
-    height: 100%;  */
-   
-
-.hole0{
-    position:absolute;
-    color:rgba(53, 1, 1, 0.718);
+.bottom-up4{
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/Premiumroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+ .price{
     background-color: white;
-    height:10%;
-    width:24%;
-    
+    width: 20%;
+    font-size: 25px;
 }
-.hole{
-    position:absolute;
-    color:rgba(53, 1, 1, 0.718);
-    background-color: white;
-    height:10%;
-    width:20%;
-    
+.bottom-up button, .bottom-up1 button, .bottom-up2 button, .bottom-up3 button, .bottom-up4 button{
+    border: 0px;
+    margin-top: 50%;
+    text-align: start;
 }
-.hole1{
-    position:absolute;
-    color:rgba(53, 1, 1, 0.718);
-    background-color: white;
-    height:20%;
-    width:30%;
-    
-}
-.button0{
-    position:absolute;
-    color:white;
+.bottom-up button a, .bottom-up1 button a, .bottom-up2 button a, .bottom-up3  button a,
+.bottom-up4 button a{
     font-size: 20px;
-    font-weight: 200;
-   border:none;
-   background-color: transparent;
-    height:39px;
-    width:200px;
-    font-style: oblique;
-    
+    text-decoration: none;
+    color: black;
 }
-.button0:hover{
-    border-style: solid;
-   }
-/* .button{
-    position:absolute;
-    color:white;
-    font-size: 20px;
-    font-weight: 200;
-   border:none;
-   background-color: transparent;
-    height:10%;
-    width:30%;
-    font-style: oblique;
-    
-    
-}
-.button2:hover{
-    border-style: solid;
-   } */
-.button1{
-    position:absolute;
-    color:white;
-    font-size: 20px;
-    font-weight: 200;
-   border:none;
-   background-color: transparent;
-   height:39px;
-   width:200px;
-    font-style: oblique;
-    
-}
-/* .button2{
-    position:absolute;
-    color:white;
-    font-size: 20px;
-    font-weight: 200;
-   border:none;
-   background-color: transparent;
-   height:39px;
-   width:200px;
-    font-style: oblique;
-    
-} */
-.button1:hover{
-    border-style: solid;
-   }
-.up-left .button0{
-    bottom:0px;
-    left:0px;
+ button a:hover{
+    background-color: black;
+    color: white;
 
-}
-.up-right .button0{
-    bottom:0px;
-    left:0px;
-
-}
-.down-right .button1{
-    bottom:0px;
-    left:0px;
-
-}
-.down-left .button1{
-    bottom:0px;
-    left:0px;
-
-}
-.down-middle .button1{
-    bottom:0px;
-    left:0px;
-
-}
-.button1 a{
-    color:white;
-    font-size: 20px;
-    font-weight: 200;
-}
-.button0 a{
-    color:white;
-    font-size: 20px;
-    font-weight: 200;
+ }
+.rapper-botton-bottom{
+    margin-left: 25px;
+    margin-top:13px;
+    display:flex;
+    flex-wrap: wrap;
+    /* border:2px solid blue; */
+    justify-content: space-around;
 }
 
+@media (max-width: 1150px) {
+    .Wrapper-top h3{
+        font-size: 25px;
+    }
+    .Wrapper-top{
+        justify-content: center;
+    }
+    .top-right{
+        width: 100%;
+        margin-top: 0px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .Wrapper-botton{
+        flex-direction: column;
+    }
+    .bottom-up, .bottom-up1, .bottom-up2, .bottom-up3, .bottom-up4, .bottom-up-right{
+        width: 100%;
+    }
+  }
 
 
 
