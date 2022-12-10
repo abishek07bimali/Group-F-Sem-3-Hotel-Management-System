@@ -84,4 +84,154 @@ button:hover{
     background-color: red;
 }
 
+@media screen and (max-width:1200px) and (min-width:999px) {
+    body{
+        background-image: url(image/resort2.jpg);
+        background-position: center;
+        background-size: auto;
+    }
+    .form{
+        background-color: #000;
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        margin-top: 20%; 
+        opacity: 0.7;
+        padding: 20px;  
+        
+    }
+    .partition{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .fa{
+        display: inline-block;
+        color: red;
+        padding-right: 4px;
+        border-right: 1px solid #fff;
+    }
+    #content{
+        border: 1px solid #fff;
+        margin:10px;
+        margin-left: 3rem;
+        padding: 2px;
+    }
+    #content #input-group{
+        border:none;
+        outline: none;
+        background: transparent;
+        margin-left: 10px;
+        width: 15rem;
+        /* width: 270px; */
+        color:#fff;
+    }
+    #first-group{
+        border: 1p solid red;
+        /* border:none; */
+        /* margin: top 40px; */
+        width: 100%;
+    }
+    #second-group{
+        margin-left: 10px;
+        border:none;
+        /* margin: top 40px; */
+        width: 100%;
+    }
+    ::placeholder{
+        color: #fff;
+        
+    }
+    button{
+        background: transparent;
+        float: right;
+        color: #fff;
+        width: 10rem;
+        border: 1.5px solid red;
+        padding:10px;
+        font-size: 20px;  
+    }
+    button:hover{
+        background-color: blue;
+    }
+}
+
+
+
+
+
+@media screen and (max-width:999px) 
+{
+    body{
+        background-image: url(image/resort2.jpg);
+        background-position: center;
+        background-size: auto;
+    }
+    .form{
+        background-color: #000;
+        width: 70%;
+        height: 100%;
+        /* margin: auto; */
+        margin-top: 30%; 
+        opacity: 0.8;
+        padding: 20px;  
+        
+    }
+    /* .partition{
+        display:flex;
+        flex-wrap: wrap;
+    } */
+    .fa{
+        display: inline-block;
+        color: red;
+        padding-right: 2px;
+        border-right: 1px solid #fff;
+    }
+    #content{
+        border: 1px solid #fff;
+        margin:10px;
+        margin: auto;
+        margin-left: 3rem;
+        padding: 2px;
+    }
+    #content #input-group{
+        border:none;
+        outline: none;
+        background: transparent;
+        margin-left: 5px;
+        width: 12rem;
+        /* width: 270px; */
+        color:#fff;
+    }
+    #first-group{
+        border:none;
+        margin-left: 10%;
+        /* margin: top 40px; */
+        width: 100%;
+    }
+    #second-group{
+        margin-left: 10%;
+        border:none;
+        /* margin: top 40px; */
+        width: 100%;
+    }
+    ::placeholder{
+        color: #fff;
+        
+    }
+    button{
+        background: transparent;
+        float: right;
+        color: #fff;
+        width: 5rem;
+        border: 1px solid red;
+        padding:2px;
+        font-size: 8px;  
+    }
+    button:hover{
+        background-color: red;
+    }
+ 
+    
+}
+
 
