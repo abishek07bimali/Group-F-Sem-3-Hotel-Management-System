@@ -6,36 +6,23 @@
 body{
     display: flex;
 }
-.main-login-wrapper{
+.main-wrapper{
     display: flex;
     margin-top: 5%;
-    /* flex-direction: row; */
     height: 60%;
     width: 100%;
     justify-content: center;
-    
 }
-/* .main-login-wrapper{
-    display: flex;
-    flex-direction: row;
-} */
 .wrapper-left{
-    /* display: none; */
     height: 70%;
     width: 60%;
     border-radius: 0px;
-    /* background: #000000; */
 }
-.wrapper-left img{
+.login-image{
     width: 100%;
     height: 100%;
 }   
-/* .login-image{
-    height: 100%; 
-    width: 100%;
-} */
 .wrapper-right{
-    /* height: 40%; */
     width: 30%;
     border-radius: 0px;
     background: #FFFFFF;
@@ -78,7 +65,7 @@ body{
 }
 .a-1{
     margin-top: 10%;
-    margin-left: 66%;
+    margin-left: 70%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -86,6 +73,7 @@ body{
     line-height: 13px;
     text-align: center;
     color: #000000;
+    text-decoration: none;
 }
 .login-button{
     margin-top: 5%;
@@ -108,13 +96,13 @@ body{
 .a-2{
     font-size: 13px;
     color: #000000;
+    text-decoration: none;
 }
 
 
 @media (max-width:892px)  {
-    .main-login-wrapper{
+    .main-wrapper{
         display: flex;
-        /* flex-direction: column; */
         height: 60%;
         width: 50%;
         padding-top: 5%;
@@ -123,13 +111,12 @@ body{
     .wrapper-left{
         display: none;
     }
-    .wrapper-left img{
+    .login-image{
         width: 30%;
         height: 50%;
 
     }
     .wrapper-right{
-        /* height: 100%; */
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -139,8 +126,7 @@ body{
 }
 
 @media (max-width:552px)  {
-    .main-login-wrapper{
-        /* display: flex; */
+    .main-wrapper{
         flex-direction: column;
         height: 40%;
         width: 30%;
@@ -149,24 +135,13 @@ body{
     .wrapper-left{
         display: none;
     }
-    .wrapper-right img{
+    .login-image{
         width: 30%;
         height: 50%;
     }
     .wrapper-right{
-        /* height: 100%; */
-        /* align-items: center; */
         width: 100%;
         border-radius: 0px;
         background: #FFFFFF;
     }
 }
-
-
-/* @media screen and (max-width:768px) and (min-width:576px) {
-
-}
-
-@media only screen and (max-width:576px) {
-
-} */
