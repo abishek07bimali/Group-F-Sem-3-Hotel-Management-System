@@ -1,0 +1,91 @@
+:root{
+  --primary: rgb(237, 236, 236);
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.tab {
+  width: 20%;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+.tab.active{
+  color: #FF5722 !important;
+    border-bottom: 2px solid  #FF5722 !important;
+}
+.tab:hover {
+  color: #FF5722 !important;
+}
+.tab-content {
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.maindiv{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.section{
+  background: rgb(233, 227, 227);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section img{
+  width: 30%;
+}
+
+.section .text{
+  width: 70%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+
+@media (max-width : 800px) {
+  .section img{
+    width: 100%;
+  }
+  .section{
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    flex-direction: column;
+  }
+  .section .text{
+    width: 100%;
+}  
+.tab-content {
+  margin: auto;
+}
+}
+
+@media (max-width : 450px) {
+  .tabs{  
+    font-size: 10px;
+  }
+  .tab-content {
+    margin:auto;
+  
+}
+}

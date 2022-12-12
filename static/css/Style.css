@@ -1,0 +1,23 @@
+:root {
+  --primary: #14274a;
+  --secondary: #14274A;
+  --white: #ffffff;
+  --red: red;
+  --black: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.image{
+  width: 100%;
+  height: 80vh;
+  background-image: url(../images/hotel.jpg);
+  background-size: 200%,100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
