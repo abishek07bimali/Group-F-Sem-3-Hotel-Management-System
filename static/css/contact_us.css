@@ -14,13 +14,19 @@ body {
 }
 .contact-main-wrap{
 	font-family: 'Poppins', sans-serif;
+	margin-bottom: 10%;
+	margin-top: 10%;
+
 
 }
 .contact-us{
-	position: relative;
+	border-radius: 10px;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
+    background-color: lightgrey;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .main-contact{
 	text-align: left;
@@ -81,7 +87,8 @@ body {
 	margin-bottom: 15px;
 	color: #F1C50E;
 	text-transform: uppercase;
-	text-align: center;
+	padding: 1%;
+	/* text-align: center; */
 }
 
 /* .contact-in h2 i {
@@ -114,7 +121,7 @@ body {
 	margin-right: 5px;
 	margin-top: 100px;
 }
-@media (min-width: 1668px){
+@media (max-width: 1350px){
 	.contact-in ul li {
 		list-style: none;
 		display: inline-block;
@@ -143,7 +150,7 @@ body {
 
 .contact-in ul li a i {
 	font-size: 14px;
-	line-height: 30px;
+	line-height: 0px;
 	color: #000;
 }
 
@@ -218,7 +225,7 @@ body {
 	}
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:580px) {
 	.contact-in:nth-child(1) {
 		flex: 50%;
 	}
