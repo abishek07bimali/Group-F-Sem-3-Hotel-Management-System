@@ -1,4 +1,4 @@
-:root{
+:root {
   --primary: rgb(237, 236, 236);
 }
 
@@ -24,68 +24,72 @@
   padding: 10px;
   text-align: center;
 }
-.tab.active{
-  color: #FF5722 !important;
-    border-bottom: 2px solid  #FF5722 !important;
+.tab.active {
+  color: #ff5722 !important;
+  border-bottom: 2px solid #ff5722 !important;
 }
 .tab:hover {
-  color: #FF5722 !important;
+  color: #ff5722 !important;
 }
 .tab-content {
   margin-left: 50px;
   margin-right: 20px;
 }
 
-.maindiv{
+.maindiv {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  justify-content: center;
 }
 
-.section{
+.section {
   background: rgb(233, 227, 227);
   padding: 20px;
   margin: 10px;
-  border-radius: 5px; 
-  display: flex;
-  flex-wrap: wrap;
+  border-radius: 5px;
+  width: 30%; /* column*/
 }
 
-.section img{
-  width: 30%;
+.section img {
+  width: 100%;
 }
 
-.section .text{
-  width: 70%;
+.section #zoom-in img{
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+.section #zoom-in:hover img{
+  transform: scale(1.1); 
+}
+
+.section .text {
   padding: 10px;
   font-size: 15px;
 }
 
-
-@media (max-width : 800px) {
-  .section img{
-    width: 100%;
-  }
-  .section{
-    padding: 20px;
-    margin: 10px;
-    width: 100%;
+@media (max-width: 900px) {
+  .section {
+    width: 45%;
     flex-direction: column;
   }
-  .section .text{
-    width: 100%;
-}  
-.tab-content {
-  margin: auto;
-}
+  .tab-content {
+    margin: auto;
+  }
 }
 
-@media (max-width : 450px) {
-  .tabs{  
+@media (max-width: 450px) {
+  .tabs {
     font-size: 10px;
   }
   .tab-content {
-    margin:auto;
-  
+    margin: auto;
+  }
 }
+
+@media (max-width: 600px) {
+  .section {
+    width: 100%;
+    flex-direction: column;
+  }
 }
