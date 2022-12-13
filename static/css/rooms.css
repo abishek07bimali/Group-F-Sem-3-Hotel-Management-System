@@ -1,0 +1,138 @@
+*{
+    font-style: oblique;
+}
+
+.Main-Wrapper{
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.Wrapper-top{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+.top-left{
+    flex-grow: 2;
+    margin-top:30px;
+ 
+}
+.top-left h2{
+    color:rgba(53, 1, 1, 0.718);
+    font-size: 20px;
+}
+
+.top-left h3{
+    color:rgba(53, 1, 1, 0.718);
+    font-size: 37px;
+    font-weight: bold;
+    margin-top:13px;
+    font-style: oblique;
+    text-transform: capitalize;
+}
+
+.top-right{
+    font-size: 17px;
+    font-style:oblique;
+    width:400px;
+    margin-top:30px;
+}
+
+.Wrapper-bottom{
+    margin-top:13px;
+    display:flex;
+    flex-wrap: wrap;  
+    justify-content: center;  
+}
+.bottom-up{
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/coupleroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.bottom-up1{
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/Luxeroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.bottom-up2{
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/Familyroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.bottom-up3{
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/Masterroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.bottom-up4{
+    width: 48%;
+    margin: 5px;
+    background-image: url("../images/Premiumroom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+ .price{
+    background-color: white;
+    width: 20%;
+    font-size: 25px;
+}
+.bottom-up button, .bottom-up1 button, .bottom-up2 button, .bottom-up3 button, .bottom-up4 button{
+    border: 0px;
+    margin-top: 50%;
+    text-align: start;
+}
+.bottom-up button a, .bottom-up1 button a, .bottom-up2 button a, .bottom-up3  button a,
+.bottom-up4 button a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+ button a:hover{
+    background-color: black;
+    color: white;
+
+ }
+.rapper-botton-bottom{
+    margin-left: 25px;
+    margin-top:13px;
+    display:flex;
+    flex-wrap: wrap;
+    /* border:2px solid blue; */
+    justify-content: space-around;
+}
+
+@media (max-width: 1150px) {
+    .Wrapper-top h3{
+        font-size: 25px;
+    }
+    .Wrapper-top{
+        justify-content: center;
+    }
+    .top-right{
+        width: 100%;
+        margin-top: 0px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .Wrapper-botton{
+        flex-direction: column;
+    }
+    .bottom-up, .bottom-up1, .bottom-up2, .bottom-up3, .bottom-up4, .bottom-up-right{
+        width: 100%;
+    }
+  }
+
+
+
