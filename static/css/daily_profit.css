@@ -30,18 +30,57 @@
     padding: 40%;
     color: rgb(54, 101, 167);
     width: 80%;
-    height: 50%;
+    height: 70%;
  }
 
  .pie-graph-data{
    display: flex;
-   flex-direction: row;
+   margin: 1%;
    align-items: center;
    width: 30%;
  }
 
- #pie-raph{
+ #pie-graph{
     display: flex;
     justify-content: center;
     border-radius: 10px;
  }
+
+ .bar-graph-data{
+   display: flex;
+   margin: 5%;
+   align-items: center;
+   width: 80%;
+ }
+
+ #bar-graph{
+    justify-content: center;
+    border-radius: 10px;
+ }
+
+@media(max-width: 750px) {
+   .body{
+   flex: 50%;
+   }
+   .main-graph-wrap{
+      align-items: center;
+      /* flex: 50%; */
+   }
+   .main-visualize-data{
+      display: flex;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+      flex: 50%;
+
+   }
+   .pie-graph-data{
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+   }
+   .bar-graph-data{
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+   }
+}
