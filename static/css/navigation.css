@@ -61,9 +61,9 @@ nav {
 	margin-left: -25px;
     font-size: x-small;
 }
-.icon img {
+.img_not{
 	display: inline-block;
-	width: 40px;
+	width: 35px;
 	margin-top: 20px;
 }
 .icon:hover {
