@@ -13,15 +13,61 @@
     <link rel="stylesheet" href="../static/css/navigation.css">
     <link rel="shortcut icon" type="x-icon" href="../images/logo.png">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="../static/javascript/notification.js" defer></script>
+
 </head>
 <body>
     <nav>
         <label class="logo"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
         <h1>Luxury Hotel: Admin Panel</h1>
-        <a href="#" class="notification">
-          <i class="fa fa-bell bell"></i>
-          <span class="badge">3</span>
-        </a>
+        <nav>
+          <div class="logo">Notification </div>
+          <div class="icon" onclick="toggleNotification()">
+            <img class="img_not" src="../static/images/Notification.jpg" alt=""> <span>5</span>
+          </div>
+          <div class="notifi-box" id="box">
+            <h2>Notifications<span> 5</span></h2>
+            <div class="notifi-item">
+              <img src="../static/images/Profile icon.jpg" alt="img">
+              <div class="text">
+                 <h4>Abhishek Karki</h4>
+                 <p>@lorem ipsum dolor sit amet</p>
+                </div> 
+            </div>
+      
+            <div class="notifi-item">
+              <img src="../static/images/Profile icon.jpg" alt="img">
+              <div class="text">
+                 <h4>Abhishek Bimali</h4>
+                 <p>@lorem ipsum dolor sit amet</p>
+                </div> 
+            </div>
+      
+            <div class="notifi-item">
+              <img src="../static/images/Profile icon.jpg" alt="img">
+              <div class="text">
+                 <h4>Amul Bashyal</h4>
+                 <p>@lorem ipsum dolor sit amet</p>
+                </div> 
+            </div>
+      
+            <div class="notifi-item">
+              <img src="../static/images/Profile icon.jpg" alt="img">
+              <div class="text">
+                 <h4>Rakhsit Shrestha</h4>
+                 <p>@lorem ipsum dolor sit amet</p>
+                </div> 
+            </div>
+      
+            <div class="notifi-item">
+              <img src="../static/images/Profile icon.jpg" alt="img">
+              <div class="text">
+                 <h4>Bhawana Bashyal</h4>
+                 <p>@lorem ipsum dolor sit amet</p>
+                </div> 
+            </div>
+          </div>
+        </nav>
       </nav>
       <div id="mySidenav" class="sidenav">
         <label class="logoInNav"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
