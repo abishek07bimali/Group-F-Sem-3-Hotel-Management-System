@@ -8,7 +8,7 @@
 }
 
 .main_bg{
-    background-image: url(gallery15.jpg);
+    background-image: url(../images/gallery15.jpg);
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
