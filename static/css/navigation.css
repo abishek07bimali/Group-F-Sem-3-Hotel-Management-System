@@ -43,8 +43,8 @@ nav h1{
 nav {
 	display: flex;
 	align-items: center;
-	background: #187e97;
-	height: 60px;
+	background: #14274A;
+	height: 80px;
 	position: relative;
 }
 .icon {
