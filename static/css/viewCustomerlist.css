@@ -119,14 +119,13 @@ table {
     color: #5041BC;
     font-weight: bolder;
     font-size: 30px;
-    border:none;
-    background-color: transparent;
   }
-  .td1:hover {
-    color:rgb(188, 174, 174);
-    font-weight: bolder;
-}
- 
+ .image{
+    border-radius: 50%;
+    height: 27px;
+    width: 29px;
+    border: solid  #5041BC;
+  }
   tr:nth-child(even) {background-color: #f2f2f2;}
 
  
