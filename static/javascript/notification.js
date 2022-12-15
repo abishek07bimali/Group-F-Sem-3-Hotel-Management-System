@@ -8,7 +8,7 @@ function toggleNotification(){
 		box.style.opacity = 0;
 		down = false;
 	}else {
-		box.style.height  = '510px';
+		box.style.height  = '490px';
 		box.style.opacity = 1;
 		down = true;
 	}
