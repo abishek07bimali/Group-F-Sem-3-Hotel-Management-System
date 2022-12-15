@@ -6,7 +6,7 @@
 }
 
 .main_bg{
-    background-image: url('/static/images/background.jpg');
+    background-image: url(../images/background.jpg);
     max-width: 1280px;
     height: 800px;
     display: flex;
