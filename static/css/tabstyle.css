@@ -43,11 +43,12 @@
 }
 
 .section {
-  background: rgb(233, 227, 227);
   padding: 20px;
   margin: 10px;
   border-radius: 5px;
   width: 30%; /* column*/
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .section img {
