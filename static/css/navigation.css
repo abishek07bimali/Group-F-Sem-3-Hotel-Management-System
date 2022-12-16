@@ -23,6 +23,7 @@ nav{
   justify-content: space-around;
   position: sticky;
   top:0;
+  width: 100%;
   /* margin-left: 30px;
   margin-right: 30px; */
 
@@ -43,6 +44,7 @@ nav h1{
 nav {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	background: #14274A;
 	height: 80px;
 	position: relative;

@@ -6,6 +6,7 @@
 .main-graph-wrap{
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
 }
 .main-visualize-data{
     display: flex;
@@ -17,15 +18,15 @@
 
  .profit-data{
     display: flex;
-    width: 70%;
-    height: 50%;
+    width: 65%;
+    padding: 1%;
     flex-direction: column;
-    margin-top: 3%;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: -8px 13px 32px rgb(14 25 185 / 38%);
  }
 
 .canvas#chart{
-    max-width: 80%;
+    max-width: 70%;
     margin-top: 2rem;
     border-radius: 10px;
     padding: 40%;
@@ -38,34 +39,38 @@
    display: flex;
    flex-direction: column;
    margin: 1%;
-   margin-top: 3%;
-   /* align-items: center; */
-   width: 30%;
-   border-radius: 5px;
-   box-shadow: 5px;
+   padding: 1%;
+   width: 35%;
+   border-radius: 15px;
+   box-shadow: 0 13px 40px rgb(14 25 185 / 39%);
  }
 
  #pie-graph{
     display: flex;
     justify-content: center;
-    border-radius: 10px;
-
+   width: 80%;
  }
 
  .bar-graph-data{
    display: flex;
    flex-direction: column;
+   padding: 1%;
    margin: 5%;
-   /* align-items: center; */
-   width: 80%;
-   border-radius: 5px;
+   width: 90%;
+   border-radius: 15px;
+   border-color: black;
+   box-shadow: 8px 13px 40px rgb(14 25 185 / 39%);
  }
 
  #bar-graph{
     justify-content: center;
     border-radius: 10px;
  }
-
+@media(max-width:1100px){
+   .body {
+      flex: 100%;
+   }
+}
 @media(max-width: 750px) {
    .body{
    flex: 50%;
@@ -95,13 +100,17 @@
    .pie-graph-data{
       justify-content: center;
       align-items: center;
-      width: 90%;
+      width: 80%;
       margin-top: 10%;
    }
+   
    .bar-graph-data{
       justify-content: center;
       align-items: center;
       width: 95%;
       margin-top: 10%;
+      border-radius: 10px;
+      border-color: black;
+      border: black;
    }
 }
