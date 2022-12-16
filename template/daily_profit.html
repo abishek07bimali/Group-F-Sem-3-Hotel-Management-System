@@ -7,6 +7,8 @@
     <title>Admin_landing_page</title>
     <link rel="stylesheet" href="../static/css/daily_profit.css">
 
+    <link rel="stylesheet" href="../static/css/WholeDayData.css" />
+
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/dashstyle.css">
@@ -89,26 +91,91 @@
         }
         </script>
 
-        <!-- graph part -->
+        <!-- data in cards -->
+
+
+        <div class="container">
+       
+          <div class="cardbox">
+            <div class="card">
+              <div>
+                <div class="numbers">25.1k</div>
+                <div class="cardname">Daily Earning</div>
+                <a class="a" href="#"><strong>view report</strong></a>
+              </div>
+              <div class="iconbox">
+                <ion-icon name="cart-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="card">
+              <div>
+                <div class="numbers">$2,332K</div>
+                <div class="cardname">Total profit</div>
+                <a class="a" href="#"><strong>view report</strong></a>
+              </div>
+              <div class="iconbox">
+                <ion-icon name="cart-outline"></ion-icon>
+              
+              </div>
+            </div>
+            <div class="card">
+              <div>
+                <div class="numbers">3.2M</div>
+                <div class="cardname">Total no of booking</div>
+                <a class="a" href="#"><strong>view more</strong></a>
+    
+              </div>
+              <div class="iconbox">
+                <ion-icon name= "cart-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="card">
+              <div>
+                <div class="numbers">23.1k</div>
+                <div class="cardname">New customer</div>
+                <a class="a" href="#"><strong>view more</strong></a>
+              </div>
+              <div class="iconbox">
+                <ion-icon name="cart-outline"></ion-icon>
+              </div>
+            </div>
+     
+         
+                   
+    
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    
+        <script src="script.js"></script>
+
+      </div>  
+
+              <!-- graph part -->
 
     <div class="main-graph-wrap">
-        <div class="main-visualize-data" >
+      <div class="main-visualize-data" >
 
-            <div class="profit-data" >
-              <h2>Daily Profit</h2>
-                <canvas id="chart"></canvas>
-            </div>
-    
-            <div class="pie-graph-data" >
-              <h3>Daily Profit</h3>
-                <canvas id="pie-graph"></canvas>
-            </div>
-        </div>
-        <div class="bar-graph-data" >
+          <div class="profit-data" >
             <h2>Daily Profit</h2>
-            <canvas id="bar-graph"></canvas>
-        </div>
-    </div>
+              <canvas id="chart"></canvas>
+          </div>
+  
+          <div class="pie-graph-data" >
+            <h3>Daily Profit</h3>
+              <canvas id="pie-graph"></canvas>
+          </div>
+      </div>
+      <div class="bar-graph-data" >
+          <h2>Daily Profit</h2>
+          <canvas id="bar-graph"></canvas>
+      </div>
+  </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
