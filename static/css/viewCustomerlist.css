@@ -3,11 +3,12 @@
 }
 
 .Main-wrapper{
-    width:75%;
+    width:90%;
     display:flex;
     flex-direction: column;
-    margin-left: 10%;
-    margin-right: 15%;
+    margin-left: 8%;
+    display: inline-block;
+ 
     margin-top: 3%;
 }
 
@@ -28,11 +29,11 @@ h2{
     width:100%;
 }
 input{
-    margin-left: 23%;
+    margin-left: 39%;
     margin-top: 4%;
     height:30px;
     width:85%;
-  
+    border-right: none;
     border-top: none;
     
     background: #F5F3FF;
@@ -52,7 +53,7 @@ input{
   font-weight: bold;
     color: black;
     font-size: 22px;
-    background: #F5F3FF;
+    background: #05b1eb;
     border-color: rgba(255, 255, 255, 0.564);
     border-left: none; 
     border-bottom: none;/* Prevent double borders */
@@ -62,7 +63,7 @@ input{
     
     color: black;
     font-weight: bold;
-    border: solid  black;
+    border: solid  orange;
  }
 
 .btn2:hover {
@@ -124,7 +125,7 @@ a{
 }
 .btn3:hover {
     
-  
+  background: #0b7dda;;
     font-weight: bolder;
     border: white solid;
  }
@@ -163,22 +164,47 @@ table {
    
   }
   .td1{
-    color: #5041BC;
-    font-weight: bolder;
-    font-size: 30px;
-    border:none;
-    background-color: transparent;
+    display: flex;
+    height:91%;
+    width:100%;
+    padding: 0;
   }
-  .td1:hover {
-    color:rgb(188, 174, 174);
-    font-weight: bolder;
+  .material-icons{
+    font-size: 32px;
+    font-family: 'Material Icons';
+  }
+  .edit{
+    color: rgb(225, 152, 16);
+    margin-right: 2%;
+    border: none;
+    background: transparent;
+    }
+  .delete{
+    color: rgb(165, 8, 8);
+    margin-left: 3%;
+    border: none;
+    background: transparent;
 }
+.edit:hover{
+    font-weight: bolder;
+    background-color: #05b1eb;
+}
+.delete:hover{
+    font-weight: bolder;
+    background-color:  #05b1eb;
+}
+  
+  i{
+    font-size:25px;
+   
+}
+
  
   tr:nth-child(even) {background-color: #f2f2f2;}
 
  
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .wrapper-top{
         flex-direction: column;
     }
@@ -188,20 +214,43 @@ table {
         font-weight: bolder;
 
     }
-    #text1{
-       
-        margin-right: 50%;
-        margin-left: 0px;
-        margin-top: 4%;
+   .search-icon{
+     margin-top: 4%;
         margin-bottom: 4%;
-        height:46px;
+        height:55px;
         width:100%;
         
     }
+    input{
+        margin-left: 0;
+        margin-top: 0;
+        height:55px;
+        width:85%;
+        font-size: 25px;
+        
+    }
+    input:hover {
+    border:black;
+  
+       
+     }
+    .btn4{
+        margin-top: 0;
+        height:55px;
+        
+     font-size: 30px;
+       width:16%;
+
+    }
+    .btn4:hover {
+        border:solid orange;
+      
+           
+         }
     .btn1{
         margin-right: 45%;
-        height:65px ;
-        width:45%;
+        height:60px ;
+        width:56%;
         font-size: 25px;
     }
     table{
@@ -209,7 +258,7 @@ table {
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 590px) {
     .wrapper-top{
         flex-direction: column;
     }
@@ -219,20 +268,99 @@ table {
         font-weight: bolder;
 
     }
-    #text1{
-       
-        margin-right: 50%;
-        margin-left: 0px;
+    .search-icon{
         margin-top: 4%;
-        margin-bottom: 4%;
-        height:46px;
-        width:100%;
-        
-    }
+           margin-bottom: 4%;
+           height:70px;
+           width:100%;
+           
+       }
+       input{
+           margin-left: 0;
+           margin-top: 0;
+           height:70px;
+           width:85%;
+           font-size: 30px;
+           
+       }
+       input:hover {
+       border:black;
+     
+          
+        }
+       .btn4{
+           margin-top: 0;
+           height:70px;
+           
+        font-size: 30px;
+          width:16%;
+   
+       }
+       .btn4:hover {
+           border:solid orange;
+         
+              
+            }
     .btn1{
         margin-right: 45%;
         height:75px ;
+        width:72%;
+    }
+    
+
+
+  }
+  @media (max-width: 450px) {
+   
+    .wrapper-top{
+        flex-direction: column;
+    }
+    h2{
+        text-align:left;
+        font-size: 70px;
+        font-weight: bolder;
+
+    }
+    .search-icon{
+        margin-top: 4%;
+           margin-bottom: 7%;
+           height:75px;
+           width:186%;
+           
+       }
+       input{
+           margin-left: 0;
+           margin-top: 0;
+           height:80px;
+           width:85%;
+           font-size: 35px;
+           
+       }
+       input:hover {
+       border:black;
+     
+          
+        }
+       .btn4{
+           margin-top: 0;
+           height:70px;
+           
+        font-size: 30px;
+          width:16%;
+   
+       }
+       .btn4:hover {
+           border:solid orange;
+         
+              
+            }
+    .btn1{
+        margin-top: 7%;
+        margin-right: 45%;
+        margin-bottom: 10%;
+        height:89px ;
         width:100%;
+        font-size: 35px;
     }
     
 
