@@ -82,6 +82,7 @@
    }
    .main-graph-wrap{
       align-items: center;
+      margin-top: 5%;
    }
    .main-visualize-data{
       display: flex;

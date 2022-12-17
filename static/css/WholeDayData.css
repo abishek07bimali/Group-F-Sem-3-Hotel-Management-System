@@ -36,7 +36,7 @@ body {
   padding: 15px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-gap: 25px;
 }
 
 .cardbox .card {
