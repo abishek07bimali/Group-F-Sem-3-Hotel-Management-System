@@ -26,10 +26,6 @@ body {
   width: 100%;
 }
 
-/* .navigation.active {
-  width: 80px;
-} */
-
 .cardbox {
   position: relative;
   width: 100%;
@@ -37,6 +33,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 25px;
+  z-index: -1;
 }
 
 .cardbox .card {
@@ -68,22 +65,11 @@ body {
   font-size: 2em;
   color: var(--black2);
 }
-.cardbox .card:hover {
-  background: var(--blue);
-}
+
 .cardbox .card .a{
     font-size: smaller;
     margin-left: 2px;
 }
-
-.cardbox .card:hover .numbers,
-.cardbox .card:hover .cardname,
-.cardbox .card:hover .iconbox {
-  color: var(--white);
-  transition: 0.5s;
-}
-
-
 
 
 @media (max-width: 991px) {
