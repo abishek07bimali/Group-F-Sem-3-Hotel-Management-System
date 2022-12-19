@@ -1,0 +1,109 @@
+*{
+    font-style: oblique;
+}
+
+.Main-Wrapper{
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.Wrapper-top{
+    
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    margin-top:30px;
+}
+
+.Wrapper-top h2{
+    color:rgba(53, 1, 1, 0.718);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+.Wrapper-top p{
+    font-size: 17px;
+    font-style:oblique;
+    width:800px;
+    margin-top:0px;
+    margin-left: 23px;
+}
+
+.Wrapper-bottom{
+    margin-top:25px;
+    display:flex;
+    flex-wrap: wrap;  
+    justify-content: center;  
+}
+.bottom-up5,.bottom-up12,.bottom-up18{
+    width: 31%;
+    margin: 4px;
+   
+  
+    
+}
+.bottom-up1,.bottom-up2,.bottom-up3,.bottom-up6,.bottom-up7,.bottom-up8,.bottom-up9,.bottom-up10,.bottom-up11,.bottom-up14,.bottom-up15,.bottom-up16,.bottom-up19,.bottom-up20,.bottom-up21{
+    width: 32%;
+    margin: 3px;
+   
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.bottom-up4,.bottom-up13,.bottom-up17{
+    width: 66%;
+    margin: 4px;
+  
+}
+
+
+/* .bottom-up button a, .bottom-up1 button a, .bottom-up2 button a, .bottom-up3  button a,
+.bottom-up4 button a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+} */
+ /* button a:hover{
+    background-color: black;
+    color: white;
+
+ } */
+/* .rapper-botton-bottom{
+    margin-left: 25px;
+    margin-top:13px;
+    display:flex;
+    flex-wrap: wrap;
+    /* border:2px solid blue; */
+    /* justify-content: space-around; */
+/* } */ 
+
+@media (max-width: 1150px) {
+    .Wrapper-top p{
+        width: 100%;
+        margin-top: 0px;
+    }
+    .Wrapper-top{
+        justify-content: center;
+    }
+   
+  }
+
+  @media (max-width: 900px) {
+    .Wrapper-bottom{
+        flex-direction: column;
+    }
+    .bottom-up5, .bottom-up1, .bottom-up2, .bottom-up3, .bottom-up4, .bottom-up6, .bottom-up7, .bottom-up8, .bottom-up9, .bottom-up10, .bottom-up11, .bottom-up12, .bottom-up13, .bottom-up14, .bottom-up15, .bottom-up16, .bottom-up17, .bottom-up18,.bottom-up19, .bottom-up20, .bottom-up21{
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
