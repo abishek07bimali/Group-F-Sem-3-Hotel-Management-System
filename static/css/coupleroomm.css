@@ -49,9 +49,13 @@
     margin-top: 10px;
     justify-content: space-evenly;
 }
+.wrapper-bottom div{
+width: 20%;
+}
 .wrapper-bottom img {
-    /* width: 25%; */
-    padding :20px;
+    width: 100%;
+    /* flex-wrap:  wrap; */
+    /* padding :20px; */
     
 }
 
