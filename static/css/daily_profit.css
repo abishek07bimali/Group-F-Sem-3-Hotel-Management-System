@@ -1,0 +1,124 @@
+.body{
+    background-color: #c3d8eb !important;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+}
+.main-graph-wrap{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.main-visualize-data{
+    display: flex;
+    flex-direction: row;
+     margin: 2%;
+    justify-content: space-evenly;
+}
+ /* ==================== Canvas or Chart js  profit_data ======================= */
+
+ .profit-data{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 65%;
+    padding: 1%;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: -8px 13px 32px rgb(14 25 185 / 38%);
+ }
+
+.canvas#chart{
+    max-width: 70%;
+    margin-top: 2rem;
+    border-radius: 10px;
+    padding: 40%;
+    color: rgb(54, 101, 167);
+    width: 80%;
+    height: 70%;
+ }
+
+ .pie-graph-data{
+   display: flex;
+   flex-direction: column;
+   background-color: white;
+   margin: 1%;
+   padding: 1%;
+   width: 35%;
+   border-radius: 15px;
+   box-shadow: 0 13px 40px rgb(14 25 185 / 39%);
+ }
+
+ #pie-graph{
+    display: flex;
+    justify-content: center;
+   width: 60%;
+ }
+
+ .bar-graph-data{
+   display: flex;
+   flex-direction: column;
+   flex-direction: column;
+   background-color: white;
+   padding: 4%;
+   margin: 5%;
+   width: 90%;
+   border-radius: 15px;
+   border-color: black;
+   box-shadow: 8px 13px 40px rgb(14 25 185 / 39%);
+ }
+
+ #bar-graph{
+    justify-content: center;
+    border-radius: 10px;
+ }
+@media(max-width:780px){
+   .body {
+      flex: 100%;
+   }
+}
+@media(max-width: 750px) {
+   .body{
+   flex: 50%;
+   }
+   .main-graph-wrap{
+      align-items: center;
+      margin-top: 5%;
+   }
+   .main-visualize-data{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 1%;
+      flex-direction: column;
+      /* flex: 50%; */
+      width: 100%;
+
+   }
+   .profit-data{
+      display: flex;
+      flex-direction: column;
+      /* height: 100%; */
+      width: 100%;
+      margin: 1%;
+      padding: 2%;
+   }
+   .canvas#chart{
+      width: 100%;
+   }
+   .pie-graph-data{
+      justify-content: center;
+      align-items: center;
+      width: 55%;
+      margin-top: 10%;
+      box-shadow: none;
+   }
+   .bar-graph-data{
+      justify-content: center;
+      align-items: center;
+      width: 85%;
+      margin-top: 10%;
+      border-radius: 10px;
+      border-color: black;
+      border: black;
+   }
+}
