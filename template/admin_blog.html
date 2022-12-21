@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog Post</title>
     <link rel="stylesheet" href="../static/css/admin_blog.css">
+    <!-- <link rel="stylesheet" href="../static/css/blog.css"> -->
 </head>
 <body>
      <h1>Add Blog Post</h1>
     <div class="uplaod_blog">
         <form id="add-post-form">
             <label for="title">Title:</label><br>
-            <input type="file" name="image" id="image"><br>
+            <!-- <input type="file" name="image" id="image"><br> -->
             <input type="text" id="title" name="title"><br>
             <label for="author">Author:</label><br>
             <input type="text" id="author" name="author"><br>
@@ -21,11 +22,11 @@
             <button type="submit">Submit</button>
         
             <!-- to upload image -->
-            <!-- <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+            <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
             <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-            <p><img id="output" width="200" /></p>
+            <!-- <p><img id="output" width="200px" /></p> -->
         
-            <script>
+            <!-- <script>
                 var loadFile = function(event) {
                     var image = document.getElementById('output');
                     image.src = URL.createObjectURL(event.target.files[0]);
@@ -41,6 +42,30 @@
     <h1>Blog</h1>
     <div id="posts"></div>
     <script src="../static/javascript/blogPage.js"></script>
+    <div class="leftcolumn">
+      <div class="card">
+        <h2 id="blog-title"></h2>
+        <h5 id="date"></h5>
+        <div class="fakeimg" style="height:100%;">
+          <img src="" alt="img" id="output" width="100%">
+        </div>
+        <p id="blog-content"></p>
+      </div>
+      <div class="card">
+        <h2 id="blog-title"></h2>
+        <h5 id="date"></h5>
+        <div class="fakeimg" style="height:100%;">
+          <img src="" alt="img" id="output" width="300%">
+        </div>
+        <p id="blog-content"></p>
+      </div>
+      <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+    </div>
   </div>
 </body>
 </html>

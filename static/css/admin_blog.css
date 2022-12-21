@@ -28,3 +28,27 @@ form {
     background-color: #45a049;
   }
   
+  /* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+  background-color: #4CAF50;
+}
+
+/* Fake image */
+.fakeimg {
+  /* background-color: #aaa; */
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  background-color: aqua;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: rgb(37, 33, 33);
+  padding: 20px;
+  margin-top: 20px;
+}
+
