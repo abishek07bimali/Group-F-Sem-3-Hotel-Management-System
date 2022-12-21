@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: white;
+}
+
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  /* background: white; */
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  /* background-color: #aaa; */
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row_blog:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#respond {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+
+#respond form{
+  width: 80%;
+}
+
+#respond input[type='text'],
+#respond input[type='email'] {
+  padding: 10px;
+  height: 40px;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: flex;
+  width: 100%;
+  font-size: 1.2em;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  /* background: #ddd; */
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide,
+ make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+
+.container-news {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.recentNews {
+  background-color: rgb(20, 117, 175);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.recentNews .news-title {
+  text-align:center;
+  padding-top:30px;
+  padding-bottom:30px;
+  font-family: 'nimbus-sans-condensed', sans-serif;
+  font-size:55px;
+  font-weight:bold;
+  color: #fff;
+}
+.recentNews .row_news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+.recentNews .ct-blog {
+  margin-bottom: 20px;
+  width: 30%;
+  margin: 1%;
+}
+
+/* @media(max-width:800){
+  .ct-blog {
+    margin-bottom: 20px;
+    width: 45% !important;
+    margin: 2% !important;
+  }
+} */
+
+@media(max-width:660px){
+  
+  .ct-blog {
+    margin-bottom: 20px;
+    width: 80% !important;
+    margin: 1% !important;
+  }
+   .row_news {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+.ct-blog .inner {
+  background-color: #FFF;
+  padding: 10px;
+  transition: all 0.2s ease-in-out 0s;
+  cursor: pointer;
+  height: 100%;
+}
+.ct-blog .inner:hover {
+  background-color: #e6e6e6;
+}
+/* .ct-blog .fauxcrop {
+  height: 100%;
+  overflow: hidden;
+} */
+.ct-blog .fauxcrop img {
+  width: 100%;
+}
+.ct-blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0 0;
+}
+.ct-blog-content .ct-blog-date {
+  border-right: 1px solid #95A5A6;
+  display: table-cell;
+  font-family: "Lato", sans-serif;
+  padding: 0px 18px 0px 15px;
+  text-align: center;
+}
+.ct-blog-content .ct-blog-date span {
+  font-size: 16px;
+  color: rgb(20, 117, 175);  
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+.ct-blog-content .ct-blog-date strong {
+  font-size: 25px;
+  color: rgb(20, 117, 175);  
+}
+.ct-blog-content .ct-blog-header {
+  color: #000;
+  display: table-cell;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 1.1;
+  padding: 0 5%;
+  vertical-align: top;
+}
+.btn-news {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.btn-news.btn-contests a {
+  color: #fff;
+  font-family: 'nimbus-sans-condensed', sans-serif;
+  font-size: 24px;
+  transition: all 0.2s ease-in-out 0s;
+}
+.btn-news.btn-contests a:hover {
+  color: #000;
+}
