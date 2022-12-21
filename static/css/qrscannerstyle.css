@@ -5,21 +5,37 @@
   }
   html {
     /* background: linear-gradient(125deg, orange, purple); */
-    min-height: 100vh;
-    font-family: "Ubuntu", sans-serif;
+    background-color:#14274a ;
   }
+  .information{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    justify-items:center;
+  }
+  .information h1{
+    font-size: 2.5rem;
+    color: white;
+    text-transform: capitalize;
+  }
+  .information h3{
+    font-size: 1.5rem;
+    color: white;
+    text-transform: capitalize;
+  }
+
   .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 80vh;
   }
   .header .box {
     background: #f4e3e3;
     padding: 20px;
     border-radius: 20px;
-    color: #1e7fb0;
-    box-shadow: 10px 10px rgba(70, 70, 70, 0.2);
+    color: #251eb0;
+    box-shadow: 10px 10px rgba(199, 246, 199, 0.2);
     text-align: center;
   }
   .header .box h1 {
@@ -30,13 +46,6 @@
   .header .box hr {
     border-top: 2px solid #a2a2a2;
     margin: 3px;
-  }
-  .header .box input {
-    width: 100%;
-    margin-bottom: 3px;
-    height: 50px;
-    padding: 3px;
-    resize: vertical;
   }
   .header .box .qrcode {
     padding: 3px;
