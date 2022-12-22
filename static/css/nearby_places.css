@@ -167,3 +167,82 @@ body{
     background: whitesmoke;
 }
 
+.container-three {
+    display: flex;
+    margin-top: 35%;
+    margin-left: -81%;
+    width: 38%;
+    height: min-content;
+}
+.overlay-three {
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+.but-img {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+}
+.but-title {
+    margin-left: -62%;
+    margin-top: 25%;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+}
+.b-7 {
+    width: 25%;
+    height: 50%;
+    margin-left: -151%;
+    margin-top: 44%;
+    text-align: center;
+    opacity: 0;
+    border: solid 2px white;
+    transition: opacity .35s ease;
+}
+.b-8 {
+    width: 25%;
+    height: 50%;
+    margin-left: 10;
+    margin-top: 44%;
+    text-align: center;
+    opacity: 0;
+    border: solid 2px white;
+    transition: opacity .35s ease;
+}
+.b-9 {
+    width: 25%;
+    height: 50%;
+    margin-left: 10;
+    margin-top: 44%;
+    text-align: center;
+    opacity: 0;
+    border: solid 2px white;
+    transition: opacity .35s ease;
+}
+.a-3 {
+    width: 20%;
+    font-size: large;
+    padding: 3% 15%;
+    text-align: center;
+    color: black;
+    /* border: solid 2px white; */
+    text-decoration: none;
+}
+.container-three:hover .b-7 {
+    opacity: 1;
+    background: whitesmoke;
+}
+.container-three:hover .b-8 {
+    opacity: 1;
+    background: whitesmoke;
+}
+.container-three:hover .b-9 {
+    opacity: 1;
+    background: whitesmoke;
+}
