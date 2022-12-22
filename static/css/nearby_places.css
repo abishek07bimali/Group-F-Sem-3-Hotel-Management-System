@@ -5,12 +5,22 @@
 }
 body{
     display: flex;
+    /* justify-content: center; */
+}
+.main-container {
+    display: flex;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    background-color: black;
 }
 .container-one {
     display: flex;
-    margin-top: 5%;
-    margin-left: 8%;
-    width: 38%;
+    margin: auto;
+    /* margin-top: 5%; */
+    /* margin-left: 2%; */
+    width: 100%;
     height: min-content;
 }
 .overlay-one {
@@ -89,9 +99,10 @@ body{
 
 .container-two {
     display: flex;
-    margin-top: 5%;
-    margin-left: 5%;
-    width: 38%;
+    margin: auto;
+    /* margin-top: 5%; */
+    margin-left: 2%;
+    width: 100%;
     height: min-content;
 }
 .overlay-two {
@@ -169,9 +180,10 @@ body{
 
 .container-three {
     display: flex;
-    margin-top: 35%;
-    margin-left: -81%;
-    width: 38%;
+    margin: auto;
+    /* margin-top: 5%; */
+    margin-left: 2%;
+    width: 100%;
     height: min-content;
 }
 .overlay-three {
