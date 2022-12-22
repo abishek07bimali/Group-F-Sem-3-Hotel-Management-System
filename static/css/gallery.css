@@ -51,14 +51,14 @@
 }
 
 
-.bottom-up5,.bottom-up12,.bottom-up18{
+#bottom-up5,#bottom-up12,#bottom-up18{
     width: 31%;
     margin: 4px;
    
   
     
 }
-.bottom-up1,.bottom-up2,.bottom-up3,.bottom-up6,.bottom-up7,.bottom-up8,.bottom-up9,.bottom-up10,.bottom-up11,.bottom-up14,.bottom-up15,.bottom-up16,.bottom-up19,.bottom-up20,.bottom-up21{
+#bottom-up1,#bottom-up2,#bottom-up3,#bottom-up6,#bottom-up7,#bottom-up8,#bottom-up9,#bottom-up10,#bottom-up11,#bottom-up14,#bottom-up15,#bottom-up16,#bottom-up19,#bottom-up20,#bottom-up21{
     width: 32%;
     margin: 3px;
    
@@ -66,7 +66,7 @@
     background-repeat: no-repeat;
 }
 
-.bottom-up4,.bottom-up13,.bottom-up17{
+#bottom-up4,#bottom-up13,#bottom-up17{
     width: 66%;
     margin: 4px;
   
@@ -108,6 +108,7 @@
 }
 .modal.appear{
     opacity:1;
+    display: block;
     pointer-events:all;
 }
 .modal.appear .modalImg{
@@ -142,7 +143,7 @@
     .Wrapper-bottom{
         flex-direction: column;
     }
-    .bottom-up5, .bottom-up1, .bottom-up2, .bottom-up3, .bottom-up4, .bottom-up6, .bottom-up7, .bottom-up8, .bottom-up9, .bottom-up10, .bottom-up11, .bottom-up12, .bottom-up13, .bottom-up14, .bottom-up15, .bottom-up16, .bottom-up17, .bottom-up18,.bottom-up19, .bottom-up20, .bottom-up21{
+    #bottom-up5, #bottom-up1, #bottom-up2, #bottom-up3, #bottom-up4, #bottom-up6, #bottom-up7, #bottom-up8, #bottom-up9, #bottom-up10, #bottom-up11, #bottom-up12, #bottom-up13, #bottom-up14, #bottom-up15, #bottom-up16, #bottom-up17, #bottom-up18,#bottom-up19, #bottom-up20, #bottom-up21{
         width: 100%;
     }
   }
