@@ -10,16 +10,12 @@ body{
 .main-container {
     display: flex;
     margin: auto;
-    height: 100%;
-    width: 100%;
     flex-direction: row;
-    background-color: black;
 }
 .container-one {
     display: flex;
     margin: auto;
-    /* margin-top: 5%; */
-    /* margin-left: 2%; */
+    margin-left: 2%;
     width: 100%;
     height: min-content;
 }
@@ -32,22 +28,22 @@ body{
     transition: background 0.5s ease;
 }
 .kath-img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     margin-left: 0;
 }
 .kath-title {
-    margin-left: -70%;
+    margin-left: -63%;
     margin-top: 25%;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     text-transform: uppercase;
     color: white;
 }
 .b-1 {
     width: 25%;
     height: 50%;
-    margin-left: -157%;
+    margin-left: -159%;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -76,7 +72,7 @@ body{
 }
 .a-1 {
     width: 20%;
-    font-size: large;
+    font-size: medium;
     padding: 3% 15%;
     text-align: center;
     color: black;
@@ -101,7 +97,7 @@ body{
     display: flex;
     margin: auto;
     /* margin-top: 5%; */
-    margin-left: 2%;
+    margin-left: 1%;
     width: 100%;
     height: min-content;
 }
@@ -114,15 +110,15 @@ body{
     transition: background 0.5s ease;
 }
 .pokh-img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     margin-left: 0;
 }
 .pokh-title {
-    margin-left: -65%;
+    margin-left: -60%;
     margin-top: 25%;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     text-transform: uppercase;
     color: white;
 }
@@ -158,7 +154,7 @@ body{
 }
 .a-2 {
     width: 20%;
-    font-size: large;
+    font-size: medium;
     padding: 3% 15%;
     text-align: center;
     color: black;
@@ -182,7 +178,7 @@ body{
     display: flex;
     margin: auto;
     /* margin-top: 5%; */
-    margin-left: 2%;
+    margin-left: 1%;
     width: 100%;
     height: min-content;
 }
@@ -195,15 +191,15 @@ body{
     transition: background 0.5s ease;
 }
 .but-img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     margin-left: 0;
 }
 .but-title {
-    margin-left: -62%;
+    margin-left: -57%;
     margin-top: 25%;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     text-transform: uppercase;
     color: white;
 }
@@ -211,7 +207,7 @@ body{
     width: 25%;
     height: 50%;
     margin-left: -151%;
-    margin-top: 44%;
+    margin-top: 40%;
     text-align: center;
     opacity: 0;
     border: solid 2px white;
@@ -221,7 +217,7 @@ body{
     width: 25%;
     height: 50%;
     margin-left: 10;
-    margin-top: 44%;
+    margin-top: 40%;
     text-align: center;
     opacity: 0;
     border: solid 2px white;
@@ -231,7 +227,7 @@ body{
     width: 25%;
     height: 50%;
     margin-left: 10;
-    margin-top: 44%;
+    margin-top: 40%;
     text-align: center;
     opacity: 0;
     border: solid 2px white;
@@ -239,7 +235,7 @@ body{
 }
 .a-3 {
     width: 20%;
-    font-size: large;
+    font-size: medium;
     padding: 3% 15%;
     text-align: center;
     color: black;
