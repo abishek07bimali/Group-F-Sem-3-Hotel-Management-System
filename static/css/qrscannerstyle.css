@@ -11,7 +11,8 @@
     width: fit-content;
     margin: auto;
     margin-top: 20px;
-    justify-items:center;
+    /* justify-items:center; */
+    text-align: center;
   }
   .information h1{
     font-size: 2.5rem;
