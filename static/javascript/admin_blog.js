@@ -1,15 +1,23 @@
 document.getElementById('add-post-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent the form from being submitted
+    // event.preventDefault(); // prevent the form from being submitted
   
     // get the form data
-    var title = document.getElementById('title').value;
+    var blogId = document.getElementById('blog-id').value;
     var author = document.getElementById('author').value;
+    var title = document.getElementById('topic-name').value;
+    var pubDate = document.getElementById('published-date').value;
+    var phoneNo = document.getElementById('phone-no').value;
     var content = document.getElementById('content').value;
+    var image = document.getElementById('file').value;
   
     // create a new blog post object
     var newPost = {
-      title: title,
+      blogId: blogId,
       author: author,
+      title: title,
+      pubDate: pubDate,
+      phoneNo: phoneNo,
+      image: image,
       content: content
     };
   
@@ -31,6 +39,50 @@ document.getElementById('add-post-form').addEventListener('submit', function(eve
   });
   
 
+// Get a reference to the button
+var button = document.getElementById("submit");
+
+// Attach an event listener to the button
+button.addEventListener("click", function() {
+  // Get a reference to the table
+  var table = document.getElementById("blog-table");
+
+  // Insert a new row at the end of the table
+  var newRow = table.insertRow(-1);
+
+  // Get the user's input from the form
+  var blogId = document.getElementById('blog-id').value;
+  var author = document.getElementById('author-name').value;
+  var title = document.getElementById('topic-name').value;
+  var pubDate = document.getElementById('published-date').value;
+  var phoneNo = document.getElementById('phone-no').value;
+  // var content = document.getElementById('content').value;
+  var image = document.getElementById('file').value;
+
+
+  // Insert a new cell at the end of the new row
+  var blogCell = newRow.insertCell(-1);
+  blogCell.innerHTML = blogId;
+
+
+  var authorCell = newRow.insertCell(-1);
+  authorCell.innerHTML = author;
+
+  var titleCell = newRow.insertCell(-1);
+  titleCell.innerHTML = title;
+
+  var pubDateCell = newRow.insertCell(-1);
+  pubDateCell.innerHTML = pubDate;
+
+  var phoneNoCell = newRow.insertCell(-1);
+  phoneNoCell.innerHTML = phoneNo;
+
+  // var contentCell = newRow.insertCell(-1);
+  // contentCell.innerHTML = content;
+
+  var imageCell = newRow.insertCell(-1);
+  imageCell.innerHTML = image;
+});
 
 
 

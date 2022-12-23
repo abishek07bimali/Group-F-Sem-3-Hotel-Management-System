@@ -12,33 +12,48 @@
      <h1>Add Blog Post</h1>
     <div class="uplaod_blog">
         <form id="add-post-form">
-            <label for="title">Title:</label><br>
-            <!-- <input type="file" name="image" id="image"><br> -->
-            <input type="text" id="title" name="title"><br>
+            <!-- <label for="title">Title:</label><br>
+            <input type="file" name="image" id="image"><br> -->
+
+            <label for="blog-id"></label><br>
+            <!-- <input type="text" id="title" name="title"><br> -->
+
             <label for="author">Author:</label><br>
             <input type="text" id="author" name="author"><br>
+
+            <label for="topic-name">Topic:</label><br>
+            <input type="text" id="topic-name" name="title"><br>
+
+            <label for="published-date">Date</label><br>
+            <input type="text" id="published-date" name="title"><br>
+
+            <label for="phone-no">Phone-number:</label><br>
+            <input type="text" id="phone-no" name="title"><br>
+
             <label for="content">Content:</label><br>
             <textarea id="content" name="content"></textarea><br><br>
-            <button type="submit">Submit</button>
-        
+                    
             <!-- to upload image -->
             <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
             <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-            <!-- <p><img id="output" width="200px" /></p> -->
+            <p><img id="output" width="200px" /></p>
+            
+            <button type="submit">Submit</button>
+
         
-            <!-- <script>
+            <script>
                 var loadFile = function(event) {
                     var image = document.getElementById('output');
                     image.src = URL.createObjectURL(event.target.files[0]);
                 };
-            </script> -->
+            </script>
           </form> 
     </div>
   <script src="../static/javascript/admin_blog.js"></script>
 
 
 
-  <div class="blog-post">
+  <!-- <div class="blog-post">
     <h1>Blog</h1>
     <div id="posts"></div>
     <script src="../static/javascript/blogPage.js"></script>
@@ -66,6 +81,36 @@
         };
     </script>
     </div>
-  </div>
+  </div> -->
+
+<div style="overflow-x:auto;"></div>
+  <table id="blog-table">
+      <tr>
+        <th>Blog_Id</th>
+        <th>Author</th>
+        <th>Topic</th>
+        <th>Published Date</th>
+        <th>Phone-number</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td id="blog-id">2</td>
+        <td id="author-name">Sofia Nepal</td>
+        <td id="topic-name">Family Room</td>
+        <td id="published-date">12/11/2022</td>
+        <td id="phone-no">9841234567</td>
+        <td><button class="btn2">Active</button></td>
+        <td ><div class="td1">
+          
+            <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
+            <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+            
+        </div>  </td>
+      
+      </tr> 
+  </table>
+
+
 </body>
 </html>
