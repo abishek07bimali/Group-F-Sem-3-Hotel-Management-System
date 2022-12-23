@@ -1,3 +1,15 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F5F3FF;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
 .blogList{
     width:90%;
     display:flex;
@@ -10,14 +22,15 @@
 
 .wrapper-top{
    
-    height:30%;
+    height:20%;
     display: flex;
     margin-bottom: 3%;
 }
 
 h2{
-    margin-top:4%;
-    text-align: end;
+    margin-top:2%;
+    /* text-align: end; */
+    width: 15%;
 }
 
 .search-icon{
@@ -34,7 +47,8 @@ input{
     
     background: #F5F3FF;
     border-color: rgba(255, 255, 255, 0.564);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     padding-left: 10px;
    
 }
@@ -204,27 +218,29 @@ table {
 
   @media (max-width: 900px) {
     .wrapper-top{
-        flex-direction: column;
+        flex-direction: row;
     }
     h2{
         text-align:left;
-        font-size: 55px;
+        font-size: 30px;
         font-weight: bolder;
+        width: 50%;
 
     }
    .search-icon{
-     margin-top: 4%;
-        margin-bottom: 4%;
-        height:55px;
-        width:100%;
+     margin-top: 1%;
+     margin-bottom: 1%;
+     /* height:100%; */
+     /* width:100%; */
+     justify-content: end;
         
     }
     input{
         margin-left: 0;
         margin-top: 0;
-        height:55px;
-        width:85%;
-        font-size: 25px;
+        height:70%;
+        width:55%;
+        font-size: 10px;
         
     }
     input:hover {
@@ -234,10 +250,9 @@ table {
      }
     .btn4{
         margin-top: 0;
-        height:55px;
-        
-     font-size: 30px;
-       width:16%;
+        height:70%;
+        font-size: 95%;
+        width:10%;
 
     }
     .btn4:hover {
@@ -246,10 +261,9 @@ table {
            
          }
     .btn1{
-        margin-right: 45%;
-        height:60px ;
-        width:56%;
-        font-size: 25px;
+        height:30px;
+        width:30%;
+        font-size: 85%;
     }
     table{
         flex-wrap: wrap;
@@ -258,27 +272,28 @@ table {
 
   @media (max-width: 590px) {
     .wrapper-top{
-        flex-direction: column;
+        flex-direction: row;
     }
     h2{
         text-align:left;
-        font-size: 65px;
+        font-size: 20px;
         font-weight: bolder;
 
     }
     .search-icon{
         margin-top: 4%;
-           margin-bottom: 4%;
-           height:70px;
-           width:100%;
+        margin-bottom: 4%;
+        /* height:70px;
+        width:100%; */
+        justify-content: end;
            
        }
        input{
            margin-left: 0;
            margin-top: 0;
-           height:70px;
-           width:85%;
-           font-size: 30px;
+           height:70%;
+           width:55%;
+           font-size: 10px;
            
        }
        input:hover {
@@ -288,10 +303,9 @@ table {
         }
        .btn4{
            margin-top: 0;
-           height:70px;
-           
-        font-size: 30px;
-          width:16%;
+           height:70%;
+           font-size: 95%;
+           width:10%;
    
        }
        .btn4:hover {
@@ -300,9 +314,9 @@ table {
               
             }
     .btn1{
-        margin-right: 45%;
-        height:75px ;
-        width:72%;
+        height:30px;
+        width:30%;
+        font-size: 85%;
     }
     
 

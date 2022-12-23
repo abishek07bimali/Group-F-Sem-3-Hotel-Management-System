@@ -91,6 +91,43 @@ button.addEventListener("click", function() {
 
 
 
+
+
+// // Get a reference to the table
+// var table = document.getElementById("myTable");
+
+// // Get a list of all the rows in the table
+// var rows = table.rows;
+
+// // Loop through the list of rows
+// for (var i = 0; i < rows.length; i++) {
+//   // Get a reference to the current row
+//   var row = rows[i];
+
+//   // Get a list of all the cells in the row
+//   var cells = row.cells;
+
+//   // Loop through the list of cells
+//   for (var j = 0; j < cells.length; j++) {
+//     // Get a reference to the current cell
+//     var cell = cells[j];
+
+//     // Get the data from the cell
+//     var data = cell.innerHTML;
+
+//     // Do something with the data (e.g., store it in an array or object)
+//     console.log(data);
+//   }
+// }
+
+
+
+
+
+
+
+
+
 // html side
 // <!DOCTYPE html>
 // <html>
