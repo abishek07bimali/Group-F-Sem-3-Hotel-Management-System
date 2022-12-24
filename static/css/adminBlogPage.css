@@ -274,6 +274,9 @@ table {
     .wrapper-top{
         flex-direction: row;
     }
+    .blogList{
+        width: auto;
+    }
     h2{
         text-align:left;
         font-size: 20px;
@@ -281,8 +284,8 @@ table {
 
     }
     .search-icon{
-        margin-top: 4%;
-        margin-bottom: 4%;
+        /* margin-top: 4%;
+        margin-bottom: 4%; */
         /* height:70px;
         width:100%; */
         justify-content: end;
@@ -291,8 +294,8 @@ table {
        input{
            margin-left: 0;
            margin-top: 0;
-           height:70%;
-           width:55%;
+           height:100%;
+           width:65%;
            font-size: 10px;
            
        }
@@ -303,9 +306,9 @@ table {
         }
        .btn4{
            margin-top: 0;
-           height:70%;
-           font-size: 95%;
-           width:10%;
+           height:100%;
+           font-size: 10px;
+           width:15%;
    
        }
        .btn4:hover {
@@ -316,7 +319,7 @@ table {
     .btn1{
         height:30px;
         width:30%;
-        font-size: 85%;
+        font-size: 15px;
     }
     
 
@@ -325,27 +328,29 @@ table {
   @media (max-width: 450px) {
    
     .wrapper-top{
-        flex-direction: column;
+        flex-direction: row;
     }
     h2{
         text-align:left;
-        font-size: 70px;
+        font-size: 20px;
         font-weight: bolder;
+        width: 50%;
 
     }
     .search-icon{
-        margin-top: 4%;
-           margin-bottom: 7%;
-           height:75px;
-           width:186%;
+        /* margin-top: 4%;
+        margin-bottom: 4%; */
+        /* height:75px;
+        width:186%; */
+        justify-content: end;
            
        }
        input{
            margin-left: 0;
            margin-top: 0;
-           height:80px;
-           width:85%;
-           font-size: 35px;
+           height:35px;
+           width:100%;
+           font-size: 15px;
            
        }
        input:hover {
@@ -354,11 +359,10 @@ table {
           
         }
        .btn4{
-           margin-top: 0;
-           height:70px;
-           
-        font-size: 30px;
-          width:16%;
+            margin-top: 0;
+            height:100%;
+            font-size: 10px;
+            width:  20%;
    
        }
        .btn4:hover {
@@ -367,12 +371,16 @@ table {
               
             }
     .btn1{
-        margin-top: 7%;
+        /* margin-top: 7%;
         margin-right: 45%;
         margin-bottom: 10%;
         height:89px ;
         width:100%;
-        font-size: 35px;
+        font-size: 35px; */
+
+        height:30px;
+        width:40%;
+        font-size: 75%;
     }
     
 
