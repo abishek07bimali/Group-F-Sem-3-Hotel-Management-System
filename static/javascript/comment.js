@@ -56,4 +56,5 @@ document.getElementById('allComments').addEventListener('click', function (e) {
     } else if(hasClass(e.target, 'deleteComment')) {
         e.target.parentElement.remove();
     }
-});
+}
+);
