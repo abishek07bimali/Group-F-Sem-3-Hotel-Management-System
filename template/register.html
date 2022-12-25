@@ -2,56 +2,26 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    
- 
+        <meta charset="Utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an account</title>
     </head>
     <body>
-        <div class="split-screen">
+        <div class="main">
             <div class="left">
-                <img src="../static/images/Image.png" alt="bg_img">
+                <img class="img" src="../static/images/image.png" alt="">
             </div>
-
-            
             <div class="right">
-                <form>
-                    <div>
-                        <h3>Create an account</h3>
-                        <p>Let's go started with your 30 days free trial.</p>
-                    </div> <br>
-                    <div class="input-container name">
-                    <!-- <label for="fname">Full Name</label> -->
-                        <input id="fname" name="fname" type="text" placeholder="Enter your name">
-                    </div>
-                    <div class="input-container number">
-                        <!-- <label for="phnunm">Phone number</label> -->
-                            <input id="phnum" name="phnum" type="text" placeholder="Enter your Phone number">
-                        </div>
-                    <div class="input-container email">
-                        <!-- <label for="email">Email</label> -->
-                        <input id="email" name="email" type="email" placeholder="Enter your E-mail">
-                    </div>
-                    <div class="input-container password">
-                      <!-- <label for="email">Password</label> -->
-                        <input id="password" name="password" type="password" placeholder="Enter your Password">
-                        <i class="far fa-eye-slash"></i>
-                    </div>
-
-                        <button class="Submit" type="submit"> Create account</button>
-                        <section class="copy">
-                            <div class="login-content">
-                                <p>Already have an account? <a href="#">
-                                    <strong>Login</strong>
-                                </a></p>
-                            </div>    
-                        </section>
-                        <!-- <section class="copy legal">
-                            <p> <span class="small">By continuing you agree to accept our<br><a href="#">Privacy Policy</a> &amp;<a href="#" >Terms of service</a> ,</span></p>
-                        </section> -->
-                    </div>
-                </form>
-             
+                <h3 class="h3">Create an account</h3>
+                <input class="name" name="name" type="text" placeholder="Enter your name">
+                <input class="number" name="name" type="number" placeholder="Enter your number ">
+                <input class="email" name="email" type="email" placeholder="Enter your email">
+                <input class="password" name="password" type="password" placeholder="Enter your password">  <i class="far fa-eye-slash"></i>
+                <button class="Submit" type="submit"> Create account</button>
+                <p class="login-content">Already have an account? <a href="#">
+                    <strong>Login</strong>
+                </a></p>   
             </div>
-        
         </div>
     </body>
-</html>

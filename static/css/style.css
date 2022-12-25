@@ -5,77 +5,45 @@
 	--primary-blue: #233975;
 }
 body{
-	width: 90%;
-	height: 100%;
-	padding: 0;
-	margin:0;
-	font-family: 'Poppins' , sans-serif;
-	font-weight: 500;
-	justify-content: center;
+    display: flex;
 }
-
-.h3{
-	font-size: 2.25 rem;
-	font-weight: 700;
-}
-.a{
-	text-decoration: none;
-	color: var(--primary-blue);
-}
-.a:hover{
-	text-decoration: underline;
-}
-.small{
-	font-size:80%;
-	text-align: center;
-}
-.split-screen{
-	
+.main{
+	height:100%;
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	padding: 10%;
-}
-
-.left, .right{
-	display:flex;
 	justify-content: center;
-	align-items: center;
 }
 .left{
-	justify-content: center;
-	display: none;
+	text-align: right;
+	height: 100%;
+    width: 100%;
+    border-radius: 0px;
 }
-.left img{
-	width: 100%;
-	height: 75%;
-	/* display: contents; */
-}
-
-.left p{
-	font-weight:400;
+.left .img{
+	height:50%;
+	width: 90%;
 }
 .right{
+	height: 100%;
+	width:100%;
+	border-radius: 0px;
+}
+
+.right .h3{
 	align-items: center;
-	justify-content: center;
+    margin-top: 0%;
+    margin-left: 22%;
+    border-radius: nullpx;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    color: #000000;
 }
-.right .copy{
-	color: black;
-	text-align: center;
-}
-.right .copy p{
-	margin: 1.5em 0;
-	font-size: 0.875rem;
-}
-.right form{
-	width: 328px;
-}
-form input[type="text"],
-form input[type="email"],
-form input[type="password"]{
+.right .name{
+	margin-left: 22%;
 	display: block;
-	width: 100%;
+	width: 50%;
 	box-sizing: border-box;
 	border-radius: 8px;
 	border: 1px solid#c4c4c4;
@@ -83,24 +51,43 @@ form input[type="password"]{
 	margin-bottom: 1.25rem;
 	font-size: 0.875rem;
 }
-label{
+.right .number{
+	margin-left: 22%;
 	display: block;
-	margin-bottom: 0.5rem;
-	font-size: 0.75rem;
+	width: 50%;
+	box-sizing: border-box;
+	border-radius: 8px;
+	border: 1px solid#c4c4c4;
+	padding: 1em;
+	margin-bottom: 1.25rem;
+	font-size: 0.875rem;
 }
-.input-container.password{
-	position: relative;
-
-}
-.input-container.password i{
-	position: absolute;
-	top: 42px;
-	right:16px;
-
-} 
-.Submit{
+.right .email{
+	margin-left: 22%;
 	display: block;
-	width: 100%;
+	width: 50%;
+	box-sizing: border-box;
+	border-radius: 8px;
+	border: 1px solid#c4c4c4;
+	padding: 1em;
+	margin-bottom: 1.25rem;
+	font-size: 0.875rem;
+}
+.right .password{
+	margin-left: 22%;
+	display: block;
+	width: 50%;
+	box-sizing: border-box;
+	border-radius: 8px;
+	border: 1px solid#c4c4c4;
+	padding: 1em;
+	margin-bottom: 1.25rem;
+	font-size: 0.875rem;
+}
+.right .Submit{
+	margin-left: 22%;
+	display: block;
+	width: 50%;
 	background: gray;
 	color: white;
 	font-weight: 700;
@@ -112,27 +99,76 @@ label{
 	letter-spacing: 0.5px;
 }
 .Submit:hover{
-	background: #2c4893;
+	background:black;
 	cursor: pointer;
 }
-@media (min-width: 900px){
-	.split-screen{
-		flex-direction: row;
-		height: 50vh;
-	}
-	.left{
-		display: flex;
-		width: 50%;
-		height: auto;
-		align-items: center;
-	}
-	.right{
-		display: flex;
-		width: 50%;
-		height: auto;
-		align-items: center;
-		/* justify-content: center; */
-		
-	}
+
+.right .login-content{
+	text-align: center;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+
+}
+@media (max-width:1024px){
+    .main{
+        margin-top: 15%
+    };
 }
 
+
+@media (max-width:692px)  {
+    .main{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin-top: 5%;
+    }
+    .left{
+        /* height: 100%;
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 1%; */
+        display: none;
+    }
+    .img{
+        display: none;
+    }
+    .right{
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        background: #FFFFFF;
+    }
+}
+
+@media (max-width:552px)  {
+    .main{
+        flex-direction: column;
+        margin-top: 10%;
+        margin-left: 10%;
+        height: 100%;
+        width: 100%;
+        justify-items: center;
+    }
+    .left{
+        display: none;
+    }
+    .img{
+        display: none;
+    }
+    .right{
+        height: 100%;
+        width: 100%;
+        border-radius: 0px;
+        background: #FFFFFF;
+    }
+}
+
+@media (max-width:320px) {
+    .main{
+        margin-top: 50%;   
+    }
+} 
