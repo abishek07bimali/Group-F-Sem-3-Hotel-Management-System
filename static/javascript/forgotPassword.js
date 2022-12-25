@@ -20,6 +20,6 @@ function fill(){
     }else if(e=="" || p==""){
         alert("please fill all your details!!!")
     }else{
-        alert("Welcome!!!")
+        alert("wait for a while!!!")
     }
 }
