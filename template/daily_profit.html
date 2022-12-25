@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin_landing_page</title>
+  <link rel="stylesheet" href="../static/css/daily_profit.css">
+
+  <link rel="stylesheet" href="../static/css/WholeDayData.css" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/dashstyle.css">
+  <link rel="stylesheet" href="../static/css/navigation.css">
+  <link rel="shortcut icon" type="x-icon" href="../images/logo.png">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="../static/javascript/notification.js" defer></script>
+
+</head>
+
+<body>
+  <nav>
+    <label class="logo"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
+    <h1>Luxury Hotel: Admin Panel</h1>
+    <nav>
+      <div class="icon" onclick="toggleNotification()">
+        <img class="img_not" src="../static/images/bell.png" alt=""> <span>5</span>
+      </div>
+      <div class="notifi-box" id="box">
+        <h2>Notifications<span> 5</span></h2>
+        <div class="notifi-item">
+          <img src="../static/images/Profile icon.jpg" alt="img">
+          <div class="text">
+            <h4>Abhishek Karki</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="../static/images/Profile icon.jpg" alt="img">
+          <div class="text">
+            <h4>Abhishek Bimali</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="../static/images/Profile icon.jpg" alt="img">
+          <div class="text">
+            <h4>Amul Bashyal</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="../static/images/Profile icon.jpg" alt="img">
+          <div class="text">
+            <h4>Rakhsit Shrestha</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+
+        <div class="notifi-item">
+          <img src="../static/images/Profile icon.jpg" alt="img">
+          <div class="text">
+            <h4>Bhawana Bashyal</h4>
+            <p>@lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  <div id="mySidenav" class="sidenav">
+    <label class="logoInNav"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="active" href="#">dashboard</a>
+    <a href="newBooking.html">new booking</a>
+    <a href="#">blogs</a>
+    <a href="#">Room</a>
+    <a href="#">Galery</a>
+    <a href="#">all booking</a>
+    <a href="#">Website</a>
+  </div>
+  <span class="burger" onclick="openNav()">&#9776;</span>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+
+  <!-- data in cards -->
+
+
+  <div class="container">
+
+    <div class="cardbox">
+      <div class="card">
+        <div>
+          <div class="numbers">25.1k</div>
+          <div class="cardname">Daily Earning</div>
+        </div>
+        <div class="iconbox">
+          <ion-icon name="cart-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <div class="numbers">$2,332K</div>
+          <div class="cardname">Total profit</div>
+        </div>
+        <div class="iconbox">
+          <ion-icon name="cart-outline"></ion-icon>
+
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <div class="numbers">3.2M</div>
+          <div class="cardname">Total no of booking</div>
+
+        </div>
+        <div class="iconbox">
+          <ion-icon name="cart-outline"></ion-icon>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <div class="numbers">23.1k</div>
+          <div class="cardname">New customer</div>
+        </div>
+        <div class="iconbox">
+          <ion-icon name="cart-outline"></ion-icon>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- graph part -->
+
+  <div class="main-graph-wrap">
+    <div class="main-visualize-data">
+
+      <div class="profit-data">
+        <h2>Daily Profit</h2>
+        <canvas id="chart"></canvas>
+      </div>
+
+      <div class="pie-graph-data">
+        <h3>Daily Profit</h3>
+        <canvas id="pie-graph"></canvas>
+      </div>
+    </div>
+    <div class="bar-graph-data">
+      <h2>Daily Profit</h2>
+      <canvas id="bar-graph"></canvas>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+    integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../static/javascript/daily_profit.js"></script>
+
+  <!-- can add extra graphs if needed -->
+
+</body>
+
+</html>
