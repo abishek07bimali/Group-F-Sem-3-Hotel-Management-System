@@ -147,7 +147,7 @@ body{
 @media (max-width:552px)  {
     .main{
         flex-direction: column;
-        margin-top: 20%;
+        margin-top: 10%;
         margin-left: 10%;
         height: 100%;
         width: 100%;
