@@ -1,0 +1,228 @@
+/* body{
+    height:100vh;
+    margin:0px;
+ 
+} */
+.Main-Wrapper{
+    width:1300px;
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+   
+}
+.Wrapper-top{
+    display:flex;
+    background-color:rgba(20, 39, 74, 0.61);
+    height:60px;
+    width:1300px;
+    flex-grow:1;
+    
+}
+.wrapper-left{
+    margin-right: 340px;
+    height:60px;
+    width:150px;
+    /* margin-top:3px; */
+}
+.wrapper-left-top{
+    color:white;
+    font-size: 23px;
+    font-weight: 100;
+    margin-top:10px;
+    margin-left:15px;
+
+}
+.wrapper-left-bottom{
+    color:white;
+    font-size: 12px;
+    font-weight: 100;
+    margin-top:5px;
+    margin-left:30px;
+
+}
+.wrapper-right{
+    flex-grow: 2;
+    margin-top: 30px;
+   
+
+}
+.btn1{
+    background-color:transparent;
+    color:white;
+    border:none;
+    font-size: 16px;
+    height:30px;
+    width:80px;
+}
+.btn2{
+   margin-left:50px;
+   background-color:transparent;
+   color:white; 
+   border:none;
+   font-size: 16px;
+}
+.btn3{
+    margin-left:50px;
+    background-color:transparent; 
+   
+    border:none;
+  
+ }
+ .btn3 a{
+    font-size: 16px;
+    color:white;
+ }
+
+ .btn4{
+    margin-left:50px; 
+    background-color:transparent;
+    color:white;
+    border:none;
+    font-size: 16px;
+ }
+ .btn5{
+    background-color:transparent;
+    margin-top:18px;
+    margin-left:50px;
+    color:white; 
+    border:none;
+    font-size: 16px;
+ }
+ .btn1:hover{
+  border-style: solid;
+ }
+ .btn2:hover{
+    border-style: solid;
+   }
+   .btn3:hover{
+    border-style: solid;
+   }
+   .btn4:hover{
+    border-style: solid;
+   }
+   .btn5:hover{
+    border-style: solid;
+   }
+   .Wrapper-bottom{
+    flex-grow:5;
+   }
+.Wrapper-bottom{
+    background-image: url("../images/roomcover.jpg");
+   background-size: 100%,100%;
+   background-repeat: no-repeat;
+    height:230px;
+    width:1300px;
+
+    /* background-color:#14274A; */
+}
+
+   .wrapper-bottom-top{
+    color:white;
+    font-size: 32px;
+     
+    
+    
+   }
+   .wrapper-bottom-middle-first{
+     color:white;
+     font-size:62px;
+     font-weight: 28px;
+     margin-top:12px;
+   }
+   .wrapper-bottom-middle-last{
+    color:white;
+     font-size:25px;
+     font-weight: 24px;
+     margin-top:8px;
+     
+}
+.wrapper-bottom-last{
+    margin-top:10px;
+    width:240px;
+    color:white;
+     font-size:15px;
+     font-weight: 10px;
+     
+}
+.top{
+    margin-left: 110px;
+    margin-top:150px;
+    background-color:transparent;
+    border:none;
+    width:700px;
+    
+}
+.foot{
+    margin-top:150px;
+    background-color:rgba(20, 39, 74, 0.61);
+    
+    display:flex;
+    height:90px;
+    width:600px;
+    margin-left:160px;
+}
+.Wrapper-foot-left{
+    display:flex;
+    margin-right:40px;
+    margin-left:50px;
+  
+}
+.foot-left{
+    margin-top:15px;
+    margin-right:40px;
+
+}
+.foot-middle{
+    margin-top:15px;
+    margin-right:40px;
+
+}
+.foot-right{
+    margin-top:15px;
+    margin-right:40px;
+
+}
+.left-top{
+    color:white;
+
+}
+.left-foot{
+    font-size: 20px;
+    color:white;
+    border:none;
+    background-color: transparent;
+
+}
+.middle-top{
+    color:white;
+
+}
+.middle-foot{
+    font-size: 20px;
+    color:white;
+    border:none;
+    background-color: transparent;
+
+}
+.right-top{
+    color:white;
+
+}
+.right-foot{
+    font-size: 20px;
+    color:white;
+    border:none;
+    background-color: transparent;
+
+}
+.Wrapper-foot-right{
+    font-size: 20px;
+    color:white;
+    border:none;
+    background-color: transparent;
+    margin-top: 25px;
+    margin-left:20px;
+
+
+}
+
