@@ -1,0 +1,326 @@
+
+
+.Main-wrapper{
+   
+    width: 100%;
+    height: 70%;
+      display:flex;
+      flex: 100%;
+      flex-direction: column;
+  }
+  
+  
+  .wrapper-top{
+     height:78%;
+      display: flex;
+      flex-wrap: wrap;
+      
+  
+  }
+  
+  
+  .top-left{
+      position: relative;
+      width:75%;
+  }
+  
+  
+  .mySlides {
+      display:none ;
+      height:100%;
+      width:100%;
+  }
+  
+  
+  .numbertext {
+      color: #f2f2f2;
+      font-size: 25px;
+      font-weight: bold;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+  
+  
+  
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -0px;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  
+  
+  .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+  
+  
+  
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  
+  
+  
+  .top-right{
+      width:25%;
+      display:flex;
+      flex-direction: column;
+      height: fit-content;
+     
+     
+  }
+  
+  
+  
+  .right-first,.right-second,.right-third,.right-last{
+   
+      margin-left: 26px;
+     
+  }
+  .btn2{
+     margin-left: 17%;
+     margin-top: 3%;
+     margin-bottom: 6%;
+    height:35px ;
+    width:49%;
+    border-radius: 24px;
+    background-color: rgb(47, 160, 47);
+    color:white;
+    border-color: white;
+  }
+  .btn2:hover {
+    
+  background: rgb(11, 122, 249);
+    font-weight: bold;
+    border: white solid;
+  }
+  
+  
+  
+  h2{
+      font-size: 22px;
+      font-weight: bold;
+      color:black;
+  }
+  
+  
+  
+  .down{
+      font-size: 15px;
+      color:black;
+  }
+  
+  
+  
+  .wrapper-bottom{
+      margin-top:2px;
+  
+    
+     
+      height:22%;
+      display:flex;
+      background-color: rgba(20, 39, 74, 0.61);
+  
+  }
+  
+  
+  
+  
+  .wrapper-bottom:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+    
+    
+    
+  .column {
+     margin-left: 2%;
+      margin-right: 2%;
+      margin-bottom: 2%;
+      margin-top: 2%;
+      
+      float: left;
+      width: 16.66%;
+        
+  }
+    
+    
+  .demo {
+      opacity: 0.6;
+     
+  }
+  
+  
+  .cursor {
+      cursor: pointer;
+  }
+    
+  .active,
+  .demo:hover {
+      opacity: 1;
+  }
+  
+  
+  
+  @media (max-width: 1050px)  {
+    .top-right h2{
+        font-size: 20px;
+    }
+  }
+  @media (max-width: 1000px) {
+  .wrapper-top {
+    flex-direction: column;
+  }
+  .top-left {
+    width: 100%;
+  }
+  .top-right {
+    margin-left:5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  align-content: center;
+    height: fit-content;
+  
+  }
+  .right-first,.right-second,.right-third,.right-last{
+    width: 40%;
+    text-align: center;
+    font-size: 18px;
+    flex-wrap: wrap;
+    margin-right: 4%;
+  }
+  .btn2{
+    margin-left:-111%;
+    
+    margin-top: 4%;
+    margin-bottom: 4%;
+   height:40px ;
+   width:49%;
+  }
+  
+  .wrapper-bottom{
+    flex-wrap: wrap;
+    height:30%
+    
+  }
+  .column{
+    margin-bottom: 3%;
+    margin-top: 3%;
+    
+    float: left;
+    width: 29%;
+  
+  }
+  }
+  @media (max-width: 600px) {
+    .Main-wrapper{
+      height:90%;
+      margin-left:3%;
+    }
+    .top-left {
+      width: 100%;
+      height:400px;
+    }
+    .top-right {
+      margin-left:10%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    align-content: center;
+      height: fit-content;
+    
+    }
+    
+    .right-first,.right-second,.right-third,.right-last{
+    width: 60%;
+    flex-wrap: wrap;
+  }
+  .btn2{
+    margin-left:13%;
+    
+    margin-top: 9%;
+    margin-bottom: 9%;
+   height:50px ;
+   width:49%;
+  }
+  .wrapper-bottom{
+    flex-wrap: wrap;
+    height:30%
+    
+  }
+  .column{
+    margin-bottom: 3%;
+    margin-top: 6%;
+    margin-left: 3%;
+    float: left;
+    width: 45%;
+  
+  }
+  
+  }
+  
+    @media (max-width: 400px) {
+  
+      .Main-wrapper{
+        height:100%;
+      }
+      .wrapper-top{
+        height:  70%;
+      }
+      .top-left {
+        width: 100%;
+        height: 450px;
+      }
+      .top-right{
+        margin-left: -8px;
+      
+      }
+  
+      .right-first,.right-second,.right-third,.right-last{
+        width: 100%;
+        flex-wrap: wrap;
+      
+      }
+      .btn2{
+        margin-left:0;}
+      
+  
+      .column{
+        margin-bottom: 3%;
+        margin-top: 12%;
+        margin-left: 9%;
+        float: left;
+        width: 80%;
+      
+      }
+  
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

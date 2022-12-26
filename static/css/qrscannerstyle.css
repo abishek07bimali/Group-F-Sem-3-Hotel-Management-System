@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    /* background: linear-gradient(125deg, orange, purple); */
+    background-color:#14274a ;
+  }
+  .information{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    /* justify-items:center; */
+    text-align: center;
+  }
+  .information h1{
+    font-size: 2.5rem;
+    color: white;
+    text-transform: capitalize;
+  }
+  .information h3{
+    font-size: 1.5rem;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+  .header .box {
+    background: #f4e3e3;
+    padding: 20px;
+    border-radius: 20px;
+    color: #251eb0;
+    box-shadow: 10px 10px rgba(199, 246, 199, 0.2);
+    text-align: center;
+  }
+  .header .box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+  }
+  .header .box hr {
+    border-top: 2px solid #a2a2a2;
+    margin: 3px;
+  }
+  .header .box .qrcode {
+    padding: 3px;
+  }
+  .header .box .sqrcode {
+    padding: 3px;
+    margin-left: 15px;
+  }
+  .header .box button {
+    width: 100%;
+    height: 35px;
+    background: #1e7fb0;
+    font-weight: 700;
+    font-family: "Ubuntu", sans-serif;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }

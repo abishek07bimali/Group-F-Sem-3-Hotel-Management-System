@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+   
+  
+}
+
+.main_bg{
+    background-image: url(../images/gallery15.jpg);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+   
+   
+    margin: 0 auto;
+  
+}
+.Main-wrapper{
+    background-color:rgba(20, 39, 74, 0.61);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+ margin-left: 15%;
+ margin-top: 5%;
+  
+}
+
+.form-text{
+    text-align: center;
+    margin: 0 0 40px 0;
+    height:10%;
+}
+.form-text h1 span img{
+    margin: 0 10px;
+
+}
+/* .form-text h1{
+    color: #fff;
+    font-family: 'Raleway',sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+} */
+.form-text h2{
+    font-style: oblique;
+    font-family: 'Raleway',sans-serif;
+    color: #F5F3FF;
+    font-size: 30px;
+ 
+}
+.wrapper-bottom{
+    height: 90%;
+    margin-left: 10%;
+      display:flex;
+    flex-wrap: wrap;  
+    justify-content: center;  
+}
+
+.wrapper-bottom div{
+    margin: 11px 11px;
+   
+    width: 300px;
+    display: inline-block;
+}
+
+.div2,.div4,.div6{
+   
+    padding-left: 10%;
+    
+}
+
+
+.wrapper-bottom div input {
+    width: 100%;
+    font-family: 'Akaya Telivigala';
+    background: #F5F3FF;
+    border: 1px solid black;;
+    border-radius: 24px;
+    font-size: 20px;
+    color:rgba(53, 1, 1, 0.718);
+    outline: none;
+    padding: 3px 0 3px 10px;
+    margin-top: 10px;
+}
+
+.wrapper-bottom div span{
+    width: 100%;
+    font-family: 'Raleway',sans-serif;
+    color: #fff;
+    font-size: 26px;
+}
+
+#Save{
+    width: 100%;
+   padding-top: 3%;
+    text-align: center;
+}
+#Save input{
+    font-family: 'Akaya Telivigala';
+    width: 200px;
+    font-size: larger;
+    background-color: #5041BC;
+    color: white;
+    transition: all .3s;
+}
+#Save input:hover{
+    font-family: 'Akaya Telivigala';
+    width: 200px;
+    background-color: black;
+    color: #fff ;
+}
+#Save input:active{
+    font-size: 19px;
+    background-color: rgb(46, 20, 5) ;
+    color: #fff ;
+}
+
+@media screen and (max-width:1200px) {
+    .div2,.div4,.div6{
+   
+        padding-left: 1%;
+        
+    }
+}
+
+   
+
+
+@media screen and (max-width:710px)  {
+    .wrapper-bottom{
+        text-align: center;
+    }
+    .div2,.div4,.div6{
+   
+        padding-left: 0;
+        
+    }
+    .Main-wrapper{
+      background-color: transparent;
+        margin-left: 1%;
+        margin-top: 10%;
+         
+       }
+}
+@media screen and (max-width:500px) {
+    .wrapper-bottom{
+        text-align: left;
+        
+    }
+    .Main-wrapper{
+        background-color: transparent; 
+     margin-left: 5%;
+     margin-top: 10%;
+      
+    }
+    .div2,.div4,.div6{
+   
+        padding-left: 0;
+        
+    }
+}
