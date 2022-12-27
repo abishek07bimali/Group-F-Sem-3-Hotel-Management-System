@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Main-wrapper{
+    height:94%;
+    margin-top: 5%;
+   align-items: center;
+background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    height:93%;
+    width: 100%;
+    margin-left: 5%;
+}
+h2{
+    font-size:39px;
+   text-align: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    font-family: 'Akaya Telivigala';
+}
+
+ .wrapper1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-right: 4%;
+    margin-left: 0%;
+    width: 30%;
+    height: 86%;
+   border:solid rgba(0, 0, 0, 0.098);
+   
+}
+.wrapper-top{
+    height:55%;
+    width:100%;
+}
+.wrapper1:hover .btn1{
+    opacity: 1;
+    margin-left: 6%;
+    margin-top: 4%;
+   height:28% ;
+    width:40%;
+   
+
+    background-color: black;
+    
+    border-color: white;
+}
+.wrapper1:hover .btn2 {
+    opacity: 1;
+  
+    margin-left: 6%;
+    margin-top: 4%;
+   height:28% ;
+    width:40%;
+   
+
+    background-color: black;
+    
+    border-color: white;
+}
+
+
+.wrapper-bottom{
+    height:50%;
+    width:100%;
+}
+h3{
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 4%;
+    margin-bottom: 3%;
+    font-family: 'Akaya Telivigala';
+    
+}
+p{
+   text-align: center;
+    font-size: 12px;
+    color:black;
+
+    font-family: 'Akaya Telivigala';
+}
+.btn1,.btn2{
+    margin-left: 6%;
+    margin-top: 4%;
+   height:28% ;
+    width:40%;
+   
+
+    background-color: black;
+    
+    border-color: white;
+    opacity: 0;
+}
+.btn1:hover {
+    font-weight: bolder;
+    transform:scale(0.9);
+    border: white solid;
+ }
+ .btn2:hover {
+    font-weight: bolder;
+    transform:scale(0.9);
+    border: white solid;
+ }
+ a{
+    color:white;
+    font-size: 13px;
+    font-family: 'Akaya Telivigala'; 
+ }
+
+ @media (max-width: 880px) {
+   .Main-wrapper{
+    flex-wrap: wrap;
+    height:fit-content ;
+   }
+   .container{
+    flex-wrap: wrap;
+   }
+   .wrapper1{
+   margin-top: 4%;
+    width:43%;
+    height: 385px;
+   }
+  }
+
+  @media (max-width: 600px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        
+    }
+    .wrapper1{
+  
+        width:58%;
+        margin-top: 8%;
+        height: 325px;
+       }
+   
+  }
+  @media (max-width: 400px) {
+    .wrapper1{
+  
+        width:73%;
+       
+       }
+  }
