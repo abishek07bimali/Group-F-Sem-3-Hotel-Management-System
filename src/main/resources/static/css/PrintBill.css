@@ -1,224 +1,223 @@
 :root {
-    --body-bg: rgb(204, 204, 204);
-    --white: #ffffff;
-    --darkWhite: #ccc;
-    --black: #000000;
-    --dark: #808080;
-    --themeColor: #49b1e4;
-    --pageShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  --body-bg: rgb(204, 204, 204);
+  --white: #ffffff;
+  --darkWhite: #ccc;
+  --black: #000000;
+  --dark: #808080;
+  --themeColor: #49b1e4;
+  --pageShadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+/* Font Include */
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap");
+
+body {
+  background-color: var(--body-bg);
+}
+
+.page {
+  background: var(--white);
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: var(--pageShadow);
+}
+
+.page[size="A4"] {
+  width: 21cm;
+  height: 29.7cm;
+  overflow: hidden;
+}
+
+.bb {
+  border-bottom: 3px solid var(--darkWhite);
+}
+
+/* Top Section */
+.top-content {
+  padding-bottom: 15px;
+}
+
+.logo img {
+  height: 90px;
+}
+
+.top-left p {
+  margin: 0;
+}
+
+.top-left .graphic-path {
+  height: 40px;
+  position: relative;
+}
+
+.top-left .graphic-path::before {
+  content: "";
+  height: 20px;
+  background-color: var(--dark);
+  position: absolute;
+  left: 15px;
+  right: 0;
+  top: -15px;
+  z-index: 2;
+}
+
+.top-left .graphic-path::after {
+  content: "";
+  height: 22px;
+  width: 17px;
+  background: var(--black);
+  position: absolute;
+  top: -13px;
+  left: 6px;
+  transform: rotate(45deg);
+}
+
+.top-left .graphic-path p {
+  color: var(--white);
+  height: 40px;
+  left: 0;
+  right: -100px;
+  text-transform: uppercase;
+  background-color: var(--dark);
+  font: 26px;
+  z-index: 3;
+  position: absolute;
+  padding-left: 10px;
+}
+
+.store-user {
+  padding-bottom: 25px;
+}
+
+.store-user p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.store-user .description {
+  font-weight: 400;
+}
+
+.store-user h2 {
+  color: var(--dark);
+  font-family: "Rajdhani", sans-serif;
+}
+
+thead {
+  color: var(--white);
+  background: var(--dark);
+}
+
+.table td,
+.table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr th:first-child,
+tr td:first-child {
+  text-align: left;
+}
+
+.media p {
+  font-weight: 400;
+  margin: 0;
+}
+
+.media p.title {
+  font-weight: 600;
+}
+
+/* Balance Info Section */
+.balance-info .table td,
+.balance-info .table th {
+  padding: 0;
+  border: 0;
+}
+
+.balance-info tr td:first-child {
+  font-weight: 600;
+}
+
+tfoot {
+  border-top: 2px solid var(--darkWhite);
+}
+
+tfoot td {
+  font-weight: 600;
+}
+
+.box {
+  width: 200px;
+  height: 50px;
+  background:var(--dark);
+ 
+
+}
+
+.unsettledbutton {
+  width: 220px;
+  height: 50px;
+  justify-content: center;
+}
+
+.myinvisible {
+  width: 100%;
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+
+.box p {
+  text-transform: uppercase;
+  font: 26px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 50px;
+  
+}
+
+
+.back{
+  width: 163.96px;
+  font: 26px;
+  color:black;
+  text-align: center;  
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: 5px;
+
+}
+
+.unsettledbutton button {
+  text-transform: uppercase;
+  background-color: red;
+  width: 163.96px;
+  font: 26px;
+  color: #ffffff;
+  text-align: center;  
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: 50px;
+}
+
+
+
+.unsettledbutton button:hover {
+  background-color: #3e8e41}
+
+.unsettledbutton button::after {
+    content:"INVOICE UNSETTLED";
   }
-  
-  /* Font Include */
-  @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap");
-  
-  body {
-    background-color: var(--body-bg);
+
+.unsettledbutton button:hover::after {
+        content:"INVOICE SETTLED";
   }
-  
-  .page {
-    background: var(--white);
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    box-shadow: var(--pageShadow);
-  }
-  
-  .page[size="A4"] {
-    width: 21cm;
-    height: 29.7cm;
-    overflow: hidden;
-  }
-  
-  .bb {
-    border-bottom: 3px solid var(--darkWhite);
-  }
-  
-  /* Top Section */
-  .top-content {
-    padding-bottom: 15px;
-  }
-  
-  .logo img {
-    height: 90px;
-  }
-  
-  .top-left p {
-    margin: 0;
-  }
-  
-  .top-left .graphic-path {
-    height: 40px;
-    position: relative;
-  }
-  
-  .top-left .graphic-path::before {
-    content: "";
-    height: 20px;
-    background-color: var(--dark);
-    position: absolute;
-    left: 15px;
-    right: 0;
-    top: -15px;
-    z-index: 2;
-  }
-  
-  .top-left .graphic-path::after {
-    content: "";
-    height: 22px;
-    width: 17px;
-    background: var(--black);
-    position: absolute;
-    top: -13px;
-    left: 6px;
-    transform: rotate(45deg);
-  }
-  
-  .top-left .graphic-path p {
-    color: var(--white);
-    height: 40px;
-    left: 0;
-    right: -100px;
-    text-transform: uppercase;
-    background-color: var(--dark);
-    font: 26px;
-    z-index: 3;
-    position: absolute;
-    padding-left: 10px;
-  }
-  
-  .store-user {
-    padding-bottom: 25px;
-  }
-  
-  .store-user p {
-    margin: 0;
-    font-weight: 600;
-  }
-  
-  .store-user .description {
-    font-weight: 400;
-  }
-  
-  .store-user h2 {
-    color: var(--dark);
-    font-family: "Rajdhani", sans-serif;
-  }
-  
-  thead {
-    color: var(--white);
-    background: var(--dark);
-  }
-  
-  .table td,
-  .table th {
-    text-align: center;
-    vertical-align: middle;
-  }
-  
-  tr th:first-child,
-  tr td:first-child {
-    text-align: left;
-  }
-  
-  .media p {
-    font-weight: 400;
-    margin: 0;
-  }
-  
-  .media p.title {
-    font-weight: 600;
-  }
-  
-  /* Balance Info Section */
-  .balance-info .table td,
-  .balance-info .table th {
-    padding: 0;
-    border: 0;
-  }
-  
-  .balance-info tr td:first-child {
-    font-weight: 600;
-  }
-  
-  tfoot {
-    border-top: 2px solid var(--darkWhite);
-  }
-  
-  tfoot td {
-    font-weight: 600;
-  }
-  
-  .box {
-    width: 200px;
-    height: 50px;
-    background:var(--dark);
-   
-  
-  }
-  
-  .unsettledbutton {
-    width: 220px;
-    height: 50px;
-    justify-content: center;
-  }
-  
-  .myinvisible {
-    width: 100%;
-    display: flex;
-    padding-left: 100px;
-    padding-right: 100px;
-    justify-content: space-between;
-    background-color: #ffffff;
-  }
-  
-  .box p {
-    text-transform: uppercase;
-    font: 26px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 50px;
-    
-  }
-  
-  
-  .back{
-    width: 163.96px;
-    font: 26px;
-    color:black;
-    text-align: center;  
-    border-radius: 2px;
-    cursor: pointer;
-    line-height: 5px;
-  
-  }
-  
-  .unsettledbutton button {
-    text-transform: uppercase;
-    background-color: red;
-    width: 163.96px;
-    font: 26px;
-    color: #ffffff;
-    text-align: center;  
-    border-radius: 2px;
-    cursor: pointer;
-    line-height: 50px;
-  }
-  
-  
-  
-  .unsettledbutton button:hover {
-    background-color: #3e8e41}
-  
-  .unsettledbutton button::after {
-      content:"INVOICE UNSETTLED";
-    }
-  
-  .unsettledbutton button:hover::after {
-          content:"INVOICE SETTLED";
-    }
-    @media (max-width:1024px){
-      .page{
-          margin-top: 15%
-      };
-  }
-  
+  @media (max-width:1024px){
+    .page{
+        margin-top: 15%
+    };
+}
