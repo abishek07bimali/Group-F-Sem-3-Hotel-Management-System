@@ -56,7 +56,9 @@ p{
     height:613px;
    
 }
-
+.image2{
+    margin-top: 8%;
+}
 .container2{
     
     margin-left: 5%;
@@ -93,6 +95,7 @@ li{
     height: fit-content;
     display: flex;
 }
+
 .foot-right{
    
     display:flex;
@@ -109,6 +112,18 @@ h4{
     margin-top: 8%;
     position: relative;
     width:50%;
+}
+.container4{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: fit-content;
+    display: flex;
+}
+.first,.second,.third{
+    width:30%;
+    margin-right: 3%;
+   text-align: center;
+
 }
 
 @media screen and (max-width:739px)  {
