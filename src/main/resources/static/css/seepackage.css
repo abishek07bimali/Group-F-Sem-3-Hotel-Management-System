@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 .Main-wrapper{
-    height:94%;
-    margin-top: 5%;
+    height:96%;
+    margin-top: 4%;
    align-items: center;
 background-color: whitesmoke;
     display: flex;
@@ -32,18 +32,18 @@ h2{
     margin-right: 4%;
     margin-left: 0%;
     width: 30%;
-    height: 86%;
+    height: 90%;
    border:solid rgba(0, 0, 0, 0.098);
    
 }
 .wrapper-top{
-    height:55%;
+    height:65%;
     width:100%;
 }
 .wrapper1:hover .btn1{
     opacity: 1;
-    margin-left: 6%;
-    margin-top: 4%;
+    margin-left: 28%;
+    margin-top: 10%;
    height:28% ;
     width:40%;
    
@@ -52,19 +52,7 @@ h2{
     
     border-color: white;
 }
-.wrapper1:hover .btn2 {
-    opacity: 1;
-  
-    margin-left: 6%;
-    margin-top: 4%;
-   height:28% ;
-    width:40%;
-   
 
-    background-color: black;
-    
-    border-color: white;
-}
 
 
 .wrapper-bottom{
@@ -103,11 +91,7 @@ p{
     transform:scale(0.9);
     border: white solid;
  }
- .btn2:hover {
-    font-weight: bolder;
-    transform:scale(0.9);
-    border: white solid;
- }
+
  a{
     color:white;
     font-size: 13px;
@@ -125,7 +109,10 @@ p{
    .wrapper1{
    margin-top: 4%;
     width:43%;
-    height: 385px;
+    height: 390px;
+   }
+   #wrapper2{
+  margin-left: 22%;
    }
   }
 
@@ -138,16 +125,26 @@ p{
     }
     .wrapper1{
   
-        width:58%;
+        width:65%;
         margin-top: 8%;
-        height: 325px;
+        height: 360px;
        }
-   
+      
+       .wrapper1:hover .btn1{
+        margin-top: 4%;
+    
   }
+  #wrapper2{
+    margin-left: 0%;
+     }
+}
   @media (max-width: 400px) {
     .wrapper1{
   
         width:73%;
        
        }
+       #wrapper2{
+        margin-left: 0%;
+         }
   }
