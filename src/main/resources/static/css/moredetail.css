@@ -11,23 +11,20 @@
     flex-direction: column;
 }
 h2{
-    font-size:39px;
+    text-decoration: underline;
+     color:#233975;
+    font-size:45px;
    text-align: center;
     margin-bottom: 5%;
-    margin-top: 2%;
+    margin-top: 7%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-.container{
+.container1{
     margin-top: 5%;
     margin-left: 5%;
-}
-
-
-.wrapper-top{
-   height: fit-content;
+    height: 70%;
     display: flex;
 }
-
 
 .top-left{
    
@@ -35,14 +32,17 @@ h2{
     width:50%;
 }
 h3{
-    font-size: 28px;
+    color:#233975;
+    font-size: 30px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 p{
-    font-size: 16px;
+    color:#233975;
+    font-size: 18px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top:5%;
+    margin-top:7%;
+  
 
 }
 
@@ -57,5 +57,95 @@ p{
    
 }
 
+.container2{
+    
+    margin-left: 5%;
+    height: fit-content;
+    display: flex;
+}
 
+.bottom-right{
+  
+    margin-left: 5%;
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    
+   
+}
+.bottom-left{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    width:50%;
+}
+li{
+    margin-top: 5%;
+    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#233975;
+
+}
+
+.container3{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: fit-content;
+    display: flex;
+}
+.foot-right{
+   
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    width:89%;
+}
+
+h4{
+    font-size: 17px;
+    color:#233975;
+}
+.foot-left{
+    margin-top: 8%;
+    position: relative;
+    width:50%;
+}
+
+@media screen and (max-width:739px)  {
+    .container1,.container3{
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-left{
+        width:82%;
+    }
+    .top-right,.foot-right{
+        width: 75%;
+    }
+    .image2{
+        margin-bottom: 10%;
+    }
+    hr{
+        width:100%;
+    }
+    .container2{
+        margin-bottom: 12%;
+    }
+    
+    .foot-left{
+        width:82%;
+       margin-left: 14%;
+       margin-bottom: 5%;
+    }
+   
+}
+@media screen and (max-width:629px)  {
+    .container2{
+        flex-direction: column;
+        align-items: center;
+    }
+    .bottom-left,.bottom-right{
+        width:82%;
+    }
+}
 
