@@ -90,9 +90,11 @@ li{
 .container3{
     margin-top: 5%;
     margin-left: 5%;
+    margin-bottom: 5%;
     height: fit-content;
     display: flex;
 }
+
 .foot-right{
    
     display:flex;
@@ -110,7 +112,18 @@ h4{
     position: relative;
     width:50%;
 }
+.container4{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: fit-content;
+    display: flex;
+}
+.first,.second,.third{
+    width:30%;
+    margin-right: 3%;
+   text-align: center;
 
+}
 @media screen and (max-width:739px)  {
     .container1,.container3{
         flex-direction: column;
@@ -146,6 +159,14 @@ h4{
     }
     .bottom-left,.bottom-right{
         width:82%;
+    }
+    .container4{
+        flex-direction: column;
+        align-items: center;
+    }
+    .first,.second,.third{
+        width:82%;
+        margin-bottom: 3%;
     }
 }
 
