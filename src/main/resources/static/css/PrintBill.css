@@ -149,9 +149,11 @@ tfoot td {
 }
 
 .box {
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
   background:var(--dark);
+  border: var(--white);
+  margin: 10%;
  
 
 }
@@ -221,3 +223,13 @@ tfoot td {
         margin-top: 15%
     };
 }
+
+
+@media (max-width:692px)  {
+    .page{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        margin-top: 5%;
+    }
+  }
