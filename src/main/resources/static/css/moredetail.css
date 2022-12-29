@@ -15,7 +15,7 @@ h2{
    text-align: center;
     margin-bottom: 5%;
     margin-top: 2%;
-    font-family: 'Akaya Telivigala';
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 .container{
     margin-top: 5%;
@@ -34,15 +34,26 @@ h2{
     position: relative;
     width:50%;
 }
+h3{
+    font-size: 28px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+p{
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top:5%;
+
+}
 
 
 .top-right{
-    margin-top: 5%;
+    margin-top: 8%;
     margin-left: 5%;
     width:40%;
     display:flex;
     flex-direction: column;
-    height:100%
+    height:613px;
    
 }
 
