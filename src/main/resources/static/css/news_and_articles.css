@@ -1,3 +1,14 @@
+.news_page{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.img{
+    position: absolute;
+}
+.h1{
+
+}
 .news_list{
     display: flex;
     flex-direction: column;

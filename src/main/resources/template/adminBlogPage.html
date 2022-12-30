@@ -13,11 +13,11 @@
 </head>
 <body>
     <div class="blogList">
-        <div class="wrapper-top">
+        <div class="blog-top">
             <h2>Blog List</h2>
             <div class="search-icon">
-            <input type="text" placeholder="Search by name" name="search">
-            <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Search by name" name="search">
+                <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
             </div>
             <button class="btn1"><a href="admin_blog.html">+ New Blog</a></button>
     
@@ -66,7 +66,66 @@
                     </div>  </td>
                 </tr>
             </table>
-        
+
+        <br><br>
+        <hr>
     </div>
+
+
+    <br><br>
+
+    <div class="noticeList">
+        <div class="notice-top">
+            <h2>Blog List</h2>
+            <div class="search-icon">
+                <input type="text" placeholder="Search by name" name="search">
+                <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
+            </div>
+            <button class="btn1"><a href="admin_blog.html">+ New Blog</a></button>
+        </div>
+
+        <div style="overflow-x:auto;"></div>
+        <table id="notice-table">
+            <tr>
+                <th>Notice_Id</th>
+                <th>Publisher</th>
+                <th>Topic</th>
+                <th>Published Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Maria Anders</td>
+                <td>Luxe Room</td>
+                <td>27/11/2022</td>
+                <td><button class="btn2">Active</button></td>
+                <td>
+                    <div class="td1">
+
+                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
+                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td id="notice-id">2</td>
+                <td id="notice-author">Sofia Nepal</td>
+                <td id="notice-topic">Family Room</td>
+                <td id="notice-published">12/11/2022</td>
+                <td><button class="btn2">Active</button></td>
+                <td ><div class="td1">
+
+                    <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
+                    <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+
+                </div>  </td>
+            </tr>
+        </table>
+
+    </div>
+
 </body>
 </html>

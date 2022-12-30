@@ -20,7 +20,17 @@
     margin-top: 3%;
 }
 
-.wrapper-top{
+.noticeList{
+    width:90%;
+    display:flex;
+    flex-direction: column;
+    margin-left: 8%;
+    display: inline-block;
+
+    margin-top: 3%;
+}
+
+.blog-top, notice-top{
    
     height:20%;
     display: flex;
@@ -214,12 +224,24 @@ table {
  
   tr:nth-child(even) {background-color: #f2f2f2;}
 
- 
+hr {
+    background-color: #663399; /* purple line color */
+    /*justify-content: center;*/
+    /*width: 100%; !* line width *!*/
+    height: 1px; /* line height */
+}
+
 
   @media (max-width: 900px) {
     .wrapper-top{
         flex-direction: row;
     }
+      .blogList{
+          width: auto;
+      }
+      .noticeList{
+          width: auto;
+      }
     h2{
         text-align:left;
         font-size: 30px;
@@ -382,7 +404,7 @@ table {
         width:40%;
         font-size: 75%;
     }
-    
+
 
 
   }
