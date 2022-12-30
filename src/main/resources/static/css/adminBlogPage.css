@@ -10,28 +10,41 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif; 
 }
+.blog-news-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
 .blogList{
     width:90%;
     display:flex;
     flex-direction: column;
-    margin-left: 8%;
+    margin-left: 5%;
     display: inline-block;
  
     margin-top: 3%;
 }
-
 .noticeList{
     width:90%;
     display:flex;
     flex-direction: column;
-    margin-left: 8%;
+    margin-left: 5%;
     display: inline-block;
 
     margin-top: 3%;
 }
 
-.blog-top, notice-top{
-   
+
+.blog-top{
+
+    height:20%;
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.notice-top{
+
     height:20%;
     display: flex;
     margin-bottom: 3%;
@@ -108,21 +121,21 @@ display: table;
     width:25%;
     border-radius: 24px;
     background-color: #5041BC;
-   
+
     border-color: white;
 }
 a{
     color: white;
 }
 .btn1:hover {
-    
+
     color: black;
     font-weight: bold;
     border: white solid;
  }
 
  .btn2{
-   
+
     height:40px ;
     width:100%;
     border-radius: 24px;
@@ -131,7 +144,7 @@ a{
     border-color: white;
 }
 .btn2:hover {
-    
+
 
     font-weight: bold;
     border: white solid;
@@ -139,14 +152,14 @@ a{
 .btn3{
     height:40px ;
     width:100%;
-   
+
     border-radius: 24px;
     background-color: rgb(225, 152, 16);
     color:white;
     border-color: white;
 }
 .btn3:hover {
-    
+
   background: #0b7dda;;
     font-weight: bolder;
     border: white solid;
@@ -161,13 +174,13 @@ a{
 table {
     width: 100%;
     border-collapse: collapse;
-      
+
   }
-  
+
   th {
     height: 70px;
     font-size: 17px;
-   
+
   }
 
 
@@ -177,13 +190,13 @@ table {
 
   td {
     height: 50px;
-   
+
     text-align: center;
   }
   th, td {
     padding: 15px;
     border-bottom: 1px solid #ddd;
-   
+
   }
   .td1{
     display: flex;
@@ -215,13 +228,13 @@ table {
     font-weight: bolder;
     background-color:  #05b1eb;
 }
-  
+
   i{
     font-size:25px;
-   
+
 }
 
- 
+
   tr:nth-child(even) {background-color: #f2f2f2;}
 
 hr {
@@ -233,16 +246,23 @@ hr {
 
 
   @media (max-width: 900px) {
-    .wrapper-top{
-        flex-direction: row;
-    }
+      html{
+          display: flex;
+      }
+      .blog-top{
+          flex-direction: row;
+      }
+      .notice-top{
+          flex-direction: row;
+      }
       .blogList{
           width: auto;
       }
       .noticeList{
           width: auto;
       }
-    h2{
+
+      h2{
         text-align:left;
         font-size: 30px;
         font-weight: bolder;
@@ -255,7 +275,7 @@ hr {
      /* height:100%; */
      /* width:100%; */
      justify-content: end;
-        
+
     }
     input{
         margin-left: 0;
@@ -263,12 +283,12 @@ hr {
         height:70%;
         width:55%;
         font-size: 10px;
-        
+
     }
     input:hover {
     border:black;
-  
-       
+
+
      }
     .btn4{
         margin-top: 0;
@@ -279,8 +299,8 @@ hr {
     }
     .btn4:hover {
         border:solid orange;
-      
-           
+
+
          }
     .btn1{
         height:30px;
@@ -293,12 +313,23 @@ hr {
   }
 
   @media (max-width: 590px) {
-    .wrapper-top{
+      html{
+          display: flex;
+      }
+
+    .blog-top{
+        flex-direction: row;
+    }
+    .notice-top{
         flex-direction: row;
     }
     .blogList{
         width: auto;
     }
+    .noticeList{
+        width: auto;
+    }
+
     h2{
         text-align:left;
         font-size: 20px;
@@ -311,7 +342,7 @@ hr {
         /* height:70px;
         width:100%; */
         justify-content: end;
-           
+
        }
        input{
            margin-left: 0;
@@ -319,40 +350,53 @@ hr {
            height:100%;
            width:65%;
            font-size: 10px;
-           
+
        }
        input:hover {
        border:black;
-     
-          
+
+
         }
        .btn4{
            margin-top: 0;
            height:100%;
            font-size: 10px;
            width:15%;
-   
+
        }
        .btn4:hover {
            border:solid orange;
-         
-              
+
+
             }
     .btn1{
         height:30px;
         width:30%;
         font-size: 15px;
     }
-    
+
 
 
   }
   @media (max-width: 450px) {
-   
-    .wrapper-top{
-        flex-direction: row;
-    }
-    h2{
+      html{
+          display: flex;
+      }
+
+      .blog-top{
+          flex-direction: row;
+      }
+      .notice-top{
+          flex-direction: row;
+      }
+      .blogList{
+          width: auto;
+      }
+      .noticeList{
+          width: auto;
+      }
+
+      h2{
         text-align:left;
         font-size: 20px;
         font-weight: bolder;
