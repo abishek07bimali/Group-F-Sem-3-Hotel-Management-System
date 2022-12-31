@@ -119,7 +119,7 @@ nav {
 	font-size: 12px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
 nav h1{
   font-size: 20px;
 }
@@ -130,7 +130,7 @@ font-size: 20px;
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 460px) {
   nav h1{
     display: none;
   }

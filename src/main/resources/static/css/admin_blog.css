@@ -3,7 +3,18 @@ body{
   flex-direction: column;
   /* align-items: center; */
 }
+.notice-upload{
+  display: flex;
+  margin-top: 5%;
+  flex-direction: column;
+}
+h1{
+  align-self: center;
+}
 .upload_blog{
+  display: flex;
+}
+.upload_notice{
   display: flex;
 }
 form {

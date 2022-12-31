@@ -1,0 +1,33 @@
+.news_page{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.bg-cover-img{
+    display: flex;
+    background-image: url("https://www.solodev.com/assets/recent-news/news-entry-4.jpg");
+    width: 100%;
+    height: 100px;
+    /*image-rendering: auto;*/
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.news_list{
+    display: flex;
+    width: 80%;
+    align-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 8%;
+    padding-top: 4%;
+    margin: 1%;
+    
+}
