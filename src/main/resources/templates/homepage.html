@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
 
 <head>
   <meta charset="utf-8">
@@ -32,12 +32,13 @@ s0.parentNode.insertBefore(s1,s0);
 </script> -->
 <!--End of Tawk.to Script-->
 
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="shortcut icon" type="x-icon" href="../static/images/ServicesImages/logo.png">
-  <link rel="stylesheet" href="../static/css/footer.css">
-  <link rel="stylesheet" href="../static/css/home_navigation.css">
-  <link rel="stylesheet" href="../static/css/homepage.css">
+  <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+  <link rel="stylesheet" th:href="@{/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/css/home_navigation.css}">
+  <link rel="stylesheet" th:href="@{/css/homepage.css}">
 
 </head>
 
@@ -47,7 +48,7 @@ s0.parentNode.insertBefore(s1,s0);
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo"> <a href="homepage.html"><img src="../static/images/ServicesImages/logo.png" alt=""></a></label>
+    <label class="logo"> <a href="homepage.html"><img th:src="@{images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
       <li><a class="active" href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -120,7 +121,7 @@ s0.parentNode.insertBefore(s1,s0);
         <button><a href="#">Read more..</a></button>
       </div>
       <div class="imageDetails">
-        <img src="../static/images/ServicesImages/bar1.jpg" alt="">
+        <img th:src="@{/images/ServicesImages/bar1.jpg}" alt="Image Not Available">
       </div>
       <div class="history">
         <h1>Our History</h1>
@@ -145,7 +146,7 @@ s0.parentNode.insertBefore(s1,s0);
       <div class="accommodation">
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
-          <img src="../static/images/ServicesImages/bar1.jpg" alt="">
+          <img th:src="@{images/ServicesImages/bar2.jpg}" alt="Image Not Available">
           <h2>Deluxe room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
