@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" >
     <head>
-        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <link rel="stylesheet" type="text/css"  th:href="@{/css/style.css}">
         <meta charset="Utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create an account</title>
+    <title>Create an account: Luxury Hotel</title>
     </head>
     <body>
         <div class="main">
@@ -13,15 +13,18 @@
                 <img class="img" src="../static/images/image.png" alt="">
             </div>
             <div class="right">
+                <form th:method="post" th:action="@{/user/save}" th:object="${user}">
                 <h3 class="h3">Create an account</h3>
-                <input class="name" name="name" type="text" placeholder="Enter your name">
-                <input class="number" name="name" type="number" placeholder="Enter your number ">
-                <input class="email" name="email" type="email" placeholder="Enter your email">
-                <input class="password" name="password" type="password" placeholder="Enter your password">  <i class="far fa-eye-slash"></i>
+                <input class="name" name="name" type="text" placeholder="Enter your name" required th:field="*{fullname}" th:value="${user.fullname}" >
+                <input class="number" name="name" type="number" placeholder="Enter your number" required th:field="*{mobile_no}" th:value="${user.mobile_no}">
+                <input class="email" name="email" type="email" placeholder="Enter your email"required th:field="*{email} " th:value="${user.email}">
+                <input class="password" name="password" type="password" placeholder="Enter your password" required th:field="*{password} " th:value="${user.password}">
+<!--                <i class="far fa-eye-slash"></i>-->
                 <button class="Submit" type="submit"> Create account</button>
-                <p class="login-content">Already have an account? <a href="#">
+                </form>
+                <p class="login-content">Already have an account? <a href="user_login.html">
                     <strong>Login</strong>
-                </a></p>   
+                </a></p>
             </div>
         </div>
     </body>

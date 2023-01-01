@@ -2,11 +2,16 @@ package com.example.hotelmanagementsystem.Controller;
 
 
 
+import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.User;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -17,39 +22,40 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-//    private final UserService userService;
+    private final UserService userService;
 
-    @GetMapping("/create")
+    @GetMapping("/homepage")
     public String getRegisterPage() {
         return "homepage";
     }
 
-}
+
 //
 
 //    @GetMapping("/list")
 //    public String getUserList(Model model) {
 //        List<User> users = userService.fetchAll();
 //        model.addAttribute("userlist", users);
-//        return "user/index";
+//        return "user/hom";
 //    }
 //
-//    @GetMapping("/create")
-//    public String createUser(Model model) {
-//        model.addAttribute("user", new UserPojo());
-//        return "user/create";
-//    }
-//
-//    @PostMapping("/save")
-//    public String saveUser(@Valid UserPojo userpojo) {
-//        userService.save(userpojo);
-//        return "redirect:/user/list";
-//    }
-//
+    @GetMapping("/create")
+    public String createUser(Model model) {
+        model.addAttribute("user", new UserPojo());
+        return "register";
+    }
+
+    @PostMapping("/save")
+    public String saveUser(@Valid UserPojo userpojo) {
+        userService.save(userpojo);
+        return "redirect:homepage";
+    }
+
 //    @GetMapping("/edit/{id}")
 //    public String editUser(@PathVariable("id") Integer id, Model model) {
 //        User user = userService.fetchById(id);
 //        model.addAttribute("user", new UserPojo(user));
 //        return "user/create";
 //    }
-//}
+
+}
