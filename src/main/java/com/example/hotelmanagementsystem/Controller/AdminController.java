@@ -23,4 +23,9 @@ public class AdminController {
         return "viewCustomerlist";
     }
 
+
+    @GetMapping("/newbooking")
+    public String getRegisterPage() {
+        return "newbookings";
+    }
 }

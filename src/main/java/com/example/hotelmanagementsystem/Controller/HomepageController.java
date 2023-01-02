@@ -27,4 +27,9 @@ public class HomepageController {
         return "nearby_places";
     }
 
+    @GetMapping("/rooms")
+    public String gerRooms() { return "rooms";
+    }
+
+
 }
