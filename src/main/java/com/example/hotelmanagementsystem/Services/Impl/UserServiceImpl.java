@@ -46,10 +46,14 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+//    @Override
+//    public Booking deleteById(Integer id) {
+//        return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+//    }
+
     public List<Booking> fetchAll(){
         return this.bookingRepo.findAll();
     }
-
 
 
 

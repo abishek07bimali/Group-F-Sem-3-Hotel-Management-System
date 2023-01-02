@@ -16,6 +16,7 @@ public interface UserService {
 //     User fetchById(Integer id);
 
     String save(BookingPojo bookingPojo);
-//    Booking fetchById(Integer id);
+
+//    Booking deleteById(Integer id);
 
 }

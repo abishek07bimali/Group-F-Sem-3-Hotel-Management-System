@@ -1,10 +1,13 @@
 package com.example.hotelmanagementsystem.Controller;
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.entity.Booking;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -24,8 +27,19 @@ public class AdminController {
     }
 
 
+
     @GetMapping("/newbooking")
-    public String getRegisterPage() {
+    public String BookHotel(Model model) {
+        model.addAttribute("newBooking", new BookingPojo());
         return "newbookings";
     }
+
+
+
+    @PostMapping("/savenewbook")
+    public String saveBooking(@Valid BookingPojo bookingPojo) {
+        userService.save(bookingPojo);
+        return "redirect:daily_profit";
+    }
+
 }
