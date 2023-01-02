@@ -28,6 +28,16 @@ public class UserController {
         return "homepage";
     }
 
+    @GetMapping("/services")
+    public String getServicePage() {
+        return "services";
+    }
+
+//    @GetMapping("/bookhere")
+//    public String getBooking() {
+//        return "booking";
+//    }
+
 
     @GetMapping("/create")
     public String createUser(Model model) {

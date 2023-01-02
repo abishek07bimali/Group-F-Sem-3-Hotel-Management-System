@@ -48,18 +48,20 @@ s0.parentNode.insertBefore(s1,s0);
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo"> <a href="homepage.html"><img th:src="@{images/ServicesImages/logo.png}" alt=""></a></label>
+    <label class="logo"> <a th:href="@{/homepage.html}"><img th:src="@{images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
       <li><a class="active" href="#">Home</a></li>
       <li><a href="#">About</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a th:href="@{/user/services}">Services</a></li>
       <li><a href="#">Contact</a></li>
+      <li><a th:href="@{/user/booking}">Book</a></li>
+
       <div class="dropdown">
         <button class="dropbtn">See More</button>
         <div class="dropdown-content">
-          <a href="#">Gallery</a>
-          <a href="#">Blogs</a>
-          <a href="#">Visit nearby</a>
+          <a th:href="@{/user/gallery}">Gallery</a>
+          <a th:href="@{/user/blog}">Blogs</a>
+          <a th:href="@{/user/nearby_places}">Visit nearby</a>
         </div>
       </div>
       <div class="dropdown">
