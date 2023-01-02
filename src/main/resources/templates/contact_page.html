@@ -1,10 +1,10 @@
 <!DOCTYPE html >
-<html lang="eng">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
 	<head>
 		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
 		<meta name="viewport"content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Contact Page</title>
-		<link href="../static/css/contact_us.css" rel="stylesheet">
+		<link th:href="@{/css/contact_us.css}" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 	</head>
@@ -26,9 +26,12 @@
 						<input type="text" placeholder="Subject" class="contact-in-input" required>
 						<textarea type="text" placeholder="Message" class="contact-in-textarea" required></textarea>
 <!--						<input type="submit" value="SUBMIT" class="contact-in-btn">-->
-						<button type="submit" class="contact-in-btn" function="submit-message">SUBMIT</button>
+						<button type="submit" class="contact-in-btn"
+								function="submit-message"
+								onclick="submitMessage">SUBMIT</button>
 <!--								style="color: black; font-size: larger; font-weight: bold; background-color: #ffca00; border-color: white; width: 100%; height: 45px; border-radius: 5px; align-self: center">SUBMIT</button>-->
 					</form>
+					<script src="../static/javascript/contact_page.js"></script>
 				</div>
 				<div class="contact-in">
 					<!-- <h1>Contact us</h1> -->

@@ -2,10 +2,13 @@ package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
+import com.example.hotelmanagementsystem.repo.ContactRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +20,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
+    public final ContactRepo contactRepo;
 
 
 
@@ -44,6 +48,17 @@ public class UserServiceImpl implements UserService {
         booking.setRooms(bookingPojo.getRoom());
         bookingRepo.save(booking);
         return null;
+    }
+
+    @Override
+    public String submitMsg(ContactPojo contactPojo) {
+        Contact contact=new Contact();
+        contact.setFullname(contactPojo.getFullname());
+        contact.setEmail(contactPojo.getEmail());
+        contact.setSubject(contactPojo.getSubject());
+        contact.setMessage(contactPojo.getMessage());
+        contactRepo.save(contact);
+        return "sent";
     }
 
     public List<Booking> fetchAll(){

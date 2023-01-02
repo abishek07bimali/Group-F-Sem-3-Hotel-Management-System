@@ -2,6 +2,7 @@ package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.User;
 import jakarta.validation.Valid;
@@ -29,6 +30,7 @@ public class UserController {
     }
 
 
+
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
@@ -54,5 +56,17 @@ public class UserController {
         userService.save(bookingPojo);
         return "redirect:homepage";
     }
+
+    @GetMapping("/contact")
+    public String getPage(){ return "contact_page";}
+
+    @PostMapping("/send-message")
+    public String submitMessage(@Valid ContactPojo contactPojo){
+        userService.submitMsg(contactPojo);
+        return "redirect:contact";
+    }
+
+
+
 
 }
