@@ -3,6 +3,7 @@ package com.example.hotelmanagementsystem.Controller;
 
 
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.User;
 import jakarta.validation.Valid;
@@ -29,33 +30,29 @@ public class UserController {
         return "homepage";
     }
 
-
-//
-
-//    @GetMapping("/list")
-//    public String getUserList(Model model) {
-//        List<User> users = userService.fetchAll();
-//        model.addAttribute("userlist", users);
-//        return "user/hom";
-//    }
-//
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
         return "register";
     }
 
+    @GetMapping("/booking")
+    public String BookHotel(Model model) {
+        model.addAttribute("booking", new BookingPojo());
+        return "booking";
+    }
+
+//
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userpojo) {
         userService.save(userpojo);
         return "redirect:homepage";
     }
 
-//    @GetMapping("/edit/{id}")
-//    public String editUser(@PathVariable("id") Integer id, Model model) {
-//        User user = userService.fetchById(id);
-//        model.addAttribute("user", new UserPojo(user));
-//        return "user/create";
-//    }
+    @PostMapping("/savebook")
+    public String saveBooking(@Valid BookingPojo bookingPojo) {
+        userService.save(bookingPojo);
+        return "redirect:homepage";
+    }
 
 }

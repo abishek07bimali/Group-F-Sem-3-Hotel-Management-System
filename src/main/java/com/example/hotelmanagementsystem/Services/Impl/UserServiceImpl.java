@@ -1,8 +1,11 @@
 package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.User;
+import com.example.hotelmanagementsystem.repo.BookingRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     public final UserRepo userRepo;
+    public final BookingRepo bookingRepo;
+
 
     public List<User> fetchAll(){
         return this.userRepo.findAll();
@@ -32,6 +37,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User fetchById(Integer id) {
         return userRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+    @Override
+    public String save(BookingPojo bookingPojo) {
+        Booking booking=new Booking();
+        booking.setEmail(bookingPojo.getEmail());
+        booking.setFullname(bookingPojo.getFullname());
+        booking.setNumber_of_people(bookingPojo.getNumber_of_people());
+        booking.setMobileNo(bookingPojo.getMobile_no());
+        booking.setTime(bookingPojo.getTime());
+        bookingRepo.save(booking);
+        return null;
     }
 
 }

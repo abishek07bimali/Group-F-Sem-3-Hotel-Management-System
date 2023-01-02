@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/booking.css">
+    <link rel="stylesheet" th:href="@{/css/booking.css}">
     <title>Booking</title>
 </head>
 
 <body class="main_bg">
     <div class="form">
         <div class="form-text">
-            <h1><span><img src="../static/images/art-1.png" alt=""></span>Book Now <span><img src="../static/images/art-1.png" alt=""></span></h1>
+            <h1><span><img th:src="@{~/images/art-1.png}" alt=""></span>Book Now <span><img th:src="@{~/images/art-1.png}"alt=""></span></h1>
             <p>Be ready to have the best experience...</p>
         </div>
         <div class="main-form">
-            <form action="#" method="get">
+            <form th:method="post" th:action="@{/user/savebook}" th:object="${booking}">
                 <div>
                     <span>Your full name ?</span>
-                    <input type="text" name="name" id="name" placeholder="Write your name here..." required>
+                    <input type="text" name="name"  placeholder="Write your name here..." required th:field="*{fullname}" th:value="${booking.fullname}">
                 </div>
                 <div>
                     <span>Your email address ?</span>
-                    <input type="email" name="name" id="name" placeholder="Write your email here..." required> 
+                    <input type="email" name="name"  placeholder="Write your email here..." required th:field="*{email}" th:value="${booking.email}">
                 </div>
                 <div>
                     <!-- <---this is the select option--->
                     <span>How many people ?</span>
-                    <select name="people" id="people" required>
+                    <select name="people" id="people" required th:field="*{number_of_people}" th:value="${booking.number_of_people}">
                         <option value="">   ---number of people---</option>
                         <option value="1">1 person</option>
                         <option value="2">2 person</option>
@@ -39,18 +39,18 @@
                 </div>
                 <div>
                     <span>What time ?</span>
-                    <input type="text" name="time" id="time" placeholder="Time" required>
+                    <input type="text" name="time" id="time" placeholder="Time" required th:field="*{time}" th:value="${booking.time}">
                 </div>
                 <div>
                     <span>What is the date ?</span>
-                    <input type="date" name="date" id="date" placeholder="date" required>
+                    <input type="date" name="date" id="date" placeholder="date" required >
                 </div>
                 <div>
                     <span>Your phone number ?</span>
-                    <input type="number" name="number" id="number" placeholder="Write your number here..." required>
+                    <input type="number" name="number" id="number" placeholder="Write your number here..." required th:field="*{mobile_no}" th:value="${booking.mobile_no}">
                 </div>
                 <div id="submit">
-                    <input type="submit" value="SUBMIT" id="submit">
+                    <input type="submit" value="SUBMIT">
                 </div>
 
 
