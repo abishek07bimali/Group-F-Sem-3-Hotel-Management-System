@@ -22,6 +22,7 @@ public class Booking {
     @Column(name = "fullname")
     private String fullname;
 
+
     @Column()
     private String email;
 

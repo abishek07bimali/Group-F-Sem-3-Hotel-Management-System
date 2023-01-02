@@ -19,9 +19,6 @@ public class UserServiceImpl implements UserService {
     public final BookingRepo bookingRepo;
 
 
-    public List<User> fetchAll(){
-        return this.userRepo.findAll();
-    }
 
     @Override
     public String save(UserPojo userPojo) {
@@ -35,11 +32,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User fetchById(Integer id) {
-        return userRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
-    }
-
-    @Override
     public String save(BookingPojo bookingPojo) {
         Booking booking=new Booking();
         booking.setEmail(bookingPojo.getEmail());
@@ -50,6 +42,13 @@ public class UserServiceImpl implements UserService {
         bookingRepo.save(booking);
         return null;
     }
+
+    public List<Booking> fetchAll(){
+        return this.bookingRepo.findAll();
+    }
+
+
+
 
 }
 

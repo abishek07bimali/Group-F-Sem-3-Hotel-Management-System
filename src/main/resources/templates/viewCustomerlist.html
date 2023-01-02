@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
    <title>Rooms</title>
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-         <link rel="stylesheet" href="../static/css/viewCustomerlist.css">
+         <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
 </head>
 <body>
 
@@ -23,6 +24,7 @@
        
             <div style="overflow-x:auto;"></div>
             <table>
+                <thead>
                 <tr>
                   <th>Cust_Id</th>
                   <th>Full Name</th>
@@ -35,95 +37,114 @@
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Maria Anders</td>
-                  <td>Luxe Room</td>
-                  <td>27/11/2022</td>
-                  <td>2/12/2022</td>
-                  <td>2/13/2022</td>
-                  <td>$2112</td>
-                  <td>9824234967</td>
-                  <td><button class="btn2">Active</button></td>
-                  <td>
-                    <div class="td1">
-                       
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-                        
-                    </div>
-                  </td>
-                
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sofia Nepal</td>
-                    <td>Family Room</td>
-                    <td>12/11/2022</td>
-                    <td>8/12/2022</td>
-                    <td>10/12/2022</td>
-                    <td>$5672</td>
-                    <td>9841234567</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td ><div class="td1">
-                       
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-                        
-                    </div>  </td>
-                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="booking:${bookinglist}">
+<!--                    <td th:text="${user.id}"></td>-->
+                    <td th:text="${booking.fullname}"></td>
+                    <td th:text="${booking.email}"></td>
+                    <td th:text="${booking.time}"></td>
+                    <td th:text="${booking.mobileNo}"></td>
+                    <td th:text="${booking.number_of_people}"></td>
+<!--                    <td> <a class="edit" th:href="@{~/user/edit/}+${user.id}" >edit</a></td>-->
 
-                <tr>
-                    <td>3</td>
-                    <td>Shekhar Pradhan</td>
-                    <td>Premium Room</td>
-                    <td>27/09/2022</td>
-                    <td>9/10/2022</td>
-                    <td>11/10/2022</td>
-                    <td>$67552</td>
-                    <td>9811657567</td>
-                    <td><button class="btn3">Pending</button></td>
-                    <td ><div class="td1">
-                       
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-                        
-                    </div></td>
                 </tr>
+                </tbody>
 
-                <tr>
-                    <td>4</td>
-                    <td>Anita Baskota</td>
-                    <td>Luxe Room</td>
-                    <td>20/07/2022</td>
-                    <td>2/11/2022</td>
-                    <td>4/11/2022</td>
-                    <td>$8851</td>
-                    <td>9765234567</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td ><div class="td1">
-                       
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-                        
-                    </div></td>
-                </tr>
 
-                <tr>
-                    <td>5</td>
-                    <td>Rajib khanna</td>
-                    <td>Couple Room</td>
-                    <td>09/08/2022</td>
-                    <td>1/09/2022</td>
-                    <td>2/09/2022</td>
-                    <td>$1091</td>
-                    <td>9848567567</td>
-                    <td><button class="btn3">Pending</button></td>
-                    <td ><div class="td1">
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-                    </div></td>
-                </tr>
+
+
+
+
+<!--                <tr>-->
+<!--                  <td>1</td>-->
+<!--                  <td>Maria Anders</td>-->
+<!--                  <td>Luxe Room</td>-->
+<!--                  <td>27/11/2022</td>-->
+<!--                  <td>2/12/2022</td>-->
+<!--                  <td>2/13/2022</td>-->
+<!--                  <td>$2112</td>-->
+<!--                  <td>9824234967</td>-->
+<!--                  <td><button class="btn2">Active</button></td>-->
+<!--                  <td>-->
+<!--                    <div class="td1">-->
+<!--                       -->
+<!--                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>-->
+<!--                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+<!--                        -->
+<!--                    </div>-->
+<!--                  </td>-->
+<!--                -->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>2</td>-->
+<!--                    <td>Sofia Nepal</td>-->
+<!--                    <td>Family Room</td>-->
+<!--                    <td>12/11/2022</td>-->
+<!--                    <td>8/12/2022</td>-->
+<!--                    <td>10/12/2022</td>-->
+<!--                    <td>$5672</td>-->
+<!--                    <td>9841234567</td>-->
+<!--                    <td><button class="btn2">Active</button></td>-->
+<!--                    <td ><div class="td1">-->
+<!--                       -->
+<!--                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>-->
+<!--                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+<!--                        -->
+<!--                    </div>  </td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>3</td>-->
+<!--                    <td>Shekhar Pradhan</td>-->
+<!--                    <td>Premium Room</td>-->
+<!--                    <td>27/09/2022</td>-->
+<!--                    <td>9/10/2022</td>-->
+<!--                    <td>11/10/2022</td>-->
+<!--                    <td>$67552</td>-->
+<!--                    <td>9811657567</td>-->
+<!--                    <td><button class="btn3">Pending</button></td>-->
+<!--                    <td ><div class="td1">-->
+<!--                       -->
+<!--                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>-->
+<!--                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+<!--                        -->
+<!--                    </div></td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>4</td>-->
+<!--                    <td>Anita Baskota</td>-->
+<!--                    <td>Luxe Room</td>-->
+<!--                    <td>20/07/2022</td>-->
+<!--                    <td>2/11/2022</td>-->
+<!--                    <td>4/11/2022</td>-->
+<!--                    <td>$8851</td>-->
+<!--                    <td>9765234567</td>-->
+<!--                    <td><button class="btn2">Active</button></td>-->
+<!--                    <td ><div class="td1">-->
+<!--                       -->
+<!--                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>-->
+<!--                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+<!--                        -->
+<!--                    </div></td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>5</td>-->
+<!--                    <td>Rajib khanna</td>-->
+<!--                    <td>Couple Room</td>-->
+<!--                    <td>09/08/2022</td>-->
+<!--                    <td>1/09/2022</td>-->
+<!--                    <td>2/09/2022</td>-->
+<!--                    <td>$1091</td>-->
+<!--                    <td>9848567567</td>-->
+<!--                    <td><button class="btn3">Pending</button></td>-->
+<!--                    <td ><div class="td1">-->
+<!--                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>-->
+<!--                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+<!--                    </div></td>-->
+<!--                </tr>-->
               </table>
 
 

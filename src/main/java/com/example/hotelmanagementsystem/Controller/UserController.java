@@ -1,7 +1,5 @@
 package com.example.hotelmanagementsystem.Controller;
 
-
-
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
@@ -30,11 +28,19 @@ public class UserController {
         return "homepage";
     }
 
+
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
         return "register";
     }
+
+    @PostMapping("/save")
+    public String saveUser(@Valid UserPojo userpojo) {
+        userService.save(userpojo);
+        return "redirect:homepage";
+    }
+
 
     @GetMapping("/booking")
     public String BookHotel(Model model) {
@@ -42,12 +48,6 @@ public class UserController {
         return "booking";
     }
 
-//
-    @PostMapping("/save")
-    public String saveUser(@Valid UserPojo userpojo) {
-        userService.save(userpojo);
-        return "redirect:homepage";
-    }
 
     @PostMapping("/savebook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
