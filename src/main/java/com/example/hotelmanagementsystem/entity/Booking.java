@@ -22,17 +22,25 @@ public class Booking {
     @Column(name = "fullname")
     private String fullname;
 
+    @Column(name = "room")
+    private String rooms;
 
-    @Column()
-    private String email;
+    @Column(name = "date")
+    private String date;
+
+    @Column(name = "Checkin")
+    private String checkin;
+
+    @Column(name = "checkout")
+    private String checkout;
+
+    @Column(name="amount")
+    private String total;
 
     @Column(name = "number_of_people")
     private String number_of_people;
 
     @Column(name = "mobile_no")
     private String mobileNo;
-
-    @Column(name = "time")
-    private String time;
 
 }

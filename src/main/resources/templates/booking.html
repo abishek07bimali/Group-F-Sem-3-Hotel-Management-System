@@ -21,10 +21,10 @@
                     <span>Your full name ?</span>
                     <input type="text" name="name"  placeholder="Write your name here..." required th:field="*{fullname}" th:value="${booking.fullname}">
                 </div>
-                <div>
-                    <span>Your email address ?</span>
-                    <input type="email" name="name"  placeholder="Write your email here..." required th:field="*{email}" th:value="${booking.email}">
-                </div>
+<!--                <div>-->
+<!--                    <span>Your email address ?</span>-->
+<!--                    <input type="email" name="name"  placeholder="Write your email here..." required th:field="*{email}" th:value="${booking.email}">-->
+<!--                </div>-->
                 <div>
                     <!-- <---this is the select option--->
                     <span>How many people ?</span>
@@ -38,16 +38,28 @@
                     <!-- <---this is the select option--->
                 </div>
                 <div>
-                    <span>What time ?</span>
-                    <input type="text" name="time" id="time" placeholder="Time" required th:field="*{time}" th:value="${booking.time}">
+                    <span>which room?</span>
+                    <input type="text" name="time" id="time" placeholder="Time" required th:field="*{room}" th:value="${booking.room}">
                 </div>
                 <div>
-                    <span>What is the date ?</span>
-                    <input type="date" name="date" id="date" placeholder="date" required >
+                    <span>What is the checkin date ?</span>
+                    <input type="date" name="date" id="date" placeholder="date" required th:field="*{Checkin}" th:value="${booking.checkin}" >
+                </div>
+                <div>
+                    <span>What is the checkout  date ?</span>
+                    <input type="date" name="date" id="dateO" placeholder="date" required th:field="*{checkout}" th:value="${booking.checkout}">
+                </div>
+                <div>
+                    <span>What is the checkin date ?</span>
+                    <input type="date" name="date" id="dateA" placeholder="date" required th:field="*{date}" th:value="${booking.date}" >
                 </div>
                 <div>
                     <span>Your phone number ?</span>
                     <input type="number" name="number" id="number" placeholder="Write your number here..." required th:field="*{mobile_no}" th:value="${booking.mobile_no}">
+                </div>
+                <div>
+                    <span>Your phone number ?</span>
+                    <input type="number" name="number" id="amount" placeholder="amount" required th:field="*{amount}" th:value="${booking.amount}">
                 </div>
                 <div id="submit">
                     <input type="submit" value="SUBMIT">

@@ -13,18 +13,24 @@ import lombok.Setter;
 @NoArgsConstructor
 public class BookingPojo {
     private Integer id;
-    private String email;
+    private  String fullname;
+    private  String checkin;
+    private  String checkout;
+    private  String room;
+    private String amount;
+    private  String date;
     private  String mobile_no;
     private  String number_of_people;
-    private  String fullname;
-    private  String time;
 
     public BookingPojo(Booking booking) {
         this.id=booking.getId();
-        this.email=booking.getEmail();
         this.number_of_people=booking.getNumber_of_people();
         this.mobile_no=booking.getMobileNo();
         this.fullname=booking.getFullname();
-        this.time=booking.getTime();
+        this.checkin=booking.getCheckin();
+        this.checkout=booking.getCheckout();
+        this.amount=booking.getTotal();
+        this.date=booking.getDate();
+        this.room=booking.getRooms();
     }
 }

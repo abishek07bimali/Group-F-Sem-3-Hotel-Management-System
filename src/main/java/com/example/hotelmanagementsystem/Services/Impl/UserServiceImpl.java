@@ -34,11 +34,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public String save(BookingPojo bookingPojo) {
         Booking booking=new Booking();
-        booking.setEmail(bookingPojo.getEmail());
         booking.setFullname(bookingPojo.getFullname());
         booking.setNumber_of_people(bookingPojo.getNumber_of_people());
         booking.setMobileNo(bookingPojo.getMobile_no());
-        booking.setTime(bookingPojo.getTime());
+        booking.setCheckin(bookingPojo.getCheckin());
+        booking.setCheckout(bookingPojo.getCheckout());
+        booking.setDate(bookingPojo.getDate());
+        booking.setTotal(bookingPojo.getAmount());
+        booking.setRooms(bookingPojo.getRoom());
         bookingRepo.save(booking);
         return null;
     }
