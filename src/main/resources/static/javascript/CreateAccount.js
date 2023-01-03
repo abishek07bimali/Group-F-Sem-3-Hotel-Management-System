@@ -49,3 +49,21 @@ attempt --;// Decrementing by one.
 alert("You have left "+attempt+" attempt;");
 
 // Disabling fields after 3 attempts.
+// Disabling fields after 3 attempts.
+
+if( attempt == 0){
+
+document.getElementById("name").disabled = true;
+
+document.getElementById("number").disabled = true;
+document.getElementById("email").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("Submit").disabled = true;
+
+return false;
+
+}
+
+}
+
+}
