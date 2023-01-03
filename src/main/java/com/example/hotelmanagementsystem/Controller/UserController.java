@@ -2,7 +2,6 @@ package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.User;
 import jakarta.validation.Valid;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+//import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 
 import java.util.List;
 
@@ -57,14 +57,14 @@ public class UserController {
         return "redirect:homepage";
     }
 
-    @GetMapping("/contact")
-    public String getPage(){ return "contact_page";}
-
-    @PostMapping("/send-message")
-    public String submitMessage(@Valid ContactPojo contactPojo){
-        userService.submitMsg(contactPojo);
-        return "redirect:contact";
-    }
+//    @GetMapping("/contact")
+//    public String getPage(){ return "contact_page";}
+//
+//    @PostMapping("/send-message")
+//    public String submitMessage(@Valid ContactPojo contactPojo){
+//        userService.submitMsg(contactPojo);
+//        return "redirect:contact";
+//    }
 
 
 
