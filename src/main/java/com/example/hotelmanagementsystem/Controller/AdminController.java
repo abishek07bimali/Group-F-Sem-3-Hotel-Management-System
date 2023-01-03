@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,6 +40,21 @@ public class AdminController {
     @PostMapping("/savenewbook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
+        return "redirect:/admin/list";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editUser(@PathVariable("id") Integer id, Model model) {
+        Booking booking = userService.fetchById(id);
+        model.addAttribute("newBooking", new BookingPojo(booking));
+        return "newbookings";
+    }
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") Integer id) {
+        userService.deleteById(id);
+
         return "redirect:/admin/list";
     }
 

@@ -18,6 +18,7 @@
         </div>
         <div class="wrapper-bottom">
             <form th:method="post" th:action="@{/admin/savenewbook}" th:object="${newBooking}">
+                <input type="number"   hidden th:field="*{id}" th:value="${newBooking.id}">
                 <div>
                     <span>Your full name ?</span>
                     <input type="text" name="name"  placeholder="Write your name here..." required th:field="*{fullname}" th:value="${newBooking.fullname}">

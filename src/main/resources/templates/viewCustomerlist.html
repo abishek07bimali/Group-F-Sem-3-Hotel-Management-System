@@ -50,10 +50,11 @@
                     <td th:text="${booking.total}"></td>
                     <td th:text="${booking.mobileNo}"></td>
                     <td th:text="${booking.number_of_people}"></td>
-                    <td> <a class="edit" href="#" >Active</a></td>
-                    <td> <a class="edit" href="#" >delete</a></td>
+<!--                    <td> <a class="edit" href="#" >Active</a></td>-->
+<!--                    <td> <a class="edit" href="#" >delete</a></td>-->
 <!--                    <td> <a class="edit" href="#" >edit</a></td>-->
-<!--                    <td> <a class="edit" th:href="@{~/user/edit/}+${user.id}" >edit</a></td>-->
+                    <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>
+                    <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>
 
                 </tr>
                 </tbody>
