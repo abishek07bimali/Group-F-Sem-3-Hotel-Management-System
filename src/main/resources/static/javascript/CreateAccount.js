@@ -42,3 +42,10 @@ window.location = "p.html"; // Redirecting to other page.
 return false;
 
 }
+else{
+
+attempt --;// Decrementing by one.
+
+alert("You have left "+attempt+" attempt;");
+
+// Disabling fields after 3 attempts.
