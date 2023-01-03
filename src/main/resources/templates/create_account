@@ -26,3 +26,7 @@
                 
                 <p class="login-content">Already have an account? <a href="#">
                     <strong>Login</strong>
+                </a></p>   
+            </div>
+        </div>
+    </body>
