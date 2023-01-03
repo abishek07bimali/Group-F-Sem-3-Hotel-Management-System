@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../static/css/user_login.css">
-    <script src="../static/javascript/user-login.js" defer></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/user_login.css}">
+    <script th:src="@{/javascript/user-login.js}" defer></script>
 </head>
 <body class="whole-body" bgcolor="#413C3C">
     <div class="main-wrapper">
