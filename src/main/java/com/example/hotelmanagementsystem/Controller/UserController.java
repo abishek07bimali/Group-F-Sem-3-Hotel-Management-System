@@ -23,21 +23,6 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/homepage")
-    public String getRegisterPage() {
-        return "homepage";
-    }
-
-    @GetMapping("/services")
-    public String getServicePage() {
-        return "services";
-    }
-
-//    @GetMapping("/bookhere")
-//    public String getBooking() {
-//        return "booking";
-//    }
-
 
     @GetMapping("/create")
     public String createUser(Model model) {

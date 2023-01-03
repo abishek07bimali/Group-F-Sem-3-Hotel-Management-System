@@ -52,17 +52,17 @@ s0.parentNode.insertBefore(s1,s0);
     <ul>
       <li><a class="active" href="#">Home</a></li>
       <li><a href="#">About</a></li>
-      <li><a th:href="@{/user/services}">Services</a></li>
+      <li><a th:href="@{~/homepage/services}">Services</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a th:href="@{/user/booking}">Book</a></li>
+      <li><a th:href="@{~/homepage/booking}">Book</a></li>
 
       <div class="dropdown">
         <button class="dropbtn">See More</button>
         <div class="dropdown-content">
-          <a th:href="@{/user/gallery}">Gallery</a>
-          <a th:href="@{/user/rooms}">Rooms</a>
-          <a th:href="@{/user/blog}">Blogs</a>
-          <a th:href="@{/user/nearby_places}">Visit nearby</a>
+          <a th:href="@{~/homepage/gallery}">Gallery</a>
+          <a th:href="@{~/homepage/rooms}">Rooms</a>
+          <a th:href="@{~/homepage/blog}">Blogs</a>
+          <a th:href="@{~/homepage/nearby_places}">Visit nearby</a>
         </div>
       </div>
       <div class="dropdown">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" dir="ltr" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/rooms.css}">
+    <link rel="stylesheet" th:href="@{~/css/rooms.css}">
     <title>Document</title>
 </head>
 <body>
@@ -24,23 +24,23 @@
         <div class="Wrapper-bottom">
             <div class="bottom-up">
                 <div class="price">$200</div>
-                <button><a href="coupleroom.html">Couple Room</a></button>
+                <button><a th:href="@{~/rooms/coupleroom}">Couple Room</a></button>
             </div>
             <div class="bottom-up1">
                 <div class="price">$200</div>
-                <button><a href="luxeroom.html">Luxe Room</a></button>
+                <button><a th:href="@{~/rooms/luxeroom}">Luxe Room</a></button>
             </div>
             <div class="bottom-up2">
                 <div class="price">$200</div>
-                <button><a href="familyroom.html">Family Room</a></button>
+                <button><a th:href="@{~/rooms/familyroom}">Family Room</a></button>
             </div>
             <div class="bottom-up3">
                 <div class="price">$200</div>
-                <button><a href="masterroom.html">Master Room</a></button>
+                <button><a  th:href="@{~/rooms/masterroom}">Master Room</a></button>
             </div>
             <div class="bottom-up4">
                 <div class="price">$200</div>
-                <button><a href="premiumroom.html">Premium Room</a></button>
+                <button><a th:href="@{~/rooms/premiumroom}">Premium Room</a></button>
             </div>
         </div>
 

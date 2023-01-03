@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/user")
+@RequestMapping("/homepage")
 public class HomepageController {
 
+
+    @GetMapping("/services")
+    public String getServicePage() {
+        return "services";
+    }
 
     @GetMapping("/gallery")
     public String getGallery() {
@@ -30,6 +35,5 @@ public class HomepageController {
     @GetMapping("/rooms")
     public String gerRooms() { return "rooms";
     }
-
 
 }
