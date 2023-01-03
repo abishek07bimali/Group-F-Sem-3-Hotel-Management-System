@@ -27,3 +27,18 @@
 var attempt = 3; // Variable to count number of attempts.
 
 // Below function Executes on click of login button.
+function validate(){
+    var name = document.getElementById("name").value;
+    var number = document.getElementById("number").value;
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
+if ( name == "admin" && number=="admin"  &&  email=="admin" && password == "admin" ){
+
+alert ("Account is created");
+
+window.location = "p.html"; // Redirecting to other page.
+
+return false;
+
+}
