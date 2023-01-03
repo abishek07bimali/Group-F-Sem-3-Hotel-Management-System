@@ -39,7 +39,7 @@ public class AdminController {
     @PostMapping("/savenewbook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
-        return "redirect:daily_profit";
+        return "redirect:/admin/list";
     }
 
 }
