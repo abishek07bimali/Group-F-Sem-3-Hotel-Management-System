@@ -48,13 +48,13 @@ s0.parentNode.insertBefore(s1,s0);
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo"> <a th:href="@{/homepage.html}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
+    <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
       <li><a class="active" href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a th:href="@{~/homepage/services}">Services</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a th:href="@{~/homepage/booking}">Book</a></li>
+      <li><a th:href="@{~/user/booking}">Book</a></li>
 
       <div class="dropdown">
         <button class="dropbtn">See More</button>
@@ -302,7 +302,7 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="information">
       <img th:src="@{~/images/ServicesImages/logo.png}" alt="">
       <h3>Luxury hotel</h3>
-      <p> <a href="">022:000000</a></p>
+      <p> <a href="#">022:000000</a></p>
       <p> <a href="">luxuryhotel@gmail.com</a> </p>
     </div>
     <div class="quicklinks">
@@ -313,14 +313,14 @@ s0.parentNode.insertBefore(s1,s0);
     </div>
     <div class="sociallinks">
       <h2>Stay Connected</h2>
-      <!-- <h4><i class="fab fa-facebook-f"></i></h4>
-      <h4><i class="fab fa-twitter"></i></h4>
-      <h4><i class="fab fa-instagram"></i></h4>
-      <h4><i class="fab fa-youtube"></i></h4> -->
-      <h4>facebook</h4>
-      <h4>twitter</h4>
-      <h4>instagram</h4>
-      <h4>Youtube</h4>
+<!--       <h4> <a href=""><i class="fab fa-facebook-f"></i></a></h4>-->
+<!--      <h4><i class="fab fa-twitter"></i></h4>-->
+<!--      <h4><i class="fab fa-instagram"></i></h4>-->
+<!--      <h4><i class="fab fa-youtube"></i></h4>-->
+      <h4><a href=""><i class="fab fa-facebook-f"></i></a></h4>
+      <h4> <a href=""><i class="fab fa-twitter"></i></a> </h4>
+      <h4> <a href=""><i class="fab fa-instagram"></i></a></h4>
+      <h4> <a href=""><i class="fab fa-youtube"></i></a></h4>
     </div>
     <div class="emailcontact">
       <h3>Email us Your Quaries</h3>
