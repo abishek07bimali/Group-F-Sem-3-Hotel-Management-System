@@ -11,12 +11,10 @@ body{
 h1{
     align-self: center;
 }
-.upload_blog{
+.upload_image{
     display: flex;
 }
-.upload_notice{
-    display: flex;
-}
+
 form {
     width: 50%;
     margin: 0 auto;
