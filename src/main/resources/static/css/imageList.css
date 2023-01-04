@@ -29,6 +29,7 @@ h2{
 .search-icon{
     display:flex;
     width:46%;
+    margin-top: 13%;
 }
 input{
     margin-left: 34%;
@@ -82,7 +83,7 @@ input{
 
 .btn1{
     margin-left: 15%;
-    margin-top: 2%;
+    margin-top: 13%;
     font-size: 15px;
     height:50px ;
     width:25%;
@@ -93,6 +94,7 @@ input{
 }
 a{
     color: white;
+    text-decoration: none;
 }
 .btn1:hover {
 
@@ -101,36 +103,7 @@ a{
     border: white solid;
 }
 
-.btn2{
 
-    height:40px ;
-    width:100%;
-    border-radius: 24px;
-    background-color: rgb(47, 160, 47);
-    color:white;
-    border-color: white;
-}
-.btn2:hover {
-
-
-    font-weight: bold;
-    border: white solid;
-}
-.btn3{
-    height:40px ;
-    width:100%;
-
-    border-radius: 24px;
-    background-color: rgb(225, 152, 16);
-    color:white;
-    border-color: white;
-}
-.btn3:hover {
-
-    background: #0b7dda;;
-    font-weight: bolder;
-    border: white solid;
-}
 
 .wrapper-bottom{
     height:70%;
@@ -175,22 +148,14 @@ th, td {
     font-size: 32px;
     font-family: 'Material Icons';
 }
-.edit{
-    color: rgb(225, 152, 16);
-    margin-right: 2%;
-    border: none;
-    background: transparent;
-}
+
 .delete{
     color: rgb(165, 8, 8);
     margin-left: 36%;
     border: none;
     background: transparent;
 }
-.edit:hover{
-    font-weight: bolder;
-    background-color: #05b1eb;
-}
+
 .delete:hover{
     font-weight: bolder;
     background-color:  #05b1eb;
