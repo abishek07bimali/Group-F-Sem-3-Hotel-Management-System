@@ -1,38 +1,37 @@
-</html>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE >
+<html lang="en" dir="ltr" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nearby Places</title>
-    <link rel="stylesheet" href="../static/css/nearby_places.css">
-    <script src="../static/javascript/nearby_places.js"></script>
+    <link rel="stylesheet" th:href="@{/css/nearby_places.css}">
+    <script th:src="@{~/javascript/nearby_places.js}"></script>
 </head>
 <body>
     <div class="main-container">
         <div class="container-one">
-            <img class="kath-img" src="../static/images/kathmandu.jpg" alt="" />
+            <img class="kath-img" th:src="@{~/images/kathmandu.jpg}" alt="" />
             <p class="kath-title">Kathmandu</p>
             <div class="overlay-one"></div>
-            <div class="b-1" onclick="kath_bio()"><a class="a-1" href=""> See more </a></div>
-            <div class="b-2" onclick="kathmandu_map()"><a class="a-1" href=""> See Location </a></div>
+            <div class="b-1" onclick="kath_bio()"><a class="a-1" href="#"> See more </a></div>
+            <div class="b-2" onclick="kathmandu_map()"><a class="a-1" href="#"> See Location </a></div>
             <div class="b-5"><a class="a-1" href=""> Book a Cab </a></div>
         </div>
         <div class="container-two">
-            <img class="pokh-img" src="../static/images/pokhara.jpg" alt="" />
+            <img class="pokh-img" th:src="@{~/images/pokhara.jpg}" alt="" />
             <p class="pokh-title">pokhara</p>
             <div class="overlay-two"></div>
-            <div class="b-3" onclick="pokh_bio()"><a class="a-2" href=""> See more </a></div>
-            <div class="b-4" onclick="pokhara_map()"><a class="a-2" href=""> See Location </a></div>
+            <div class="b-3" onclick="pokh_bio()"><a class="a-2" > See more </a></div>
+            <div class="b-4" onclick="pokhara_map()"><a class="a-2"> See Location </a></div>
             <div class="b-6"><a class="a-2" href=""> Book a Cab </a></div>
         </div>
         <div class="container-three">
-            <img class="but-img" src="../static/images/butwal.jpg" alt="" />
+            <img class="but-img" th:src="@{~/images/butwal.jpg}" alt="" />
             <p class="but-title">Butwal</p>
             <div class="overlay-three"></div>
-            <div class="b-7" onclick="butwal_bio()"><a class="a-3" href=""> See more </a></div>
-            <div class="b-8" onclick="butwal_map()"><a class="a-3" href=""> See Location </a></div>
+            <div class="b-7" onclick="butwal_bio()"><a class="a-3" > See more </a></div>
+            <div class="b-8" onclick="butwal_map()"><a class="a-3"> See Location </a></div>
             <div class="b-9"><a class="a-3" href=""> Book a Cab </a></div>
         </div>
     </div>

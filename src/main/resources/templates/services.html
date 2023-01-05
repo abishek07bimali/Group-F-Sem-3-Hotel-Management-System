@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="../static/javascript/script.js" defer></script>
-  <link href="../static/css/Service_navigation.css" rel="stylesheet">
-  <link href="../static/css/ServicesStyle.css" rel="stylesheet">
-  <link href="../static/css/tabstyle.css" rel="stylesheet">
+  <script th:src="@{/javascript/script.js}" defer></script>
+  <link th:href="@{/css/home_navigation.css}" rel="stylesheet">
+  <link th:href="@{/css/ServiceStyle.css}" rel="stylesheet">
+  <link th:href="@{/css/tabstyle.css}" rel="stylesheet">
   <link rel="shortcut icon" type="x-icon" href="../static/images/ServicesImages/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <title>Services: List of the services provided to custoemr</title>
@@ -21,14 +21,31 @@
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo"> <a href="#"><img src="../static/images/ServicesImages/logo.png" alt=""></a></label>
+    <label class="logo"> <a th:href="@{/homepage.html}"><img th:src="@{images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a th:href="@{/user/homepage}">Home</a></li>
       <li><a href="#">About</a></li>
-      <li><a class="active">Services</a></li>
+      <li><a class="active" th:href="@{/user/services}">Services</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a href="#">Find us</a></li>
-      <button><a href="" class="login">bOOK</a></button>
+      <li><a th:href="@{/user/booking}">Book</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">See More</button>
+        <div class="dropdown-content">
+          <a th:href="@{/user/gallery}">Gallery</a>
+          <a th:href="@{/user/rooms}">Rooms</a>
+          <a th:href="@{/user/blog}">Blogs</a>
+          <a th:href="@{/user/nearby_places}">Visit nearby</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn imageButton">User</button>
+        <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
+        <div class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="#">Settings</a>
+          <a href="#">logout</a>
+        </div>
+      </div>
     </ul>
   </nav>
   <section>
@@ -44,7 +61,7 @@
       <div id="bar" data-tab-content class="active">
         <div class="maindiv">
           <div class="section">
-            <div id="zoom-in">
+            <div >
               <figure>
                 <img src="../static/images/ServicesImages/bar1.jpg" alt="">
               </figure>
@@ -60,7 +77,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div >
               <figure>              
                 <img src="../static/images/ServicesImages/bar2.jpg" alt="">
               </figure>
@@ -76,7 +93,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div >
               <figure>              <img src="../static/images/ServicesImages/bar3.jpg" alt="">
               </figure>
               <div class="text">
@@ -96,7 +113,7 @@
       <div id="pickup" data-tab-content>
         <div class="maindiv">
             <div class="section">
-              <div id="zoom-in">
+              <div >
               <figure>
                 <img src="../static/images/ServicesImages/car1.jpg" alt="">
               </figure>
@@ -112,7 +129,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div >
               <figure>              <img src="../static/images/ServicesImages/car2.jpg" alt="">
               </figure>
               <div class="text">
@@ -127,7 +144,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div>
               <figure>              <img src="../static/images/ServicesImages/car3.jpg" alt="">
               </figure>
               <div class="text">
@@ -146,7 +163,7 @@
       <div id="restaurent" data-tab-content>
         <div class="maindiv">
             <div class="section">
-              <div id="zoom-in">
+              <div>
               <img src="../static/images/ServicesImages/resta1.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -160,7 +177,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div>
               <img src="../static/images/ServicesImages/resta2.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -174,7 +191,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div>
               <img src="../static/images/ServicesImages/rest3.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -192,7 +209,7 @@
       <div id="delights" data-tab-content>
         <div class="maindiv">
           <div class="section">
-            <div id="zoom-in">
+            <div>
               <img src="../static/images/ServicesImages/food1.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -206,7 +223,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div >
               <img src="../static/images/ServicesImages/food2.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -220,7 +237,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div>
               <img src="../static/images/ServicesImages/food3.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -238,7 +255,7 @@
       <div id="Gym" data-tab-content>
         <div class="maindiv">
             <div class="section">
-              <div id="zoom-in">
+              <div>
               <img src="../static/images/ServicesImages/gym1.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -252,7 +269,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div>
               <img src="../static/images/ServicesImages/gym2.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -266,7 +283,7 @@
             </div>
           </div>
           <div class="section">
-            <div id="zoom-in">
+            <div >
               <img src="../static/images/ServicesImages/gym3.jpg" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque

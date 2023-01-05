@@ -25,11 +25,6 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/homepage")
-    public String getRegisterPage() {
-        return "homepage";
-    }
-
 
 
     @GetMapping("/create")

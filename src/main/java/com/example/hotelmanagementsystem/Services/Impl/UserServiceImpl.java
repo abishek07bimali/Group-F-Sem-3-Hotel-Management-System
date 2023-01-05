@@ -36,9 +36,13 @@ public class UserServiceImpl implements UserService {
         return "created";
     }
 
+
     @Override
     public String save(BookingPojo bookingPojo) {
         Booking booking=new Booking();
+        if(bookingPojo.getId()!=null){
+            booking.setId(bookingPojo.getId());
+        }
         booking.setFullname(bookingPojo.getFullname());
         booking.setNumber_of_people(bookingPojo.getNumber_of_people());
         booking.setMobileNo(bookingPojo.getMobile_no());
@@ -63,11 +67,25 @@ public class UserServiceImpl implements UserService {
         return "sent";
     }
 
+    @Override
+    public Booking fetchById(Integer id) {
+        return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+//    @Override
+//    public Booking deleteById(Integer id) {
+//        return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+//    }
+
     public List<Booking> fetchAll(){
         return this.bookingRepo.findAll();
     }
 
+    @Override
+    public void deleteById(Integer id) {
+        bookingRepo.deleteById(id);
 
+    }
 
 
 }
