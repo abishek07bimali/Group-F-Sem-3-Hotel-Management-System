@@ -1,6 +1,9 @@
 package com.example.hotelmanagementsystem.Controller;
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -54,8 +57,20 @@ public class AdminController {
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id) {
         userService.deleteById(id);
-
         return "redirect:/admin/list";
+    }
+
+    @GetMapping("/blog-List")
+    public String getBlogList(Model model){
+//        List<Blog> blogs = userService.fetchAll();
+        model.addAttribute("blog", new BlogPojo());
+        return "blog";
+    }
+
+    @GetMapping("/newblog")
+    public String AddBlog(Model model) {
+        model.addAttribute("newBlog", new BlogPojo());
+        return "admin_blog";
     }
 
 }

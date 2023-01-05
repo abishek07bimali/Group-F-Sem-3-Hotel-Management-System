@@ -1,9 +1,11 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.User;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -64,6 +66,11 @@ public class UserController {
         return "redirect:contact";
     }
 
+    @GetMapping("/viewBlog")
+    public String viewUserBlog(Model model){
+        model.addAttribute("bloglist", new BlogPojo());
+        return "blog";
+    }
 
 
 
