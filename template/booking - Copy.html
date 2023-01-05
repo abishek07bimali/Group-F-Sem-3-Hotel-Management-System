@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./booking.css">
+    <script defer src="./booking.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="/">
+            <h1>Book Now</h1>
+            <div class="input-control">
+                <label for="FullName">FullName</label>
+                <input id="FullName" name="FullName" type="text" >
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="Phone">Phone</label>
+                <input id="Phone" name="Phone" type="number" >
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="RoomType">Room Type</label>
+                <select name="RoomType" id="RoomType" >
+                    <option value="s">Single</option>
+                    <option value="c">Couple</option>
+                    <option value="f">Family</option>
+                    <option value="g">Group</option>
+                    <option value="h">Honeymoon</option>
+                </select>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="Number">Number Of People</label>
+                <!-- <input id="Number"name="Number" type="number"> -->
+                <select  id="people" >
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                    <option value="more">more than 4</option>
+                </select>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="date">Check in</label>
+                <!-- <input id="date" name="date" type="number"> -->
+                <input type="date" name="date" id="checkInDate" placeholder="date">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="date">Check Out</label>
+                <!-- <input id="date" name="date" type="number"> -->
+                <input type="date" name="date" id="checkOutDate" placeholder="date">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</body>
+</html>
