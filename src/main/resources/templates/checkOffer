@@ -12,3 +12,11 @@
      <div class="imgBx">
        <img src="t.jpg">
      </div>
+     <div class="content">
+        <div>
+        <h3>Special Offer</h3>
+        <h2>30<sup>%</sup><span>Off</span></h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae sapiente modi blanditiis doloribus, praesentium, sequi ipsum ullam facilis ad eius alias totam a reiciendis
+             mollitia quos tempore maxime amet asperiores.</p>
+             <a href="#">Book Now</a>
+            </div>
