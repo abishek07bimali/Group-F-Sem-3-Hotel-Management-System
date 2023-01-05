@@ -14,3 +14,33 @@
       transform: translate(-50%, -50%);
       display: none;
     }
+.contentBox{
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  box-shadow: 0 5px 15px rgba(0,0,0,0,1);
+}
+.contentBox .imgBx{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contentBox .imgBx::before{
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #e7ffe0;
+  border: 50%;
+}
+.contentBox .imgBx img{
+  position: relative;
+  max-width: 250px;
+  z-index: 1;
+}
