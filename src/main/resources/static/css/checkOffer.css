@@ -88,7 +88,7 @@
     right: 20px;
     width: 40px;
     height: 40px;
-    background: #f3f3f3 url(close.png);
+    background: #f3f3f3 url(../images/close.png);
     background-repeat: no-repeat;
     background-size: 10px;
     background-position: center;
@@ -119,7 +119,7 @@
       .close{
         top: -50px;
         right: -10px;
-        background: #fff url(close.png);
+        background: #fff url(../images/close.png);
         background-repeat: no-repeat;
         background-size: 10px;
         background-position: center;
