@@ -64,3 +64,21 @@
     line-height: 1em;
 
   }
+
+  .contentBox .content h2 span{
+    color:#333;
+    font-size: 0.75em;
+    text-transform:uppercase ;
+  }
+  .contentBox .content p{
+    font-weight: 300;
+  }
+  .contentBox .content a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4d54;
+    color: #fff;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+  }
