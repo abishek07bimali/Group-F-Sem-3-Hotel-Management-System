@@ -20,3 +20,13 @@
              mollitia quos tempore maxime amet asperiores.</p>
              <a href="#">Book Now</a>
             </div>
+        </div>
+    </div>
+   </div>
+    <script>
+      const popup=document.querySelector('.popup');
+      const close=document.querySelector('.close');
+      window.onload = function(){
+        setTimeout(function(){
+          popup.style.display="block"
+        }, 5000)
