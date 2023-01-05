@@ -20,15 +20,18 @@
 			<div class="contact-wrap">
 				<div class="contact-in">
 					<h1>Send a Message</h1>
-					<form >
-						<input type="text" placeholder="Full Name" class="contact-in-input" required>
-						<input type="email" placeholder="Email" class="contact-in-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-						<input type="text" placeholder="Subject" class="contact-in-input" required>
-						<textarea type="text" placeholder="Message" class="contact-in-textarea" required></textarea>
+					<form th:method="post" th:action="@{/user/send-message}" th:object="${contact}">
+						<input type="text" placeholder="Full Name" class="contact-in-input" required th:field="*{fullname}" th:value="${contact.fullname}">
+						<input type="email" placeholder="Email" class="contact-in-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${contact.email}">
+						<input type="text" placeholder="Subject" class="contact-in-input" required th:field="*{subject}" th:value="${contact.subject}">
+						<textarea type="text" placeholder="Message" class="contact-in-textarea" required th:field="*{message}" th:value="${contact.message}"></textarea>
 <!--						<input type="submit" value="SUBMIT" class="contact-in-btn">-->
-						<button type="submit" class="contact-in-btn"
-								function="submit-message"
-								onclick="submitMessage">SUBMIT</button>
+						<input type="submit" value="SUBMIT">
+
+						<!--						<button type="Submit" class="contact-in-btn">SUBMIT</button>-->
+
+						<!--								function="submit-message"-->
+<!--								onclick="submitMessage"-->
 <!--								style="color: black; font-size: larger; font-weight: bold; background-color: #ffca00; border-color: white; width: 100%; height: 45px; border-radius: 5px; align-self: center">SUBMIT</button>-->
 					</form>
 					<script src="../static/javascript/contact_page.js"></script>
@@ -43,10 +46,10 @@
 					<h2><i class="fa fa-map-marker" ></i> Our Services</h2>
 					<p>Restaurant, Lodging</p><p>Excursions and Tours</p>
 					<ul>
-						<li><a href="https://www.facebook.com" target="_blank" rel="nofollow" title="Facebook"><i class="fa fa-facebook"><image th:src="@{https://cdn-icons-png.flaticon.com/512/5968/5968764.png}"/></i></a></li>
-						<li><a href="https://www.twitter.com" target="_blank" rel="nofollow" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="https://www.google.com" target="_blank" rel="nofollow" title="Google"><i class="fa fa-google"></i></a></li>
-						<li><a href="https://www.instagram.com" target="_blank" rel="nofollow" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://www.facebook.com" target="_blank" rel="nofollow" title="Facebook"><i class="fa fa-facebook"><img th:src="@{https://cdn-icons-png.flaticon.com/512/5968/5968764.png}" alt=""></i></a></li>
+						<li><a href="https://www.twitter.com" target="_blank" rel="nofollow" title="Twitter"><i class="fa fa-twitter"><img th:src="@{https://www.flaticon.com/free-icon/twitter_2504839}"></i></a></li>
+						<li><a href="https://www.google.com" target="_blank" rel="nofollow" title="Google"><i class="fa fa-google"><img th:src="@{https://cdn-icons-png.flaticon.com/512/5968/5968764.png}"></i></a></li>
+						<li><a href="https://www.instagram.com" target="_blank" rel="nofollow" title="Instagram"><i class="fa fa-instagram"><img th:src="@{https://cdn-icons-png.flaticon.com/512/4138/4138124.png}"></i></a></li>
 					</ul>
 				</div>	
 				<div class="contact-in">
