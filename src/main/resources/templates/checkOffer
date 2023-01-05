@@ -30,3 +30,10 @@
         setTimeout(function(){
           popup.style.display="block"
         }, 5000)
+    }
+      close.addEventListener('click' , () => {
+        popup.style.display= "none";
+      })
+    </script>
+  </body>
+</html>
