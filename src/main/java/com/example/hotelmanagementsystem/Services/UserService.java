@@ -27,4 +27,5 @@ public interface UserService {
 
     String viewBlog(BlogPojo blogpojo);
 
+    String save(BlogPojo blogPojo);
 }

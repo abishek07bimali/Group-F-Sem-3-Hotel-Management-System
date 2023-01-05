@@ -8,6 +8,7 @@ import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
+import com.example.hotelmanagementsystem.repo.BlogRepo;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
 import com.example.hotelmanagementsystem.repo.ContactRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
@@ -24,6 +25,7 @@ public class UserServiceImpl implements UserService {
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
+    public final BlogRepo blogRepo;
 
 
 
@@ -91,6 +93,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String viewBlog(BlogPojo blogpojo) {
+        return null;
+    }
+
+    @Override
+    public String save(BlogPojo blogPojo) {
+        Blog blog =new Blog();
+        if(blogPojo.getId()!=null){
+            blog.setId(blogPojo.getId());
+        }
+        blog.setAuthor(blogPojo.getAuthor());
+        blog.setTopic(blogPojo.getTopic());
+        blog.setDate(blogPojo.getDate());
+        blog.setPhoneNum(blogPojo.getPhoneNum());
+        blog.setContent(blogPojo.getContent());
+//        blog.setImg(blogPojo.getImg());
+        blogRepo.save(blog);
         return null;
     }
 

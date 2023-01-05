@@ -55,10 +55,6 @@ public class UserController {
         return "redirect:homepage";
     }
 
-    @GetMapping("/contact")
-    public String getPage( Model model){
-        model.addAttribute("contact", new ContactPojo());
-        return "contact_page";}
 
     @PostMapping("/send-message")
     public String submitMessage(@Valid ContactPojo contactPojo){

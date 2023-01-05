@@ -1,8 +1,10 @@
 package com.example.hotelmanagementsystem.Controller;
 
 
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,7 +24,7 @@ public class HomepageController {
         return "gallery";
     }
 
-    @GetMapping("/blog")
+    @GetMapping("/blogs")
     public String getBlogs() {
         return "blog";
     }
@@ -33,7 +35,14 @@ public class HomepageController {
     }
 
     @GetMapping("/rooms")
-    public String getRooms() { return "rooms";
+    public String getRooms() {
+        return "rooms";
     }
+
+    @GetMapping("/contact")
+    public String getPage( Model model){
+        model.addAttribute("contact", new ContactPojo());
+        return "contact_page";}
+
 
 }
