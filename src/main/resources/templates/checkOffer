@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title> Offer page</title>
+    <link rel="stylesheet" href="b.css">
+  </head>
+  <body>
+    <div class="popup">
+     <div class="contentBox">
+       <div class="close"></div>
+     <div class="imgBx">
+       <img src="t.jpg">
+     </div>
