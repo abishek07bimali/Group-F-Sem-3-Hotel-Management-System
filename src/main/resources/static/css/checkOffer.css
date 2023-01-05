@@ -44,3 +44,23 @@
   max-width: 250px;
   z-index: 1;
 }
+.contentBox .content{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contentBox .content h3{
+    color: #333;
+    line-height:1em ;
+    font-weight: 300;
+    font-size: 2em;
+  }
+  .contentBox .content h2{
+    font-size: 4em;
+    color: #ff4d54;
+    line-height: 1em;
+
+  }
