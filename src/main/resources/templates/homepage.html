@@ -39,7 +39,7 @@ s0.parentNode.insertBefore(s1,s0);
   <link rel="stylesheet" th:href="@{~/css/footer.css}">
   <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
   <link rel="stylesheet" th:href="@{~/css/HomepageStyle.css}">
-  <link rel="stylesheet" href="@{~css/checkOffer.css}">
+  <link rel="stylesheet" th:href="@{~/css/checkOffer.css}">
 
 </head>
 
@@ -339,7 +339,7 @@ s0.parentNode.insertBefore(s1,s0);
   <div class="contentBox">
     <div class="close"></div>
   <div class="imgBx">
-    <img src="../static/images/t.jpg">
+    <img th:src="@{~/images/t.jpg}" alt="">
   </div>
   <div class="content">
      <div>
@@ -347,7 +347,7 @@ s0.parentNode.insertBefore(s1,s0);
      <h2>30<sup>%</sup><span>Off</span></h2>
        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae sapiente modi blanditiis doloribus, praesentium, sequi ipsum ullam facilis ad eius alias totam a reiciendis
           mollitia quos tempore maxime amet asperiores.</p>
-          <a href="booking.html">Book Now</a>
+          <a th:href="@{~/user/booking}">Book Now</a>
          </div>
      </div>
  </div>
