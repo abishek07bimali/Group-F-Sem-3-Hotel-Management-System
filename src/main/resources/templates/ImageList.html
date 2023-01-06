@@ -1,75 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+<!--    <title>Image List</title>-->
+<!--    <link rel="stylesheet" href="../static/css/imageList.css">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<div class="Main-wrapper">-->
+<!--    <div class="ImageList">-->
+<!--        <div class="wrapper-top">-->
+<!--            <h2>Image List</h2>-->
+<!--            <div class="search-icon">-->
+<!--                <input type="text" placeholder="Search by path" name="search">-->
+<!--                <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>-->
+<!--            </div>-->
+<!--            <button class="btn1"><a href="add_image.html">+ Add Images</a></button>-->
+
+<!--        </div>-->
+
+<!--        <div style="overflow-x:auto;"></div>-->
+<!--        <table id="image-table">-->
+<!--            <tr>-->
+<!--                <th>Image_Id</th>-->
+<!--                <th>Image</th>-->
+<!--                <th>Image_Path</th>-->
+
+
+<!--                <th>Action</th>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>1</td>-->
+<!--                <td><img src="../static/images/coupleroom1.jpg"></td>-->
+<!--                <td>coupleroom1.jpg</td>-->
+
+
+<!--                <td>-->
+<!--                    <div class="td1">-->
+
+
+<!--                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+
+<!--                    </div>-->
+<!--                </td>-->
+
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td id="image-id">2</td>-->
+<!--                <td><img src="../static/images/gallery2.jpg"></td>-->
+<!--                <td >gallery2.jpg</td>-->
+
+<!--                <td ><div class="td1">-->
+
+
+<!--                    <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>-->
+
+<!--                </div>  </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+
+
+<!--    </div>-->
+
+
+
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Rooms</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Image List</title>
-    <link rel="stylesheet" href="../static/css/imageList.css">
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{/css/imageList.css}">
 </head>
 <body>
+
 <div class="Main-wrapper">
-    <div class="ImageList">
-        <div class="wrapper-top">
-            <h2>Image List</h2>
-            <div class="search-icon">
-                <input type="text" placeholder="Search by path" name="search">
-                <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
-            </div>
-            <button class="btn1"><a href="add_image.html">+ Add Images</a></button>
-
+    <div class="wrapper-top">
+        <h2>Add Images To Gallery</h2>
+        <div class="search-icon">
+            <input type="text" placeholder="Search by name" name="search">
+            <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
         </div>
-
-        <div style="overflow-x:auto;"></div>
-        <table id="image-table">
-            <tr>
-                <th>Image_Id</th>
-                <th>Image</th>
-                <th>Image_Path</th>
-
-
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td><img src="../static/images/coupleroom1.jpg"></td>
-                <td>coupleroom1.jpg</td>
-
-
-                <td>
-                    <div class="td1">
-
-
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                    </div>
-                </td>
-
-            </tr>
-            <tr>
-                <td id="image-id">2</td>
-                <td><img src="../static/images/gallery2.jpg"></td>
-                <td >gallery2.jpg</td>
-
-                <td ><div class="td1">
-
-
-                    <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                </div>  </td>
-            </tr>
-        </table>
-
-
+        <button class="btn1"><a href="add_image.html">+ Add Images</a></button>
 
     </div>
 
+    <div style="overflow-x:auto;"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>Image_Id</th>
+<!--            <th>Image</th>-->
+            <th>Image_path</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="image:${imagelist}">
+            <!--                    <td th:text="${user.id}"></td>-->
+            <td th:text="${image.Image_path}"></td>
+
+            <!--                    <td> <a class="edit" th:href="@{~/user/edit/}+${user.id}" >edit</a></td>-->
+
+        </tr>
+        </tbody>
+
+
+
+
+
+    </table>
 
 
 
