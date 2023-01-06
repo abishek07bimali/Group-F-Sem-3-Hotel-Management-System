@@ -125,31 +125,31 @@ body {
 }
 
 
- /*.fa {*/
-	/* display: inline-block;*/
-	/* font-family: "Font Awesome 5 Free";*/
-	/* font-style: normal;*/
-	/* font-weight: 900;*/
-	/* line-height: 1;*/
-	/* -webkit-font-smoothing: antialiased;*/
-	/* -moz-osx-font-smoothing: grayscale;*/
- /*}*/
+ .fa {
+	 display: inline-block;
+	 font-family: "Font Awesome 5 Free";
+	 font-style: normal;
+	 font-weight: 900;
+	 line-height: 1;
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+ }
 
- /*.fa-facebook:before {*/
-	/* content: "\f09a";*/
- /*}*/
+ .fa-facebook:before {
+	 content: "\f09a";
+ }
 
- /*.fa-twitter:before {*/
-	/* content: "\f099";*/
- /*}*/
+ .fa-twitter:before {
+	 content: "\f099";
+ }
 
- /*.fa-google:before {*/
-	/* content: "\f1a0";*/
- /*}*/
+ .fa-google:before {
+	 content: "\f1a0";
+ }
 
- /*.fa-instagram:before {*/
-	/* content: "\f16d";*/
- /*}*/
+ .fa-instagram:before {
+	 content: "\f16d";
+ }
 
 
 @media (max-width: 1350px){

@@ -25,7 +25,7 @@ public class HomepageController {
         return "gallery";
     }
 
-    @GetMapping("/viewBlog")
+    @GetMapping("/viewblog")
     public String viewUserBlog(){
 //        model.addAttribute("blog", new BlogPojo());
         return "blog";
