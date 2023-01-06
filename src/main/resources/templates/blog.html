@@ -17,7 +17,7 @@
         <div class="card" th:each="blog:${blogList}">
           <h2 th:text="${blog.topic}"></h2>
           <h5 th:text="${blog.topic}", th:text="${blog.date}"></h5>
-          <div class="fakeimg" style="height:100%;"><img th:src="${./images/bg_img.jpg}" alt="img"></div>
+          <div class="fakeimg" style="height:100%;"><img th:src="${~/images/bg_img.jpg}" alt="img"></div>
           <p th:text="${blog.content}"></p>
         </div>
 <!--        <div class="card">-->

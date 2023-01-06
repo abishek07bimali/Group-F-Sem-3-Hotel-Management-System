@@ -71,12 +71,12 @@ public class AdminController {
     public String getBlogList(Model model){
 //        List<Blog> blogs = userService.fetchAll();
         model.addAttribute("blog", new BlogPojo());
-        return "blog";
+        return "adminBlogPage";
     }
 
     @GetMapping("/newblog")
     public String AddBlog(Model model) {
-        model.addAttribute("newBlog", new BlogPojo());
+        model.addAttribute("blog", new BlogPojo());
         return "admin_blog";
     }
 

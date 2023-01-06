@@ -55,6 +55,10 @@ public class UserController {
         return "redirect:homepage";
     }
 
+    @GetMapping("/contact")
+    public String getPage( Model model){
+        model.addAttribute("contact", new ContactPojo());
+        return "contact_page";}
 
     @PostMapping("/send-message")
     public String submitMessage(@Valid ContactPojo contactPojo){
@@ -64,7 +68,7 @@ public class UserController {
 
     @GetMapping("/viewBlog")
     public String viewUserBlog(Model model){
-        model.addAttribute("bloglist", new BlogPojo());
+        model.addAttribute("blog", new BlogPojo());
         return "blog";
     }
 
