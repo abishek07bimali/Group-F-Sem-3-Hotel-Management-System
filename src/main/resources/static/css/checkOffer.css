@@ -53,20 +53,20 @@
     align-items: center;
   }
   .contentBox .content h3{
-    color: #333;
+    color: #23395d;
     line-height:1em ;
     font-weight: 300;
     font-size: 2em;
   }
   .contentBox .content h2{
     font-size: 4em;
-    color: #000080;
+    color: #23395d;
     line-height: 1em;
 
   }
 
   .contentBox .content h2 span{
-    color:#333;
+    color:#23395d;
     font-size: 0.75em;
     text-transform:uppercase ;
   }
@@ -76,7 +76,7 @@
   .contentBox .content a{
     display: inline-block;
     padding: 10px 20px;
-    background-color: #000080;
+    background-color: #23395d;
     color: #fff;
     margin-top: 15px;
     text-decoration: none;
