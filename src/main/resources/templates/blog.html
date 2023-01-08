@@ -14,26 +14,24 @@
     
     <div class="row_blog">
       <div class="leftcolumn">
-        <div class="card">
-          <h2>Wedding</h2>
-          <h5>Wedding happening, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:100%;"><img src="../static/images/bg_img.jpg" alt="img"></div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, possimus.
-             Nesciunt labore impedit maxime id delectus sapiente possimus atque consequatur
-              corrupti et animi temporibus libero optio cum officiis, numquam iusto!</p>
-        </div>
-        <div class="card">
-          <h2>Renovation</h2>
-          <h5>Some discription of the topic, Sep 2, 2017</h5>
-          <div class="fakeimg" style="height:100%;"><img src="../static/images/bg_img.jpg" alt="img"></div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi incidunt in deserunt vel
-             quibusdam quam rerum quis eos illum. Tempora in labore atque iste reprehenderit corrupti,
-             possimus pariatur quasi maxime.</p>
-        </div>
+<!--        <div class="card" th:each="blog:${blogList}">-->
+<!--          <h2 th:text="${blog.topic}"></h2>-->
+<!--          <h5 th:text="${blog.topic}", th:text="${blog.date}"></h5>-->
+<!--          <div class="fakeimg" style="height:100%;"><img th:src="${~/images/bg_img.jpg}" alt="img"></div>-->
+<!--          <p th:text="${blog.content}"></p>-->
+<!--        </div>-->
+<!--        <div class="card">-->
+<!--          <h2>Renovation</h2>-->
+<!--          <h5>Some discription of the topic, Sep 2, 2017</h5>-->
+<!--          <div class="fakeimg" style="height:100%;"><img src="../static/images/bg_img.jpg" alt="img"></div>-->
+<!--          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi incidunt in deserunt vel-->
+<!--             quibusdam quam rerum quis eos illum. Tempora in labore atque iste reprehenderit corrupti,-->
+<!--             possimus pariatur quasi maxime.</p>-->
+<!--        </div>-->
       </div>
       <div class="rightcolumn">
-        <div class="card">
-          <h2>About Me</h2>
+<!--        <div class="card" th:each="blog:${blogList}">-->
+<!--          <h2 th:text="${blog.topic}"></h2>-->
           <div class="fakeimg" style="height:100%;"><img src="../static/images/bg_img.jpg" alt="img"></div>
           <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
         </div>

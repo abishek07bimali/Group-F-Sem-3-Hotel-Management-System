@@ -1,10 +1,11 @@
 <!DOCTYPE html >
-<html lang="eng">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
 	<head>
 		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
 		<meta name="viewport"content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 		<title>Contact Page</title>
-		<link href="../static/css/contact_us.css" rel="stylesheet">
+		<link th:href="@{/css/contact_us.css}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 	</head>
 	<body>
@@ -19,28 +20,48 @@
 			<div class="contact-wrap">
 				<div class="contact-in">
 					<h1>Send a Message</h1>
-					<form>
-						<input type="text" placeholder="Full Name" class="contact-in-input">
-						<input type="text" placeholder="Email" class="contact-in-input">
-						<input type="text" placeholder="Subject" class="contact-in-input">
-						<textarea placeholder="Message" class="contact-in-textarea"></textarea>
+					<form th:method="post" th:action="@{/user/send-message}" th:object="${contact}">
+						<input type="text" placeholder="Full Name" class="contact-in-input" required th:field="*{fullname}" th:value="${contact.fullname}">
+						<input type="email" placeholder="Email" class="contact-in-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${contact.email}">
+						<input type="text" placeholder="Subject" class="contact-in-input" required th:field="*{subject}" th:value="${contact.subject}">
+						<textarea type="text" placeholder="Message" class="contact-in-textarea" required th:field="*{message}" th:value="${contact.message}"></textarea>
 						<input type="submit" value="SUBMIT" class="contact-in-btn">
+<!--						<input type="submit" value="SUBMIT">-->
+
+						<!--						<button type="Submit" class="contact-in-btn">SUBMIT</button>-->
+
+						<!--								function="submit-message"-->
+<!--								onclick="submitMessage"-->
+<!--								style="color: black; font-size: larger; font-weight: bold; background-color: #ffca00; border-color: white; width: 100%; height: 45px; border-radius: 5px; align-self: center">SUBMIT</button>-->
 					</form>
+					<script src="../static/javascript/contact_page.js"></script>
 				</div>
 				<div class="contact-in">
 					<!-- <h1>Contact us</h1> -->
-					<h2><i class="fa fa-phone"></i>Call or Email</h2>
+					<h2><i class="fa fa-phone"></i> Call or Email</h2>
 					<p>01-5xxxxxx, 9800000000</p>
 					<p>hotel@email.com</p>
-					<h2><i class="fa fa-envelope" ></i>Location</h2>
+					<h2><i class="fa fa-envelope" ></i> Location</h2>
 					<p>Kathmandu; Nepal</p>
-					<h2><i class="fa fa-map-marker" ></i>Our Services</h2>
+					<h2><i class="fa fa-map-marker" ></i> Our Services</h2>
 					<p>Restaurant, Lodging</p><p>Excursions and Tours</p>
 					<ul>
-						<li><a href="https://www.facebook.com"><i class="fa fa-facebook"><img src="../static/images/facebook.png" alt=""></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"><img src="../static/images/twitter.png" alt=""></i></a></li>
-						<li><a href="#"><i class="fa fa-google"><img src="../static/images/google.png" alt=""></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"><img src="../static/images/instagram.png" alt=""></i></a></li>
+						<li><a href="https://www.facebook.com" target="_blank" rel="nofollow" title="Facebook"><i class="fa fa-facebook">
+							<img th:src="@{https://cdn-icons-png.flaticon.com/512/5968/5968764.png}" alt="">
+						</i></a></li>
+						<li><a href="https://www.twitter.com" target="_blank" rel="nofollow" title="Twitter"><i class="fa fa-twitter">
+							<img th:src="@{https://cdn-icons-png.flaticon.com/512/2504/2504839.png}">
+						</i></a></li>
+<!--						<li><a href="https://www.google.com" target="_blank" rel="nofollow" title="Google"><i class="fa fa-google"><img th:src="@{https://cdn-icons-png.flaticon.com/512/5968/5968764.png}"></i></a></li>-->
+						<li><a href="https://www.instagram.com" target="_blank" rel="nofollow" title="Instagram"><i class="fa fa-instagram">
+							<img th:src="@{https://cdn-icons-png.flaticon.com/512/4138/4138124.png}">
+						</i></a></li>
+						<li><a href="https://github.com/abishek07bimali/Group-F-Sem-3-Hotel-Management-System" target="_blank" rel="nofollow" title="Github"><i class="fa fa-github">
+							<img th:src="@{https://cdn-icons-png.flaticon.com/512/733/733553.png}">
+						</i></a></li>
+						<li><a href="https://trello.com/b/v1pwvCJD/group-f" target="_blank" rel="nofollow" title="Github"><i class="fa fa-trello">
+							<img th:src="@{https://cdn-icons-png.flaticon.com/512/732/732252.png}">
+						</i></a></li>
 					</ul>
 				</div>	
 				<div class="contact-in">
