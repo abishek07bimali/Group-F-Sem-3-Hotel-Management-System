@@ -28,21 +28,21 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userpojo) {
         userService.save(userpojo);
-        return "redirect:homepage";
+        return "homepage";
     }
 
 
     @GetMapping("/booking")
     public String BookHotel(Model model) {
         model.addAttribute("booking", new BookingPojo());
-        return "booking1";
+        return "booking";
     }
 
 
     @PostMapping("/savebook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
-        return "redirect:homepage";
+        return "homepage";
     }
 
 }
