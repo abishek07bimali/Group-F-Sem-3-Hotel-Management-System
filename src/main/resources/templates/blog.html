@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>User Blog</title>
     <link rel="stylesheet" th:href="@{/css/blog.css}" />
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
   </head>
 
   <body>
@@ -32,14 +34,14 @@
       <div class="rightcolumn">
 <!--        <div class="card" th:each="blog:${blogList}">-->
 <!--          <h2 th:text="${blog.topic}"></h2>-->
-          <div class="fakeimg" style="height:100%;"><img src="../static/images/bg_img.jpg" alt="img"></div>
+          <div class="fakeimg" style="height:100%;"><img th:src="@{~/images/bg_img.jpg}" alt="img"></div>
           <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
         </div>
         <div class="card">
           <h3>Popular Post</h3>
-          <div class="fakeimg"><img src="../static/images/bg_img.jpg" alt="img"></div><br>
-          <div class="fakeimg"><img src="../static/images/bg_img.jpg" alt="img"></div><br>
-          <div class="fakeimg"><img src="../static/images/bg_img.jpg" alt="img"></div>
+          <div class="fakeimg"><img th:src="@{~/images/bg_img.jpg}" alt="img"></div><br>
+          <div class="fakeimg"><img  th:src="@{~/images/bg_img.jpg}"  alt="img"></div><br>
+          <div class="fakeimg"><img  th:src="@{~/images/bg_img.jpg}"  alt="img"></div>
         </div>
         <div class="card">
           <h3>Follow Me</h3>
@@ -75,7 +77,7 @@
     </form>
   
   </div>
-  <script src="../static/javascript/comment.js"></script>
+  <script th:src="@{~/javascript/comment.js}"></script>
 
 <!--    News section-->
     <section class="recentNews">
@@ -181,10 +183,7 @@
         </div>
       </div>
     </section>
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
-
-    <div class="footer">
-      <h2>Footer</h2>
-    </div>
   </body>
 </html>

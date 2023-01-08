@@ -41,6 +41,12 @@ public class HomepageController {
         return "rooms";
     }
 
+
+    @GetMapping("/packages")
+    public String getpackages() {
+        return "seepackage";
+    }
+
     @GetMapping("/contact")
     public String getPage( Model model){
         model.addAttribute("contact", new ContactPojo());
