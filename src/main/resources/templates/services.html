@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script th:src="@{/javascript/script.js}" defer></script>
-  <link th:href="@{/css/home_navigation.css}" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
   <link th:href="@{/css/ServiceStyle.css}" rel="stylesheet">
   <link th:href="@{/css/tabstyle.css}" rel="stylesheet">
   <link rel="shortcut icon" type="x-icon" href="../static/images/ServicesImages/logo.png">
@@ -23,18 +23,18 @@
     </label>
     <label class="logo"> <a th:href="@{/homepage.html}"><img th:src="@{images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
-      <li><a th:href="@{/user/homepage}">Home</a></li>
+      <li><a th:href="@{~/homepage}">Home</a></li>
       <li><a href="#">About</a></li>
-      <li><a class="active" th:href="@{/user/services}">Services</a></li>
+      <li><a class="active" th:href="@{~/user/services}">Services</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a th:href="@{/user/booking}">Book</a></li>
+      <li><a th:href="@{~/user/booking}">Book</a></li>
       <div class="dropdown">
         <button class="dropbtn">See More</button>
         <div class="dropdown-content">
-          <a th:href="@{/user/gallery}">Gallery</a>
-          <a th:href="@{/user/rooms}">Rooms</a>
-          <a th:href="@{/user/blog}">Blogs</a>
-          <a th:href="@{/user/nearby_places}">Visit nearby</a>
+          <a th:href="@{~/user/gallery}">Gallery</a>
+          <a th:href="@{~/user/rooms}">Rooms</a>
+          <a th:href="@{~/user/blog}">Blogs</a>
+          <a th:href="@{~/user/nearby_places}">Visit nearby</a>
         </div>
       </div>
       <div class="dropdown">
@@ -63,7 +63,7 @@
           <div class="section">
             <div >
               <figure>
-                <img src="../static/images/ServicesImages/bar1.jpg" alt="">
+                <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
               </figure>
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -79,7 +79,7 @@
           <div class="section">
             <div >
               <figure>              
-                <img src="../static/images/ServicesImages/bar2.jpg" alt="">
+                <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
               </figure>
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -94,7 +94,7 @@
           </div>
           <div class="section">
             <div >
-              <figure>              <img src="../static/images/ServicesImages/bar3.jpg" alt="">
+              <figure> <img th:src="@{~/images/ServicesImages/bar3.jpg}" alt="">
               </figure>
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -115,7 +115,7 @@
             <div class="section">
               <div >
               <figure>
-                <img src="../static/images/ServicesImages/car1.jpg" alt="">
+                <img th:src="@{~/images/ServicesImages/car1.jpg}" alt="">
               </figure>
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -130,7 +130,7 @@
           </div>
           <div class="section">
             <div >
-              <figure>              <img src="../static/images/ServicesImages/car2.jpg" alt="">
+              <figure>              <img th:src="@{~/images/ServicesImages/car2.jpg}" alt="">
               </figure>
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -145,7 +145,7 @@
           </div>
           <div class="section">
             <div>
-              <figure>              <img src="../static/images/ServicesImages/car3.jpg" alt="">
+              <figure>              <img th:src="@{~/images/ServicesImages/car3.jpg}" alt="">
               </figure>
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
@@ -164,7 +164,7 @@
         <div class="maindiv">
             <div class="section">
               <div>
-              <img src="../static/images/ServicesImages/resta1.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/resta1.jpg}" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -178,7 +178,7 @@
           </div>
           <div class="section">
             <div>
-              <img src="../static/images/ServicesImages/resta2.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/resta2.jpg}" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -192,7 +192,7 @@
           </div>
           <div class="section">
             <div>
-              <img src="../static/images/ServicesImages/rest3.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/rest3.jpg}"  alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -210,7 +210,7 @@
         <div class="maindiv">
           <div class="section">
             <div>
-              <img src="../static/images/ServicesImages/food1.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/food1.jpg}"  alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -224,7 +224,7 @@
           </div>
           <div class="section">
             <div >
-              <img src="../static/images/ServicesImages/food2.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/food2.jpg}" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -238,7 +238,7 @@
           </div>
           <div class="section">
             <div>
-              <img src="../static/images/ServicesImages/food3.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/food3.jpg}" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -256,7 +256,7 @@
         <div class="maindiv">
             <div class="section">
               <div>
-              <img src="../static/images/ServicesImages/gym1.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/gym1.jpg}" alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -270,7 +270,7 @@
           </div>
           <div class="section">
             <div>
-              <img src="../static/images/ServicesImages/gym2.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/gym2.jpg}"  alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor
@@ -284,7 +284,7 @@
           </div>
           <div class="section">
             <div >
-              <img src="../static/images/ServicesImages/gym3.jpg" alt="">
+              <img th:src="@{~/images/ServicesImages/gym3.jpg}"  alt="">
               <div class="text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quam fugiat velit ad, culpa itaque
                 dolor

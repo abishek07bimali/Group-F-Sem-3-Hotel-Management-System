@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery of Luxury Hotel </title>
      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.magnific-popup/1.0.0/magnific-popup.css"> 
-     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    <link rel="stylesheet" type="text/css" th:href="@{/css/gallery.css}">
-
-
-    <script th:src="@{javascript/gallery.js}"></script>
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{~/css/gallery.css}">
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.magnific-popup/1.0.0/jquery.magnific-popup.js"></script>
+    <script th:src="@{~/javascript/gallery.js}"></script>
+
 </head>
 <body>
     <div class="Main-Wrapper">
@@ -29,7 +30,7 @@
             <!-- <div class="col-md-4">
                 <div class="resources-item"> -->
                     <div id="bottom-up1" class="resources-category-image">
-                        <a href="../static/images/gallery5.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery5.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery5.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery5.jpg}"  style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -37,7 +38,7 @@
             <!-- <div class="col-md-4">
                 <div class="resources-item"> -->
                     <div id="bottom-up2" class="resources-category-image">
-                      <a href="../static/images/gallery3.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery3.jpg"  style="width:100% ;height:100% ;" /> </a>
+                      <a th:href="@{~/images/gallery3.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery3.jpg}"   style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -45,7 +46,7 @@
             <!-- <div class="col-md-4">
                 <div class="resources-item"> -->
                     <div id="bottom-up3" class="resources-category-image">
-                        <a href="../static/images/gallery13.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery13.jpg" style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery13.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery13.jpg}" style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -54,7 +55,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up4" class="resources-category-image">
-                        <a href="../static/images/gallery9.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery9.jpg"   style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery14.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery14.jpg}"  style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -62,7 +63,7 @@
             <!-- <div class="col-md-4">
                 <div class="resources-item"> -->
                     <div id="bottom-up5" class="resources-category-image">
-                        <a href="../static/images/gallery12.jpg" title="Environment"></a><img class="img-responsive" src="../static/images/gallery12.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery12.jpg}" title="Environment"></a><img class="img-responsive" th:src="@{~/images/gallery12.jpg}"  style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div>
@@ -71,7 +72,7 @@
                 <div class="resources-item"> -->
                     
                     <div id="bottom-up6" class="resources-category-image">
-                        <a href="../static/images/gallery1.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery1.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery1.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery1.jpg}" style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -80,7 +81,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up7" class="resources-category-image">
-                        <a href="../static/images/gallery2.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery2.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery2.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery2.jpg}"   style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -89,7 +90,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up8" class="resources-category-image">
-                        <a href="../static/images/gallery3.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery3.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery3.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery3.jpg}"   style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -98,7 +99,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up9" class="resources-category-image">
-                        <a href="../static/images/premium3.jpg" title="Environment"><img class="img-responsive" src="../static/images/premium3.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a  th:href="@{~/images/premium3.jpg}"  title="Environment"><img class="img-responsive" th:src="@{~/images/premium3.jpg}"   style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -107,7 +108,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up10" class="resources-category-image">
-                        <a href="../static/images/gallery4.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery4.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery2.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery2.jpg}" style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -116,7 +117,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up11" class="resources-category-image">
-                        <a href="../static/images/gallery6.jpg" title="Environment"> <img class="img-responsive" src="../static/images/gallery6.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery6.jpg}" title="Environment"> <img class="img-responsive" th:src="@{~/images/gallery6.jpg}"  style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -125,7 +126,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up12" class="resources-category-image">
-                        <a href="../static/images/gallery4.jpg" title="Environment"> <img class="img-responsive" src="../static/images/luxeroom4.jpg"  style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/luxeroom4.jpg}" title="Environment"> <img class="img-responsive" th:src="@{~/images/luxeroom4.jpg}"  style="width:100% ;height:100% ;" /> </a>
                     </div>
                 <!-- </div> -->
             <!-- </div> -->
@@ -134,7 +135,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up13" class="resources-category-image">
-                        <a href="../static/images/gallery11.jpg" title="Environment"> <img class="img-responsive" src="../static/images/gallery11.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery11.jpg}" title="Environment"> <img class="img-responsive" th:src="@{~/images/gallery11.jpg}"  style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -143,7 +144,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up14" class="resources-category-image">
-                        <a href="../static/images/gallery8.jpg" title="Environment"> <img class="img-responsive" src="../static/images/gallery8.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery8.jpg}" title="Environment"> <img class="img-responsive" th:src="@{~/images/gallery8.jpg}"  style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -152,7 +153,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up15" class="resources-category-image">
-                        <a href="../static/images/gallery6.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery6.jpg" style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery6.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery6.jpg}" style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -161,7 +162,7 @@
                 <!-- <div class="resources-item"> -->
 
                     <div id="bottom-up16" class="resources-category-image">
-                        <a href="../static/images/gallery10.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery10.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery10.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery10.jpg}"  style="width:100% ;height:100% ;"/> </a>
                         </div>
                 <!-- </div>
             </div> -->
@@ -170,7 +171,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up17" class="resources-category-image">
-                        <a href="../static/images/gallery15.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery15.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery15.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery15.jpg}"  style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -179,7 +180,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up18" class="resources-category-image">
-                        <a href="../static/images/gallery14.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery14.jpg"  style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery14.jpg}" title="Environment"><img class="img-responsive" th:src="@{~/images/gallery14.jpg}" style="width:100% ;height:100% ;"/> </a>
                     </div>
                 <!-- </div>
             </div> -->
@@ -188,7 +189,7 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up19" class="resources-category-image">
-                        <a href="../static/images/gallery13.jpg" title="Environment"><img class="img-responsive" src="../static/images/gallery13.jpg" style="width:100% ;height:100% ;"/> </a>
+                        <a th:href="@{~/images/gallery13.jpg}"title="Environment"><img class="img-responsive" th:src="@{~/images/gallery13.jpg}" style="width:100% ;height:100% ;"/> </a>
                         </div>
                 <!-- </div>
             </div> -->
@@ -197,7 +198,7 @@
                 <div class="resources-item"> -->
 
                         <div id="bottom-up20" class="resources-category-image">
-                            <a href="../static/images/gallery7.jpg" title="Environment"> <img class="img-responsive" src="../static/images/gallery7.jpg"  style="width:100% ;height:100% ;"/> </a>
+                            <a th:href="@{~/images/gallery7.jpg}" title="Environment"> <img class="img-responsive" th:src="@{~/images/gallery7.jpg}"  style="width:100% ;height:100% ;"/> </a>
                         </div>
                 <!-- </div>
             </div> -->
@@ -206,33 +207,19 @@
                 <div class="resources-item"> -->
 
                     <div id="bottom-up21" class="resources-category-image">
-                        <a href="../static/images/gallery2.jpg" title="Environment"> <img class="img-responsive" src="../static/images/gallery2.jpg " style="width:100% ;height:100% ;" /> </a>
+                        <a th:href="@{~/images/gallery2.jpg}" title="Environment"> <img class="img-responsive" th:src="@{~/images/gallery2.jpg}" style="width:100% ;height:100% ;" /> </a>
                         </div>
                 <!-- </div>
             </div> -->
-                
+
 
              
         </div>
 
-                
-
-
-
-       
-       
-    
-
-
-    
-         
-
-      
-
-
-       
     </div>
-    
+
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
+
 
 </body>
 </html>
