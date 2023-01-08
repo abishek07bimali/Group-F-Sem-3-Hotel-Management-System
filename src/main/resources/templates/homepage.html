@@ -39,10 +39,9 @@
       <li><a href="#">About</a></li>
       <li><a th:href="@{~/homepage/services}">Services</a></li>
       <li><a th:href="@{~/homepage/contact}">Contact</a></li>
-      <li><a th:href="@{~/homepage/booking}">Book</a></li>
-      <li><a href="#">Contact</a></li>
+<!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
+<!--      <li><a href="#">Contact</a></li>-->
       <li><a th:href="@{~/user/booking}">Book</a></li>
-
       <div class="dropdown">
         <button class="dropbtn">See More</button>
         <div class="dropdown-content">
@@ -138,28 +137,28 @@
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
           <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="Image Not Available">
-          <h2>Deluxe room</h2>
+          <h2>Premium room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
-          <button><a href="#">Details</a></button>
+          <button><a th:href="@{~/rooms/premiumroom}">Details</a></button>
           <!-- </div> -->
         </div>
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
           <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
           <!-- </div> -->
-          <h2>Deluxe room</h2>
+          <h2>Couple room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
-          <button><a href="#">Details</a></button>
+          <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
         </div>
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
           <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-          <h2>Deluxe room</h2>
+          <h2>Luxe room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
-          <button><a href="#">Details</a></button>
+          <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
           <!-- </div> -->
         </div>
       </div>
@@ -178,7 +177,7 @@
         <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
         <br>
         <br>
-        <button><a href="#">Explore More</a></button>
+        <button><a th:href="@{~/homepage/gallery}">Explore More</a></button>
       </div>
     </div>
     <!-- reviews -->
@@ -282,7 +281,7 @@
           <button><a href="#">Read More</a></button>
         </div>
       </div>
-      <button class="button"> <a href="#"> Read All</a></button>
+      <button class="button"> <a  th:href="@{~/homepage/viewblog}"> Read All</a></button>
     
     </div>
   </section>
