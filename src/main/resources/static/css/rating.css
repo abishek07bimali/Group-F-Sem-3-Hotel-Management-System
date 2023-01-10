@@ -26,3 +26,24 @@ body{
     text-align:center ;
     animation: slide-up 1s ease;
 }
+@keyframes slide-up{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity:1 ;
+        transform: translateY(0px);
+    }
+}
+
+.star{
+    font-size: 3rem;
+    color: #ff9800;
+    background-color: unset;
+    border:none ;
+}
+
+.star:hover{
+    cursor: pointer;
+}
