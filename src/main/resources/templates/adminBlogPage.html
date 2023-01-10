@@ -22,7 +22,7 @@
                     <input type="text" placeholder="Search by name" name="search">
                     <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
                 </div>
-                <button class="btn1"><a href="admin_blog.html">+ New Blog</a></button>
+                <button class="btn1"><a th:href="@{/admin/newblog}">+ New Blog</a></button>
 
             </div>
 
@@ -37,37 +37,23 @@
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Maria Anders</td>
-                    <td>Luxe Room</td>
-                    <td>27/11/2022</td>
-                    <td>9824234967</td>
+                <tr th:each="blog:${blogList}">
+                    <td th:text="${blog.id}"></td>
+                    <td th:text="${blog.author}"></td>
+                    <td th:text="${blog.topic}"></td>
+                    <td th:text="${blog.date}">27/11/2022</td>
+                    <td th:text="${blog.phoneNum}">9824234967</td>
                     <td><button class="btn2">Active</button></td>
                     <td>
                         <div class="td1">
 
-                            <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                            <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
+                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/edit/}+${blog.id}"><i class="material-icons">&#xE254;</i></button>
+                            <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/delete/}+${blog.id}"><i class="material-icons">&#xE872;</i></button>
                         </div>
                     </td>
 
                 </tr>
-                <tr>
-                    <td id="blog-id">2</td>
-                    <td id="author-name">Sofia Nepal</td>
-                    <td id="topic-name">Family Room</td>
-                    <td id="published-date">12/11/2022</td>
-                    <td id="phone-no">9841234567</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td ><div class="td1">
 
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                    </div>  </td>
-                </tr>
             </table>
 
             <br><br>
@@ -106,26 +92,14 @@
                     <td>
                         <div class="td1">
 
-                            <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                            <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/edit/}+${booking.id}"><i class="material-icons">&#xE254;</i></button>
+                            <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/delete/}+${booking.id}"><i class="material-icons">&#xE872;</i></button>
 
                         </div>
                     </td>
 
                 </tr>
-                <tr>
-                    <td id="notice-id">2</td>
-                    <td id="notice-author">Sofia Nepal</td>
-                    <td id="notice-topic">Family Room</td>
-                    <td id="notice-published">12/11/2022</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td ><div class="td1">
 
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                    </div>  </td>
-                </tr>
             </table>
 
         </div>
