@@ -13,7 +13,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="users")
+@Table(name="users", uniqueConstraints = {
+        @UniqueConstraint(name = "hms_user_email", columnNames = "email")
+})
 public class User {
     @Id
     @SequenceGenerator(name = "hms_user_seq_gen", sequenceName = "hms_user_id_seq", allocationSize = 1)
