@@ -19,3 +19,24 @@
     <button class="star">&#9734;</button>
     <!-- <p class="current_rating"> 0 of 5</p> -->
 </div>
+<script>
+
+    const allStar=document.querySelectorAll('.star');
+    // let current_rating=document.querySelector('.current_rating');
+    allStar.forEach((star, i) => {
+        star.onclick=function(){
+            // let current_rating_level= i+1;
+            // current_rating.innerText=`${current_star_level} of 5`;
+            allStar.forEach((star, j) => {
+                if(current_rating_level >= j+1)
+                {
+                    star.innerHTML='&#9733';
+                }else{
+                    star.innerHTML='&#9734'
+                }
+            })
+        }
+    })
+</script>
+</body>
+</html>
