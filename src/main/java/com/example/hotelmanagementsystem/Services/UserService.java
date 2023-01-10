@@ -28,4 +28,6 @@ public interface UserService {
     String viewBlog(BlogPojo blogpojo);
 
     String save(BlogPojo blogPojo);
+    UserPojo findByEmail(String email);
+    UserPojo findByPassword(String password);
 }
