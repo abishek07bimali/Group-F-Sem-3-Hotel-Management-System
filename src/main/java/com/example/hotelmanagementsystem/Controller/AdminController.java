@@ -70,20 +70,25 @@ public class AdminController {
     @GetMapping("/blog-List")
     public String getBlogList(Model model){
 //        List<Blog> blogs = userService.fetchAll();
-        model.addAttribute("blog", new BlogPojo());
+//        model.addAttribute("blog", new BlogPojo());
         return "adminBlogPage";
     }
 
     @GetMapping("/newblog")
     public String AddBlog(Model model) {
-        model.addAttribute("blog", new BlogPojo());
+//        model.addAttribute("blog", new BlogPojo());
         return "admin_blog";
     }
 
     @PostMapping("/saveblog")
     public String saveBlog(@Valid BlogPojo blogPojo) {
-        userService.save(blogPojo);
+//        userService.save(blogPojo);
         return "redirect:adminBlogPage";
+    }
+
+    @PostMapping("/dashboard")
+    public String getAdmin(Model model) {
+        return "daily_profit";
     }
 
 }
