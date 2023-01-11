@@ -72,6 +72,11 @@ public class UserController {
         return "blog";
     }
 
+    @GetMapping("/event")
+    public String getEventPage() {
+        return ("event");
+    }
+
 
 
 }
