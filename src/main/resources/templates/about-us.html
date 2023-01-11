@@ -6,16 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About us</title>
         <link rel="stylesheet" th:href="@{~/css/aboutUs.css}">
+        <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
     </head>
     <body>
+    <div class="about-section">
+      <h1>About Us Page</h1>
+      <p>Some text about who we are and what we do.</p>
+      <p>Resize the browser window to see that this page is responsive by the way.</p>
+    </div>
 
       <div id="page">
 
-        <div class="about-section">
-          <h1>About Us Page</h1>
-          <p>Some text about who we are and what we do.</p>
-          <p>Resize the browser window to see that this page is responsive by the way.</p>
-        </div>
+
 
         <h2 style="text-align:center">Our Team</h2>
         <div class="team-row">
@@ -74,7 +76,7 @@
 
           <div class="column">
             <div class="card">
-              <img style="border-radius: 50%;" src="" alt="Purnima">
+              <img style="border-radius: 50%;" src="https://instagram.fktm19-1.fna.fbcdn.net/v/t51.2885-19/322668478_201384455727000_686787163563095085_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fktm19-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=au5dQwQ5zs8AX8p7AS7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAVmVovFRYVWdjfX2o-10n8acvooVzUQZ--r1GoJgMd9w&oe=63C2F97E&_nc_sid=8fd12b" alt="Purnima">
               <div class="container1">
                 <h2>Purnima Bohara</h2>
                 <p class="title">Developer</p>
@@ -99,7 +101,9 @@
           </div>
 
         </div>
-
+        <br>
+        <hr style="background-color: #3A3A3A; width: 90%; align-self: center">
+        <br>
         <div class="topic-heading">
           <h1>Our History</h1>
         </div>
@@ -142,9 +146,10 @@
               </div>
             </div>
           </div>
-
-
+        <br><br>
       </div>
+
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
   
     </body>
 </html>

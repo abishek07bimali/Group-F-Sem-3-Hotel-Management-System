@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -77,12 +77,12 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a class="active" th:href="@{~/admin/list}">dashboard</a>
     <a th:href="@{~/admin/list}">new booking</a>
-    <a th:href="@{~/admin/adminBlogPage}">blogs and notice</a>
+    <a th:href="@{~/admin/adminblogpage}">blogs and notice</a>
     <a th:href="@{~/admin/room}">Room</a>
     <a th:href="@{~/admin/gallery}">Gallery</a>
     <a th:href="@{~/admin/list}">all booking</a>
-    <a th:href="@{~/admin/}">Website</a>
-    <a th:href="@{~/admin/}" style="margin-top: 150px">Logout</a>
+    <a th:href="@{~/admin/list}">Website</a>
+    <a th:href="@{~/admin/list}" style="margin-top: 150px">Logout</a>
   </div>
   <span class="burger" onclick="openNav()">&#9776;</span>
   <script>

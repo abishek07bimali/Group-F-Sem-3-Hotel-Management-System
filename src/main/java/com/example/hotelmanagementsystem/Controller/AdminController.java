@@ -61,7 +61,7 @@ public class AdminController {
     }
 
 
-    @GetMapping("/adminBlogPage")
+    @GetMapping("/adminblogpage")
     public  String getPage(){
         return "adminBlogPage";
     }

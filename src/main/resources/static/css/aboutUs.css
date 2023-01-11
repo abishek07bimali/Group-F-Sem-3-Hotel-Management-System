@@ -6,6 +6,11 @@
     background-color: #ffffff;
     font-family: Helvetica, sans-serif;
   }
+  .page{
+    display: flex;
+    justify-content: center;
+
+  }
   .topic-heading{
     text-align: center;
     font-size: 30px;
@@ -224,6 +229,7 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .button:hover {
@@ -232,7 +238,7 @@
 
   @media screen and (max-width: 650px) {
     .column {
-      width: 100%;
-      display: block;
+      /*width: 100%;*/
+      /*display: block;*/
     }
   }
