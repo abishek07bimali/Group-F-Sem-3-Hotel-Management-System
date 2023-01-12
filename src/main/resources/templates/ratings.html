@@ -30,12 +30,22 @@
 </div>
 <script>
 
+    const btn=document.querySelector(".btn");
+    const post=document.querySelector(".post");
+    const rating=document.querySelector(".star_rating");
+    const editBtn=document.querySelector(".edit");
+
+    btn.onclick = () =>{
+        rating.style.display="none";
+        post.style.display="block";
+        return false;
+    }
     const allStar=document.querySelectorAll('.star');
     let current_rating=document.querySelector('.current_rating');
     allStar.forEach((star, i) => {
         star.onclick=function(){
             let current_rating_level= i+1;
-            current_rating.innerText=`${current_star_level} of 5`;
+            current_rating.innerText=`${current_rating_level} of 5`;
             allStar.forEach((star, j) => {
                 if(current_rating_level >= j+1)
                 {
