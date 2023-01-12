@@ -15,13 +15,13 @@ h2{
     color:#233975;
     font-size:45px;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     margin-top: 7%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 .container1{
     margin-top: 2%;
-    margin-left: 5%;
+    margin-left: 0%;
     margin-bottom: 5%;
     height: 70%;
     display: flex;
@@ -62,16 +62,22 @@ p{
 
 }
 #img1{
-   margin-left: 14%;
+   margin-left: 5%;
 
 }
 #img2{
-    margin-left: 42%;
+    margin-left: 55%;
     margin-top: 25%;
 }
 #img3{
-    margin-left: 5%;
+    margin-left: 21%;
     margin-top: 38%;
+}
+.content{
+    margin-left: 57%;
+    margin-top: 58%;
+    width:35%;
+
 }
 .image1{
     position: absolute;
@@ -85,22 +91,49 @@ p{
     margin-left: 5%;
     height: fit-content;
     display: flex;
+    flex-direction: column;
 }
 
 .bottom-right{
 
-    margin-left: 5%;
-    width:50%;
-    display:flex;
-    flex-direction: column;
+    margin-left: 2%;
+    height:30%;
 
+    display:flex;
+}
+
+.rows{
+    margin-top: 2%;
+
+}
+.column{
+    width: 61%;
+    text-align: center;
+    margin-left:9%;
+    margin-top: 12%;
 
 }
 .bottom-left{
+    margin-top: 2%;
+    margin-left: 1%;
+    height:350px;
     display:flex;
     flex-direction: column;
     position: relative;
-    width:50%;
+    width:90%;
+}
+#img4{
+
+    margin-left: 7%;
+
+}
+#img5{
+    margin-left: 38%;
+
+}
+#img6{
+    margin-left: 69%;
+
 }
 li{
     margin-top: 5%;
@@ -127,7 +160,7 @@ li{
 }
 
 h4{
-    font-size: 17px;
+    font-size: 21px;
     color:#233975;
 }
 .foot-left{
