@@ -86,4 +86,9 @@ public class AdminController {
         return "redirect:adminBlogPage";
     }
 
+    @GetMapping("/profit")
+    public String getProfitPage() {
+        return ("daily_profit");
+    }
+
 }
