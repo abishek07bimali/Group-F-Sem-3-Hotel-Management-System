@@ -1,8 +1,9 @@
 package com.example.hotelmanagementsystem.Controller;
+
+import com.example.hotelmanagementsystem.Services.BlogServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import jakarta.validation.Valid;
@@ -22,6 +23,7 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminController {
     private final UserService userService;
+    private final BlogServices blogServices;
 
     @GetMapping("/list")
     public String getUserList(Model model) {
@@ -61,16 +63,22 @@ public class AdminController {
     }
 
 
-    @GetMapping("/adminBlogPage")
-    public  String getPage(){
-        return "adminBlogPage";
-    }
+
+//
+//
+//    ----------------------------------------------------------------------
+//               blog page
+//    --------------------------------------------------------------
+//    @GetMapping("/adminBlogPage")
+//    public  String getPage(){
+//        return "adminBlogPage";
+//    }
 
 
-    @GetMapping("/blog-List")
+    @GetMapping("/bloglist")
     public String getBlogList(Model model){
-//        List<Blog> blogs = userService.fetchAll();
-        model.addAttribute("blog", new BlogPojo());
+        List<Blog> blogs = blogServices.fetchAll();
+        model.addAttribute("blog", blogs);
         return "adminBlogPage";
     }
 
@@ -82,8 +90,14 @@ public class AdminController {
 
     @PostMapping("/saveblog")
     public String saveBlog(@Valid BlogPojo blogPojo) {
-        userService.save(blogPojo);
-        return "redirect:adminBlogPage";
+        blogServices.save(blogPojo);
+        return "redirect:/admin/bloglist";
+    }
+    @GetMapping("/editblog/{id}")
+    public String editBlog(@PathVariable("id") Integer id, Model model) {
+        Blog blog = blogServices.fetchById(id);
+        model.addAttribute("newBooking", new BlogPojo(blog));
+        return "admin_blog";
     }
 
     @GetMapping("/profit")
@@ -91,4 +105,10 @@ public class AdminController {
         return ("daily_profit");
     }
 
+
+    @GetMapping("/deleteblog/{id}")
+    public String deleteBlog(@PathVariable("id") Integer id) {
+        blogServices.deleteById(id);
+        return "redirect:/admin/bloglist";
+    }
 }

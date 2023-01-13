@@ -3,6 +3,7 @@ package com.example.hotelmanagementsystem.Services.Impl;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
@@ -14,8 +15,6 @@ import com.example.hotelmanagementsystem.repo.ContactRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 
 import java.util.List;
 
@@ -89,11 +88,6 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
 
-    }
-
-    @Override
-    public String viewBlog(BlogPojo blogpojo) {
-        return null;
     }
 
     @Override

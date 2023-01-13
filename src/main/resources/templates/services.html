@@ -17,38 +17,10 @@
 </head>
 
 <body>
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo"> <a th:href="@{/homepage.html}"><img th:src="@{images/ServicesImages/logo.png}" alt=""></a></label>
-    <ul>
-      <li><a th:href="@{~/homepage}">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a class="active" th:href="@{~/user/services}">Services</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a th:href="@{~/user/booking}">Book</a></li>
-      <div class="dropdown">
-        <button class="dropbtn">See More</button>
-        <div class="dropdown-content">
-          <a th:href="@{~/user/gallery}">Gallery</a>
-          <a th:href="@{~/user/rooms}">Rooms</a>
-          <a th:href="@{~/user/blog}">Blogs</a>
-          <a th:href="@{~/user/nearby_places}">Visit nearby</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn imageButton">User</button>
-        <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
-        <div class="dropdown-content">
-          <a href="#">Profile</a>
-          <a href="#">Settings</a>
-          <a href="#">logout</a>
-        </div>
-      </div>
-    </ul>
-  </nav>
+
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+
   <section>
     <ul class="tabs">
       <li data-tab-target="#bar" class="active tab">Bar</li>
@@ -305,5 +277,15 @@
   <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
 </body>
+
+<script>
+  let myPage = "services";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
 
 </html>

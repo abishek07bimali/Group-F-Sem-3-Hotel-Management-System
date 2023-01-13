@@ -7,7 +7,6 @@ import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Booking;
 
-
 import java.util.List;
 
 public interface UserService {
@@ -25,7 +24,7 @@ public interface UserService {
 //    Contact fetchById(Integer id);
     void deleteById(Integer id);
 
-    String viewBlog(BlogPojo blogpojo);
+//    String viewBlog(BlogPojo blogpojo);
 
     String save(BlogPojo blogPojo);
     UserPojo findByEmail(String email);
