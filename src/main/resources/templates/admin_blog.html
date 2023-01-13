@@ -5,33 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog Post</title>
-    <link rel="stylesheet" th:href="@{css/admin_blog.css}">
+    <link rel="stylesheet" th:href="@{~/css/admin_blog.css}">
     <!-- <link rel="stylesheet" href="../static/css/blog.css"> -->
 </head>
 <body>
      <h1>Add Blog Post</h1>
     <div class="uplaod_blog">
-        <form id="add-post-form" th:method="post" th:action="@{/user/savebook}" th:object="${newBlog}">
+        <form id="add-post-form" th:method="post" th:action="@{/admin/saveblog}" th:object="${blog}">
             <!-- <label for="title">Title:</label><br>
             <input type="file" name="image" id="image"><br> -->
 
-            <label for="blog-id"></label><br>
-            <!-- <input type="text" id="title" name="title"><br> -->
+<!--            <label for="blog-id"></label><br>-->
+            <input type="number"
+                   hidden th:field="*{id}" th:value="${blog.id}">
 
             <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author" required th:field="*{author}" th:value="${newBlog.author}"><br>
+            <input type="text" id="author" name="author" required th:field="*{author}" th:value="${blog.author}"><br>
 
             <label for="topic-name">Topic:</label><br>
-            <input type="text" id="topic-name" name="title" required th:field="*{topic}" th:value="${newBlog.topic}"><br>
+            <input type="text" id="topic-name" name="title" required th:field="*{topic}" th:value="${blog.topic}"><br>
 
             <label for="published-date">Date</label><br>
-            <input type="text" id="published-date" name="title" required th:field="*{date}" th:value="${newBlog.date}"><br>
+            <input type="text" id="published-date" name="title" required th:field="*{date}" th:value="${blog.date}"><br>
 
             <label for="phone-no">Phone-number:</label><br>
-            <input type="text" id="phone-no" name="title" required th:field="*{phoneNum}" th:value="${newBlog.phoneNum}"><br>
+            <input type="text" id="phone-no" name="title" required th:field="*{phoneNum}" th:value="${blog.phoneNum}"><br>
 
             <label for="content">Content:</label><br>
-            <textarea id="content" name="content" required th:field="*{content}" th:value="${newBlog.content}"></textarea><br><br>
+            <textarea id="content" name="content" required th:field="*{content}" th:value="${blog.content}"></textarea><br><br>
                     
             <!-- to upload image -->
             <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
@@ -39,7 +40,7 @@
             <p><img id="output" width="200px" /></p>
 <!--            required th:field="*{date}" th:value="${newBlog.date}"-->
             
-            <button type="submit"><a th:href="@{~/admin/saveblog}" style="color: white;">Submit</a></button>
+            <button type="submit" value="submmit"></button>
 <!--            <input type="submit" value="SUBMIT">-->
 
         

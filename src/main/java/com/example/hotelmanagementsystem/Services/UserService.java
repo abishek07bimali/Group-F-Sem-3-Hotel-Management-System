@@ -1,12 +1,10 @@
 package com.example.hotelmanagementsystem.Services;
 
 
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Booking;
-
 
 import java.util.List;
 
@@ -25,7 +23,6 @@ public interface UserService {
 //    Contact fetchById(Integer id);
     void deleteById(Integer id);
 
-    String viewBlog(BlogPojo blogpojo);
+//    String viewBlog(BlogPojo blogpojo);
 
-    String save(BlogPojo blogPojo);
 }

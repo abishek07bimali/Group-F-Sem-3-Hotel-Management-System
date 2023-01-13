@@ -1,0 +1,78 @@
+body{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.notice-upload{
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+}
+h1{
+    align-self: center;
+}
+.upload_image{
+    display: flex;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(180, 174, 174);
+    box-sizing: border-box;
+
+}
+@media (max-width: 720px) {
+    form{
+        width: 80%;
+    }
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+    background-color: #4CAF50;
+}
+
+/* Fake image */
+.fakeimg {
+    /* background-color: #aaa; */
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: rgb(37, 33, 33);
+    padding: 20px;
+    margin-top: 20px;
+}
+
