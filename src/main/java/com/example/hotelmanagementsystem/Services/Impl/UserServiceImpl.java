@@ -1,10 +1,9 @@
 package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
-import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
@@ -14,8 +13,6 @@ import com.example.hotelmanagementsystem.repo.ContactRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 
 import java.util.List;
 
@@ -89,27 +86,6 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
 
-    }
-
-    @Override
-    public String viewBlog(BlogPojo blogpojo) {
-        return null;
-    }
-
-    @Override
-    public String save(BlogPojo blogPojo) {
-        Blog blog =new Blog();
-        if(blogPojo.getId()!=null){
-            blog.setId(blogPojo.getId());
-        }
-        blog.setAuthor(blogPojo.getAuthor());
-        blog.setTopic(blogPojo.getTopic());
-        blog.setDate(blogPojo.getDate());
-        blog.setPhoneNum(blogPojo.getPhoneNum());
-        blog.setContent(blogPojo.getContent());
-//        blog.setImg(blogPojo.getImg());
-        blogRepo.save(blog);
-        return null;
     }
 
 

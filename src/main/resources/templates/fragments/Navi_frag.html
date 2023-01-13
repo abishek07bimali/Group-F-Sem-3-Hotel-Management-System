@@ -1,0 +1,38 @@
+<div th:fragment="navigator">
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
+    <ul>
+      <li><a class="list-group-item active" id="homepage"  th:href="@{~/homepage}">Home</a></li>
+      <li><a href="#" class="list-group-item">About</a></li>
+      <li><a th:href="@{~/homepage/services}" class="list-group-item" id="services">Services</a></li>
+      <li><a th:href="@{~/homepage/contact}" class="list-group-item" id="contact">Contact</a></li>
+      <!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
+      <!--      <li><a href="#">Contact</a></li>-->
+      <li><a th:href="@{~/user/booking}" class="list-group-item" id="book">Book</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">See More</button>
+        <div class="dropdown-content">
+          <a th:href="@{~/homepage/gallery}" class="list-group-item" id="gallery">Gallery</a>
+          <a th:href="@{~/homepage/rooms}" class="list-group-item" id="rooms">Rooms</a>
+          <a th:href="@{~/homepage/packages}" class="list-group-item" id="packages">Packages</a>
+          <a th:href="@{~/homepage/viewblog}" class="list-group-item" id="blogs">Blogs</a>
+          <a th:href="@{~/homepage/nearby_places}" class="list-group-item" id="nearby">Visit nearby</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn imageButton" >User</button>
+        <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
+        <div class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="#">Settings</a>
+          <a href="#">logout</a>
+        </div>
+      </div>
+    </ul>
+  </nav>
+
+</div>
