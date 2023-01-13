@@ -75,6 +75,7 @@ footer .emailcontact {
     width: 70%;
     display: flex;
     border: 3px solid var(--black);
+    margin: auto;
 }
 .emailcontact input{
     padding-top: 5px;
