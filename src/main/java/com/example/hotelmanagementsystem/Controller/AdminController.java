@@ -114,13 +114,15 @@ public class AdminController {
         return "admin_blog";
     }
 
+    @GetMapping("/profit")
+    public String getProfitPage() {
+        return ("daily_profit");
+    }
+
 
     @GetMapping("/deleteblog/{id}")
     public String deleteBlog(@PathVariable("id") Integer id) {
         blogServices.deleteById(id);
         return "redirect:/admin/bloglist";
     }
-
-
-
 }

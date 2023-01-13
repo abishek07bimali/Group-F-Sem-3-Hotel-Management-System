@@ -1,9 +1,11 @@
 package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
@@ -86,6 +88,35 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
 
+    }
+
+    @Override
+    public String save(BlogPojo blogPojo) {
+        Blog blog =new Blog();
+        if(blogPojo.getId()!=null){
+            blog.setId(blogPojo.getId());
+        }
+        blog.setAuthor(blogPojo.getAuthor());
+        blog.setTopic(blogPojo.getTopic());
+        blog.setDate(blogPojo.getDate());
+        blog.setPhoneNum(blogPojo.getPhoneNum());
+        blog.setContent(blogPojo.getContent());
+//        blog.setImg(blogPojo.getImg());
+        blogRepo.save(blog);
+        return null;
+    }
+    @Override
+    public UserPojo findByEmail(String email) {
+        User user = (User) userRepo.findByEmail(email)
+                .orElseThrow(()-> new RuntimeException("Invalid User email"));
+        return new UserPojo(user);
+    }
+
+    @Override
+    public UserPojo findByPassword(String password) {
+        User user = (User) userRepo.findByPassword(password)
+                .orElseThrow(() -> new RuntimeException("Invalid User password"));
+        return new UserPojo(user);
     }
 
 

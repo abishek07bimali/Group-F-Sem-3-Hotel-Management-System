@@ -1,6 +1,7 @@
 package com.example.hotelmanagementsystem.Services;
 
 
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
@@ -25,4 +26,7 @@ public interface UserService {
 
 //    String viewBlog(BlogPojo blogpojo);
 
+    String save(BlogPojo blogPojo);
+    UserPojo findByEmail(String email);
+    UserPojo findByPassword(String password);
 }

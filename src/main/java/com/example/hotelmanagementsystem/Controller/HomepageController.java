@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("/homepage")
 public class HomepageController {
+    @GetMapping("")
+    public String geHomepage() {
+        return ("homepage");
+    }
 
 
     @GetMapping("/services")

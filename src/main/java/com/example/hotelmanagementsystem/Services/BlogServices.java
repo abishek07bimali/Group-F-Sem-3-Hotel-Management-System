@@ -11,6 +11,4 @@ public interface BlogServices {
 
     Blog fetchById(Integer id);
     void deleteById(Integer id);
-
-
 }
