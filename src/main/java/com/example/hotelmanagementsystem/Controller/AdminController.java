@@ -63,6 +63,10 @@ public class AdminController {
     }
 
 
+    @GetMapping("/adminblogpage")
+    public  String getPage(){
+        return "adminBlogPage";
+    }
 
 //
 //
@@ -77,6 +81,8 @@ public class AdminController {
 
     @GetMapping("/bloglist")
     public String getBlogList(Model model){
+//        List<Blog> blogs = userService.fetchAll();
+//        model.addAttribute("blog", new BlogPojo());
         List<Blog> blogs = blogServices.fetchAll();
         model.addAttribute("blog", blogs);
         return "adminBlogPage";
@@ -84,12 +90,20 @@ public class AdminController {
 
     @GetMapping("/newblog")
     public String AddBlog(Model model) {
-        model.addAttribute("blog", new BlogPojo());
+//        model.addAttribute("blog", new BlogPojo());
         return "admin_blog";
     }
 
     @PostMapping("/saveblog")
     public String saveBlog(@Valid BlogPojo blogPojo) {
+//        userService.save(blogPojo);
+        return "redirect:adminBlogPage";
+    }
+
+    @PostMapping("/dashboard")
+    public String getAdmin(Model model) {
+        return "daily_profit";
+    }
         blogServices.save(blogPojo);
         return "redirect:/admin/bloglist";
     }
