@@ -52,5 +52,8 @@ public class HomepageController {
         model.addAttribute("contact", new ContactPojo());
         return "contact_page";}
 
-
+    @GetMapping("/about")
+    public String getAbout() {
+        return "about-us";
+    }
 }

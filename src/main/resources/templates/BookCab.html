@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/BookCab.css">
     <title>Booking</title>
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
 </head>
 
 <body class="main_bg">
-    <div class="form">
-        <div class="form-text">
+<div class="form">
+    <div class="form-text">
             <h1><span><img src="../static/images/art-1.png" alt=""></span>Book Now <span><img src="../static/images/art-1.png" alt=""></span></h1>
             <p>Be ready to have the best experience...</p>
         </div>
@@ -23,7 +24,7 @@
                 </div>
                 <div>
                     <span>Any specific car?</span>
-                    <input type="text" name="name" id="name" placeholder="write if have any..."> 
+                    <input type="text" name="name" id="name" placeholder="write if have any...">
                 </div>
                 <div>
                     <!-- <---this is the select option--->
@@ -57,6 +58,7 @@
             </form>
         </div>
     </div>
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
 </body>
 
 </html>

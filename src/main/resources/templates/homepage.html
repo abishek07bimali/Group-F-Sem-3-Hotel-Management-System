@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"  >
+<html lang="en" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -28,6 +28,43 @@
 </head>
 
 <body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
+    <ul>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a th:href="@{~/homepage/about}">About</a></li>
+      <li><a th:href="@{~/homepage/services}">Services</a></li>
+      <li><a th:href="@{~/homepage/contact}">Contact</a></li>
+<!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
+<!--      <li><a href="#">Contact</a></li>-->
+      <li><a th:href="@{~/user/booking}">Book</a></li>
+      <div class="dropdown">
+        <button class="dropbtn">See More</button>
+        <div class="dropdown-content">
+          <a th:href="@{~/homepage/gallery}">Gallery</a>
+          <a th:href="@{~/homepage/rooms}">Rooms</a>
+          <a th:href="@{~/homepage/packages}">Packages</a>
+          <a th:href="@{~/homepage/viewblog}">Blogs</a>
+          <a th:href="@{~/homepage/nearby_places}">Visit nearby</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn imageButton">User</button>
+        <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
+        <div class="dropdown-content">
+          <a href="#">Profile</a>
+          <a href="#">Settings</a>
+          <a href="#">logout</a>
+        </div>
+      </div>    
+    </ul>
+  </nav>
+  
+  <section>
 <div th:replace="fragments/Navi_frag.html :: navigator"></div>
 
 <section>
@@ -74,7 +111,7 @@
           Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
           itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
         <br>
-        <button><a href="#">Read more..</a></button>
+        <button><a th:href="@{~/homepage/about}">Read more..</a></button>
       </div>
       <div class="imageDetails">
         <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="Image Not Available">
@@ -88,7 +125,7 @@
           Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
           itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
         <br>
-        <button><a href="#">Read more..</a></button>
+        <button><a th:href="@{~/homepage/about}">Read more..</a></button>
 
       </div>
     </div>
