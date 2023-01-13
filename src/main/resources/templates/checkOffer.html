@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title> Offer page</title>
+    <link rel="stylesheet" href="../static/css/checkOffer.css">
+  </head>
+  <body>
+    <div class="popup">
+     <div class="contentBox">
+       <div class="close"></div>
+     <div class="imgBx">
+       <img src="../static/images/t.jpg">
+     </div>
+     <div class="content">
+        <div>
+        <h3>Special Offer</h3>
+        <h2>30<sup>%</sup><span>Off</span></h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae sapiente modi blanditiis doloribus, praesentium, sequi ipsum ullam facilis ad eius alias totam a reiciendis
+             mollitia quos tempore maxime amet asperiores.</p>
+             <a href="booking.html">Book Now</a>
+            </div>
+        </div>
+    </div>
+   </div>
+    <script>
+      const popup=document.querySelector('.popup');
+      const close=document.querySelector('.close');
+      window.onload = function(){
+        setTimeout(function(){
+          popup.style.display="block"
+        }, 5000)
+    }
+      close.addEventListener('click' , () => {
+        popup.style.display= "none";
+      })
+    </script>
+  </body>
+</html>

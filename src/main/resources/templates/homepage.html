@@ -23,6 +23,8 @@
   <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
   <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
   <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+  <link rel="stylesheet" th:href="@{~/css/HomepageStyle.css}">
+  <link rel="stylesheet" th:href="@{~/css/checkOffer.css}">
   <link rel="stylesheet" th:href="@{~/css/homepageStyle.css}">
 
 </head>
@@ -288,6 +290,72 @@
     
     </div>
   </section>
+  <footer>
+    <div class="information">
+      <img th:src="@{~/images/ServicesImages/logo.png}" alt="">
+      <h3>Luxury hotel</h3>
+      <p> <a href="">022:000000</a></p>
+      <p> <a href="">luxuryhotel@gmail.com</a> </p>
+    </div>
+    <div class="quicklinks">
+      <h2>Quick links</h2>
+      <p> <a href="">about</a></p>
+      <p> <a href="">contact</a></p>
+      <p> <a href="">find us</a></p>
+    </div>
+    <div class="sociallinks">
+      <h2>Stay Connected</h2>
+      <!-- <h4><i class="fab fa-facebook-f"></i></h4>
+      <h4><i class="fab fa-twitter"></i></h4>
+      <h4><i class="fab fa-instagram"></i></h4>
+      <h4><i class="fab fa-youtube"></i></h4> -->
+      <h4>facebook</h4>
+      <h4>twitter</h4>
+      <h4>instagram</h4>
+      <h4>Youtube</h4>
+    </div>
+    <div class="emailcontact">
+      <h3>Email us Your Quaries</h3>
+      <div class="email">
+        <input type="email" name="" id="" placeholder="  Enter your email">
+        <!-- <input type="submit" name="" id=""> -->
+        <button><a href="">Send</a></button>
+      </div>
+    </div>
+  </footer>
+
+<!-- this contains for popup window  offer -->
+
+<div class="popup">
+  <div class="contentBox">
+    <div class="close"></div>
+  <div class="imgBx">
+    <img th:src="@{~/images/t.jpg}" alt="">
+  </div>
+  <div class="content">
+     <div>
+     <h3>Special Offer</h3>
+     <h2>30<sup>%</sup><span>Off</span></h2>
+       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae sapiente modi blanditiis doloribus, praesentium, sequi ipsum ullam facilis ad eius alias totam a reiciendis
+          mollitia quos tempore maxime amet asperiores.</p>
+          <a th:href="@{~/user/booking}">Book Now</a>
+         </div>
+     </div>
+ </div>
+</div>
+ <script>
+   const popup=document.querySelector('.popup');
+   const close=document.querySelector('.close');
+   window.onload = function(){
+     setTimeout(function(){
+       popup.style.display="block"
+     }, 5000)
+ }
+   close.addEventListener('click' , () => {
+     popup.style.display= "none";
+   })
+ </script>
+  
 
   <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
