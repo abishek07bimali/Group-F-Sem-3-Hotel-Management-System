@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"  >
+<html lang="en" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -16,30 +16,16 @@
   s0.parentNode.insertBefore(s1,s0);
   })();
   </script>
-  <!--End of Tawk.to Script-->
-
-  <!--Start of Tawk.to Script-->
-<!-- <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/63ac567ec2f1ac1e202a8616/1glcj3ofd';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script> -->
-<!--End of Tawk.to Script-->
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
-  <link rel="stylesheet" th:href="@{~/css/footer.css}">
+  <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
   <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
   <link rel="stylesheet" th:href="@{~/css/HomepageStyle.css}">
   <link rel="stylesheet" th:href="@{~/css/checkOffer.css}">
+  <link rel="stylesheet" th:href="@{~/css/homepageStyle.css}">
 
 </head>
 
@@ -49,20 +35,22 @@ s0.parentNode.insertBefore(s1,s0);
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo"> <a th:href="@{/homepage.html}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
+    <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
       <li><a class="active" href="#">Home</a></li>
-      <li><a href="#">About</a></li>
+      <li><a th:href="@{~/homepage/about}">About</a></li>
       <li><a th:href="@{~/homepage/services}">Services</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a th:href="@{~/homepage/booking}">Book</a></li>
-
+      <li><a th:href="@{~/homepage/contact}">Contact</a></li>
+<!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
+<!--      <li><a href="#">Contact</a></li>-->
+      <li><a th:href="@{~/user/booking}">Book</a></li>
       <div class="dropdown">
         <button class="dropbtn">See More</button>
         <div class="dropdown-content">
           <a th:href="@{~/homepage/gallery}">Gallery</a>
           <a th:href="@{~/homepage/rooms}">Rooms</a>
-          <a th:href="@{~/homepage/blog}">Blogs</a>
+          <a th:href="@{~/homepage/packages}">Packages</a>
+          <a th:href="@{~/homepage/viewblog}">Blogs</a>
           <a th:href="@{~/homepage/nearby_places}">Visit nearby</a>
         </div>
       </div>
@@ -79,6 +67,9 @@ s0.parentNode.insertBefore(s1,s0);
   </nav>
   
   <section>
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+<section>
     <!-- image -->
     <div class="image">
       <div class="cover">
@@ -122,7 +113,7 @@ s0.parentNode.insertBefore(s1,s0);
           Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
           itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
         <br>
-        <button><a href="#">Read more..</a></button>
+        <button><a th:href="@{~/homepage/about}">Read more..</a></button>
       </div>
       <div class="imageDetails">
         <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="Image Not Available">
@@ -136,7 +127,7 @@ s0.parentNode.insertBefore(s1,s0);
           Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
           itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
         <br>
-        <button><a href="#">Read more..</a></button>
+        <button><a th:href="@{~/homepage/about}">Read more..</a></button>
 
       </div>
     </div>
@@ -151,28 +142,28 @@ s0.parentNode.insertBefore(s1,s0);
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
           <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="Image Not Available">
-          <h2>Deluxe room</h2>
+          <h2>Premium room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
-          <button><a href="#">Details</a></button>
+          <button><a th:href="@{~/rooms/premiumroom}">Details</a></button>
           <!-- </div> -->
         </div>
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
           <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
           <!-- </div> -->
-          <h2>Deluxe room</h2>
+          <h2>Couple room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
-          <button><a href="#">Details</a></button>
+          <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
         </div>
         <div class="rooms">
           <!-- <div id="zoom-in"> -->
           <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-          <h2>Deluxe room</h2>
+          <h2>Luxe room</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
             voluptatibus?</p>
-          <button><a href="#">Details</a></button>
+          <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
           <!-- </div> -->
         </div>
       </div>
@@ -191,7 +182,7 @@ s0.parentNode.insertBefore(s1,s0);
         <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
         <br>
         <br>
-        <button><a href="#">Explore More</a></button>
+        <button><a th:href="@{~/homepage/gallery}">Explore More</a></button>
       </div>
     </div>
     <!-- reviews -->
@@ -295,7 +286,7 @@ s0.parentNode.insertBefore(s1,s0);
           <button><a href="#">Read More</a></button>
         </div>
       </div>
-      <button class="button"> <a href="#"> Read All</a></button>
+      <button class="button"> <a  th:href="@{~/homepage/viewblog}"> Read All</a></button>
     
     </div>
   </section>
@@ -365,6 +356,20 @@ s0.parentNode.insertBefore(s1,s0);
    })
  </script>
   
+
+  <div th:replace="fragments/Footer_frag.html :: footer"></div>
+
 </body>
+
+<script>
+  let myPage = "homepage";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+
 
 </html>

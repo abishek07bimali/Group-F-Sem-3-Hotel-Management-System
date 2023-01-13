@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin_landing_page</title>
-  <link rel="stylesheet" href="../static/css/daily_profit.css">
+  <link rel="stylesheet" th:href="@{~/css/daily_profit.css}">
 
-  <link rel="stylesheet" href="../static/css/WholeDayData.css" />
+  <link rel="stylesheet" th:href="@{~/css/WholeDayData.css}" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../static/css/dashstyle.css">
-  <link rel="stylesheet" href="../static/css/navigation.css">
+  <link rel="stylesheet" th:href="@{/css/dashstyle.css}">
+  <link rel="stylesheet" th:href="@{/css/navigation.css}">
+  <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+  <link rel="stylesheet" th:href="@{~/css/navigation.css}">
   <link rel="shortcut icon" type="x-icon" href="../images/logo.png">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="../static/javascript/notification.js" defer></script>
@@ -75,14 +77,14 @@
   <div id="mySidenav" class="sidenav">
     <label class="logoInNav"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a class="active" href="#">dashboard</a>
-    <a href="newBooking.html">new booking</a>
-    <a href="../template/adminBlogPage.html">blogs and notice</a>
-    <a href="#">Room</a>
-    <a href="#">Galery</a>
-    <a href="#">all booking</a>
-    <a href="#">Website</a>
-    <a href="#" style="margin-top: 150px">Logout</a>
+    <a class="active" th:href="@{~/admin/list}">dashboard</a>
+    <a th:href="@{~/admin/list}">new booking</a>
+    <a th:href="@{~/admin/adminblogpage}">blogs and notice</a>
+    <a th:href="@{~/admin/room}">Room</a>
+    <a th:href="@{~/admin/gallery}">Gallery</a>
+    <a th:href="@{~/admin/list}">all booking</a>
+    <a th:href="@{~/admin/list}">Website</a>
+    <a th:href="@{~/admin/list}" style="margin-top: 150px">Logout</a>
   </div>
   <span class="burger" onclick="openNav()">&#9776;</span>
   <script>

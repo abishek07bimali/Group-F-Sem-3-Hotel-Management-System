@@ -5,40 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog Post</title>
-    <link rel="stylesheet" th:href="@{css/admin_blog.css}">
+    <link rel="stylesheet" th:href="@{~/css/admin_blog.css}">
     <!-- <link rel="stylesheet" href="../static/css/blog.css"> -->
 </head>
 <body>
      <h1>Add Blog Post</h1>
     <div class="uplaod_blog">
-        <form id="add-post-form">
+        <form id="add-post-form" th:method="post" th:action="@{/admin/saveblog}" th:object="${blog}">
             <!-- <label for="title">Title:</label><br>
             <input type="file" name="image" id="image"><br> -->
 
-            <label for="blog-id"></label><br>
-            <!-- <input type="text" id="title" name="title"><br> -->
+<!--            <label for="blog-id"></label><br>-->
+            <input type="number"
+                   hidden th:field="*{id}" th:value="${blog.id}">
 
             <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author"><br>
+            <input type="text" id="author" name="author" required th:field="*{author}" th:value="${blog.author}"><br>
 
             <label for="topic-name">Topic:</label><br>
-            <input type="text" id="topic-name" name="title"><br>
+            <input type="text" id="topic-name" name="title" required th:field="*{topic}" th:value="${blog.topic}"><br>
 
             <label for="published-date">Date</label><br>
-            <input type="text" id="published-date" name="title"><br>
+            <input type="text" id="published-date" name="title" required th:field="*{date}" th:value="${blog.date}"><br>
 
             <label for="phone-no">Phone-number:</label><br>
-            <input type="text" id="phone-no" name="title"><br>
+            <input type="text" id="phone-no" name="title" required th:field="*{phoneNum}" th:value="${blog.phoneNum}"><br>
 
             <label for="content">Content:</label><br>
-            <textarea id="content" name="content"></textarea><br><br>
+            <textarea id="content" name="content" required th:field="*{content}" th:value="${blog.content}"></textarea><br><br>
                     
             <!-- to upload image -->
             <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
             <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
             <p><img id="output" width="200px" /></p>
+<!--            required th:field="*{date}" th:value="${newBlog.date}"-->
             
-            <button type="submit"><a href="./adminBlogPage.html" style="color: white;">Submit</a></button>
+            <button type="submit" value="submmit"></button>
+<!--            <input type="submit" value="SUBMIT">-->
 
         
             <script>
@@ -51,65 +54,6 @@
     </div>
   <script src="../static/javascript/admin_blog.js"></script>
 
-
-
-  <!-- <div class="blog-post">
-    <h1>Blog</h1>
-    <div id="posts"></div>
-    <script src="../static/javascript/blogPage.js"></script>
-    <div class="leftcolumn">
-      <div class="card">
-        <h2 id="blog-title"></h2>
-        <h5 id="date"></h5>
-        <div class="fakeimg" style="height:100%;">
-          <img src="" alt="img" id="output" width="100%">
-        </div>
-        <p id="blog-content"></p>
-      </div>
-      <div class="card">
-        <h2 id="blog-title"></h2>
-        <h5 id="date"></h5>
-        <div class="fakeimg" style="height:100%;">
-          <img src="" alt="img" id="output" width="300%">
-        </div>
-        <p id="blog-content"></p>
-      </div>
-      <script>
-        var loadFile = function(event) {
-            var image = document.getElementById('output');
-            image.src = URL.createObjectURL(event.target.files[0]);
-        };
-    </script>
-    </div>
-  </div> -->
-
-<!-- <div style="overflow-x:auto;"></div>
-  <table id="blog-table">
-      <tr>
-        <th>Blog_Id</th>
-        <th>Author</th>
-        <th>Topic</th>
-        <th>Published Date</th>
-        <th>Phone-number</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-      <tr>
-        <td id="blog-id"></td>
-        <td id="author-name"></td>
-        <td id="topic-name"></td>
-        <td id="published-date"></td>
-        <td id="phone-no"></td>
-        <td><button class="btn2">Active</button></td>
-        <td ><div class="td1">
-          
-            <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-            <button id="del-btn" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-            
-        </div>  </td>
-      
-      </tr> 
-  </table> -->
 
 
 </body>
