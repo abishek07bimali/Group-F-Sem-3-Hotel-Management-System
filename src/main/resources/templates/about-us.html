@@ -7,10 +7,16 @@
         <title>About us</title>
         <link rel="stylesheet" th:href="@{~/css/aboutUs.css}">
         <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+      <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
     </head>
     <body>
+    <div th:replace="fragments/Navi_frag.html :: navigator"></div>
 
-      <div id="page" class="page">
+
+    <div id="page" class="page">
 
         <div class="about-section" id="history">
           <div class="topic-heading">
@@ -174,4 +180,15 @@
     <div th:replace="fragments/Footer_frag.html :: footer"></div>
   
     </body>
+    <script>
+      let myPage = "about";
+      let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+      listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+      })
+      let activeID = document.getElementById(myPage);
+      activeID.classList.add("active");
+    </script>
+
+
 </html>

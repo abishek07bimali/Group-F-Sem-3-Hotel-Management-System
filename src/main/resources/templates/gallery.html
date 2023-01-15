@@ -14,9 +14,13 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.magnific-popup/1.0.0/jquery.magnific-popup.js"></script>
     <script th:src="@{~/javascript/gallery.js}"></script>
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+
 
 </head>
 <body>
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
     <div class="Main-Wrapper">
         <div class="Wrapper-top">
               <h2>GALLERY</h2>

@@ -59,4 +59,20 @@ public class HomepageController {
     public String getAbout() {
         return "about-us";
     }
+
+
+    @GetMapping("/birthday")
+    public String getBirthday() {
+        return "birthdaydetail";
+    }
+
+    @GetMapping("/anniversary")
+    public String getAnni() {
+        return "anniversarydetail";
+    }
+
+    @GetMapping("/wedding")
+    public String getWeeding() {
+        return "weddingdetail";
+    }
 }

@@ -6,8 +6,13 @@
           <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
           <script th:src="@{~/javascript/premiumroom.js}"></script>
     <link rel="stylesheet" th:href="@{~/css/allrooms.css}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+
+
 </head>
 <body>
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
     <div class="Main-wrapper">
         
         <div class="wrapper-top">
@@ -150,5 +155,14 @@
     </div>
 
 </body>
+<script>
+    let myPage = "rooms";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
 
 </html>

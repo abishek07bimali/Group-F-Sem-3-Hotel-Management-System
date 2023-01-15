@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nearby Places</title>
     <link rel="stylesheet" th:href="@{/css/nearby_places.css}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+
+
     <script th:src="@{~/javascript/nearby_places.js}"></script>
 
 </head>
 <body>
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
     <div class="main-container">
         <div class="container-one">
             <img class="kath-img" th:src="@{~/images/kathmandu.jpg}" alt="" />
@@ -39,4 +44,13 @@
 
 
 </body>
+<script>
+    let myPage = "nearby";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
 </html>
