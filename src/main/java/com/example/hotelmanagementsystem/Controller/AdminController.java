@@ -96,17 +96,18 @@ public class AdminController {
 
     @PostMapping("/saveblog")
     public String saveBlog(@Valid BlogPojo blogPojo) {
+                blogServices.save(blogPojo);
+        return "redirect:/admin/bloglist";
+//    }
 //        userService.save(blogPojo);
-        return "redirect:adminBlogPage";
+//        return "redirect:adminBlogPage";
     }
 
     @PostMapping("/dashboard")
     public String getAdmin(Model model) {
         return "daily_profit";
     }
-        blogServices.save(blogPojo);
-        return "redirect:/admin/bloglist";
-    }
+
     @GetMapping("/editblog/{id}")
     public String editBlog(@PathVariable("id") Integer id, Model model) {
         Blog blog = blogServices.fetchById(id);

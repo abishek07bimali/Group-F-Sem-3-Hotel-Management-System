@@ -1,7 +1,6 @@
 package com.example.hotelmanagementsystem.Controller;
 
 
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

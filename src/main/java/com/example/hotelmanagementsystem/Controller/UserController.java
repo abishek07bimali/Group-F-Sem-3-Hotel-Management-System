@@ -5,9 +5,6 @@ import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
-
-import com.example.hotelmanagementsystem.entity.Blog;
-import com.example.hotelmanagementsystem.entity.User;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,11 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-//import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
