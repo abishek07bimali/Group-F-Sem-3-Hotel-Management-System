@@ -7,7 +7,7 @@
     <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
     <ul>
       <li><a class="list-group-item active" id="homepage"  th:href="@{~/homepage}">Home</a></li>
-      <li><a href="#" class="list-group-item">About</a></li>
+      <li><a th:href="@{~/homepage/about}" class="list-group-item">About</a></li>
       <li><a th:href="@{~/homepage/services}" class="list-group-item" id="services">Services</a></li>
       <li><a th:href="@{~/homepage/contact}" class="list-group-item" id="contact">Contact</a></li>
       <!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->

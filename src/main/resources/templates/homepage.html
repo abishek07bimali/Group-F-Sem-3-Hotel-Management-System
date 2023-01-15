@@ -30,42 +30,6 @@
 </head>
 
 <body>
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
-    <ul>
-      <li><a class="active" href="#">Home</a></li>
-      <li><a th:href="@{~/homepage/about}">About</a></li>
-      <li><a th:href="@{~/homepage/services}">Services</a></li>
-      <li><a th:href="@{~/homepage/contact}">Contact</a></li>
-<!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
-<!--      <li><a href="#">Contact</a></li>-->
-      <li><a th:href="@{~/user/booking}">Book</a></li>
-      <div class="dropdown">
-        <button class="dropbtn">See More</button>
-        <div class="dropdown-content">
-          <a th:href="@{~/homepage/gallery}">Gallery</a>
-          <a th:href="@{~/homepage/rooms}">Rooms</a>
-          <a th:href="@{~/homepage/packages}">Packages</a>
-          <a th:href="@{~/homepage/viewblog}">Blogs</a>
-          <a th:href="@{~/homepage/nearby_places}">Visit nearby</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn imageButton">User</button>
-        <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
-        <div class="dropdown-content">
-          <a href="#">Profile</a>
-          <a href="#">Settings</a>
-          <a href="#">logout</a>
-        </div>
-      </div>    
-    </ul>
-  </nav>
-  
   <section>
 <div th:replace="fragments/Navi_frag.html :: navigator"></div>
 
@@ -290,39 +254,6 @@
     
     </div>
   </section>
-  <footer>
-    <div class="information">
-      <img th:src="@{~/images/ServicesImages/logo.png}" alt="">
-      <h3>Luxury hotel</h3>
-      <p> <a href="">022:000000</a></p>
-      <p> <a href="">luxuryhotel@gmail.com</a> </p>
-    </div>
-    <div class="quicklinks">
-      <h2>Quick links</h2>
-      <p> <a href="">about</a></p>
-      <p> <a href="">contact</a></p>
-      <p> <a href="">find us</a></p>
-    </div>
-    <div class="sociallinks">
-      <h2>Stay Connected</h2>
-      <!-- <h4><i class="fab fa-facebook-f"></i></h4>
-      <h4><i class="fab fa-twitter"></i></h4>
-      <h4><i class="fab fa-instagram"></i></h4>
-      <h4><i class="fab fa-youtube"></i></h4> -->
-      <h4>facebook</h4>
-      <h4>twitter</h4>
-      <h4>instagram</h4>
-      <h4>Youtube</h4>
-    </div>
-    <div class="emailcontact">
-      <h3>Email us Your Quaries</h3>
-      <div class="email">
-        <input type="email" name="" id="" placeholder="  Enter your email">
-        <!-- <input type="submit" name="" id=""> -->
-        <button><a href="">Send</a></button>
-      </div>
-    </div>
-  </footer>
 
 <!-- this contains for popup window  offer -->
 
@@ -358,7 +289,7 @@
   
 
   <div th:replace="fragments/Footer_frag.html :: footer"></div>
-
+  </section>
 </body>
 
 <script>
