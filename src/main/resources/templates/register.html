@@ -13,7 +13,7 @@
     <body>
         <div class="main">
             <div class="left">
-                <img class="img" src="../static/images/image.png" alt="">
+                <img class="img" th:src="@{~/images/image.png}" alt="">
             </div>
             <div class="right">
                 <form th:method="post" th:action="@{/user/save}" th:object="${user}">
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div th:replace="fragments/Footer_frag.html :: footer"></div>
+<!--        <div th:replace="fragments/Footer_frag.html :: footer"></div>-->
 
     </body>
 </html>
