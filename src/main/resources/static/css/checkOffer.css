@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+    body{
+      min-height: 100vh;
+      background: #FFFFFF;
+    }
+    .popup{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+.contentBox{
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  box-shadow: 0 5px 15px rgba(0,0,0,0,1);
+}
+.contentBox .imgBx{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contentBox .imgBx::before{
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #e7ffe0;
+  border: 50%;
+}
+.contentBox .imgBx img{
+  position: relative;
+  max-width: 250px;
+  z-index: 1;
+}
+.contentBox .content{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contentBox .content h3{
+    color: #23395d;
+    line-height:1em ;
+    font-weight: 300;
+    font-size: 2em;
+  }
+  .contentBox .content h2{
+    font-size: 4em;
+    color: #23395d;
+    line-height: 1em;
+
+  }
+
+  .contentBox .content h2 span{
+    color:#23395d;
+    font-size: 0.75em;
+    text-transform:uppercase ;
+  }
+  .contentBox .content p{
+    font-weight: 300;
+  }
+  .contentBox .content a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #23395d;
+    color: #fff;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+  }
+  .close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f3f3f3 url(../images/close.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  @media(max-width:767px){
+    .contentBox{
+      width: 300px;
+      height: auto;
+      flex-direction: column;
+    }
+    .contentBox .imgBx{
+      height: 200px;
+      transform: translateY(-50px);
+    }
+    .contentBox .imgBx::before{
+      background: #fff;
+
+    }
+    .contentBox .content{
+        height: auto;
+        text-align: center;
+        padding: 20px;
+        padding-top: 0;
+      }
+      .close{
+        top: -50px;
+        right: -10px;
+        background: #fff url(../images/close.png);
+        background-repeat: no-repeat;
+        background-size: 10px;
+        background-position: center;
+      }
+    }

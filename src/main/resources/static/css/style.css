@@ -33,7 +33,7 @@ body{
 	align-items: center;
     margin-top: 0%;
     margin-left: 22%;
-    border-radius: nullpx;
+    /*border-radius: ;*/
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -113,7 +113,7 @@ body{
 @media (max-width:1024px){
     .main{
         margin-top: 15%
-    };
+    }
 }
 
 

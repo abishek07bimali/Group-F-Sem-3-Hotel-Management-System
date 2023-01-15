@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Images to gallery</title>
+    <link rel="stylesheet" href="../static/css/add_images.css">
+    <!-- <link rel="stylesheet" href="../static/css/blog.css"> -->
+</head>
+<body>
+<h1>Add Images to Gallery</h1>
+<div class="uplaod_image">
+    <form id="add-post-form">
+        <!-- <label for="title">Title:</label><br>
+        <input type="file" name="image" id="image"><br> -->
+
+        <label for="image-id"></label><br>
+        <!-- <input type="text" id="title" name="title"><br> -->
+
+        <label for="image_path">Image_path</label><br>
+        <input type="text" id="image_path" name="image_path"><br>
+
+
+        <label for="image_description">Image Description</label><br>
+        <textarea id="image_description" name="image_description"></textarea><br><br>
+
+        <!-- to upload image -->
+        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <p><img id="output" width="200px" /></p>
+
+        <button type="submit"><a href="./ImageList.html" style="color: white;">Submit</a></button>
+
+
+        <script>
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        </script>
+    </form>
+</div>
+<!--<script src="../static/javascript/add_images.js"></script>-->
+
+
+
+
+
+
+</body>
+</html>

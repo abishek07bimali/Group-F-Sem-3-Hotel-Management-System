@@ -1,0 +1,360 @@
+:root {
+  --primary: #14274a;
+  --secondary: #14274a;
+  --white: #ffffff;
+  --red: red;
+  --black: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.image {
+  width: 100%;
+  justify-content: center;
+  /* background-color: black; */
+  background-image: url(../images/hotel.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image .cover h1,
+.image .cover h3 {
+  color: var(--white);
+  font-size: 50px;
+  text-align: center;
+  padding-top: 100px;
+  background-color: black;
+  /* opacity: 0.6; */
+}
+
+.image .cover p {
+  color: var(--white);
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+  padding-right: 10%;
+  padding-left: 10%;
+  background-color: black;
+  /* opacity: 0.6; */
+  padding-bottom: 10%;
+}
+
+.booking {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.booking .checkout,
+.booking .checkin,
+.booking .adults,
+.booking .children {
+  width: 250px;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.booking .book button {
+  color: var(--black);
+  border: 0px;
+  margin-top: 30px;
+  margin-left: 30px;
+  flex-wrap: wrap;
+}
+.booking .adults input,
+.booking .children input,
+.booking .checkout input,
+.booking .checkin input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.booking h3 {
+  color: var(--white);
+  font-size: 15px;
+  text-align: center;
+}
+.booking .book button{
+  background:transparent;
+}
+
+.booking .book button a {
+  border: 1px solid black;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.booking .book button a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+
+.shortdetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
+  margin-top: 20px;
+}
+.shortdetails .about,
+.shortdetails .imageDetails,
+.shortdetails .history {
+  width: 450px;
+  font-size: 15px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.shortdetails .about p,
+.shortdetails .history p {
+  padding-top: 2px;
+  text-align: justify;
+}
+
+.shortdetails .imageDetails img {
+  width: 100%;
+}
+.shortdetails .about button, .shortdetails .history button {
+  border: 0px;
+  background-color: var(--black);
+  background: transparent;
+  cursor: pointer;
+}
+
+
+.Roominformation .heading{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.Roominformation .accommodation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+} 
+.Roominformation .accommodation .rooms {
+  width: 400px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+.Roominformation .accommodation .rooms:hover, .readBlogs .blog_read:hover {
+  border: 0.5px solid black;
+}
+
+.Roominformation .accommodation .rooms img {
+  width: 100%;
+}
+
+
+.Roominformation .accommodation .rooms button {
+  background: transparent;
+  cursor: pointer;
+  padding-top: 15px;
+  border: 0px;
+}
+
+.Roominformation .accommodation .rooms button a {
+  background-color: var(--white);
+  border: 1px solid black;
+  border-radius: 20px;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px;
+}
+.Roominformation .accommodation .rooms button a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* 
+.rooms #zoom-in img{
+  transform: scale(1);
+  transition: 0.3s ease-out;
+}
+
+.rooms #zoom-in:hover img{
+  transform: scale(1.05); 
+} */
+
+.CheckGallery, .reviews, .readBlogs{
+  justify-content: center;
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.CheckGallery .GalleryPic {
+  width: 100%;
+  font-size: 15px;
+  padding: 40px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.CheckGallery .GalleryPic img {
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.CheckGallery .GalleryPic button{
+  background: transparent;
+  padding-top: 15px;
+  border: 0px;
+  margin: 20px;
+}
+.CheckGallery .GalleryPic button a {
+  background-color: var(--white);
+  border: 1px solid black;
+  border-radius: 20px;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px;
+}
+.CheckGallery .GalleryPic button a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.reviews .mainmessage{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.reviews .messages {
+  width: 350px;
+  font-size: 15px;
+  margin: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+.reviews .messages .customerdetail{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.reviews .messages img{
+  width: 20%;
+  border-radius: 50%;
+  margin: 10px;
+}
+.readBlogs .mainblog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.readBlogs .blog_read {
+  width: 350px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 30px;
+}
+
+.readBlogs .blog_read img {
+  width: 100%;
+}
+
+.readBlogs .blog_read button{
+  background: transparent;
+  padding-top: 10px;
+  border: 0px;
+}
+.readBlogs .blog_read button a{
+  border: 0px;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.readBlogs .blog_read button a:hover{
+  color: var(--primary);
+}
+
+.readBlogs button{
+  background: transparent;
+  padding-top: 10px;
+  border: 0px;
+}
+.readBlogs button a{
+  background-color: var(--white);
+  border: 1px solid black;
+  border-radius: 20px;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.readBlogs .button a:hover{
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+
+ @media (max-width: 1000px) {
+  .booking .checkout,
+  .booking .checkin,
+  .booking .adults,
+  .booking .children {
+    width: 20%;
+  }
+}
+
+@media (max-width: 670px) {
+  .booking .checkout,
+  .booking .checkin,
+  .booking .adults,
+  .booking .children {
+    width: 35%;
+  }
+} 
+
+ /* @media (max-width: 1200px) {
+  .shortdetails .about,
+  .shortdetails .imageDetails,
+  .shortdetails .history {
+    width: 45%;
+  }
+}
+
+@media (max-width: 800px) {
+  .shortdetails .about,
+  .shortdetails .imageDetails,
+  .shortdetails .history {
+    width: 95%;
+  }
+}   */
