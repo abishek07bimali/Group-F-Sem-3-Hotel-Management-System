@@ -1,132 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-      <meta charset="UTF-8">
-      <title>User Profile</title>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" th:href="@{~/css/user_profile.css}">
+
+    <link rel="stylesheet" type="text/css" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
   </head>
   <body>
-  <div class="container-fluid main" style="height:100vh;padding-left:0px;">
 
-    <div class="d-block d-md-none menu">
+  <section class="py-5 my-5">
+    <div class="container">
+      <h1 class="mb-5">Account Settings</h1>
+      <div class="bg-white shadow rounded-lg d-block d-sm-flex">
 
-      <div class="bar"></div>
-
-    </div>
-
-    <div class="expand-menu nav flex-column">
-
-      <a href="#" class="nav-link active mt-auto"><i class="far fa-user-circle"></i> Profile</a>
-      <a href="#" class="nav-link"><i class="far fa-file-alt"></i> History</a>
-      <a href="#" class="nav-link mb-auto"><i class="fas fa-cogs"></i> General</a>
-
-    </div>
-
-    <div class="row align-items-center" style="height:100%">
-
-      <div class="col-md-3 d-none d-md-block" style="height:100%" >
-
-        <div class="container-fluid nav sidebar flex-column">
-
-          <a href="#" class="nav-link active mt-auto"><i class="far fa-user-circle"></i> Profile</a>
-          <a href="#" class="nav-link"><i class="far fa-bell"></i> Notifications</a>
-          <a href="#" class="nav-link"><i class="far fa-file-alt"></i> Billing Info</a>
-          <a href="#" class="nav-link mb-auto"><i class="fas fa-cogs"></i> General</a>
-
+<!--        nav bar -->
+        <div class="profile-tab-nav border-right">
+          <div class="p-4">
+            <div class="img-circle text-center mb-3">
+              <img src="img/user2.jpg" alt="Image" class="shadow">
+            </div>
+            <h4 class="text-center">Username</h4>
+          </div>
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+              <i class="fa fa-home text-center mr-1"></i>
+              Account
+            </a>
+            <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+              <i class="fa fa-key text-center mr-1"></i>
+              Password
+            </a>
+            <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
+              <i class="fa fa-user text-center mr-1"></i>
+              Security
+            </a>
+            <a class="nav-link" id="history-tab" data-toggle="pill" href="#history" role="tab" aria-controls="history" aria-selected="false">
+              <i class="fa fa-bell text-center mr-1"></i>
+              History
+            </a>
+          </div>
         </div>
 
-      </div>
 
-      <div class="col-md-9">
 
-        <div class="container content clear-fix">
-
-          <h2 class="mt-5 mb-5">Profile Settings</h2>
-
-          <div class="row" style="height:100%">
-
-            <div class="col-md-3">
-
-              <div href=# class="d-inline"><img th:src="https://image.flaticon.com/icons/svg/236/236831.svg" width=130px style="margin:0;">
-                <br>
-<!--                <p class="pl-2 mt-2">-->
-<!--                  <a href="#" class="btn" style="color:#8f9096;font-weight:600">Edit Picture</a>-->
-<!--                </p>-->
+<!      right form container---->
+        <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+            <h3 class="mb-4">Account Settings</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control" value="username">
+                </div>
               </div>
 
-
-            </div>
-
-            <div class="col-md-9">
-
-              <div class="container">
-
-                <form>
-
-                  <div class="form-group">
-
-                    <label for=fullName>Full Name</label>
-                    <input type="text" class="form-control" id="fullName">
-
-                  </div>
-                  <div class="form-group">
-
-                    <label for=email>Email</label>
-                    <input type="email" class="form-control" id="email">
-
-                  </div>
-                  <div class="form-group">
-
-                    <label for=pass>Password</label>
-                    <input type="password" class="form-control" id="pass">
-
-                  </div>
-                  <div class="form-group ">
-
-                    <label for=birthday>Birthday</label>
-                    <input type="date" class="form-control" id="birthday">
-
-                  </div>
-
-<!--                  <div class="row mt-5">-->
-
-<!--                    <div class="col">-->
-
-<!--                      <button type="button" class="btn btn-primary btn-block">Save Changes</button>-->
-
-<!--                    </div>-->
-
-<!--                    <div class="col">-->
-
-<!--                      <button type="button" class="btn btn-default btn-block">Cancel</button>-->
-
-<!--                    </div>-->
-
-<!--                  </div>-->
-
-                </form>
-
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" value="smth@gmail.com">
+                </div>
               </div>
-
             </div>
 
+            <div>
+              <button class="btn btn-primary">Update</button>
+              <button class="btn btn-light">Cancel</button>
+            </div>
           </div>
 
+<!--          Password update-->
+          <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+            <h3 class="mb-4">Password Settings</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Old password</label>
+                  <input type="password" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>New password</label>
+                  <input type="password" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Confirm new password</label>
+                  <input type="password" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-primary">Update</button>
+              <button class="btn btn-light">Cancel</button>
+            </div>
+          </div>
+
+<!--         Booking   History -->
+          <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+            <h3 class="mb-4">Booking History</h3>
+            <div class="form-group">
+              <div class="form-check">
+<!--        Make a table or something to display the history-->
+              </div>
+            </div>
+    
+            
+            
+            <div>
+              <button class="btn btn-primary">Update</button>
+              <button class="btn btn-light">Cancel</button>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
-
-  </div>
-
+  </section>
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>

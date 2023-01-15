@@ -75,4 +75,10 @@ public class HomepageController {
     public String getWeeding() {
         return "weddingdetail";
     }
+
+    @GetMapping("/profile")
+    public String getUserProfile() {
+        return "user_profile";
+    }
+
 }
