@@ -10,6 +10,7 @@
     display: flex;
     margin: auto;
     flex-direction: row;
+    margin-bottom: 4%;
 }
 .container-one {
     display: flex;
@@ -52,7 +53,7 @@
 .b-2 {
     width: 27%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -62,7 +63,7 @@
 .b-5 {
     width: 25%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -134,7 +135,7 @@
 .b-4 {
     width: 27%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -144,7 +145,7 @@
 .b-6 {
     width: 25%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -215,7 +216,7 @@
 .b-8 {
     width: 27%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -225,7 +226,7 @@
 .b-9 {
     width: 25%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
