@@ -5,11 +5,14 @@
     <title>User Profile</title>
     <link rel="stylesheet" th:href="@{~/css/user_profile.css}">
 
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+
     <link rel="stylesheet" type="text/css" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
   </head>
   <body>
-
+  <div th:replace="fragments/Navi_frag.html :: navigator"></div>
   <section class="py-5 my-5">
     <div class="container">
       <h1 class="mb-5">Account Settings</h1>
@@ -124,9 +127,19 @@
     </div>
   </section>
 
+  <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </body>
+  <script>
+    let myPage = "profile";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+      i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+  </script>
 </html>
