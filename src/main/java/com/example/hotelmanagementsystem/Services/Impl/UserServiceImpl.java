@@ -31,6 +31,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     public final LaundaryRepo laundaryRepo;
+    public final surprisePlanningRepo surpriseplanningRepo;
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
@@ -94,6 +95,18 @@ public class UserServiceImpl implements UserService {
         feedback.setMessage(feedbackPojo.getMessage());
         feedbackRepo.save(feedback);
         return "sent";
+    }
+
+    @Override
+    public String submitPlanning(surprisePlanningPojo surpriseplanningPojo) {
+        surprisePlanning surpriseplanning=new surprisePlanning();
+        surpriseplanning.setStartdate(surpriseplanningPojo.getStartdate());
+        surpriseplanning.setEnddate(surpriseplanningPojo.getEnddate());
+        surpriseplanning.setEventtype(surpriseplanningPojo.getEventtype());
+        surpriseplanning.setEventspace(surpriseplanningPojo.getEventspace());
+        surpriseplanning.setEventdescription(surpriseplanningPojo.getEventdescription());
+        surpriseplanningRepo.save(surpriseplanning);
+        return "submitted";
     }
 
     @Override
