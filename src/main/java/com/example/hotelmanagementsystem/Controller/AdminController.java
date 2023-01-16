@@ -90,7 +90,7 @@ public class AdminController {
 
     @GetMapping("/newblog")
     public String AddBlog(Model model) {
-//        model.addAttribute("blog", new BlogPojo());
+        model.addAttribute("blog", new BlogPojo());
         return "admin_blog";
     }
 
@@ -103,7 +103,7 @@ public class AdminController {
 //        return "redirect:adminBlogPage";
     }
 
-    @PostMapping("/dashboard")
+    @GetMapping("/dashboard")
     public String getAdmin(Model model) {
         return "daily_profit";
     }
@@ -111,14 +111,14 @@ public class AdminController {
     @GetMapping("/editblog/{id}")
     public String editBlog(@PathVariable("id") Integer id, Model model) {
         Blog blog = blogServices.fetchById(id);
-        model.addAttribute("newBooking", new BlogPojo(blog));
+        model.addAttribute("blog", new BlogPojo(blog));
         return "admin_blog";
     }
 
-    @GetMapping("/profit")
-    public String getProfitPage() {
-        return ("daily_profit");
-    }
+//    @GetMapping("/profit")
+//    public String getProfitPage() {
+//        return ("daily_profit");
+//    }
 
 
     @GetMapping("/deleteblog/{id}")

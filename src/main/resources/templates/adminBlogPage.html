@@ -5,38 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{~/https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans}">
+    <link rel="stylesheet" th:href="@{~/https://fonts.googleapis.com/icon?family=Material+Icons}">
+    <link rel="stylesheet" th:href="@{~/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
 
     <title>Admin Blog List</title>
-<<<<<<< HEAD:src/main/resources/template/adminBlogPage.html
-    <link rel="stylesheet" href="../static/css/adminBlogPage.css">
+    <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/dashstyle.css">
-    <link rel="stylesheet" href="../static/css/navigation.css">
-    <link rel="shortcut icon" type="x-icon" href="../static/images/logo.png">
+    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../static/javascript/notification.js" defer></script>
-=======
+    <script th:src="@{~/javascript/notification.js}" defer></script>
     <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">
->>>>>>> main:src/main/resources/templates/adminBlogPage.html
-    
 </head>
 <body>
 <!--    Nav bar-->
     <nav>
-        <label class="logo"> <a href="#"><img src="../static/images/logo.png" alt=""></a></label>
+        <label class="logo"> <a href="#"><img th:src="@{~/images/logo.png}" alt=""></a></label>
         <h1>Luxury Hotel: Admin Panel</h1>
-        <nav>
             <div class="icon" onclick="toggleNotification()">
-                <img class="img_not" src="../static/images/bell.png" alt=""> <span>5</span>
+                <img class="img_not" th:src="@{~/images/bell.png}" alt=""> <span>5</span>
             </div>
             <div class="notifi-box" id="box">
                 <h2>Notifications<span> 5</span></h2>
                 <div class="notifi-item">
-                    <img src="../static/images/Profile icon.jpg" alt="img">
+                    <img th:src="@{~/images/Profile icon.jpg}" alt="img">
                     <div class="text">
                         <h4>Abhishek Karki</h4>
                         <p>@lorem ipsum dolor sit amet</p>
@@ -44,7 +39,7 @@
                 </div>
 
                 <div class="notifi-item">
-                    <img src="../static/images/Profile icon.jpg" alt="img">
+                    <img th:src="@{~/images/Profile icon.jpg}" alt="img">
                     <div class="text">
                         <h4>Abhishek Bimali</h4>
                         <p>@lorem ipsum dolor sit amet</p>
@@ -75,7 +70,6 @@
                     </div>
                 </div>
             </div>
-        </nav>
     </nav>
     <div id="mySidenav" class="sidenav">
         <label class="logoInNav"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
@@ -128,11 +122,11 @@
                     <td th:text="${blog.id}"></td>
                     <td th:text="${blog.author}"></td>
                     <td th:text="${blog.topic}"></td>
-                    <td th:text="${blog.date}">27/11/2022</td>
-                    <td th:text="${blog.phoneNum}">9824234967</td>
+                    <td th:text="${blog.date}"></td>
+                    <td th:text="${blog.phoneNum}"></td>
 <!--                    <td><button class="btn2">Active</button></td>-->
-                    <td> <a class="edit" th:href="@{~/admin/editblog/}+${blog.id}" >delete</a></td>
-                    <td> <a class="delete" th:href="@{~/admin/editblog/}+${blog.id}" >delete</a></td>
+                    <td> <a class="edit" th:href="@{~/admin/editblog/}+${blog.id}" >edit</a></td>
+                    <td> <a class="delete" th:href="@{~/admin/deleteblog/}+${blog.id}" >delete</a></td>
 <!--                        <div class="td1">-->
 
 <!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/editblog/}+${blog.id}"><i class="material-icons">&#xE254;</i></button>-->
