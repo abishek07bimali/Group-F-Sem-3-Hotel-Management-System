@@ -1,6 +1,6 @@
 package com.example.hotelmanagementsystem.Services;
 
-import com.system.web_backend_individual1.Pojo.CabPojo;
+import com.example.hotelmanagementsystem.UserPojo.CabPojo;
 
 public interface CabService {
     String save_cab_record(CabPojo cabPojo);

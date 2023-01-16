@@ -1,7 +1,7 @@
 package com.example.hotelmanagementsystem.Controller;
 
-import com.system.web_backend_individual1.Pojo.CabPojo;
-import com.system.web_backend_individual1.Services.CabService;
+import com.example.hotelmanagementsystem.UserPojo.CabPojo;
+import com.example.hotelmanagementsystem.Services.CabService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

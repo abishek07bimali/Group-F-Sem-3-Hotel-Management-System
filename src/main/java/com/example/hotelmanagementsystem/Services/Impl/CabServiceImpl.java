@@ -1,9 +1,9 @@
 package com.example.hotelmanagementsystem.Services.Impl;
 
-import com.system.web_backend_individual1.Entity.Cab;
-import com.system.web_backend_individual1.Pojo.CabPojo;
-import com.system.web_backend_individual1.Repo.CabRepo;
-import com.system.web_backend_individual1.Services.CabService;
+import com.example.hotelmanagementsystem.entity.Cab;
+import com.example.hotelmanagementsystem.UserPojo.CabPojo;
+import com.example.hotelmanagementsystem.repo.CabRepo;
+import com.example.hotelmanagementsystem.Services.CabService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
