@@ -33,7 +33,7 @@ public class HomepageController {
     }
 
     @GetMapping("/rooms")
-    public String getRooms() { return "rooms";
+    public String getRooms() {
+        return "rooms";
     }
-
 }

@@ -83,7 +83,7 @@ body{
     cursor: pointer;
     transition:all 0.3s ease ;
 }
-.btn .button:hover{
+ .container .star_rating .btn .button:hover{
     background: #1b1b1b;
 
 }

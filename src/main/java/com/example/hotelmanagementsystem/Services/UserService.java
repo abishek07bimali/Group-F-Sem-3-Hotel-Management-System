@@ -13,10 +13,14 @@ public interface UserService {
     List<Booking> fetchAll();
 
     String save(UserPojo userPojo);
-     Booking fetchById(Integer id);
+
+    Booking fetchById(Integer id);
 
     String save(BookingPojo bookingPojo);
 
+
     void deleteById(Integer id);
+
+
 
 }

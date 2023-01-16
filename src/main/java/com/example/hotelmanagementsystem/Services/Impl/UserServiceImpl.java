@@ -18,11 +18,14 @@ public class UserServiceImpl implements UserService {
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
 
+   
+
+
 
 
     @Override
     public String save(UserPojo userPojo) {
-        User user=new User();
+        User user = new User();
         user.setEmail(userPojo.getEmail());
         user.setFullname(userPojo.getFullname());
         user.setMobileNo(userPojo.getMobile_no());
@@ -49,6 +52,8 @@ public class UserServiceImpl implements UserService {
         bookingRepo.save(booking);
         return null;
     }
+
+
 
     @Override
     public Booking fetchById(Integer id) {
