@@ -17,10 +17,11 @@
   width: 100%;
   justify-content: center;
   /* background-color: black; */
-  background-image: url(../images/background.jpg);
+  background-image:  linear-gradient(to bottom, rgba(140, 192, 224, 0.52), rgba(18, 47, 77, 0.73)),url(../images/gallery11.jpg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #bfbff3;
 }
 
 .image .cover h1,
@@ -29,8 +30,8 @@
   font-size: 50px;
   text-align: center;
   padding-top: 100px;
-  background-color: black;
-  /* opacity: 0.6; */
+  /*background-color: black;*/
+  /* opacity: 0.6;*/
 }
 
 .image .cover p {
@@ -40,7 +41,7 @@
   padding-top: 30px;
   padding-right: 10%;
   padding-left: 10%;
-  background-color: black;
+  /*background-color: black;*/
   /* opacity: 0.6; */
   padding-bottom: 10%;
 }
