@@ -7,7 +7,7 @@
 body {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
@@ -16,7 +16,8 @@ body {
     align-items: center;
     flex-direction: column;
     width: 500px;
-    margin-top: 30px;
+    height: 400px;
+    margin-top: 5px;
     border: 2px solid black;
 }
 
@@ -48,6 +49,8 @@ button {
 
 .maps {
     display: flex;
-    width: 500px;
+    /* width: 500px; */
     border: 2px solid black;
+    height: 400px;
+    width: 50%;
 }
