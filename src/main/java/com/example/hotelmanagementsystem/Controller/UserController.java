@@ -1,10 +1,7 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
-import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
-import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.UserPojo.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -57,6 +54,12 @@ public class UserController {
     public String submitMessage(@Valid ContactPojo contactPojo){
         userService.submitMsg(contactPojo);
         return "redirect:contact";
+    }
+
+    @PostMapping("/send-feedback")
+    public String submitFeedback(@Valid FeedbackPojo feedbackPojo){
+        userService.submitFeedback(feedbackPojo);
+        return "redirect:homepage";
     }
 
     @GetMapping("/viewBlog")

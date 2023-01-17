@@ -2,6 +2,7 @@ package com.example.hotelmanagementsystem.Controller;
 
 
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
+import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

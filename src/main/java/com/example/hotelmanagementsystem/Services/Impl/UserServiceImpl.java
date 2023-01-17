@@ -1,18 +1,9 @@
 package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
-import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
-import com.example.hotelmanagementsystem.UserPojo.UserPojo;
-import com.example.hotelmanagementsystem.entity.Blog;
-import com.example.hotelmanagementsystem.entity.Booking;
-import com.example.hotelmanagementsystem.entity.Contact;
-import com.example.hotelmanagementsystem.entity.User;
-import com.example.hotelmanagementsystem.repo.BlogRepo;
-import com.example.hotelmanagementsystem.repo.BookingRepo;
-import com.example.hotelmanagementsystem.repo.ContactRepo;
-import com.example.hotelmanagementsystem.repo.UserRepo;
+import com.example.hotelmanagementsystem.UserPojo.*;
+import com.example.hotelmanagementsystem.entity.*;
+import com.example.hotelmanagementsystem.repo.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +15,7 @@ public class UserServiceImpl implements UserService {
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
+    public final FeedbackRepo feedbackRepo;
     public final BlogRepo blogRepo;
 
 
@@ -67,6 +59,17 @@ public class UserServiceImpl implements UserService {
         contact.setSubject(contactPojo.getSubject());
         contact.setMessage(contactPojo.getMessage());
         contactRepo.save(contact);
+        return "sent";
+    }
+
+    @Override
+    public String submitFeedback(FeedbackPojo feedbackPojo){
+        Feedback feedback = new Feedback();
+        feedback.setFullname(feedbackPojo.getFullname());
+        feedback.setEmail(feedbackPojo.getEmail());
+        feedback.setSubject(feedbackPojo.getSubject());
+        feedback.setMessage(feedbackPojo.getMessage());
+        feedbackRepo.save(feedback);
         return "sent";
     }
 
