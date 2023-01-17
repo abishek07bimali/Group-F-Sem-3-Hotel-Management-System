@@ -1,0 +1,35 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.body{
+
+}
+.btn {
+    margin-top: 10%;
+    margin-left: 20%;
+    background-color: white;
+    height: 50%;
+    width: 50%;
+}
+.btn  .img{
+    height: 50%;
+    width: 50%;
+    opacity: 50%;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+ .btn .btn1{
+    height: 20%;
+    width: 20%;
+     margin-left: 35%;
+}
+ .btn1{
+     height: 30%;
+     width: 100%;
+     background-color: #0b7dda;
+
+ }
