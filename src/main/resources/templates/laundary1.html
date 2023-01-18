@@ -8,13 +8,23 @@
 <body>
 <div class="main">
     <div class="container">
-  <label class="l1">Room No</label><br>
+  <label class="l1">Room No</label><br><br>
   <input class="ibox" type="text" name="room no"><br><br>
-  <label class="l2">No of clothes</label><br>
-  <input class="ibox1" type="number" name="clothes"><br><br>
- <div><button class="btn" type="submit">Collect</button></div>
+  <label class="l2">No of clothes</label><br><br>
+  <input class="ibox1" type="number" name="clothes" onkeyup="mult(this.value);"><br><br>
+        <label class="l3">Price</label><br><br>
+        <input id="ibox2" type="number" name="print" ><br><br>
+ <div><button id="btn" type="submit">Collect</button></div>
     </div>
 </div>
+<script>
+    function mult(value){
+        var x;
+        x=10*value;
+        document.getElementById("ibox2").value=x;
+    }
+
+</script>
 
 </body>
 </html>

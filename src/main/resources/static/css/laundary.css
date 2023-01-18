@@ -5,9 +5,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.body{
 
-}
 .btn {
     margin-left: 15%;
     background-color: white;
@@ -16,7 +14,6 @@
 }
 .btn  .img{
     height: 50%;
-    opacity: 50%;
     width: 40%;
     margin-top: 10%;
     margin-left: 20%;
