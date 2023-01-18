@@ -70,6 +70,12 @@ public class UserController {
         return ("event");
     }
 
+    @GetMapping("/pickup_request")
+    public String getPickupPage() {
+        return ("picked_up");
+    }
+
+
 
 
 }
