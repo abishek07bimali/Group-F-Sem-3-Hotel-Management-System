@@ -14,14 +14,14 @@ public interface UserService {
 
     String save(UserPojo userPojo);
 
-    String submitFeedback(FeedbackPojo feedbackPojo);
-
     Booking fetchById(Integer id);
 
     String save(BookingPojo bookingPojo);
 
+    String submitFeedback(FeedbackPojo feedbackPojo);
+
     String submitMsg(ContactPojo contactPojo);
-//    Contact fetchById(Integer id);
+    //    Contact fetchById(Integer id);
     void deleteById(Integer id);
 
 //    String viewBlog(BlogPojo blogpojo);

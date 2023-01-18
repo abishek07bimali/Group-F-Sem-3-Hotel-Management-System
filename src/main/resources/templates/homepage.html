@@ -294,17 +294,17 @@
       </div>
         <div class="container-fluid contact" id="contact">
           <div class="container">
-            <form th:method="post" th:action="@{/user/send-feedback}" th:object="${feedback}">
+            <form th:method="post" th:action="@{/user/savefeedback}" th:object="${feedback}">
               <h2>Guest Experience Feedback</h2>
-<!--              <input type="email" placeholder="Email"  class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${feedback.email}">-->
-<!--              <input type="text" placeholder="Name"   class="full-half" required th:field="*{fullname}" th:value="${feedback.fullname}">-->
-<!--              <input type="text" placeholder="Subject"  required th:field="*{subject}" th:value="${feedback.subject}">-->
-<!--              <textarea placeholder="Message"  required th:field="*{message}" th:value="${feedback.message}"></textarea>-->
+              <input type="email" placeholder="Email"  class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${feedback.email}">
+              <input type="text" placeholder="Name"   class="full-half" required th:field="*{fullname}" th:value="${feedback.fullname}">
+              <input type="text" placeholder="Subject"  required th:field="*{subject}" th:value="${feedback.subject}">
+              <textarea placeholder="Message"  required th:field="*{message}" th:value="${feedback.message}"></textarea>
 
-              <input type="text" placeholder="Name" id="name" name="name" class="full-half" required >
-              <input type="email" placeholder="Email" id="email" name="email" class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
-              <input type="text" placeholder="Subject" id="subject" name="subject"  required >
-              <textarea placeholder="Message" id="message" name="message" required></textarea>
+<!--              <input type="text" placeholder="Name" id="name" name="name" class="full-half" required >-->
+<!--              <input type="email" placeholder="Email" id="email" name="email" class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >-->
+<!--              <input type="text" placeholder="Subject" id="subject" name="subject"  required >-->
+<!--              <textarea placeholder="Message" id="message" name="message" required></textarea>-->
               <input type="submit" value="Send">
             </form>
           </div>

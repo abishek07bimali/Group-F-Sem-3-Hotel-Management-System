@@ -56,11 +56,13 @@ public class UserController {
         return "redirect:contact";
     }
 
-    @PostMapping("/send-feedback")
-    public String submitFeedback(@Valid FeedbackPojo feedbackPojo){
+
+    @PostMapping("/savefeedback")
+    public String getFeedback(@Valid FeedbackPojo feedbackPojo){
         userService.submitFeedback(feedbackPojo);
-        return "redirect:homepage";
+        return "redirect:/homepage";
     }
+
 
     @GetMapping("/viewBlog")
     public String viewUserBlog(Model model){

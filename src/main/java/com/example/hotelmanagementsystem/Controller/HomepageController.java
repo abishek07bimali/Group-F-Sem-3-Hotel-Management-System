@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/homepage")
 public class HomepageController {
     @GetMapping("")
-    public String geHomepage() {
+    public String geHomepage(Model model) {
+        model.addAttribute("feedback", new FeedbackPojo());
+
         return ("homepage");
     }
 
