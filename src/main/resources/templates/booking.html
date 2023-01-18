@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" th:href="@{~/css/booking.css}">
-<!--    <script defer th:src="@{~/javascript/booking.js}"></script>-->
+    <script defer th:src="@{~/javascript/booking.js}"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,7 @@
 
             <label for="FullName">FullName</label>
 
-            <input id="FullName" name="FullName" type="text" required th:field="*{fullname}" th:value="${booking.fullname}">
+            <input id="FullName" name="FullName" type="text"  th:field="*{fullname}" th:value="${booking.fullname}">
 
             <div class="error"></div>
 
@@ -48,7 +48,7 @@
 
             <label for="Phone">Phone</label>
 
-            <input id="Phone" name="Phone" type="number" required th:field="*{mobile_no}" th:value="${booking.mobile_no}">
+            <input id="Phone" name="Phone" type="number"  th:field="*{mobile_no}" th:value="${booking.mobile_no}">
 
             <div class="error"></div>
 
@@ -58,7 +58,7 @@
 
             <label for="RoomType">Room Type</label>
 
-            <select name="RoomType" id="RoomType" required th:field="*{room}" th:value="${booking.room}">
+            <select name="RoomType" id="RoomType"  th:field="*{room}" th:value="${booking.room}">
 
                 <option value="s">Single</option>
 
@@ -82,7 +82,7 @@
 
             <!-- <input id="Number"name="Number" type="number"> -->
 
-            <select  id="people" required th:field="*{number_of_people}" th:value="${booking.number_of_people}">
+            <select  id="people"  th:field="*{number_of_people}" th:value="${booking.number_of_people}">
 
                 <option value="1">1 person</option>
 
@@ -106,7 +106,7 @@
 
             <!-- <input id="date" name="date" type="number"> -->
 
-            <input type="date" name="date" id="checkInDate" placeholder="date" required th:field="*{Checkin}" th:value="${booking.checkin}">
+            <input type="date" name="date" id="checkInDate" placeholder="date"  th:field="*{Checkin}" th:value="${booking.checkin}">
 
             <div class="error"></div>
 
@@ -118,7 +118,7 @@
 
             <!-- <input id="date" name="date" type="number"> -->
 
-            <input type="date" name="date" id="checkOutDate" placeholder="date" required  th:field="*{checkout}" th:value="${booking.checkout}">
+            <input type="date" name="date" id="checkOutDate" placeholder="date"   th:field="*{checkout}" th:value="${booking.checkout}">
             <div class="error"></div>
 
         </div>

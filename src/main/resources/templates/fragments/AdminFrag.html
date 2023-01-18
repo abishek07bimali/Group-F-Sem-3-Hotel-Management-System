@@ -1,38 +1,76 @@
-<div th:fragment="navigator">
+<div th:fragment="admin_navigation">
+    <!--    Nav bar-->
     <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo"> <a th:href="@{/homepage}"><img th:src="@{~/images/ServicesImages/logo.png}" alt=""></a></label>
-        <ul>
-            <li><a class="list-group-item active" id="homepage"  th:href="@{~/homepage}">Home</a></li>
-            <li><a th:href="@{~/homepage/about}" class="list-group-item" id="about">About</a></li>
-            <li><a th:href="@{~/homepage/services}" class="list-group-item" id="services">Services</a></li>
-            <li><a th:href="@{~/homepage/contact}" class="list-group-item" id="contact">Contact</a></li>
-            <!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
-            <!--      <li><a href="#">Contact</a></li>-->
-            <li><a th:href="@{~/user/booking}" class="list-group-item" id="book">Book</a></li>
-            <div class="dropdown">
-                <button class="dropbtn">See More</button>
-                <div class="dropdown-content">
-                    <a th:href="@{~/homepage/gallery}" class="list-group-item" id="gallery">Gallery</a>
-                    <a th:href="@{~/homepage/rooms}" class="list-group-item" id="rooms">Rooms</a>
-                    <a th:href="@{~/homepage/packages}" class="list-group-item" id="packages">Packages</a>
-                    <a th:href="@{~/homepage/viewblog}" class="list-group-item" id="blogs">Blogs</a>
-                    <!--          <a th:href="@{~/homepage/nearby_places}" class="list-group-item" id="nearby">Visit nearby</a>-->
+        <label class="logo"> <a href="#"><img th:src="@{~/images/logo.png}" alt=""></a></label>
+        <h1>Luxury Hotel: Admin Panel</h1>
+        <div class="icon" onclick="toggleNotification()">
+            <img class="img_not" th:src="@{~/images/bell.png}" alt=""> <span>5</span>
+        </div>
+        <div class="notifi-box" id="box">
+            <h2>Notifications<span> 5</span></h2>
+
+            <div class="notifi-item">
+                <img th:src="@{~/images/Profile icon.jpg}" alt="img">
+                <div class="text">
+                    <h4>Abhishek Karki</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn imageButton" >User</button>
-                <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
-                <div class="dropdown-content">
-                    <a th:href="@{~/homepage/profile}">Profile</a>
-                    <a href="#">Settings</a>
-                    <a href="#">logout</a>
+
+            <div class="notifi-item">
+                <img th:src="@{~/images/Profile icon.jpg}" alt="img">
+                <div class="text">
+                    <h4>Abhishek Bimali</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
                 </div>
             </div>
-        </ul>
+
+            <div class="notifi-item">
+                <img src="../static/images/Profile icon.jpg" alt="img">
+                <div class="text">
+                    <h4>Amul Bashyal</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+
+            <div class="notifi-item">
+                <img src="../static/images/Profile icon.jpg" alt="img">
+                <div class="text">
+                    <h4>Rakhsit Shrestha</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+
+            <div class="notifi-item">
+                <img src="../static/images/Profile icon.jpg" alt="img">
+                <div class="text">
+                    <h4>Bhawana Bashyal</h4>
+                    <p>@lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+        </div>
     </nav>
+    <div id="mySidenav" class="sidenav">
+        <label class="logoInNav"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="list-group-item active" id="dash" th:href="@{~/admin/list}">dashboard</a>
+        <a class="list-group-item" id="new" th:href="@{~/admin/list}">new booking</a>
+        <a class="list-group-item" id="blog" th:href="@{~/admin/bloglist}">blogs and notice</a>
+        <a class="list-group-item" id="room" th:href="@{~/admin/room}">Room</a>
+        <a class="list-group-item" id="gallery" th:href="@{~/admin/gallery}">Gallery</a>
+        <a class="list-group-item" id="book" th:href="@{~/admin/list}">all booking</a>
+        <a class="list-group-item"  id="web" th:href="@{~/admin/list}">Website</a>
+        <a class="list-group-item" th:href="@{~/admin/list}" style="margin-top: 150px">Logout</a>
+    </div>
+    <span class="burger" onclick="openNav()">&#9776;</span>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
 
 </div>
