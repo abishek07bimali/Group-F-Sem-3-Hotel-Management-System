@@ -6,6 +6,7 @@
 
 body {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -17,7 +18,7 @@ body {
     flex-direction: column;
     width: 500px;
     height: 400px;
-    margin-top: 5px;
+    margin-top: 50px;
     border: 2px solid black;
 }
 
@@ -40,17 +41,14 @@ input {
     border-radius: 5px;
 }
 
-button {
-    width: 200px;
-    height: 30px;
-    margin-top: 8px;
-    margin-bottom: 30px;
+.forlocation {
+    width: 300px;
+    height: 35px;
+    margin-top: 5px;
 }
 
-.maps {
-    display: flex;
-    /* width: 500px; */
-    border: 2px solid black;
-    height: 400px;
-    width: 50%;
+.submitbutton {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
 }
