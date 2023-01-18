@@ -1,0 +1,49 @@
+.form-container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 2%;
+
+
+}
+h1{
+    margin-bottom: 3%;
+    color: rgba(2, 17, 54, 0.61);
+    font-family: 'Akaya Telivigala';
+}
+.btn-cancel{
+    position: absolute;
+}
+.btn{
+    background-color: #15aa04;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 12%;
+}
+
+
+
+
+
+
+/* Style inputs with type="text", select elements and textareas */
+input, select, textarea {
+    width: 40%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
