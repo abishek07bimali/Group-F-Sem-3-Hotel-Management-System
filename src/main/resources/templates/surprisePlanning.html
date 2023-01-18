@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Plan a surprise with Luxury</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/surprisePlanning.css">
-
+    <script src="../static/javascript/surprisePlanning.js"></script>
 </head>
 <body>
 <!-- A button to open the popup form -->
@@ -42,14 +43,14 @@
         <input type="text" id="space" placeholder="# of attendances" name="space" required>
 
         <label for="subject"><b>Event Description</b></label>
-        <textarea id="subject" name="subject" placeholder="Special instructions if any..." style="height:200px"></textarea>
+        <textarea id="subject" name="subject" placeholder="Special instructions if any..." style="height:75px"></textarea>
 
 
 
 
 
         <button type="submit" class="btn">Submit</button>
-        <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+        <button type="button" class="btn-cancel" onclick="closeForm()"><i class="fa fa-close"></i></button>
     </form>
 </div>
 </body>

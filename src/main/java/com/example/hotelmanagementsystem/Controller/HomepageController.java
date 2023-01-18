@@ -73,7 +73,7 @@ public class HomepageController {
 
     @GetMapping("/wedding")
     public String getWeeding() {
-        return "weddingdetail";
+        return "weddingPackage";
     }
 
     @GetMapping("/profile")

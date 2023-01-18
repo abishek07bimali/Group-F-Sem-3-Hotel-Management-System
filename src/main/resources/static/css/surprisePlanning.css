@@ -1,28 +1,95 @@
+{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: #233975;
+    color: white;
+    font-size: 18px;
+    font-family: 'Akaya Telivigala';
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    /*bottom: 23px;*/
+    /*right: 28px;*/
+    width: 200px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    width: 35%;
+
+    position: fixed;
+    /*bottom: 15%;*/
+    bottom: 1%;
+    right: 340px;
+    /*right: 480px;*/
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+
 .form-container{
     display:flex;
+
     flex-direction: column;
     position: relative;
     margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 7%;
 
 
 }
+/* Style inputs with type="text", select elements and textareas */
+input, select, textarea {
+    width: 93%; /* Full width */
+    padding: 6px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+
+    background: #f1f1f1;
+    margin-bottom: 19px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+input:focus, select:focus, textarea:focus{
+    background-color: #ddd;
+    outline: none;
+
+}
+
+
 h1{
     margin-bottom: 3%;
-    color: rgba(2, 17, 54, 0.61);
+    color:#233975;
     font-family: 'Akaya Telivigala';
+    font-size: 29px;
 }
+
 .btn-cancel{
     position: absolute;
+    border:none;
+    background-color: white;
+    color:#142f83;
+    right:1%;
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+.btn-cancel:hover{
+opacity: 1;
 }
 .btn{
     background-color: #15aa04;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 18px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 12%;
+    width: 22%;
+}
+.btn:hover {
+    background-color: #142f83;
 }
 
 
@@ -30,20 +97,3 @@ h1{
 
 
 
-/* Style inputs with type="text", select elements and textareas */
-input, select, textarea {
-    width: 40%; /* Full width */
-    padding: 12px; /* Some padding */
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-/* Add a background color and some padding around the form */
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
