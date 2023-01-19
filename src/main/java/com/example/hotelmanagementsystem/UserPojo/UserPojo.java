@@ -31,6 +31,11 @@ public class UserPojo {
         private  String Price;
 
 
-     
+        public LaundaryPojo(Laundary laundary) {
+            this.id=laundary.getId();
+            this.No_of_clothes=laundary.getNo_of_clothes();
+            this.Price=laundary.getPrice();
+
+        }
     }
 }
