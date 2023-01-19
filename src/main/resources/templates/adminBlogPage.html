@@ -35,8 +35,8 @@
 
             </div>
 
-            <div style="overflow-x:auto;"></div>
-            <table id="blog-table">
+            <div style="overflow-x:auto;">
+            <table id="blog-table" style="overflow: scroll">
                 <tr>
                     <th>Blog_Id</th>
                     <th>Author</th>
@@ -67,7 +67,7 @@
                 </tr>
 
             </table>
-
+            </div>
             <br><br>
             <hr>
         </div>
@@ -85,8 +85,8 @@
                 <button class="btn1"><a th:href="@{/admin/noticeform}">+ New Blog</a></button>
             </div>
 
-            <div style="overflow-x:auto;"></div>
-            <table id="notice-table">
+            <div style="overflow-x:auto;">
+            <table id="notice-table" style="overflow: scroll">
                 <tr>
                     <th>Notice_Id</th>
                     <th>Publisher</th>
@@ -95,11 +95,12 @@
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Maria Anders</td>
-                    <td>Luxe Room</td>
-                    <td>27/11/2022</td>
+                <tr th:each="notice:${notice}">
+                    <td th:text="${notice.id}"></td>
+                    <td th:text="${notice.publisher}"></td>
+                    <td th:text="${notice.topic}"></td>
+                    <td th:text="${notice.date_published}"></td>
+                    <td> <a class="edit" th:href="@{~/admin/editnotice}+${notice.id}" >edit</a></td>
                     <td><button class="btn2">Active</button></td>
                     <td>
                         <div class="td1">
@@ -114,6 +115,7 @@
 
             </table>
 
+        </div>
         </div>
 
     </div>

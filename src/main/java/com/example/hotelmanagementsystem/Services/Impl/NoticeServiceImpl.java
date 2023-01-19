@@ -31,4 +31,15 @@ public class NoticeServiceImpl implements NoticesService {
     public List<Notices> fetchAll() {
         return this.noticeRepo.findAll();
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        noticeRepo.deleteById(id);
+    }
+
+    @Override
+    public Notices fetchById(Integer id) {
+        return noticeRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+
+    }
 }

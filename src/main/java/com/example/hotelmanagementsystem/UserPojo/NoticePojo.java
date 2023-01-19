@@ -16,7 +16,7 @@ public class NoticePojo {
     private  String topic;
     private  String content;
     private  String date_published;
-    NoticePojo(Notices notice){
+    public  NoticePojo(Notices notice){
         this.id=notice.getId();
         this.content=notice.getContent();
         this.topic=notice.getTopic();

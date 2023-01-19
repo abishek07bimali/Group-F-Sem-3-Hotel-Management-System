@@ -8,6 +8,7 @@ import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Notices;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -81,11 +82,13 @@ public class AdminController {
 //        return "adminBlogPage";
 //    }
 
-
+//    AdminBlog page
     @GetMapping("/bloglist")
     public String getBlogList(Model model){
         List<Blog> blogs = blogServices.fetchAll();
+        List<Notices> notices = noticesService.fetchAll();
         model.addAttribute("blog", blogs);
+        model.addAttribute("notice", notices);
         return "adminBlogPage";
     }
 
@@ -113,7 +116,7 @@ public class AdminController {
     public String editBlog(@PathVariable("id") Integer id, Model model) {
         Blog blog = blogServices.fetchById(id);
         model.addAttribute("blog", new BlogPojo(blog));
-        return "redirect: /admin/addblog";
+        return "redirect:/admin/addblog";
     }
 
 
@@ -122,6 +125,8 @@ public class AdminController {
         blogServices.deleteById(id);
         return "redirect:/admin/bloglist";
     }
+
+
 
     @GetMapping("/noticeform")
     public String getNotice( Model model) {
@@ -134,5 +139,14 @@ public class AdminController {
         noticesService.save(noticePojo);
         return "redirect:/admin/bloglist";
     }
+
+
+    @GetMapping("/editnotice/{id}")
+    public String editNotice(@PathVariable("id") Integer id, Model model) {
+        Notices notice = noticesService.fetchById(id);
+        model.addAttribute("notice", new NoticePojo(notice));
+        return "redirect:/admin/noticeform";
+    }
+
 //
 }

@@ -8,5 +8,7 @@ import java.util.List;
 public interface NoticesService {
     String save(NoticePojo noticePojo);
     List<Notices> fetchAll();
+    void deleteById(Integer id);
+    Notices fetchById(Integer id);
 
 }

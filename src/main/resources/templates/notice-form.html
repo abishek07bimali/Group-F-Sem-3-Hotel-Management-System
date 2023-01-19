@@ -13,23 +13,23 @@
             <form id="add-notice-form" th:method="post" th:action="@{/admin/noticeAdd}" th:object="${blog}">
 
                 <label for="topic-name">Topic:</label><br>
-                <input type="text" id="topic-name" name="title"  th:field="*{topic}" th:value="${blog.topic}"><br>
+                <input type="text" id="topic-name" name="title"  th:field="*{topic}" required th:value="${blog.topic}"><br>
 
                 <label for="topic-name">Publisher:</label><br>
-                <input type="text"  name="title"  th:field="*{publisher}" th:value="${blog.publisher}"><br>
+                <input type="text"  name="title"  th:field="*{publisher}" required th:value="${blog.publisher}"><br>
 
                 <label for="published-date">Date</label><br>
-                <input type="text" id="published-date" name="title" th:field="*{date_published}" th:value="${blog.date_published}"><br>
+                <input type="text" id="published-date" name="title" required th:field="*{date_published}" th:value="${blog.date_published}"><br>
 
                 <label for="content">Content:</label><br>
-                <textarea id="content" name="content" th:field="*{content}" th:value="${blog.content}"></textarea><br><br>
+                <textarea id="content" name="content" required th:field="*{content}" th:value="${blog.content}"></textarea><br><br>
 
-                <button type="submit" function="submit-notice"><a href="./adminBlogPage.html" style="color: white;">Submit</a></button>
+                <button type="submit" function="submit-notice">Submit</button>
 
             </form>
         </div>
     </div>
-    <script th:src="@{~/javascript/notice-upload.js}"></script>
+<!--    <script th:src="@{~/javascript/notice-upload.js}"></script>-->
 
 
 </body>
