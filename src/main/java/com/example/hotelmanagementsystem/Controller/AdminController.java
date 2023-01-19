@@ -1,9 +1,11 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.BlogServices;
+import com.example.hotelmanagementsystem.Services.NoticesService;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import jakarta.validation.Valid;
@@ -24,6 +26,7 @@ import java.util.List;
 public class AdminController {
     private final UserService userService;
     private final BlogServices blogServices;
+    private  final NoticesService noticesService;
 
     @GetMapping("/list")
     public String getUserList(Model model) {
@@ -113,15 +116,23 @@ public class AdminController {
         return "redirect: /admin/addblog";
     }
 
-    @GetMapping("/noticeform")
-    public String getNOtice() {
-        return ("notice-form");
-    }
-
 
     @GetMapping("/deleteblog/{id}")
     public String deleteBlog(@PathVariable("id") Integer id) {
         blogServices.deleteById(id);
         return "redirect:/admin/bloglist";
     }
+
+    @GetMapping("/noticeform")
+    public String getNotice( Model model) {
+        model.addAttribute("blog", new NoticePojo());
+        return ("notice-form");
+    }
+
+    @PostMapping("/noticeAdd")
+    public String saveNotice(@Valid NoticePojo noticePojo) {
+        noticesService.save(noticePojo);
+        return "redirect:/admin/bloglist";
+    }
+//
 }

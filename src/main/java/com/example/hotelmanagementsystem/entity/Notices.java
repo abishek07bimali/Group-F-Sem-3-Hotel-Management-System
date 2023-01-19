@@ -26,10 +26,10 @@ public class Notices {
     @Column(name = "topic")
     private String topic;
 
-    @Column(name = "date")
-    private String date;
+    @Column(name = "content")
+    private String content;
 
-    @Column(name = "Date")
+    @Column(name = "published")
     private String date_published;
 
 

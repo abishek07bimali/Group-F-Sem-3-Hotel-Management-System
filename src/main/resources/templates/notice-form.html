@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Notice form</title>
-    <link rel="stylesheet" href="../static/css/admin_blog.css">
+    <link rel="stylesheet" th:href="@{~/css/admin_blog.css}">
 </head>
 <body>
     <div class="notice-upload">
         <h1>Add Notice</h1>
         <div class="upload_notice">
-            <form id="add-notice-form">
+            <form id="add-notice-form" th:method="post" th:action="@{/admin/noticeAdd}" th:object="${blog}">
 
                 <label for="topic-name">Topic:</label><br>
-                <input type="text" id="topic-name" name="title"><br>
+                <input type="text" id="topic-name" name="title"  th:field="*{topic}" th:value="${blog.topic}"><br>
 
-
+                <label for="topic-name">Publisher:</label><br>
+                <input type="text"  name="title"  th:field="*{publisher}" th:value="${blog.publisher}"><br>
 
                 <label for="published-date">Date</label><br>
-                <input type="text" id="published-date" name="title"><br>
+                <input type="text" id="published-date" name="title" th:field="*{date_published}" th:value="${blog.date_published}"><br>
 
                 <label for="content">Content:</label><br>
-                <textarea id="content" name="content"></textarea><br><br>
+                <textarea id="content" name="content" th:field="*{content}" th:value="${blog.content}"></textarea><br><br>
 
                 <button type="submit" function="submit-notice"><a href="./adminBlogPage.html" style="color: white;">Submit</a></button>
 
             </form>
         </div>
     </div>
-    <script src="../static/javascript/notice-upload.js"></script>
+    <script th:src="@{~/javascript/notice-upload.js}"></script>
 
 
 </body>
