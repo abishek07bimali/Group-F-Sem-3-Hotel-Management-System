@@ -73,7 +73,24 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
 
+
+
     }
+    @Override
+    public String save(LaundaryPojo laundaryPojo) {
+        Laundary laundary=new Laundary();
+        if(laundaryPojo.getId()!=null){
+            laundary.setId(laundaryPojo.getId());
+        }
+        laundary.Room_No(laundaryPojo.getRoom_No());
+        laundary.setNumber_of_clothes(laundaryPojo.getNumber_of_clothes());
+        laundary.setPrice(laundaryPojo.getCheckin());
+        laundaryRepo.save(laundary);
+        return null;
+    }
+
+
+
 
 
 }
