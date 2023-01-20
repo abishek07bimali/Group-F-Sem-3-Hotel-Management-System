@@ -1,5 +1,7 @@
 package com.example.hotelmanagementsystem.UserPojo;
 
+import com.example.hotelmanagementsystem.entity.Laundary;
+
 public class LaundaryPojo {
 
     private Integer id;
@@ -11,7 +13,7 @@ public class LaundaryPojo {
 
     public LaundaryPojo(Laundary laundary) {
         this.id=laundary.getId();
-        this.roomno=laundary.getroomNo();
+        this.roomno=laundary.getRoomNo();
         this.noofclothes=laundary.getNoOfclothes();
         this.print=laundary.getPrint();
 

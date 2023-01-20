@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String submitLaundary(UserPojo.LaundaryPojo laundaryPojo){
         Laundary laundary = new Laundary();
-        laundary .setroomNo(laundaryPojo.getroomNo());
+        laundary .setRoomNo(laundaryPojo.getRoomNo());
         laundary .setNoOfclothes(laundaryPojo.getNoOfclothes());
         laundary .setPrint(laundaryPojo.getPrint());
         laundary .save(laundary );
