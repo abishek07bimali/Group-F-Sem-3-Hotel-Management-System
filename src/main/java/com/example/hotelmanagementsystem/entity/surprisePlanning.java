@@ -15,8 +15,8 @@ import lombok.Setter;
 @Table(name="surprisePlanning")
 public class surprisePlanning{
     @Id
-    @SequenceGenerator(name = "hms_user_seq_gen", sequenceName = "hms_user_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "hms_user_seq_gen", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "hms_book_seq_gen", sequenceName = "hms_book_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "hms_book_seq_gen", strategy = GenerationType.SEQUENCE)
     private Integer user_id;
 
     @Column(name = "startdate")
