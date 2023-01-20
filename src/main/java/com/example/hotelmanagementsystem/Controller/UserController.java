@@ -66,6 +66,12 @@ public class UserController {
         return "redirect:/homepage";
     }
 
+    @PostMapping("/savesurpriseplanning")
+    public String getSurprisePlanning(@Valid surprisePlanningPojo surpriseplanningPojo){
+        userService.submitPlanning(surpriseplanningPojo);
+        return "redirect:/seepackage";
+    }
+
 
 //     @GetMapping("/viewBlog")
     @PostMapping("/savelaundary")
