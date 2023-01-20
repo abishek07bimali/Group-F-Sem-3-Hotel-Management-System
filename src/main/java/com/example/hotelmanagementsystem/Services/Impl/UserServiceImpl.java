@@ -5,15 +5,18 @@ import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.config.PasswordEncoderUtil;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
+import com.example.hotelmanagementsystem.exception.AppException;
 import com.example.hotelmanagementsystem.repo.BlogRepo;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
 import com.example.hotelmanagementsystem.repo.ContactRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,7 +37,7 @@ public class UserServiceImpl implements UserService {
         user.setEmail(userPojo.getEmail());
         user.setFullname(userPojo.getFullname());
         user.setMobileNo(userPojo.getMobile_no());
-        user.setPassword(userPojo.getPassword());
+        user.setPassword(PasswordEncoderUtil.getInstance().encode(userPojo.getPassword()));
         userRepo.save(user);
         return "created";
     }
@@ -107,15 +110,8 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public UserPojo findByEmail(String email) {
-        User user = (User) userRepo.findByEmail(email)
-                .orElseThrow(()-> new RuntimeException("Invalid User email"));
-        return new UserPojo(user);
-    }
-
-    @Override
-    public UserPojo findByPassword(String password) {
-        User user = (User) userRepo.findByPassword(password)
-                .orElseThrow(() -> new RuntimeException("Invalid User password"));
+        User user = userRepo.findByEmail(email)
+                .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
         return new UserPojo(user);
     }
 
