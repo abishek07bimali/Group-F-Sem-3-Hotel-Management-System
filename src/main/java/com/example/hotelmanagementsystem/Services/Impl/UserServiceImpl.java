@@ -76,17 +76,15 @@ public class UserServiceImpl implements UserService {
 
 
     }
+
     @Override
-    public String save(UserPojo.LaundaryPojo laundaryPojo) {
-        Laundary laundary=new Laundary();
-        if(laundaryPojo.getId()!=null){
-            laundary.setId(laundaryPojo.getId());
-        }
-        laundary.Room_No(laundaryPojo.getRoom_No());
-        laundary.setNumber_of_clothes(laundaryPojo.getNumber_of_clothes());
-        laundary.setPrice(laundaryPojo.getCheckin());
-        laundaryRepo.save(laundary);
-        return null;
+    public String submitLaundary(UserPojo.LaundaryPojo laundaryPojo){
+        Laundary laundary = new Laundary();
+        laundary .setroomNo(laundaryPojo.getroomNo());
+        laundary .setNoOfclothes(laundaryPojo.getNoOfclothes());
+        laundary .setPrint(laundaryPojo.getPrint());
+        laundary .save(laundary );
+        return "sent";
     }
 
 

@@ -47,7 +47,7 @@ public class UserController {
 
 
     @PostMapping("/savelaundary")
-    public String getFeedback(@Valid UserPojo.LaundaryPojo laundaryPojo){
+    public String getLaundary(@Valid UserPojo.LaundaryPojo laundaryPojo){
         userService.submitLaundary(laundaryPojo);
         return "redirect:/homepage";
     }

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>laudary service</title>
-    <link rel="stylesheet" href="../static/css/laundry1.css">
+    <link rel="stylesheet" th:href="@{/css/laundry1.css}">
 </head>
 <body>
 <div class="main">
     <div class="container">
+        <form th:method="post" th:action="@{/user/savelaundary}" th:object="${laundary}">
   <label class="l1">Room No</label><br><br>
-  <input class="ibox" type="text" name="room no"><br><br>
+  <input class="ibox" type="text" name="room no" required th:field="*{roomNo}" th:value="${laundary.roomNo}"><br><br>
   <label class="l2">No of clothes</label><br><br>
-  <input class="ibox1" type="number" name="clothes" onkeyup="mult(this.value);"><br><br>
+  <input class="ibox1" type="number" name="clothes" onkeyup="mult(this.value);" required th:field="*{NoOfclothes}" th:value="${laundary.NoOfclothes}"><br><br>
         <label class="l3">Price</label><br><br>
-        <input id="ibox2" type="number" name="print" ><br><br>
- <div><button id="btn" type="submit">Collect</button></div>
+        <input id="ibox2" type="number" name="print" required th:field="*{Print}" th:value="${laundary.Print}"><br><br>
+ <div><button id="btn" type="submit" value="Send">Collect</button></div>
+        </form>
     </div>
 </div>
 <script>

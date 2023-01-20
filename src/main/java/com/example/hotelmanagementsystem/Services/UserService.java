@@ -20,12 +20,7 @@ public interface UserService {
 
 
     void deleteById(Integer id);
-    List<Laundary> fetchAll();
-
-    String save(UserPojo userPojo);
-    Laundary fetchById(Integer id);
-
-    String save(LaundaryPojo laundaryPojo);
+    String submitLaundary(UserPojo.LaundaryPojo laundaryPojo);
 
 
     String save(UserPojo.LaundaryPojo laundaryPojo);
