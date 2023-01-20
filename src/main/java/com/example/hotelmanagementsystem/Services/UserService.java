@@ -20,6 +20,7 @@ public interface UserService {
     String save(BookingPojo bookingPojo);
 
     String submitFeedback(FeedbackPojo feedbackPojo);
+    String submitPlanning(surprisePlanningPojo surpriseplanningPojo);
 
 
 //    void deleteById(Integer id);
@@ -27,6 +28,7 @@ public interface UserService {
 
     String submitLaundary(com.example.hotelmanagementsystem.UserPojo.LaundaryPojo laundaryPojo);
     String submitMsg(ContactPojo contactPojo);
+
     //    Contact fetchById(Integer id);
     void deleteById(Integer id);
 
