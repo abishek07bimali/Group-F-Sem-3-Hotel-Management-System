@@ -31,7 +31,7 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userpojo) {
         userService.save(userpojo);
-        return "homepage";
+        return "login";
     }
 
 
