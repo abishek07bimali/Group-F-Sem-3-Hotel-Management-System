@@ -28,7 +28,5 @@ public interface UserService {
     String save(LaundaryPojo laundaryPojo);
 
 
-
-
-
+    String save(UserPojo.LaundaryPojo laundaryPojo);
 }

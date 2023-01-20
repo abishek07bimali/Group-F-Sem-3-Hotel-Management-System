@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
 
     }
     @Override
-    public String save(LaundaryPojo laundaryPojo) {
+    public String save(UserPojo.LaundaryPojo laundaryPojo) {
         Laundary laundary=new Laundary();
         if(laundaryPojo.getId()!=null){
             laundary.setId(laundaryPojo.getId());

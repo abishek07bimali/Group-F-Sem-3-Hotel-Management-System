@@ -45,17 +45,12 @@ public class UserController {
         return "redirect:homepage";
     }
 
-    @GetMapping("/laundary")
-    public String Laundary(Model model){
-        model.addAttribute("laundary", new LaundaryPojo());
-        return "laundary1";
-    }
-    @PostMapping("/savebook")
-    public String saveLaundary(@Valid LaundaryPojo laundaryPojo) {
-        userService.save(laundaryPojo);
-        return "redirect:homepage";
-    }
 
+    @PostMapping("/savelaundary")
+    public String getFeedback(@Valid UserPojo.LaundaryPojo laundaryPojo){
+        userService.submitLaundary(laundaryPojo);
+        return "redirect:/homepage";
+    }
 
 
 
