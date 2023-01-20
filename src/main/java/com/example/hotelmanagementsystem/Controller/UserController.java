@@ -20,8 +20,6 @@ public class UserController {
 
     private final UserService userService;
 
-
-
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
@@ -74,8 +72,4 @@ public class UserController {
     public String getPickupPage() {
         return ("picked_up");
     }
-
-
-
-
 }
