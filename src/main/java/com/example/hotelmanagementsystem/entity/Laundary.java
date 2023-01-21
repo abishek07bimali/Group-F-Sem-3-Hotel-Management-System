@@ -30,4 +30,5 @@ public class Laundary {
     private Integer print;
 
 
+
 }

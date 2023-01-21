@@ -2,6 +2,7 @@ package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -47,9 +48,9 @@ public class UserController {
 
 
     @PostMapping("/savelaundary")
-    public String getLaundary(@Valid UserPojo.LaundaryPojo laundaryPojo){
+    public String getLaundary(@Valid LaundaryPojo laundaryPojo){
         userService.submitLaundary(laundaryPojo);
-        return "redirect:/homepage";
+        return "redirect:/laundary1";
     }
 
 

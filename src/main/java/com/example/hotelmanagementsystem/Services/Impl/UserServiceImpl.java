@@ -2,10 +2,13 @@ package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Laundary;
 import com.example.hotelmanagementsystem.entity.User;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
+import com.example.hotelmanagementsystem.repo.LaundaryRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    public final LaundaryRepo laundaryRepo;
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
 
@@ -78,14 +82,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String submitLaundary(UserPojo.LaundaryPojo laundaryPojo){
+    public String submitLaundary(LaundaryPojo laundaryPojo) {
         Laundary laundary = new Laundary();
-        laundary .setRoomNo(laundaryPojo.getRoomNo());
-        laundary .setNoOfclothes(laundaryPojo.getNoOfclothes());
+        laundary .setRoomno(laundaryPojo.getRoomno());
+        laundary .setNoofclothes(laundaryPojo.getNoofclothes());
         laundary .setPrint(laundaryPojo.getPrint());
-        laundary .save(laundary );
+        laundaryRepo .save(laundary );
         return "sent";
     }
+    }
+
+
+ 
 
 
 

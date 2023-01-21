@@ -13,10 +13,11 @@ public class LaundaryPojo {
 
     public LaundaryPojo(Laundary laundary) {
         this.id=laundary.getId();
-        this.roomno=laundary.getRoomNo();
-        this.noofclothes=laundary.getNoOfclothes();
+        this.roomno=laundary.getRoomno();
+        this.noofclothes=laundary.getNoofclothes();
         this.print=laundary.getPrint();
 
     }
+
 }
 
