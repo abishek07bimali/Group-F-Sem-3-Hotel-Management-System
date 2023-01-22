@@ -24,4 +24,13 @@ public class UserPojo {
       this.fullname=user.getFullname();
       this.password=user.getPassword();
     }
+    public class LaundaryPojo {
+        private Integer id;
+        private  String Room_NO;
+        private  String No_of_clothes;
+        private  String Price;
+
+
+
+    }
 }

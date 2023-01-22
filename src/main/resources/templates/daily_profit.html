@@ -12,97 +12,23 @@
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<<<<<<< HEAD:src/main/resources/template/daily_profit.html
-  <link rel="stylesheet" href="../static/css/dashstyle.css">
-  <link rel="stylesheet" href="../static/css/navigation.css">
+<!--  <link rel="stylesheet" href="../static/css/dashstyle.css">-->
+<!--  <link rel="stylesheet" href="../static/css/navigation.css">-->
   <link rel="shortcut icon" type="x-icon" href="../static/images/logo.png">
-=======
+
   <link rel="stylesheet" th:href="@{/css/dashstyle.css}">
   <link rel="stylesheet" th:href="@{/css/navigation.css}">
-  <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
-  <link rel="stylesheet" th:href="@{~/css/navigation.css}">
-  <link rel="shortcut icon" type="x-icon" href="../images/logo.png">
->>>>>>> main:src/main/resources/templates/daily_profit.html
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="../static/javascript/notification.js" defer></script>
+  <script th:src="@{~/javascript/notification.js}" defer></script>
 
 </head>
 
 <body>
-  <nav>
-    <label class="logo"> <a href="#"><img src="../static/images/logo.png" alt=""></a></label>
-    <h1>Luxury Hotel: Admin Panel</h1>
-    <nav>
-      <div class="icon" onclick="toggleNotification()">
-        <img class="img_not" src="../static/images/bell.png" alt=""> <span>5</span>
-      </div>
-      <div class="notifi-box" id="box">
-        <h2>Notifications<span> 5</span></h2>
-        <div class="notifi-item">
-          <img src="../static/images/Profile icon.jpg" alt="img">
-          <div class="text">
-            <h4>Abhishek Karki</h4>
-            <p>@lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
+<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
 
-        <div class="notifi-item">
-          <img src="../static/images/Profile icon.jpg" alt="img">
-          <div class="text">
-            <h4>Abhishek Bimali</h4>
-            <p>@lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
 
-        <div class="notifi-item">
-          <img src="../static/images/Profile icon.jpg" alt="img">
-          <div class="text">
-            <h4>Amul Bashyal</h4>
-            <p>@lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <div class="notifi-item">
-          <img src="../static/images/Profile icon.jpg" alt="img">
-          <div class="text">
-            <h4>Rakhsit Shrestha</h4>
-            <p>@lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <div class="notifi-item">
-          <img src="../static/images/Profile icon.jpg" alt="img">
-          <div class="text">
-            <h4>Bhawana Bashyal</h4>
-            <p>@lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </nav>
-  <div id="mySidenav" class="sidenav">
-    <label class="logoInNav"> <a href="#"><img src="../images/logo.png" alt=""></a></label>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a class="active" th:href="@{~/admin/list}">dashboard</a>
-    <a th:href="@{~/admin/list}">new booking</a>
-    <a th:href="@{~/admin/adminblogpage}">blogs and notice</a>
-    <a th:href="@{~/admin/room}">Room</a>
-    <a th:href="@{~/admin/gallery}">Gallery</a>
-    <a th:href="@{~/admin/list}">all booking</a>
-    <a th:href="@{~/admin/list}">Website</a>
-    <a th:href="@{~/admin/list}" style="margin-top: 150px">Logout</a>
-  </div>
-  <span class="burger" onclick="openNav()">&#9776;</span>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
-
-  <!-- data in cards -->
+<!-- data in cards -->
 
 
   <div class="container">
@@ -181,5 +107,14 @@
   <!-- can add extra graphs if needed -->
 
 </body>
+<script>
+  let myPage = "dash";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
 
 </html>

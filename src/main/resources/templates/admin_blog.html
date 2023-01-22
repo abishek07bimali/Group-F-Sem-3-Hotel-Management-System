@@ -16,8 +16,7 @@
             <input type="file" name="image" id="image"><br> -->
 
 <!--            <label for="blog-id"></label><br>-->
-            <input type="number"
-                   hidden th:field="*{id}" th:value="${blog.id}">
+            <input type="number" hidden th:field="*{id}" th:value="${blog.id}">
 
             <label for="author">Author:</label><br>
             <input type="text" id="author" name="author" required th:field="*{author}" th:value="${blog.author}"><br>

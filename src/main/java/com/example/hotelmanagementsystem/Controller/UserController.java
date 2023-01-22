@@ -2,6 +2,11 @@ package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
+import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
+import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -64,7 +69,13 @@ public class UserController {
     }
 
 
-    @GetMapping("/viewBlog")
+//     @GetMapping("/viewBlog")
+    @PostMapping("/savelaundary")
+    public String getLaundary(@Valid LaundaryPojo laundaryPojo){
+        userService.submitLaundary(laundaryPojo);
+        return "redirect:/laundary1";
+
+      @GetMapping("/viewBlog")
     public String viewUserBlog(Model model){
         model.addAttribute("blog", new BlogPojo());
         return "blog";
