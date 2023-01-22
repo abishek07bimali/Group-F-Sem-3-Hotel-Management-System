@@ -1,0 +1,35 @@
+<div th:fragment="footer" class="row">
+<footer>
+    <div class="information">
+        <img th:src="@{~/images/ServicesImages/logo.png}" alt="">
+        <h3>Luxury hotel</h3>
+        <p> <a href="#">022:000000</a></p>
+        <p> <a href="">luxuryhotel@gmail.com</a> </p>
+    </div>
+    <div class="quicklinks">
+        <h2>Quick links</h2>
+        <p> <a href="">about</a></p>
+        <p> <a th:href="@{~/homepage/contact}">contact</a></p>
+        <p> <a th:href="@{~/user/booking}">Book Now</a></p>
+    </div>
+    <div class="sociallinks">
+        <h2>Stay Connected</h2>
+        <!--       <h4> <a href=""><i class="fab fa-facebook-f"></i></a></h4>-->
+        <!--      <h4><i class="fab fa-twitter"></i></h4>-->
+        <!--      <h4><i class="fab fa-instagram"></i></h4>-->
+        <!--      <h4><i class="fab fa-youtube"></i></h4>-->
+        <h4><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></h4>
+        <h4> <a href="https://www.facebook.com/"><i class="fab fa-twitter"></i></a> </h4>
+        <h4> <a href="https://www.facebook.com/"><i class="fab fa-instagram"></i></a></h4>
+        <h4> <a href="https://www.facebook.com/"><i class="fab fa-youtube"></i></a></h4>
+    </div>
+    <div class="emailcontact">
+        <h3>Email us Your Quaries</h3>
+        <div class="email">
+            <input type="email" name="" id="" placeholder="  Enter your email">
+            <!-- <input type="submit" name="" id=""> -->
+            <button><a href="">Send</a></button>
+        </div>
+    </div>
+</footer>
+</div>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+<!--    <link rel="stylesheet" th:href="@{~/css/user_profile.css}">-->
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+
+<!--    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+  <div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+  <section class="py-5 my-5">
+
+    <div class="container">
+      <h1 class="mb-5">Account Settings</h1>
+      <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+
+<!--        nav bar -->
+        <div class="profile-tab-nav border-right">
+          <div class="p-4">
+            <div class="img-circle text-center mb-3">
+              <img src="img/user2.jpg" alt="Image" class="shadow">
+            </div>
+            <h4 class="text-center">Username</h4>
+          </div>
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+              <i class="fa fa-home text-center mr-1"></i>
+              Account
+            </a>
+            <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+              <i class="fa fa-key text-center mr-1"></i>
+              Password
+            </a>
+            <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
+              <i class="fa fa-user text-center mr-1"></i>
+              Security
+            </a>
+            <a class="nav-link" id="history-tab" data-toggle="pill" href="#history" role="tab" aria-controls="history" aria-selected="false">
+              <i class="fa fa-bell text-center mr-1"></i>
+              History
+            </a>
+          </div>
+        </div>
+
+
+
+<!      right form container---->
+        <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+            <h3 class="mb-4">Account Settings</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control" required placeholder="username">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" required placeholder="smth@gmail.com">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary">Update</button>
+              <button type="reset" class="btn btn-light">Cancel</button>
+            </div>
+          </div>
+
+<!--          Password update-->
+          <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+            <h3 class="mb-4">Password Settings</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Old password</label>
+                  <input type="password" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>New password</label>
+                  <input type="password" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Confirm new password</label>
+                  <input type="password" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-primary">Update</button>
+              <button class="btn btn-light">Cancel</button>
+            </div>
+          </div>
+
+<!--         Booking   History -->
+          <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+            <h3 class="mb-4">Booking History</h3>
+            <div class="form-group">
+              <div class="form-check">
+<!--        Make a table or something to display the history-->
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-primary">Update</button>
+              <button class="btn btn-light">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div th:replace="fragments/Footer_frag.html :: footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+  <script>
+    let myPage = "profile";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+      i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+  </script>
+</html>

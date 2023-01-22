@@ -174,7 +174,7 @@ a{
 table {
     width: 100%;
     border-collapse: collapse;
-
+    margin-bottom: 5%;
   }
 
   th {
@@ -203,6 +203,7 @@ table {
     height:91%;
     width:100%;
     padding: 0;
+    justify-content: center;
   }
   .material-icons{
     font-size: 32px;
@@ -241,7 +242,7 @@ hr {
     background-color: #663399; /* purple line color */
     /*justify-content: center;*/
     /*width: 100%; !* line width *!*/
-    height: 1px; /* line height */
+    height: 2px; /* line height */
 }
 
 

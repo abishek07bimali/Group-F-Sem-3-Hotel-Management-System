@@ -12,7 +12,8 @@
 }
 
 footer {
-  background-color: var(--primary);
+  background-color:#14274a;
+  background-color:#14274a ;
   color: var(--white);
   margin-top: 5px;
   padding: 20px;
@@ -36,7 +37,7 @@ footer .quicklinks {
 footer .sociallinks {
   width: 25%;
   text-transform: capitalize;
-  /* background-color: red; */
+   /*background-color: red;*/
   /* display: flex; */
 }
 footer .emailcontact {
@@ -61,7 +62,10 @@ footer .emailcontact {
 .sociallinks h4{
     padding: 3px;
 }
-
+.sociallinks h4 a{
+    color: white;
+    /*background-color: red;*/
+}
 
 .email{
     width:90% ;
@@ -72,6 +76,7 @@ footer .emailcontact {
     width: 70%;
     display: flex;
     border: 3px solid var(--black);
+    margin: auto;
 }
 .emailcontact input{
     padding-top: 5px;
@@ -97,7 +102,7 @@ background: transparent;
     color: var(--black);
     text-decoration: none;
 }
-/* 
+/*
 .sociallinks .fab{
     padding: 7px;
     margin: 7px;
@@ -109,7 +114,7 @@ background: transparent;
     background-color: var(--white);
     color: var(--primary);
     border-radius: 50%;
-    
+
 } */
 
 /* .email button:hover{

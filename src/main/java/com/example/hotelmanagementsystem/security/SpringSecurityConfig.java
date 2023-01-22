@@ -18,6 +18,7 @@ public class SpringSecurityConfig {
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/homepage/**","/user/**","/admin/**", "/rating/**")
+                .requestMatchers("/homepage","/user/**","/admin/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

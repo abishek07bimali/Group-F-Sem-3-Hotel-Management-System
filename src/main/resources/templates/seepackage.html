@@ -1,68 +1,125 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding packages</title>
-    <link rel="stylesheet" href="../static/css/seepackage.css">
-    <!-- <script src="../static/javascript/nearby_places.js"></script> -->
-</head>
-<body>
-      <div class ="Main-wrapper">
-      
-        <h2>Our Packages</h2>
-       
-        
-        <div class="container">
-        
-        <div class="wrapper1">
-            <div class="wrapper-top">
-                <img class="myImg" src="../static/images/package1.jpg" style="width:100% ;height:100% ;" >
-            </div>
-            <div class="wrapper-bottom">
-             <h3>Birthday Celebration</h3>
-             <p>One Day, a Lifetime of Memories.</p>
-             <p>'Your Beautiful day,Our Beautiful venue'  </p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wedding packages</title>
+        <link rel="stylesheet" th:href="@{~/css/seepackage.css}">
 
-             <button class="btn1"><a href="birthdaydetail.html">See More Details</a> </button>
-             
+        <link rel="stylesheet" th:href="@{/css/nearby_places.css}">
+
+        <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+        <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+        <!-- <script src="../static/javascript/nearby_places.js"></script> -->
+
+
+        <script th:src="@{~/javascript/nearby_places.js}"></script>
+    </head>
+    <body>
+    <div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+            <div class ="Main-wrapper">
+
+            <h2>Our Packages</h2>
+
+
+            <div class="container">
+
+            <div class="wrapper1">
+                <div class="wrapper-top">
+                    <img class="myImg" th:src="@{~/images/package1.jpg}" style="width:100% ;height:100% ;" >
+                </div>
+                <div class="wrapper-bottom">
+                 <h3>Birthday Celebration</h3>
+                 <p>One Day, a Lifetime of Memories.</p>
+                 <p>'Your Beautiful day,Our Beautiful venue'  </p>
+
+                 <button class="btn1"><a th:href="@{~/homepage/birthday}">See More Details</a> </button>
+
+                </div>
+
             </div>
 
+            <div class="wrapper1">
+                <div class="wrapper-top">
+                    <img class="myImg" th:src="@{~/images/package2.jpg}" style="width:100% ;height:100% ;" >
+                </div>
+                <div class="wrapper-bottom">
+                 <h3>Wedding Celebration</h3>
+                 <p>One Day, a Lifetime of Memories.</p>
+                 <p>'Your Beautiful day,Our Beautiful venue'  </p>
+
+                 <button class="btn1"><a th:href="@{~/homepage/wedding}">See More Details</a> </button>
+
+                </div>
+
+            </div>
+
+            <div class="wrapper1" id="wrapper2">
+                <div class="wrapper-top">
+                    <img class="myImg" th:src="@{~/images/package3.jpg}" style="width:100% ;height:100% ;" >
+                </div>
+                <div class="wrapper-bottom">
+                 <h3>Anniversary Celebration</h3>
+                 <p>One Day, a Lifetime of Memories.</p>
+                 <p>'Your Beautiful day,Our Beautiful venue'  </p>
+
+                 <button class="btn1"><a th:href="@{~/homepage/anniversary}">See More Details</a> </button>
+
+                </div>
+
+            </div>
+            </div>
+
+          </div>
+    <br>
+    <hr>
+    <br>
+            <h2>Nearby Places</h2>
+
+    <br>
+            <div class="main-container">
+                <div class="container-one">
+            <img class="kath-img" th:src="@{~/images/kathmandu.jpg}" alt="" />
+            <p class="kath-title">Kathmandu</p>
+            <div class="overlay-one"></div>
+            <div class="b-1" onclick="kath_bio()"><a class="a-1" href="#"> See more </a></div>
+            <div class="b-2" onclick="kathmandu_map()"><a class="a-1" href="#"> See Location </a></div>
+            <div class="b-5"><a class="a-1" href=""> Book a Cab </a></div>
         </div>
-
-        <div class="wrapper1">
-            <div class="wrapper-top">
-                <img class="myImg" src="../static/images/package2.jpg" style="width:100% ;height:100% ;" >
-            </div>
-            <div class="wrapper-bottom">
-             <h3>Wedding Celebration</h3>
-             <p>One Day, a Lifetime of Memories.</p>
-             <p>'Your Beautiful day,Our Beautiful venue'  </p>
-
-             <button class="btn1"><a href="weddingdetail.html">See More Details</a> </button>
-             
-            </div>
-
+        <div class="container-two">
+            <img class="pokh-img" th:src="@{~/images/pokhara.jpg}" alt="" />
+            <p class="pokh-title">pokhara</p>
+            <div class="overlay-two"></div>
+            <div class="b-3" onclick="pokh_bio()"><a class="a-2" > See more </a></div>
+            <div class="b-4" onclick="pokhara_map()"><a class="a-2"> See Location </a></div>
+            <div class="b-6"><a class="a-2" href=""> Book a Cab </a></div>
         </div>
-
-        <div class="wrapper1" id="wrapper2">
-            <div class="wrapper-top">
-                <img class="myImg" src="../static/images/package3.jpg" style="width:100% ;height:100% ;" >
-            </div>
-            <div class="wrapper-bottom">
-             <h3>Anniversary Celebration</h3>
-             <p>One Day, a Lifetime of Memories.</p>
-             <p>'Your Beautiful day,Our Beautiful venue'  </p>
-
-             <button class="btn1"><a href="anniversarydetail.html">See More Details</a> </button>
-            
-            </div>
-
+        <div class="container-three">
+            <img class="but-img" th:src="@{~/images/butwal.jpg}" alt="" />
+            <p class="but-title">Butwal</p>
+            <div class="overlay-three"></div>
+            <div class="b-7" onclick="butwal_bio()"><a class="a-3" > See more </a></div>
+            <div class="b-8" onclick="butwal_map()"><a class="a-3"> See Location </a></div>
+            <div class="b-9"><a class="a-3" href=""> Book a Cab </a></div>
         </div>
-        </div>
+    </div>
 
-      </div>
-</body>
+
+
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
+
+    </body>
+<script>
+    let myPage = "packages";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
 </html>

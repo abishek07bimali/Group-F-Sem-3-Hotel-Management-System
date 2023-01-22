@@ -10,66 +10,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Admin Blog List</title>
-    <link rel="stylesheet" th:href="@{/css/adminBlogPage.css}">
-    
+    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script th:src="@{~/javascript/notification.js}" defer></script>
+    <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">
 </head>
 <body>
+
+<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
+
+
+<!--    bolg and news side-->
     <div class="blog-news-wrapper">
         <div class="blogList">
             <div class="blog-top">
                 <h2>Blog List</h2>
-                <div class="search-icon">
-                    <input type="text" placeholder="Search by name" name="search">
-                    <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
-                </div>
-                <button class="btn1"><a href="admin_blog.html">+ New Blog</a></button>
+<!--                <div class="search-icon">-->
+<!--                    <input type="text" placeholder="Search by name" name="search">-->
+<!--                    <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>-->
+<!--                </div>-->
+                <button class="btn1"><a th:href="@{~/admin/addblog}">+ New Blog</a></button>
 
             </div>
 
-            <div style="overflow-x:auto;"></div>
-            <table id="blog-table">
+            <div style="overflow-x:auto;">
+            <table id="blog-table" style="overflow: scroll">
                 <tr>
                     <th>Blog_Id</th>
                     <th>Author</th>
                     <th>Topic</th>
                     <th>Published Date</th>
                     <th>Phone-number</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Maria Anders</td>
-                    <td>Luxe Room</td>
-                    <td>27/11/2022</td>
-                    <td>9824234967</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td>
-                        <div class="td1">
+                <tr th:each="blog:${blog}">
+                    <td th:text="${blog.id}"></td>
+                    <td th:text="${blog.author}"></td>
+                    <td th:text="${blog.topic}"></td>
+                    <td th:text="${blog.date}"></td>
+                    <td th:text="${blog.phoneNum}"></td>
+<!--                    <td><button class="btn2">Active</button></td>-->
+                    <td> <a class="edit" th:href="@{~/admin/editblog/}+${blog.id}" >edit</a></td>
+                    <td> <a class="delete" th:href="@{~/admin/deleteblog/}+${blog.id}" >delete</a></td>
+<!--                        <div class="td1">-->
 
-                            <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                            <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                        </div>
-                    </td>
+<!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/editblog/}+${blog.id}"><i class="material-icons">&#xE254;</i></button>-->
+<!--
+                            <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/deleteblog/}+${blog.id}"><i class="material-icons">&#xE872;</i></button>
+-->
+<!--                        </div>-->
+<!--                    </td>-->
 
                 </tr>
-                <tr>
-                    <td id="blog-id">2</td>
-                    <td id="author-name">Sofia Nepal</td>
-                    <td id="topic-name">Family Room</td>
-                    <td id="published-date">12/11/2022</td>
-                    <td id="phone-no">9841234567</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td ><div class="td1">
 
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                    </div>  </td>
-                </tr>
             </table>
-
+            </div>
             <br><br>
             <hr>
         </div>
@@ -84,11 +82,11 @@
                     <input type="text" placeholder="Search by name" name="search">
                     <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
                 </div>
-                <button class="btn1"><a href="admin_blog.html">+ New Blog</a></button>
+                <button class="btn1"><a th:href="@{/admin/noticeform}">+ New Blog</a></button>
             </div>
 
-            <div style="overflow-x:auto;"></div>
-            <table id="notice-table">
+            <div style="overflow-x:auto;">
+            <table id="notice-table" style="overflow: scroll">
                 <tr>
                     <th>Notice_Id</th>
                     <th>Publisher</th>
@@ -97,39 +95,40 @@
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Maria Anders</td>
-                    <td>Luxe Room</td>
-                    <td>27/11/2022</td>
+                <tr th:each="notice:${notice}">
+                    <td th:text="${notice.id}"></td>
+                    <td th:text="${notice.publisher}"></td>
+                    <td th:text="${notice.topic}"></td>
+                    <td th:text="${notice.date_published}"></td>
+                    <td> <a class="edit" th:href="@{~/admin/editnotice}+${notice.id}" >edit</a></td>
                     <td><button class="btn2">Active</button></td>
                     <td>
                         <div class="td1">
 
-                            <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                            <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+<!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/edit/}+${booking.id}"><i class="material-icons">&#xE254;</i></button>-->
+<!--                            <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/delete/}+${booking.id}"><i class="material-icons">&#xE872;</i></button>-->
 
                         </div>
                     </td>
 
                 </tr>
-                <tr>
-                    <td id="notice-id">2</td>
-                    <td id="notice-author">Sofia Nepal</td>
-                    <td id="notice-topic">Family Room</td>
-                    <td id="notice-published">12/11/2022</td>
-                    <td><button class="btn2">Active</button></td>
-                    <td ><div class="td1">
 
-                        <button class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
-                        <button class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
-
-                    </div>  </td>
-                </tr>
             </table>
 
         </div>
+        </div>
 
     </div>
+
 </body>
+<script>
+    let myPage = "blog";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
+
 </html>

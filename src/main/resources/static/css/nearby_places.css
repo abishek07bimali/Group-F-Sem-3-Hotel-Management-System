@@ -3,14 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    display: flex;
-    /* justify-content: center; */
-}
+/*body{*/
+/*    display: flex;*/
+/*}*/
 .main-container {
     display: flex;
     margin: auto;
     flex-direction: row;
+    margin-bottom: 4%;
 }
 .container-one {
     display: flex;
@@ -53,7 +53,7 @@ body{
 .b-2 {
     width: 27%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -63,7 +63,7 @@ body{
 .b-5 {
     width: 25%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -135,7 +135,7 @@ body{
 .b-4 {
     width: 27%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -145,7 +145,7 @@ body{
 .b-6 {
     width: 25%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -216,7 +216,7 @@ body{
 .b-8 {
     width: 27%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;
@@ -226,7 +226,7 @@ body{
 .b-9 {
     width: 25%;
     height: 50%;
-    margin-left: 10;
+    margin-left: 10px;
     margin-top: 40%;
     text-align: center;
     opacity: 0;

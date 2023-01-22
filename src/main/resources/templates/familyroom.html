@@ -1,72 +1,79 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-   <title>Family room</title>
-         
-          <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-          <script th:src="@{~/javascript/familyroom.js}"></script>
-         <link rel="stylesheet" th:href="@{~/css/allrooms.css}">
+    <title>Family room</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <script th:src="@{~/javascript/familyroom.js}"></script>
+    <link rel="stylesheet" th:href="@{~/css/allrooms.css}">
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
 </head>
 <body>
-    <div class="Main-wrapper">
-        
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+<div class="Main-wrapper">
+
         <div class="wrapper-top">
-           
-           
+
+
             <div class="top-left">
                 <div class="mySlides">
                     <div class="numbertext">1 / 5</div>
-                      <img th:src="@{~/images/familyroom1.jpg}" style="width:100% ;height:100% ;">
-                  </div>
-                
-                  <div class="mySlides">
-                    <div class="numbertext">2 / 5</div>
+                    <img th:src="@{~/images/familyroom1.jpg}" style="width:100% ;height:100% ;">
+                </div>
+
+                <div class="mySlides">
+                      <div class="numbertext">2 / 5</div>
                       <img th:src="@{~/images/familyroom2.jpg}" style="width:100% ;height:100% ;">
                   </div>
-                
-                  <div class="mySlides">
-                    <div class="numbertext">3 / 5</div>
+
+                <div class="mySlides">
+                      <div class="numbertext">3 / 5</div>
                       <img th:src="@{~/images/familyroom3.jpg}" style="width:100% ;height:100% ;">
                   </div>
-                
-                  <div class="mySlides">
-                    <div class="numbertext">4 / 5</div>
+
+                <div class="mySlides">
+                      <div class="numbertext">4 / 5</div>
                       <img th:src="@{~/images/familyroom4.jpg}" style="width:100% ;height:100% ;">
                   </div>
-                
-                  <div class="mySlides">
-                    <div class="numbertext">5 / 5</div>
+
+                <div class="mySlides">
+                      <div class="numbertext">5 / 5</div>
                       <img th:src="@{~/images/familyroom5.jpg}" style="width:100% ;height:100% ;">
                   </div>
-                
-                  
-                 
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                
-                  
-                </div>
-            
-            
+
+
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+            </div>
+
+
             <div class="top-right">
                 <div class="right-first">
-                  
-                    <h2>Features</h2> 
-                   
-                   <div >
-                        <ul class ="list1">
+
+                    <h2>Features</h2>
+
+                    <div >
+                       <ul class ="list1">
                             <li> Room-size:29m2/171 ft2</li>
                             <li> Non-smoking</li>
                             <li> Shower</li>
                         </ul>
                    </div>
-         
+
                 </div>
                 <div class="right-second">
-                   
-                     <h2> Bathroom and toiletries  </h2>
-                    
-                    
+
+                    <h2> Bathroom and toiletries  </h2>
+
+
                     <div >
                         <ul class ="list2">
                           <li>Mirror</li>
@@ -76,27 +83,27 @@
                           
                         </ul>
                     </div>
-        
+
                 </div>
                 <div class="right-third">
-                    
-                     <h2> Entertainment</h2>
-                   
+
+                    <h2> Entertainment</h2>
+
                     <div >
                         <ul class ="list3"></ul>
-                           <li> Free wifi in all rooms</li>
-                           <li> Satellite/cable channels</li>
-                            <li>Telephone</li>
-                            <li>Seating area</li> 
-                         </ul>
-                   
+                        <li> Free wifi in all rooms</li>
+                        <li> Satellite/cable channels</li>
+                        <li>Telephone</li>
+                        <li>Seating area</li>
+                        </ul>
+
                     </div>
-        
+
                 </div>
                 <div class="right-last">
-                    
-                      <h2>  Comforts</h2>
-                   
+
+                    <h2>  Comforts</h2>
+
                     <div >
                         <ul class ="list4">
                            <li>Fan</li> 
@@ -106,11 +113,11 @@
                         </ul>
                         <button class="btn2"><a th:href="@{~/user/booking}">Book Now</a></button>
                     </div>
-        
+
                 </div>
-        
+
             </div>
-        
+
         </div>
 
 
@@ -136,14 +143,23 @@
             <div class="column">
                 <img class="demo cursor" th:src="@{~/images/familyroom5.jpg}" style="width:100% ;height:100% ;" onclick="currentSlide(5)" alt="image5">
             </div>
-             
-            </div>
-        
-                
-            </div>
+
+        </div>
+
 
     </div>
 
+    </div>
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
 </body>
+<script>
+    let myPage = "rooms";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
 
 </html>

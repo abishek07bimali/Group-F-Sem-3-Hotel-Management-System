@@ -1,8 +1,10 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,7 @@ public class UserController {
     private final UserService userService;
 
 
+
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
@@ -29,7 +32,7 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userpojo) {
         userService.save(userpojo);
-        return "redirect:homepage";
+        return "homepage";
     }
 
 
@@ -43,7 +46,18 @@ public class UserController {
     @PostMapping("/savebook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
-        return "redirect:homepage";
+        return "homepage";
+    }
+
+    @GetMapping("/contact")
+    public String getPage( Model model){
+        model.addAttribute("contact", new ContactPojo());
+        return "contact_page";}
+
+    @PostMapping("/send-message")
+    public String submitMessage(@Valid ContactPojo contactPojo){
+        userService.submitMsg(contactPojo);
+        return "redirect:contact";
     }
 
 
@@ -51,6 +65,16 @@ public class UserController {
     public String getLaundary(@Valid LaundaryPojo laundaryPojo){
         userService.submitLaundary(laundaryPojo);
         return "redirect:/laundary1";
+
+      @GetMapping("/viewBlog")
+    public String viewUserBlog(Model model){
+        model.addAttribute("blog", new BlogPojo());
+        return "blog";
+    }
+
+    @GetMapping("/event")
+    public String getEventPage() {
+        return ("event");
     }
 
 
