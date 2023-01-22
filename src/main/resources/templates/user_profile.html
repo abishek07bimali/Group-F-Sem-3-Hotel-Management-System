@@ -3,17 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
-    <link rel="stylesheet" th:href="@{~/css/user_profile.css}">
-
+<!--    <link rel="stylesheet" th:href="@{~/css/user_profile.css}">-->
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
     <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
     <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
 
-    <link rel="stylesheet" type="text/css" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+<!--    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+
   <body>
   <div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
   <section class="py-5 my-5">
+
     <div class="container">
       <h1 class="mb-5">Account Settings</h1>
       <div class="bg-white shadow rounded-lg d-block d-sm-flex">
@@ -56,21 +59,21 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Username</label>
-                  <input type="text" class="form-control" value="username">
+                  <input type="text" class="form-control" required placeholder="username">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="text" class="form-control" value="smth@gmail.com">
+                  <input type="text" class="form-control" required placeholder="smth@gmail.com">
                 </div>
               </div>
             </div>
 
             <div>
-              <button class="btn btn-primary">Update</button>
-              <button class="btn btn-light">Cancel</button>
+              <button type="submit" class="btn btn-primary">Update</button>
+              <button type="reset" class="btn btn-light">Cancel</button>
             </div>
           </div>
 
@@ -114,9 +117,6 @@
 <!--        Make a table or something to display the history-->
               </div>
             </div>
-    
-            
-            
             <div>
               <button class="btn btn-primary">Update</button>
               <button class="btn btn-light">Cancel</button>

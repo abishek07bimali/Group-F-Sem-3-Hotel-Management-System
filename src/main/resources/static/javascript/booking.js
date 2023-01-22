@@ -1,11 +1,16 @@
-
+let error = [];
 form.addEventListener('submit', e => {
-    e.preventDefault();
-
     validateInputs();
+
+    if (error.length > 0) {
+        e.preventDefault();
+    }
+
+
 });
 
 const setError = (element, message) => {
+    error.push(true);
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
 
@@ -24,7 +29,7 @@ const setSuccess = element => {
 };
 
 const validateInputs = () => {
-
+    error = [];
     const form = document.getElementById('form');
     const FullName = document.getElementById('FullName');
     const Phone = document.getElementById('Phone');
@@ -35,33 +40,32 @@ const validateInputs = () => {
 
     const FullNameValue = FullName.value.trim();
     const PhoneValue = Phone.value.trim();
-    const checkInDateValue=checkInDate.value.trim();
-    const checkOutDateValue=checkInDate.value.trim();
+    const checkInDateValue = checkInDate.value.trim();
+    const checkOutDateValue = checkInDate.value.trim();
     debugger;
 
-    if(FullNameValue === '') {
+    if (FullNameValue === '') {
         setError(FullName, 'FullName is required');
     } else {
         setSuccess(FullName);
     }
 
-    if(PhoneValue === '') {
+    if (PhoneValue === '') {
         setError(Phone, 'Phone number is required');
-    }else if(PhoneValue.toString().length!= 10){
+    } else if (PhoneValue.toString().length != 10) {
         setError(Phone, 'Phone number must be of 10 digits');
-    } 
-    else {
+    } else {
         setSuccess(Phone);
     }
-    if(checkInDateValue === '') {
+    if (checkInDateValue === '') {
         setError(checkInDate, 'please enter check in date');
-    }  else {
+    } else {
         setSuccess(checkInDate);
     }
 
-    if(checkOutDateValue === '') {
+    if (checkOutDateValue === '') {
         setError(checkOutDate, 'please enter check out date');
-    }else {
+    } else {
         setSuccess(checkOutDate);
-    } 
+    }
 };

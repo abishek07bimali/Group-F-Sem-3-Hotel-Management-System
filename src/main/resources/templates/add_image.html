@@ -5,32 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Images to gallery</title>
-    <link rel="stylesheet" href="../static/css/add_images.css">
+    <link rel="stylesheet" th:href="@{~/css/add_images.css}">
     <!-- <link rel="stylesheet" href="../static/css/blog.css"> -->
 </head>
 <body>
 <h1>Add Images to Gallery</h1>
 <div class="uplaod_image">
-    <form id="add-post-form">
-        <!-- <label for="title">Title:</label><br>
-        <input type="file" name="image" id="image"><br> -->
+    <form id="add-post-form" th:method="post" th:action="@{/admin/addgallery}" th:object="${gallery}" enctype="multipart/form-data">
 
-        <label for="image-id"></label><br>
-        <!-- <input type="text" id="title" name="title"><br> -->
-
-        <label for="image_path">Image_path</label><br>
-        <input type="text" id="image_path" name="image_path"><br>
+        <label for="image_path">Name of the images</label><br>
+        <input type="text" id="image_path" name="image_path"  th:field="*{name}" th:value="${gallery.name}"><br>
 
 
-        <label for="image_description">Image Description</label><br>
-        <textarea id="image_description" name="image_description"></textarea><br><br>
+<!--        <label for="image_description">Image Description</label><br>-->
+<!--        <textarea id="image_description" name="image_description"></textarea><br><br>-->
 
         <!-- to upload image -->
-        <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+        <p><input type="file"  name="image" id="file" accept="image/*" required   onchange="loadFile(event)" style="display: none;"></p>
         <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
         <p><img id="output" width="200px" /></p>
 
-        <button type="submit"><a href="./ImageList.html" style="color: white;">Submit</a></button>
+        <button type="submit">Submit</button>
 
 
         <script>
@@ -41,7 +36,7 @@
         </script>
     </form>
 </div>
-<!--<script src="../static/javascript/add_images.js"></script>-->
+
 
 
 
