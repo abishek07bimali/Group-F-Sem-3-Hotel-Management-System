@@ -22,8 +22,6 @@ public class UserController {
 
     private final UserService userService;
 
-
-
     @GetMapping("/create")
     public String createUser(Model model) {
         model.addAttribute("user", new UserPojo());
@@ -33,7 +31,7 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@Valid UserPojo userpojo) {
         userService.save(userpojo);
-        return "homepage";
+        return "login";
     }
 
 
@@ -86,6 +84,8 @@ public class UserController {
         return ("event");
     }
 
-
-
+    @GetMapping("/pickup_request")
+    public String getPickupPage() {
+        return ("picked_up");
+    }
 }

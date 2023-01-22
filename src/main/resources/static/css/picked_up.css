@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.fields {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    margin-top: 50px;
+    border: 2px solid black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.forlocation {
+    width: 300px;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.submitbutton {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+}

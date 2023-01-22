@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Pickup Request</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/picked_up.css}">
+    <script type="text/javascript" th:src="@{/javascript/picked_up.js}" defer></script>
+</head>
+<body>
+<div class="fields">
+    <form>
+        <h2>
+            Fill this form to send a pickup request.
+        </h2>
+        <input type="text" name="fullname" id="fullname" placeholder="Enter your full name...">
+        <input type="email" name="email" id="email" placeholder="Enter your email...">
+        <input type="number" name="id" id="id" placeholder="Enter your Booking ID...">
+        <button class="forlocation">Find your location...</button>
+        <button class="submitbutton" type="submit">Submit location</button>
+    </form>
+</div>
+</body>
+</html>
