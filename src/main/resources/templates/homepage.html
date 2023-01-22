@@ -1,306 +1,330 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
 
-<head>
-  <meta charset="utf-8">
-  <title> Luxury hotel: Welcome to the Luxury hotel in Kathmandu Nepal. </title>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/638bfd91daff0e1306dacc54/1gjddd0do';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
+  <head>
+    <meta charset="utf-8">
+    <title> Luxury hotel: Welcome to the Luxury hotel in Kathmandu Nepal. </title>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/638bfd91daff0e1306dacc54/1gjddd0do';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
-  <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
-  <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
-  <link rel="stylesheet" th:href="@{~/css/HomepageStyle.css}">
-  <link rel="stylesheet" th:href="@{~/css/checkOffer.css}">
-  <link rel="stylesheet" th:href="@{~/css/homepageStyle.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/HomepageStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/checkOffer.css}">
+    <link rel="stylesheet" th:href="@{~/css/homepageStyle.css}">
 
-</head>
+  </head>
 
-<body>
+  <body>
+      <section>
+  <div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
   <section>
-<div th:replace="fragments/Navi_frag.html :: navigator"></div>
-
-<section>
-    <!-- image -->
-    <div class="image">
-      <div class="cover">
-        <h3>WELCOME TO </h3>
-        <h1>THE LUXURY HOTEL</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
-          itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
-      </div>
-    </div>
-    <!-- booking -->
-    <!-- <div class="booking">
-      <div class="checkin">
-        <h3>Check in</h3>
-        <input type="Date">
-      </div>
-      <div class="checkout">
-        <h3>Check out</h3>
-        <input type="Date">
-      </div>
-      <div class="adults">
-        <h3>Adults</h3>
-        <input type="number" placeholder="1">
-      </div>
-      <div class="children">
-        <h3>Children</h3>
-        <input type="number" placeholder="0">
-      </div>
-      <div class="book">
-        <button><a href="#">Book Now</a></button>
-      </div>
-    </div> -->
-    <!-- details and history -->
-    <div class="shortdetails">
-      <div class="about">
-        <h1>About us</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
-          itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
-          itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
-        <br>
-        <button><a th:href="@{~/homepage/about}">Read more..</a></button>
-      </div>
-      <div class="imageDetails">
-        <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="Image Not Available">
-      </div>
-      <div class="history">
-        <h1>Our History</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
-          itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
-          itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
-        <br>
-        <button><a th:href="@{~/homepage/about}">Read more..</a></button>
-
-      </div>
-    </div>
-    <!--  -->
-    <!-- information div -->
-
-    <div class="Roominformation">
-      <div class="heading">
-        <h1>Accomodation</h1>
-      </div>
-      <div class="accommodation">
-        <div class="rooms">
-          <!-- <div id="zoom-in"> -->
-          <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="Image Not Available">
-          <h2>Premium room</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
-            voluptatibus?</p>
-          <button><a th:href="@{~/rooms/premiumroom}">Details</a></button>
-          <!-- </div> -->
-        </div>
-        <div class="rooms">
-          <!-- <div id="zoom-in"> -->
-          <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
-          <!-- </div> -->
-          <h2>Couple room</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
-            voluptatibus?</p>
-          <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
-        </div>
-        <div class="rooms">
-          <!-- <div id="zoom-in"> -->
-          <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-          <h2>Luxe room</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
-            voluptatibus?</p>
-          <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
-          <!-- </div> -->
+      <!-- image -->
+      <div class="image">
+        <div class="cover">
+          <h3>WELCOME TO </h3>
+          <h1>THE LUXURY HOTEL</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
+            itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
         </div>
       </div>
-    </div>
+      <!-- booking -->
+      <!-- <div class="booking">
+        <div class="checkin">
+          <h3>Check in</h3>
+          <input type="Date">
+        </div>
+        <div class="checkout">
+          <h3>Check out</h3>
+          <input type="Date">
+        </div>
+        <div class="adults">
+          <h3>Adults</h3>
+          <input type="number" placeholder="1">
+        </div>
+        <div class="children">
+          <h3>Children</h3>
+          <input type="number" placeholder="0">
+        </div>
+        <div class="book">
+          <button><a href="#">Book Now</a></button>
+        </div>
+      </div> -->
+      <!-- details and history -->
+      <div class="shortdetails">
+        <div class="about">
+          <h1>About us</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
+            itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
+            itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
+          <br>
+          <button><a th:href="@{~/homepage/about}">Read more..</a></button>
+        </div>
+        <div class="imageDetails">
+          <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="Image Not Available">
+        </div>
+        <div class="history">
+          <h1>Our History</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
+            itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam optio laborum veniam consequatur placeat nihil dolor error sed vel
+            itaque? Autem cupiditate accusantium voluptatem debitis quis sint inventore dicta labore!</p>
+          <br>
+          <button><a th:href="@{~/homepage/about}">Read more..</a></button>
 
-    <div class="CheckGallery">
-      <div class="title">
-        <h1>Gallery</h1>
-        <br>
+        </div>
       </div>
-      <div class="GalleryPic">
-        <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-        <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-        <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-        <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-        <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-        <br>
-        <br>
-        <button><a th:href="@{~/homepage/gallery}">Explore More</a></button>
-      </div>
-    </div>
-    <!-- reviews -->
-    <div class="reviews">
-      <div class="comments">
-        <h1>Read our Customer Experience</h1>
-        <br>
-      </div>
-      <div class="mainmessage">
-        <div class="messages">
-          <p>Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit.
-            Repellat beatae hic animi voluptatum
-            tenetur commodi odit eius minus
-            iusto ea, maxime necessitatibus
-            ab quae sunt, voluptates pariatur ipsum
-            vero cupiditate.</p>
-          <div class="customerdetail">
-            <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-            <h3>Abishek Bimali</h3>
+      <!--  -->
+      <!-- information div -->
+
+      <div class="Roominformation">
+        <div class="heading">
+          <h1>Accomodation</h1>
+        </div>
+        <div class="accommodation">
+          <div class="rooms">
+            <!-- <div id="zoom-in"> -->
+            <img th:src="@{~/images/premium4.jpg}" alt="Image Not Available">
+            <h2>Premium room</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
+              voluptatibus?</p>
+            <button><a th:href="@{~/rooms/premiumroom}">Details</a></button>
+            <!-- </div> -->
+          </div>
+          <div class="rooms">
+            <!-- <div id="zoom-in"> -->
+            <img th:src="@{~/images/coupleroom2.jpg}" alt="">
+            <!-- </div> -->
+            <h2>Couple room</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
+              voluptatibus?</p>
+            <button><a th:href="@{~/rooms/coupleroom3}">Details</a></button>
+          </div>
+          <div class="rooms">
+            <!-- <div id="zoom-in"> -->
+            <img th:src="@{~/images/coupleroom2.jpg}" alt="">
+            <h2>Luxe room</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
+              voluptatibus?</p>
+            <button><a th:href="@{~/rooms/masterroom2}">Details</a></button>
+            <!-- </div> -->
           </div>
         </div>
-        <div class="messages">
-          <p>Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit.
-            Repellat beatae hic animi voluptatum
-            tenetur commodi odit eius minus
-            iusto ea, maxime necessitatibus
-            ab quae sunt, voluptates pariatur ipsum
-            vero cupiditate.</p>
-          <div class="customerdetail">
-            <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-            <h3>Abishek Bimali</h3>
-          </div>
-        </div>
-        <div class="messages">
-          <p>Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit.
-            Repellat beatae hic animi voluptatum
-            tenetur commodi odit eius minus
-            iusto ea, maxime necessitatibus
-            ab quae sunt, voluptates pariatur ipsum
-            vero cupiditate.</p>
-          <div class="customerdetail">
-            <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-            <h3>Abishek Bimali</h3>
-          </div>
-        </div>
-        <div class="messages">
-          <p>Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit.
-            Repellat beatae hic animi voluptatum
-            tenetur commodi odit eius minus
-            iusto ea, maxime necessitatibus
-            ab quae sunt, voluptates pariatur ipsum
-            vero cupiditate.</p>
-          <div class="customerdetail">
-            <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-            <h3>Abishek Bimali</h3>
-          </div>
-        </div>
-        <div class="messages">
-          <p>Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit.
-            Repellat beatae hic animi voluptatum
-            tenetur commodi odit eius minus
-            iusto ea, maxime necessitatibus
-            ab quae sunt, voluptates pariatur ipsum
-            vero cupiditate.</p>
-          <div class="customerdetail">
-            <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-            <h3>Abishek Bimali</h3>
-          </div>
-        </div>
-
       </div>
-    </div>
-    <div class="readBlogs">
-      <h2>Read our Article</h2>
-      <br>
-      <div class="mainblog">
-        <div class="blog_read">
-          <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-          <h2>SAARC Summit</h2><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
-            voluptatibus?</p>
-          <button><a href="#">Read More</a></button>
+
+      <div class="CheckGallery">
+        <div class="title">
+          <h1>Gallery</h1>
+          <br>
         </div>
-        <div class="blog_read">
-          <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-          <h2>SAARC Summit</h2><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
-            voluptatibus?</p>
-          <button><a href="#">Read More</a></button>
-        </div>
-        <div class="blog_read">
-          <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
-          <h2>SAARC Summit</h2><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
-            voluptatibus?</p>
-          <button><a href="#">Read More</a></button>
+        <div class="GalleryPic">
+          <img th:src="@{~/images/gallery2.jpg}" alt="">
+          <img th:src="@{~/images/gallery4.jpg}" alt="">
+          <img th:src="@{~/images/gallery12.jpg}" alt="">
+          <img th:src="@{~/images/gallery9.jpg}" alt="">
+          <img th:src="@{~/images/gallery15.jpg}" alt="">
+          <br>
+          <br>
+          <button><a th:href="@{~/homepage/gallery}">Explore More</a></button>
         </div>
       </div>
-      <button class="button"> <a  th:href="@{~/homepage/viewblog}"> Read All</a></button>
-    
+      <!-- reviews -->
+      <div class="reviews">
+        <div class="comments">
+          <h1>Read our Customer Experience</h1>
+          <br>
+        </div>
+        <div class="mainmessage">
+          <div class="messages">
+            <p>Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.
+              Repellat beatae hic animi voluptatum
+              tenetur commodi odit eius minus
+              iusto ea, maxime necessitatibus
+              ab quae sunt, voluptates pariatur ipsum
+              vero cupiditate.</p>
+            <div class="customerdetail">
+              <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
+              <h3>Abishek Bimali</h3>
+            </div>
+          </div>
+          <div class="messages">
+            <p>Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.
+              Repellat beatae hic animi voluptatum
+              tenetur commodi odit eius minus
+              iusto ea, maxime necessitatibus
+              ab quae sunt, voluptates pariatur ipsum
+              vero cupiditate.</p>
+            <div class="customerdetail">
+              <img th:src="@{~/images/ServicesImages/bar3.jpg}" alt="">
+              <h3>Abishek Bimali</h3>
+            </div>
+          </div>
+          <div class="messages">
+            <p>Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.
+              Repellat beatae hic animi voluptatum
+              tenetur commodi odit eius minus
+              iusto ea, maxime necessitatibus
+              ab quae sunt, voluptates pariatur ipsum
+              vero cupiditate.</p>
+            <div class="customerdetail">
+              <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
+              <h3>Rakshit Shrestha</h3>
+            </div>
+          </div>
+          <div class="messages">
+            <p>Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.
+              Repellat beatae hic animi voluptatum
+              tenetur commodi odit eius minus
+              iusto ea, maxime necessitatibus
+              ab quae sunt, voluptates pariatur ipsum
+              vero cupiditate.</p>
+            <div class="customerdetail">
+              <img th:src="@{~/images/ServicesImages/bar3.jpg}" alt="">
+              <h3>Abishek Kari</h3>
+            </div>
+          </div>
+          <div class="messages">
+            <p>Lorem ipsum dolor sit amet
+              consectetur, adipisicing elit.
+              Repellat beatae hic animi voluptatum
+              tenetur commodi odit eius minus
+              iusto ea, maxime necessitatibus
+              ab quae sunt, voluptates pariatur ipsum
+              vero cupiditate.</p>
+            <div class="customerdetail">
+              <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
+              <h3>Bhawana Shahi</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="readBlogs">
+        <h2>Read our Article</h2>
+        <br>
+        <div class="mainblog">
+          <div class="blog_read">
+            <img th:src="@{~/images/ServicesImages/bar3.jpg}" alt="">
+            <h2>SAARC Summit</h2><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
+              voluptatibus?</p>
+            <button><a href="#">Read More</a></button>
+          </div>
+          <div class="blog_read">
+            <img th:src="@{~/images/ServicesImages/bar2.jpg}" alt="">
+            <h2>SAARC Summit</h2><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
+              voluptatibus?</p>
+            <button><a href="#">Read More</a></button>
+          </div>
+          <div class="blog_read">
+            <img th:src="@{~/images/ServicesImages/bar1.jpg}" alt="">
+            <h2>SAARC Summit</h2><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
+              voluptatibus?</p>
+            <button><a href="#">Read More</a></button>
+          </div>
+        </div>
+        <button class="button"> <a  th:href="@{~/homepage/viewblog}"> Read All</a></button>
+
+      </div>
+    </section>
+
+  <!-- this contains for popup window  offer -->
+
+  <div class="popup">
+    <div class="contentBox">
+      <div class="close"></div>
+    <div class="imgBx">
+      <img th:src="@{~/images/t.jpg}" alt="">
     </div>
-  </section>
-
-<!-- this contains for popup window  offer -->
-
-<div class="popup">
-  <div class="contentBox">
-    <div class="close"></div>
-  <div class="imgBx">
-    <img th:src="@{~/images/t.jpg}" alt="">
+    <div class="content">
+       <div>
+       <h3>Special Offer</h3>
+       <h2>30<sup>%</sup><span>Off</span></h2>
+         <p>Book your stay at Luxary Hotel now and receive a 30% discount on our best available rates! Whether you're
+           traveling for business or pleasure, our luxurious accommodations and unparalleled service will make your
+           stay truly unforgettable. Don't miss out on this limited-time offer, book today and take advantage of our
+           discounted rates!</p>
+            <a th:href="@{~/user/booking}">Book Now</a>
+           </div>
+       </div>
+   </div>
   </div>
-  <div class="content">
-     <div>
-     <h3>Special Offer</h3>
-     <h2>30<sup>%</sup><span>Off</span></h2>
-       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae sapiente modi blanditiis doloribus, praesentium, sequi ipsum ullam facilis ad eius alias totam a reiciendis
-          mollitia quos tempore maxime amet asperiores.</p>
-          <a th:href="@{~/user/booking}">Book Now</a>
-         </div>
-     </div>
- </div>
-</div>
- <script>
-   const popup=document.querySelector('.popup');
-   const close=document.querySelector('.close');
-   window.onload = function(){
-     setTimeout(function(){
-       popup.style.display="block"
-     }, 5000)
- }
-   close.addEventListener('click' , () => {
-     popup.style.display= "none";
-   })
- </script>
-  
+   <script>
+     const popup=document.querySelector('.popup');
+     const close=document.querySelector('.close');
+     window.onload = function(){
+       setTimeout(function(){
+         popup.style.display="block"
+       }, 5000)
+   }
+     close.addEventListener('click' , () => {
+       popup.style.display= "none";
+     })
+   </script>
 
-  <div th:replace="fragments/Footer_frag.html :: footer"></div>
-  </section>
-</body>
+      <div class="suggest-problem">
 
-<script>
-  let myPage = "homepage";
-  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
-  listGroupItem.forEach(i=>{
-    i.classList.remove("active")
-  })
-  let activeID = document.getElementById(myPage);
-  activeID.classList.add("active");
-</script>
+      </div>
+        <div class="container-fluid contact" id="contact">
+          <div class="container">
+            <form th:method="post" th:action="@{/user/savefeedback}" th:object="${feedback}">
+              <h2>Guest Experience Feedback</h2>
+              <input type="email" placeholder="Email"  class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${feedback.email}">
+              <input type="text" placeholder="Name"   class="full-half" required th:field="*{fullname}" th:value="${feedback.fullname}">
+              <input type="text" placeholder="Subject"  required th:field="*{subject}" th:value="${feedback.subject}">
+              <textarea placeholder="Message"  required th:field="*{message}" th:value="${feedback.message}"></textarea>
+
+<!--              <input type="text" placeholder="Name" id="name" name="name" class="full-half" required >-->
+<!--              <input type="email" placeholder="Email" id="email" name="email" class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >-->
+<!--              <input type="text" placeholder="Subject" id="subject" name="subject"  required >-->
+<!--              <textarea placeholder="Message" id="message" name="message" required></textarea>-->
+              <input type="submit" value="Send">
+            </form>
+          </div>
+        </div>
+
+
+    <div th:replace="fragments/Footer_frag.html :: footer"></div>
+    </section>
+  </body>
+
+
+  <script>
+    let myPage = "homepage";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+      i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+  </script>
 
 
 </html>

@@ -3,6 +3,7 @@ package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
+import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,9 @@ public class HomepageController {
     private  final GalleryServices galleryServices;
 
     @GetMapping("")
-    public String geHomepage() {
+    public String geHomepage(Model model) {
+        model.addAttribute("feedback", new FeedbackPojo());
+
         return ("homepage");
     }
 

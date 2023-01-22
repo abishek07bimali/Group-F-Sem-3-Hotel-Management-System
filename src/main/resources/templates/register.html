@@ -20,7 +20,7 @@
                 <h3 class="h3">Create an account</h3>
                 <input class="name" name="name" type="text" placeholder="Enter your name" required th:field="*{fullname}" th:value="${user.fullname}" >
                 <input class="number" name="name" type="number" placeholder="Enter your number" required th:field="*{mobile_no}" th:value="${user.mobile_no}">
-                <input class="email" name="email" type="email" placeholder="Enter your email"required th:field="*{email} " th:value="${user.email}">
+                <input class="email" name="email" type="email" placeholder="Enter your email" required th:field="*{email} " th:value="${user.email}">
                 <input class="password" name="password" type="password" placeholder="Enter your password" required th:field="*{password} " th:value="${user.password}">
 <!--                <i class="far fa-eye-slash"></i>-->
                 <button class="Submit" type="submit"> Create account</button>

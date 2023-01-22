@@ -1,6 +1,7 @@
 package com.example.hotelmanagementsystem.Services;
 
 
+import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
@@ -25,13 +26,15 @@ public interface UserService {
 
     String save(BookingPojo bookingPojo);
 
+    String submitFeedback(FeedbackPojo feedbackPojo);
+
 
     void deleteById(Integer id);
 
 
     String submitLaundary(com.example.hotelmanagementsystem.UserPojo.LaundaryPojo laundaryPojo);
     String submitMsg(ContactPojo contactPojo);
-//    Contact fetchById(Integer id);
+    //    Contact fetchById(Integer id);
     void deleteById(Integer id);
 
 //    String viewBlog(BlogPojo blogpojo);
