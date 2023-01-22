@@ -50,6 +50,16 @@ public class AdminController {
     }
 
 
+    @GetMapping("/alllist")
+    public String getAllBooking(Model model) {
+        List<Booking> bookings = userService.fetchAll();
+        model.addAttribute("bookinglist", bookings);
+        return "Admin/AllBooking";
+    }
+
+
+
+
 
     @GetMapping("/newbooking")
     public String BookHotel(Model model) {
