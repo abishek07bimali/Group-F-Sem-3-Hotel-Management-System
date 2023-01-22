@@ -62,6 +62,7 @@ public class HomepageController {
     public String getRooms() {
         return "rooms";
     }
+}
 
 
     @GetMapping("/packages")

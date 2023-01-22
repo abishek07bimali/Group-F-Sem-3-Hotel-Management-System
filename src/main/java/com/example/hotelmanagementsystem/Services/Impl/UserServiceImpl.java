@@ -3,14 +3,17 @@ package com.example.hotelmanagementsystem.Services.Impl;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Laundary;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
 import com.example.hotelmanagementsystem.repo.BlogRepo;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
+import com.example.hotelmanagementsystem.repo.LaundaryRepo;
 import com.example.hotelmanagementsystem.repo.ContactRepo;
 import com.example.hotelmanagementsystem.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +24,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    public final LaundaryRepo laundaryRepo;
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
@@ -28,9 +32,12 @@ public class UserServiceImpl implements UserService {
 
 
 
+
+
+
     @Override
     public String save(UserPojo userPojo) {
-        User user=new User();
+        User user = new User();
         user.setEmail(userPojo.getEmail());
         user.setFullname(userPojo.getFullname());
         user.setMobileNo(userPojo.getMobile_no());
@@ -57,6 +64,7 @@ public class UserServiceImpl implements UserService {
         bookingRepo.save(booking);
         return null;
     }
+
 
 
     @Override
@@ -88,9 +96,27 @@ public class UserServiceImpl implements UserService {
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
 
+
+
     }
 
     @Override
+    public String submitLaundary(LaundaryPojo laundaryPojo) {
+        Laundary laundary = new Laundary();
+        laundary .setRoomno(laundaryPojo.getRoomno());
+        laundary .setNoofclothes(laundaryPojo.getNoofclothes());
+        laundary .setPrint(laundaryPojo.getPrint());
+        laundaryRepo .save(laundary );
+        return "sent";
+    }
+    }
+
+
+ 
+
+
+
+
     public String save(BlogPojo blogPojo) {
         Blog blog =new Blog();
         if(blogPojo.getId()!=null){
@@ -120,5 +146,4 @@ public class UserServiceImpl implements UserService {
     }
 
 
-}
 
