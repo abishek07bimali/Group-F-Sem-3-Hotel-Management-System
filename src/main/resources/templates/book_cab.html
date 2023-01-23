@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/book_cab.css}">
-<!--    <script defer src="./booking.js"></script>-->
+    <script defer th:src="@{~/javascript/booking.js}"></script>
 </head>
 <body>
 <div class="container">
-    <form id="form" th:method="post" th:action="@{/cab/save}" th:object="${cab}>
+    <form id="form" th:method="post" th:action="@{/cab/save}" th:object="${cab}">
         <h1>Book Cab</h1>
         <div class="input-control">
             <label for="FullName">FullName</label>
@@ -22,7 +22,7 @@
         </div>
         <div class="input-control">
             <label for="Phone">Phone</label>
-            <input id="Phone" name="Phone" type="number" type="text" th:field="*{phone}" th:value="${cab.phone}" >
+            <input id="Phone" name="Phone"  type="text" th:field="*{phone}" th:value="${cab.phone}" >
             <div class="error"></div>
         </div>
         <div class="input-control">
@@ -51,13 +51,13 @@
         <div class="input-control">
             <label for="date">date</label>
             <!-- <input id="date" name="date" type="number"> -->
-            <input type="date" name="date" id="date" placeholder="date" type="text" th:field="*{date}" th:value="${cab.date}">
+            <input type="date" name="date" id="date" placeholder="date"  th:field="*{date}" th:value="${cab.date}">
             <div class="error"></div>
         </div>
         <div class="input-control">
             <label for="time">Time</label>
             <!-- <input id="date" name="date" type="number"> -->
-            <input type="time" name="time" id="time" placeholder="Enter time" type="text" th:field="*{time}" th:value="${cab.time}">
+            <input type="time" name="time" id="time" placeholder="Enter time" th:field="*{time}" th:value="${cab.time}">
             <div class="error"></div>
         </div>
         <button type="submit">Book Now</button>

@@ -1,6 +1,6 @@
 package com.example.hotelmanagementsystem.UserPojo;
 
-import com.system.web_backend_individual1.Entity.Cab;
+import com.example.hotelmanagementsystem.entity.Cab;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

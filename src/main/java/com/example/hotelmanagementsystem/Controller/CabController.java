@@ -19,9 +19,9 @@ public class CabController {
         model.addAttribute("cab",new CabPojo());
         return "book_cab";
     }
-    @PostMapping("/cab/save")
+    @PostMapping("/save")
     public String SaveCab(CabPojo cabPojo){
         cabService.save_cab_record(cabPojo);
-        return"dashboard";
+        return"redirect:/homepage";
     }
 }
