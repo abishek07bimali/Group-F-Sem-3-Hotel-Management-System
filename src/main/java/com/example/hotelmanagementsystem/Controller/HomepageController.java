@@ -65,7 +65,12 @@ public class HomepageController {
     public String getRooms() {
         return "rooms";
     }
-}
+
+    @GetMapping("/cabbook")
+    public String getCabBook() {
+        return "redirect:/cab/book";
+    }
+
 
 
     @GetMapping("/packages")

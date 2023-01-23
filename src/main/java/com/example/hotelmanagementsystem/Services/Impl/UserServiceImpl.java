@@ -127,7 +127,7 @@ public class UserServiceImpl implements UserService {
         laundaryRepo .save(laundary );
         return "sent";
     }
-    }
+
 
 
  
@@ -149,12 +149,14 @@ public class UserServiceImpl implements UserService {
         blogRepo.save(blog);
         return null;
     }
+
     @Override
     public UserPojo findByEmail(String email) {
         User user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
         return new UserPojo(user);
     }
+}
 
 
 

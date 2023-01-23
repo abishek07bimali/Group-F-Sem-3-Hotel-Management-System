@@ -69,10 +69,11 @@ public class UserController {
 
 //     @GetMapping("/viewBlog")
     @PostMapping("/savelaundary")
-    public String getLaundary(@Valid LaundaryPojo laundaryPojo){
+    public String getLaundary(@Valid LaundaryPojo laundaryPojo) {
         userService.submitLaundary(laundaryPojo);
         return "redirect:/laundary1";
 
+    }
       @GetMapping("/viewBlog")
     public String viewUserBlog(Model model){
         model.addAttribute("blog", new BlogPojo());
