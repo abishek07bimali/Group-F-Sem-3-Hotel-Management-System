@@ -45,7 +45,7 @@ public class UserController {
     @PostMapping("/savebook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
-        return "homepage";
+        return "redirect:/homepage";
     }
 
     @GetMapping("/contact")

@@ -27,7 +27,7 @@
     <title>Booking</title>
 </head>
 
-<body>
+<body onload="myFunction()">
 
 <div class="container">
 
@@ -60,15 +60,15 @@
 
             <select name="RoomType" id="RoomType"  th:field="*{room}" th:value="${booking.room}">
 
-                <option value="s">Single</option>
+                <option value="Single Room">Single</option>
 
-                <option value="c">Couple</option>
+                <option value="Couple Room">Couple</option>
 
-                <option value="f">Family</option>
+                <option value="Family Room">Family</option>
 
-                <option value="g">Group</option>
+                <option value="Group Room">Group</option>
 
-                <option value="h">Honeymoon</option>
+                <option value="Honeymoon Room">Honeymoon</option>
 
             </select>
 
@@ -112,6 +112,15 @@
 
         </div>
 
+
+<!--        Amount -->
+        <input type="text" hidden="hidden" id="amount" th:field="*{amount}" th:value="${booking.amount}">
+
+<!--        <h1 id="amount" th:field="*{amount}" th:value="${booking.amount}"></h1>-->
+
+
+
+
         <div class="input-control">
 
             <label for="date">Check Out</label>
@@ -124,7 +133,7 @@
         </div>
         <!--                    <input type="submit" value="SUBMIT">-->
         <div>
-            <button type="submit">Book Now</button>
+            <button type="submit" onclick="myFunction()">Book Now</button>
         </div>
 
 
@@ -132,6 +141,30 @@
 
 </div>
 
+<script>
+    function myFunction() {
+        let A = document.getElementById("RoomType").value;
+            if(A=="Single Room"){
+                console.log(200);
+                var val=document.getElementById("amount");
+                val.setAttribute("value","$200");
+            }
+            else if(A=="Couple Room"){
+                var val=document.getElementById("amount");
+                val.setAttribute("value","$300");
+            }
+            else if(A=="Family Room"){
+                var val=document.getElementById("amount");
+                val.setAttribute("value","$400");          }
+            else if(A=="Group Room"){
+                var val=document.getElementById("amount");
+                val.setAttribute("value","$500");          }
+            else{
+                var val=document.getElementById("amount");
+                val.setAttribute("value","$600");          }
+
+    }
+</script>
 </body>
 
 </html>

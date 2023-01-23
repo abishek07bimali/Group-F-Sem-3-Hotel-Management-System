@@ -82,13 +82,19 @@ public class AdminController {
         return "newbookings";
     }
 
-
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id) {
         userService.deleteById(id);
         return "redirect:/admin/list";
     }
 
+
+    @GetMapping("/bill/{id}")
+    public String getBill(@PathVariable("id") Integer id, Model model) {
+        Booking booking = userService.fetchById(id);
+        model.addAttribute("bill", new BookingPojo(booking));
+        return "PrintBill";
+    }
 
 //    @GetMapping("/adminblogpage")
 //    public  String getPage(){

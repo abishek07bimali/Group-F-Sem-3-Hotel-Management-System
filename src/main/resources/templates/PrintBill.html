@@ -2,22 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-  
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../static/css/PrintBill.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" th:href="@{~/css/PrintBill.css}" />
 
     <title>Customer Invoice.</title>
   </head>
@@ -27,30 +16,33 @@
       <div class="p-5">
         <section class="top-content bb d-flex justify-content-between">
           <div class="logo">
-            <img src="southern.png" alt="" class="img-fluid" />
+<!--            <img src="southern.png" alt="not" class="img-fluid" />-->
+            <p> Luxury Hotel: Visit again !!! &#128512; &#128512;</p>
           </div>
           <div class="top-left">
             <div class="graphic-path">
             </div>
             <div class="position-relative">
-              <p>Invoice No. <span>1234</span></p>
-              <p>Invoice Date: <span>15-10-2022</span></p>
+              <p>Invoice No. <span th:text="${bill.getId()}"></span></p>
+              <p>Invoice Date: <span th:text="${bill.getCheckout()}"></span></p>
             </div>
           </div>
         </section>
 
         <section class="store-user mt-5">
-          <div class="col-10">
+          <div class="col-12">
             <div class="row bb pb-3">
-              <div class="col-7">
+              <div class="col-4">
                 <p>Customer Name:</p>
-                <h2>Bhawana shahi</h2>
+                <h2 th:text="${bill.getFullname()}"></h2>
               </div>
-              <div class="col-5">
-                <p>Room Number:</p>
-                <h2>102</h2>
-                <!-- <p>Delux Room</p> -->
-                <!-- <p class="description">Standard</p> -->
+              <div class="col-4">
+                <p>Room Type:</p>
+                <h2 th:text="${bill.getRoom()}"></h2>
+              </div>
+              <div class="col-4">
+                <p>Contact:</p>
+                <h2 th:text="${bill.getMobile_no()}"></h2>
               </div>
             </div>
           </div>
@@ -61,8 +53,10 @@
               <tr>
                 <td>Description</td>
                 <td>Price</td>
-                <td>Quantity</td>
-                <td>Total</td>
+                <td>Checkin</td>
+                <td>Checkout</td>
+                <td>People</td>
+<!--                <td>Total</td>-->
               </tr>
             </thead>
             <tbody>
@@ -70,50 +64,52 @@
                 <td>
                   <div class="media">
                     <div class="media-body">
-                      <p class="mt-0 title">Delux Room</p>
+                      <p class="mt-0 title" th:text="${bill.getRoom()}"></p>
                     </div>
                   </div>
                 </td>
-                <td>$50</td>
-                <td>1</td>
-                <td>$500</td>
+                <td th:text="${bill.getAmount()}"></td>
+                <td th:text="${bill.getCheckin()}"></td>
+                <td th:text="${bill.getCheckout()}"></td>
+                <td th:text="${bill.getNumber_of_people()}"></td>
+<!--                <td>$500</td>-->
               </tr>
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="media-body">
-                      <p class="mt-0 title">Momo</p>
-                    </div>
-                  </div>
-                </td>
-                <td>$100</td>
-                <td>4</td>
-                <td>$600</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="media-body">
-                      <p class="mt-0 title">Pizza</p>
-                    </div>
-                  </div>
-                </td>
-                <td>$500</td>
-                <td>2</td>
-                <td>$700</td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="media-body">
-                      <p class="mt-0 title">Wine</p>
-                    </div>
-                  </div>
-                </td>
-                <td>$500</td>
-                <td>2</td>
-                <td>$700</td>
-              </tr>
+<!--              <tr>-->
+<!--                <td>-->
+<!--                  <div class="media">-->
+<!--                    <div class="media-body">-->
+<!--                      <p class="mt-0 title">Momo</p>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--                <td>$100</td>-->
+<!--                <td>4</td>-->
+<!--                <td>$600</td>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <td>-->
+<!--                  <div class="media">-->
+<!--                    <div class="media-body">-->
+<!--                      <p class="mt-0 title">Pizza</p>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--                <td>$500</td>-->
+<!--                <td>2</td>-->
+<!--                <td>$700</td>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <td>-->
+<!--                  <div class="media">-->
+<!--                    <div class="media-body">-->
+<!--                      <p class="mt-0 title">Wine</p>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--                <td>$500</td>-->
+<!--                <td>2</td>-->
+<!--                <td>$700</td>-->
+<!--              </tr>-->
             </tbody>
           </table>
         </section>
@@ -134,7 +130,7 @@
                   <tr>
                     <br />
                     <td>Sub Total:</td>
-                    <td>$2,500</td>
+                    <td th:text="${bill.getAmount()}"></td>
                   </tr>
                 </tfoot>
               </table>
