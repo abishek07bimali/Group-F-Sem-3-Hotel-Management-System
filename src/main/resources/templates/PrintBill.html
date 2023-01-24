@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <link rel="stylesheet" th:href="@{~/css/PrintBill.css}" />
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
 
-    <title>Customer Invoice.</title>
+    <title>Customer Invoice: Luxury Hotel</title>
   </head>
 
   <body>
@@ -24,7 +25,7 @@
             </div>
             <div class="position-relative">
               <p>Invoice No. <span th:text="${bill.getId()}"></span></p>
-              <p>Invoice Date: <span th:text="${bill.getCheckout()}"></span></p>
+              <p>Invoice Date: <span id="date"></span></p>
             </div>
           </div>
         </section>
@@ -146,5 +147,19 @@
         
       </div>
     </div>
+
+    <script>
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = mm + '/' + dd + '/' + yyyy;
+      document.getElementById("date").innerHTML=today;
+
+
+      // document.write(today);
+
+    </script>
+
   </body>
 </html>

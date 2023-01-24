@@ -9,20 +9,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hotel Booking</title>
+    <title>Hotel Booking: Luxury Hotel</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
     <link rel="stylesheet" th:href="@{~/css/booking.css}">
     <script defer th:src="@{~/javascript/booking.js}"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/booking.css}">
+<!--    <script defer th:src="@{~/javascript/disableDate.js}"></script>-->
+
 
     <title>Booking</title>
 </head>
@@ -33,6 +35,7 @@
 
     <form  id="form" th:method="post" th:action="@{/user/savebook}" th:object="${booking}">
         <h1>Book Now</h1>
+        <input type="number"   hidden="hidden" th:field="*{id}" th:value="${newBooking.id}">
 
         <div class="input-control">
 
@@ -106,7 +109,7 @@
 
             <!-- <input id="date" name="date" type="number"> -->
 
-            <input type="date" name="date" id="checkInDate" placeholder="date"  th:field="*{Checkin}" th:value="${booking.checkin}">
+            <input type="date" name="date" id="checkInDate" placeholder="date"  th:field="*{checkin}" th:value="${booking.checkin}">
 
             <div class="error"></div>
 
@@ -116,7 +119,7 @@
 <!--        Amount -->
         <input type="text" hidden="hidden" id="amount" th:field="*{amount}" th:value="${booking.amount}">
 
-<!--        <h1 id="amount" th:field="*{amount}" th:value="${booking.amount}"></h1>-->
+        <input type="text" hidden="hidden" id="date" th:field="*{date}" th:value="${booking.date}">
 
 
 
@@ -164,6 +167,28 @@
                 val.setAttribute("value","$600");          }
 
     }
+</script>
+<script>
+    $(document).ready(function(){
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("checkInDate").setAttribute("min", today);
+        document.getElementById("checkOutDate").setAttribute("min", today);
+    });
+
+</script>
+<script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '/' + mm + '/' + dd;
+    var val=document.getElementById("date");
+    val.setAttribute("value",today);
+
 </script>
 </body>
 
