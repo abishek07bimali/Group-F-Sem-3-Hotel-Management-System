@@ -4,7 +4,6 @@ import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import jakarta.validation.Valid;
@@ -21,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     private final UserService userService;
+    private final UserService laundaryService;
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -67,7 +67,7 @@ public class UserController {
     }
 
 
-//     @GetMapping("/viewBlog")
+
     @PostMapping("/savelaundary")
     public String getLaundary(@Valid LaundaryPojo laundaryPojo) {
         userService.submitLaundary(laundaryPojo);

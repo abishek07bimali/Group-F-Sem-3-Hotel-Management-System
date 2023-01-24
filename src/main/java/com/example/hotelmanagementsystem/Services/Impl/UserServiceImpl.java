@@ -6,13 +6,11 @@ import com.example.hotelmanagementsystem.entity.*;
 import com.example.hotelmanagementsystem.repo.*;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.config.PasswordEncoderUtil;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Booking;
-import com.example.hotelmanagementsystem.entity.Laundary;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.User;
 import com.example.hotelmanagementsystem.exception.AppException;
@@ -31,6 +29,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     public final LaundaryRepo laundaryRepo;
+
     public final UserRepo userRepo;
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
@@ -96,6 +95,17 @@ public class UserServiceImpl implements UserService {
         return "sent";
     }
 
+
+    @Override
+    public String submitLaundary(LaundaryPojo laundaryPojo) {
+        Laundary laundary = new Laundary();
+        laundary.setRoomno(laundaryPojo.getRoomno());
+        laundary.setNoofclothes(laundaryPojo.getNoofclothes());
+        laundary.setPrice(laundaryPojo.getPrice());
+        laundaryRepo.save(laundary );
+        return "sent";
+    }
+
     @Override
     public Booking fetchById(Integer id) {
         return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
@@ -118,15 +128,6 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Override
-    public String submitLaundary(LaundaryPojo laundaryPojo) {
-        Laundary laundary = new Laundary();
-        laundary .setRoomno(laundaryPojo.getRoomno());
-        laundary .setNoofclothes(laundaryPojo.getNoofclothes());
-        laundary .setPrint(laundaryPojo.getPrint());
-        laundaryRepo .save(laundary );
-        return "sent";
-    }
 
 
 

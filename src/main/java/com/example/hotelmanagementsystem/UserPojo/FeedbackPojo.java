@@ -1,8 +1,6 @@
 package com.example.hotelmanagementsystem.UserPojo;
 
 import com.example.hotelmanagementsystem.entity.Feedback;
-import com.example.hotelmanagementsystem.entity.User;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
