@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0" >
+    <title>Coupoun Offer</title>
+  <link rel="stylesheet" href="../static/css/couponoffer.css">
+</head>
+<body>
+     <div class="container">
+         <div class="coupon-card">
+             <img src="../static/images/logo.png" class="logo">
+             <h3> 50% off on all packages
+             </h3>
+             <div class="coupon-row">
+                 <span id="cpnCode">ENJOY500</span>
+                 <span id="cpnBtn">COPY CODE</span>
+             </div>
+             <p> Valid Till: 15th March, 2023</p>
+<!--             <div class="circle1"></div>-->
+<!--             <div class="circle2"></div>-->
+
+         </div>
+     </div>
+<script>
+    var cpnBtn=document.getElementById("cpnBtn");
+    var cpnCode=document.getElementById("cpnCode");
+
+    cpnBtn.onclick=function (){
+        navigator.clipboard.writeText(cpnCode.innerHTML);
+        cpnBtn.innerHTML ="COPIED";
+        setTimeout(function (){
+            cpnBtn.innerHTML="COPY CODE";
+        }, 3000)
+    }
+
+
+</script>
+
+
+
+</body>
+</html>
