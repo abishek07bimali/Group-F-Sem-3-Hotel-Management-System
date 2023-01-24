@@ -11,9 +11,13 @@ body {
 
 /* Header/Blog Title */
 .header {
-  padding: 30px;
-  font-size: 40px;
+  padding: 60px;
   text-align: center;
+  color: white;
+  background-image:  linear-gradient(to bottom, rgba(140, 192, 224, 0.52), rgba(18, 47, 77, 0.73)),url(../images/gallery2.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   /* background: white; */
 }
 
