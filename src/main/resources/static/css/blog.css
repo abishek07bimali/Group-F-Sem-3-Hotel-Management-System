@@ -234,3 +234,7 @@ body {
 .btn-news.btn-contests a:hover {
   color: #000;
 }
+.recentNews{
+  padding: 50px;
+  margin-bottom: 50px;
+}

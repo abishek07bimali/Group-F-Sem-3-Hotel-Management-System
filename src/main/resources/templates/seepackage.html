@@ -24,60 +24,64 @@
     <body>
     <div th:replace="fragments/Navi_frag.html :: navigator"></div>
 
-            <div class ="Main-wrapper" id="blur">
+    <div class="about-section">
+        <div class="topic-heading">
+            <h1>Our Packages</h1>
+        </div>
+    </div>
 
-            <h2>Our Packages</h2>
+    <div class ="Main-wrapper" id="blur">
 
 
-            <div class="container">
+        <div class="container">
 
-            <div class="wrapper1">
-                <div class="wrapper-top">
-                    <img class="myImg" th:src="@{~/images/package1.jpg}" style="width:100% ;height:100% ;" >
-                </div>
-                <div class="wrapper-bottom">
-                 <h3>Birthday Celebration</h3>
-                 <p>One Day, a Lifetime of Memories.</p>
-                 <p>'Your Beautiful day,Our Beautiful venue'  </p>
+        <div class="wrapper1">
+            <div class="wrapper-top">
+                <img class="myImg" th:src="@{~/images/package1.jpg}" style="width:100% ;height:100% ;" >
+            </div>
+            <div class="wrapper-bottom">
+             <h3>Birthday Celebration</h3>
+             <p>One Day, a Lifetime of Memories.</p>
+             <p>'Your Beautiful day,Our Beautiful venue'  </p>
 
-                 <button class="btn1"><a th:href="@{~/homepage/birthday}">See More Details</a> </button>
-
-                </div>
+             <button class="btn1"><a th:href="@{~/homepage/birthday}">See More Details</a> </button>
 
             </div>
 
-            <div class="wrapper1">
-                <div class="wrapper-top">
-                    <img class="myImg" th:src="@{~/images/package2.jpg}" style="width:100% ;height:100% ;" >
-                </div>
-                <div class="wrapper-bottom">
-                 <h3>Wedding Celebration</h3>
-                 <p>One Day, a Lifetime of Memories.</p>
-                 <p>'Your Beautiful day,Our Beautiful venue'  </p>
+        </div>
 
-                 <button class="btn1"><a th:href="@{~/homepage/wedding}">See More Details</a> </button>
+        <div class="wrapper1">
+            <div class="wrapper-top">
+                <img class="myImg" th:src="@{~/images/package2.jpg}" style="width:100% ;height:100% ;" >
+            </div>
+            <div class="wrapper-bottom">
+             <h3>Wedding Celebration</h3>
+             <p>One Day, a Lifetime of Memories.</p>
+             <p>'Your Beautiful day,Our Beautiful venue'  </p>
 
-                </div>
+             <button class="btn1"><a th:href="@{~/homepage/wedding}">See More Details</a> </button>
 
             </div>
 
-            <div class="wrapper1" id="wrapper2">
-                <div class="wrapper-top">
-                    <img class="myImg" th:src="@{~/images/package3.jpg}" style="width:100% ;height:100% ;" >
-                </div>
-                <div class="wrapper-bottom">
-                 <h3>Anniversary Celebration</h3>
-                 <p>One Day, a Lifetime of Memories.</p>
-                 <p>'Your Beautiful day,Our Beautiful venue'  </p>
+        </div>
 
-                 <button class="btn1"><a th:href="@{~/homepage/anniversary}">See More Details</a> </button>
+        <div class="wrapper1" id="wrapper2">
+            <div class="wrapper-top">
+                <img class="myImg" th:src="@{~/images/package3.jpg}" style="width:100% ;height:100% ;" >
+            </div>
+            <div class="wrapper-bottom">
+             <h3>Anniversary Celebration</h3>
+             <p>One Day, a Lifetime of Memories.</p>
+             <p>'Your Beautiful day,Our Beautiful venue'  </p>
 
-                </div>
+             <button class="btn1"><a th:href="@{~/homepage/anniversary}">See More Details</a> </button>
 
             </div>
-            </div>
 
-          </div>
+        </div>
+        </div>
+
+      </div>
 
     <!-- A button to open the popup form -->
     <button class="open-button" onclick="openForm()">plan a surprise</button>
