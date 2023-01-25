@@ -3,6 +3,8 @@ package com.example.hotelmanagementsystem.Services;
 
 import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Contact;
+import com.example.hotelmanagementsystem.entity.Feedback;
 
 import java.util.List;
 
@@ -20,6 +22,8 @@ public interface UserService {
     String save(BookingPojo bookingPojo);
 
     String submitFeedback(FeedbackPojo feedbackPojo);
+    List<Feedback> fetchAllFeedback();
+
 
 
 
@@ -28,6 +32,7 @@ public interface UserService {
     String submitMsg(ContactPojo contactPojo);
     //    Contact fetchById(Integer id);
     void deleteById(Integer id);
+    List<Contact> fetchAllContact();
 
 
     String save(BlogPojo blogPojo);

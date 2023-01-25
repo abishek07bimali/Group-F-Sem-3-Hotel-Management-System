@@ -98,7 +98,22 @@ public class AdminController {
         model.addAttribute("bookinglist", bookings);
         return "Admin/AllBooking";
     }
+//
+//    -----------------
+//    view contactfetch
+//    -----------
+//
 
+    @GetMapping("/contactfetch")
+    public String getContactAdmin(Model model) {
+        List<Contact> contact = userService.fetchAllContact();
+        model.addAttribute("contactlist", contact);
+        List<Feedback> feedbacks = userService.fetchAllFeedback();
+        model.addAttribute("feedback", feedbacks);
+        return "Admin/ViewContactandFeedback";
+    }
+
+    //
 
 
     @GetMapping("/newbooking")

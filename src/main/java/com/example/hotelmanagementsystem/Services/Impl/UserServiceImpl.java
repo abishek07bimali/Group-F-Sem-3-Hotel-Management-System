@@ -82,6 +82,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<Feedback> fetchAllFeedback() {
+        return this.feedbackRepo.findAll();
+    }
+
+    @Override
     public Booking fetchById(Integer id) {
         return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
     }
@@ -100,6 +105,11 @@ public class UserServiceImpl implements UserService {
 
 
 
+    }
+
+    @Override
+    public List<Contact> fetchAllContact() {
+        return this.contactRepo.findAll();
     }
 
     @Override

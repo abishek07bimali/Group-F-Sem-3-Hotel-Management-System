@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Rating</title>
-    <link rel="stylesheet" th:href="../static/css/rating.css">
+    <link rel="stylesheet" th:href="@{~/css/rating.css}">
 
 </head>
 <body>
@@ -33,7 +33,7 @@
     const btn=document.querySelector(".btn");
     const post=document.querySelector(".post");
     const rating=document.querySelector(".star_rating");
-    const editBtn=document.querySelector(".edit");
+    // const editBtn=document.querySelector(".edit");
 
     btn.onclick = () =>{
         rating.style.display="none";

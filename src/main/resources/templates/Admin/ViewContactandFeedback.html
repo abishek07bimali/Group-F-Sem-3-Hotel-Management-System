@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script th:src="@{~/javascript/notification.js}" defer></script>
+    <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
+</head>
+<body>
+<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
+
+<div class="Main-wrapper">
+    <div class="wrapper-top">
+        <h2>Bookings</h2>
+    </div>
+
+    <div style="overflow-x:auto;"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>Contact_Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Subject</th>
+            <th>Action</th>
+            <!--            <th>Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cab:${contactlist}">
+            <td th:text="${cab.id}"></td>
+            <td th:text="${cab.fullname}"></td>
+            <td th:text="${cab.email}"></td>
+            <td th:text="${cab.message}"></td>
+            <td th:text="${cab.subject}"></td>
+            <td> <a>delete</a></td>
+            <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
+
+        </tr>
+        </tbody>
+
+    </table>
+
+
+
+</div>
+
+<div class="Main-wrapper">
+    <div class="wrapper-top">
+        <h2>Bookings</h2>
+    </div>
+
+    <div style="overflow-x:auto;"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>Booking_Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Subject</th>
+            <th>Action</th>
+            <!--            <th>Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cab:${feedback}">
+            <td th:text="${cab.id}"></td>
+            <td th:text="${cab.fullname}"></td>
+            <td th:text="${cab.message}"></td>
+            <td th:text="${cab.subject}"></td>
+
+<!--            <td> <a class="edit" th:href="@{~/admin/deletecab/}+${cab.id}" >delete</a></td>-->
+            <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
+
+        </tr>
+        </tbody>
+
+    </table>
+
+
+
+</div>
+
+</body>
+
+<script>
+    let myPage = "cab";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
+
+</html>
