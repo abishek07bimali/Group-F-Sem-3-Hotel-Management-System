@@ -1,17 +1,12 @@
 package com.example.hotelmanagementsystem.Controller;
 
-import com.example.hotelmanagementsystem.Services.BlogServices;
-import com.example.hotelmanagementsystem.Services.GalleryServices;
-import com.example.hotelmanagementsystem.Services.NoticesService;
-import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.Services.*;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.GalleryPojo;
 import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
-import com.example.hotelmanagementsystem.entity.Blog;
-import com.example.hotelmanagementsystem.entity.Booking;
-import com.example.hotelmanagementsystem.entity.Gallery;
-import com.example.hotelmanagementsystem.entity.Notices;
+import com.example.hotelmanagementsystem.entity.*;
+import com.example.hotelmanagementsystem.repo.BookingRepo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -41,13 +36,60 @@ public class AdminController {
     private final BlogServices blogServices;
     private  final NoticesService noticesService;
     private  final GalleryServices galleryServices;
+    private  final BookingRepo bookingRepo;
+    private  final CabService cabService;
+
+
 
     @GetMapping("/list")
-    public String getUserList(Model model) {
+    public String getUserList( Model model) {
         List<Booking> bookings = userService.fetchAll();
         model.addAttribute("bookinglist", bookings);
         return "viewCustomerlist";
     }
+
+//    @GetMapping("/page/{pageNo}")
+//    public String findPaginated(@PathVariable (value = "pageNo") int pageNo,
+//                                @RequestParam("sortField") String sortField,
+//                                @RequestParam("sortDir") String sortDir,
+//                                Model model) {
+//        int pageSize = 7;
+//
+//        Page<Booking> page = userService.findPaginated(pageNo, pageSize, sortField, sortDir);
+//        List<Booking> bookings = page.getContent();
+//
+//        model.addAttribute("currentPage", pageNo);
+//        model.addAttribute("totalPages", page.getTotalPages());
+//        model.addAttribute("totalItems", page.getTotalElements());
+//
+//        model.addAttribute("sortField", sortField);
+//        model.addAttribute("sortDir", sortDir);
+//        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+//
+//        model.addAttribute("bookinglist", bookings);
+//        return "viewCustomerlist";
+//    }
+//    @GetMapping("/list")
+//    public String viewHomePage(Model model) {
+//        return findPaginated(1, "fullname", "asc", model);
+//    }
+
+
+
+
+//    @Autowired
+//    private UserService service;
+//    @RequestMapping(path = {"/","/list"})
+//    public String home(Model model, String keyword) {
+//        if(keyword!=null) {
+//            List<Booking> bookings = service.getByKeyword(keyword);
+//            model.addAttribute("bookinglist", bookings);
+//        }else {
+//            List<Booking> bookings = service.fetchAll();
+//            model.addAttribute("bookinglist", bookings);
+//        }
+//        return "viewCustomerlist";
+//    }
 
 
     @GetMapping("/alllist")
@@ -56,8 +98,6 @@ public class AdminController {
         model.addAttribute("bookinglist", bookings);
         return "Admin/AllBooking";
     }
-
-
 
 
 
@@ -214,6 +254,28 @@ public class AdminController {
 
         ));
         return "Admin/ViewImages";
+    }
+
+//
+//
+//------------------------------------------------------------
+//  Cab Booking
+//
+//
+//    -------------------------------------------------------------
+
+    @GetMapping("/cabBookingByCustomer")
+    public String getCabBooking(Model model) {
+        List<Cab> cabs = cabService.findAll();
+        model.addAttribute("cab", cabs);
+        return "Admin/ViewCabBooking";
+    }
+
+
+    @GetMapping("/deletecab/{id}")
+    public String detCab(@PathVariable("id") Integer id) {
+        cabService.deleteById(id);
+        return "redirect:/admin/cabBookingByCustomer";
     }
 
 

@@ -35,7 +35,7 @@
 
     <form  id="form" th:method="post" th:action="@{/user/savebook}" th:object="${booking}">
         <h1>Book Now</h1>
-        <input type="number"   hidden="hidden" th:field="*{id}" th:value="${newBooking.id}">
+        <input type="number"   hidden="hidden" th:field="*{id}" th:value="${booking.id}">
 
         <div class="input-control">
 

@@ -2,77 +2,92 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-   <title>Rooms</title>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
     <link rel="stylesheet" th:href="@{~/css/navigation.css}">
     <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script th:src="@{~/javascript/notification.js}" defer></script>
     <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">
-         <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
+    <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
 </head>
 <body>
 <div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
 
-    <div class="Main-wrapper">
-        <div class="wrapper-top">
-            <h2>Bookings</h2>
-            <div class="search-icon">
-            <input type="text" placeholder="Search by name" name="search">
+<div class="Main-wrapper">
+    <div class="wrapper-top">
+        <h2>Bookings</h2>
+<!--        <form th:action="@{/list}" method="get">-->
+        <div class="search-icon">
+            <input type="text" id="search" placeholder="Search by name" name="keyword"  size="50">
+<!--            <input type="text" id="search" placeholder="Search by name" name="keyword" th:value="${keyword}" size="50">-->
             <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
-            </div>
-            <button class="btn1"><a th:href="@{/admin/newbooking}">+ New Bookings</a></button>
-
         </div>
-       
-            <div style="overflow-x:auto;"></div>
-            <table>
-                <thead>
-                <tr>
-                  <th>Cust_Id</th>
-                  <th>Full Name</th>
-                  <th>Room</th>
-                  <th>Date</th>
-                  <th>Checkin_date</th>
-                  <th>Checkout_date</th>
-                  <th>Total_payment</th>
-                  <th>Phone-number</th>
-                  <th>Number</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                  <th>Bill</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="booking:${bookinglist}">
-                    <td th:text="${booking.id}"></td>
-                    <td th:text="${booking.fullname}"></td>
-                    <td th:text="${booking.rooms}"></td>
-                    <td th:text="${booking.date}"></td>
-                    <td th:text="${booking.checkin}"></td>
-                    <td th:text="${booking.checkout}"></td>
-                    <td th:text="${booking.total}"></td>
-                    <td th:text="${booking.mobileNo}"></td>
-                    <td th:text="${booking.number_of_people}"></td>
-<!--                    <td> <a class="edit" href="#" >Active</a></td>-->
-<!--                    <td> <a class="edit" href="#" >delete</a></td>-->
-<!--                    <td> <a class="edit" href="#" >edit</a></td>-->
-                    <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>
-                    <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>
-                    <td> <a class="edit" th:href="@{~/admin/bill/}+${booking.id}">Bill</a></td>
+<!--        </form>-->
 
-                </tr>
-                </tbody>
+        <button class="btn1"><a th:href="@{/admin/newbooking}">+ New Bookings</a></button>
 
-              </table>
-
-
-       
     </div>
+
+    <div style="overflow-x:auto;"></div>
+    <table>
+        <thead>
+        <tr>
+            <th>Cust_Id</th>
+            <th>Full Name</th>
+            <th>Room</th>
+            <th>Date</th>
+            <th>Checkin_date</th>
+            <th>Checkout_date</th>
+            <th>Total_payment</th>
+            <th>Phone-number</th>
+            <th>Number</th>
+            <th>Status</th>
+            <th>Action</th>
+            <th>Bill</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="booking:${bookinglist}">
+            <td th:text="${booking.id}"></td>
+            <td th:text="${booking.fullname}"></td>
+            <td th:text="${booking.rooms}"></td>
+            <td th:text="${booking.date}"></td>
+            <td th:text="${booking.checkin}"></td>
+            <td th:text="${booking.checkout}"></td>
+            <td th:text="${booking.total}"></td>
+            <td th:text="${booking.mobileNo}"></td>
+            <td th:text="${booking.number_of_people}"></td>
+            <!--                    <td> <a class="edit" href="#" >Active</a></td>-->
+            <!--                    <td> <a class="edit" href="#" >delete</a></td>-->
+            <!--                    <td> <a class="edit" href="#" >edit</a></td>-->
+            <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>
+            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>
+            <td> <a class="edit" th:href="@{~/admin/bill/}+${booking.id}">Bill</a></td>
+
+        </tr>
+        </tbody>
+
+    </table>
+
+
+<!--    <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination">-->
+<!--            <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+</div>
+
 
 </body>
 
@@ -85,5 +100,141 @@
     let activeID = document.getElementById(myPage);
     activeID.classList.add("active");
 </script>
-
 </html>
+
+
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <title>Rooms</title>-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+<!--    <link rel="stylesheet"-->
+<!--          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"-->
+<!--          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"-->
+<!--          crossorigin="anonymous">-->
+
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>-->
+<!--    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">-->
+<!--    <link rel="stylesheet" th:href="@{~/css/navigation.css}">-->
+<!--    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">-->
+<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<!--    <script th:src="@{~/javascript/notification.js}" defer></script>-->
+<!--    <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">-->
+<!--    <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>-->
+
+<!--<div class="Main-wrapper">-->
+<!--    <div class="wrapper-top">-->
+<!--        <h2>Bookings</h2>-->
+<!--        &lt;!&ndash;        <form th:action="@{/list}" method="get">&ndash;&gt;-->
+<!--        <div class="search-icon">-->
+<!--            <input type="text" id="search" placeholder="Search by name" name="keyword"  size="50">-->
+<!--            &lt;!&ndash;            <input type="text" id="search" placeholder="Search by name" name="keyword" th:value="${keyword}" size="50">&ndash;&gt;-->
+<!--            <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        </form>&ndash;&gt;-->
+
+<!--        <button class="btn1"><a th:href="@{/admin/newbooking}">+ New Bookings</a></button>-->
+
+<!--    </div>-->
+
+<!--    <div style="overflow-x:auto;"></div>-->
+<!--    <table>-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>-->
+<!--                <a th:href="@{'/page/' + ${currentPage} + '?sortField=fullname&sortDir=' + ${reverseSortDir}}">-->
+<!--                    First Name</a>-->
+<!--            </th>-->
+<!--            <th>-->
+<!--                <a th:href="@{'/page/' + ${currentPage} + '?sortField=rooms&sortDir=' + ${reverseSortDir}}">-->
+<!--                    Employee Last Name</a>-->
+<!--            </th>-->
+<!--            <th>-->
+<!--                <a th:href="@{'/page/' + ${currentPage} + '?sortField=date&sortDir=' + ${reverseSortDir}}">-->
+<!--                    Employee Email</a>-->
+<!--            </th>-->
+<!--            <th> Actions </th>-->
+
+<!--            &lt;!&ndash;            <th>Cust_Id</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Full Name</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Room</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Date</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Checkin_date</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Checkout_date</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Total_payment</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Phone-number</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Number</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Status</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Action</th>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <th>Bill</th>&ndash;&gt;-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="booking:${bookinglist}">-->
+<!--            &lt;!&ndash;            <td th:text="${booking.id}"></td>&ndash;&gt;-->
+<!--            <td th:text="${booking.fullname}"></td>-->
+<!--            <td th:text="${booking.rooms}"></td>-->
+<!--            <td th:text="${booking.date}"></td>-->
+<!--            &lt;!&ndash;            <td th:text="${booking.checkin}"></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <td th:text="${booking.checkout}"></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <td th:text="${booking.total}"></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <td th:text="${booking.mobileNo}"></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <td th:text="${booking.number_of_people}"></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <td> <a class="edit" href="#" >Active</a></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <td> <a class="edit" href="#" >delete</a></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <td> <a class="edit" href="#" >edit</a></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>&ndash;&gt;-->
+<!--            <td> <a class="edit" th:href="@{~/admin/bill/}+${booking.id}">Bill</a></td>-->
+
+<!--        </tr>-->
+<!--        </tbody>-->
+
+<!--    </table>-->
+
+<!--    <div th:if = "${totalPages > 1}">-->
+<!--        <div class = "row col-sm-10">-->
+<!--            <div class = "col-sm-2">-->
+<!--                Total Rows: [[${totalItems}]]-->
+<!--            </div>-->
+<!--            <div class = "col-sm-1">-->
+<!--					<span th:each="i: ${#numbers.sequence(1, totalPages)}">-->
+<!--						<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>-->
+<!--						<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;-->
+<!--					</span>-->
+<!--            </div>-->
+<!--            <div class = "col-sm-1">-->
+<!--                <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>-->
+<!--                <span th:unless="${currentPage < totalPages}">Next</span>-->
+<!--            </div>-->
+
+<!--            <div class="col-sm-1">-->
+<!--                <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>-->
+<!--                <span th:unless="${currentPage < totalPages}">Last</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+<!--</body>-->
+
+<!--<script>-->
+<!--    let myPage = "new";-->
+<!--    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));-->
+<!--    listGroupItem.forEach(i=>{-->
+<!--        i.classList.remove("active")-->
+<!--    })-->
+<!--    let activeID = document.getElementById(myPage);-->
+<!--    activeID.classList.add("active");-->
+<!--</script>-->
+<!--</html>-->

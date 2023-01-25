@@ -22,7 +22,6 @@ public interface UserService {
     String submitFeedback(FeedbackPojo feedbackPojo);
 
 
-//    void deleteById(Integer id);
 
 
     String submitLaundary(com.example.hotelmanagementsystem.UserPojo.LaundaryPojo laundaryPojo);
@@ -30,8 +29,12 @@ public interface UserService {
     //    Contact fetchById(Integer id);
     void deleteById(Integer id);
 
-//    String viewBlog(BlogPojo blogpojo);
 
     String save(BlogPojo blogPojo);
     UserPojo findByEmail(String email);
+
+//    List<Booking> getByKeyword( String keyword);
+//    Page<Booking> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
+
+
 }

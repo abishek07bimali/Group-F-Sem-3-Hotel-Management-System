@@ -2,25 +2,10 @@ package com.example.hotelmanagementsystem.Services.Impl;
 
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
-import com.example.hotelmanagementsystem.entity.*;
-import com.example.hotelmanagementsystem.repo.*;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
-import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
-import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.config.PasswordEncoderUtil;
-import com.example.hotelmanagementsystem.entity.Blog;
-import com.example.hotelmanagementsystem.entity.Booking;
-import com.example.hotelmanagementsystem.entity.Laundary;
-import com.example.hotelmanagementsystem.entity.Contact;
-import com.example.hotelmanagementsystem.entity.User;
+import com.example.hotelmanagementsystem.entity.*;
 import com.example.hotelmanagementsystem.exception.AppException;
-import com.example.hotelmanagementsystem.repo.BlogRepo;
-import com.example.hotelmanagementsystem.repo.BookingRepo;
-import com.example.hotelmanagementsystem.repo.LaundaryRepo;
-import com.example.hotelmanagementsystem.repo.ContactRepo;
-import com.example.hotelmanagementsystem.repo.UserRepo;
+import com.example.hotelmanagementsystem.repo.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -101,9 +86,8 @@ public class UserServiceImpl implements UserService {
         return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
     }
 
-//    @Override
-//    public Booking deleteById(Integer id) {
-//        return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+//    public List<Booking> getByKeyword(String keyword){
+//        return bookingRepo.findByKeyword(keyword);
 //    }
 
     public List<Booking> fetchAll(){
@@ -156,6 +140,14 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
         return new UserPojo(user);
     }
+//    @Override
+//    public Page<Booking> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
+//        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
+//                Sort.by(sortField).descending();
+//
+//        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+//        return this.bookingRepo.findAll(pageable);
+//    }
 }
 
 
