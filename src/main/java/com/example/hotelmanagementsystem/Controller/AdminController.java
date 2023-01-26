@@ -243,17 +243,17 @@ public class AdminController {
         return "media-linkForm";
     }
 
-    @GetMapping("/editblog/{id}")
-    public String editMediaLink(@PathVariable("id") Integer id, Model model) {
-        SocialMedia socialMedia = socialMediaServices.fetchById(id);
-        model.addAttribute("blog", new SocialMediaPojo(socialMedia));
-        return "redirect:/admin/socialmeadia_Form";
-    }
-
-
-    @PostMapping("/savemedialink")
-    public String saveMediaLink(@Valid SocialMediaPojo socialMediaPojo) {
-        socialMediaServices.save(socialMediaPojo);
-        return "redirect:/admin/bloglist";
-    }
+//    @GetMapping("/editblog/{id}")
+//    public String editMediaLink(@PathVariable("id") Integer id, Model model) {
+//        SocialMedia socialMedia = socialMediaServices.fetchById(id);
+//        model.addAttribute("blog", new SocialMediaPojo(socialMedia));
+//        return "redirect:/admin/socialmeadia_Form";
+//    }
+//
+//
+//    @PostMapping("/savemedialink")
+//    public String saveMediaLink(@Valid SocialMediaPojo socialMediaPojo) {
+//        socialMediaServices.save(socialMediaPojo);
+//        return "redirect:/admin/bloglist";
+//    }
 }
