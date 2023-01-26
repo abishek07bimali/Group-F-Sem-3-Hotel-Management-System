@@ -91,13 +91,13 @@ public class AdminController {
 //        return "viewCustomerlist";
 //    }
 
-
-    @GetMapping("/alllist")
-    public String getAllBooking(Model model) {
-        List<Booking> bookings = userService.fetchAll();
-        model.addAttribute("bookinglist", bookings);
-        return "Admin/AllBooking";
-    }
+//
+//    @GetMapping("/alllist")
+//    public String getAllBooking(Model model) {
+//        List<Booking> bookings = userService.fetchAll();
+//        model.addAttribute("bookinglist", bookings);
+//        return "Admin/AllBooking";
+//    }
 //
 //    -----------------
 //    view contactfetch
@@ -200,7 +200,7 @@ public class AdminController {
     public String editBlog(@PathVariable("id") Integer id, Model model) {
         Blog blog = blogServices.fetchById(id);
         model.addAttribute("blog", new BlogPojo(blog));
-        return "redirect:/admin/addblog";
+        return "admin_blog";
     }
 
 
@@ -229,7 +229,7 @@ public class AdminController {
     public String editNotice(@PathVariable("id") Integer id, Model model) {
         Notices notice = noticesService.fetchById(id);
         model.addAttribute("notice", new NoticePojo(notice));
-        return "redirect:/admin/noticeform";
+        return ("notice-form");
     }
 
 //gallery controller
