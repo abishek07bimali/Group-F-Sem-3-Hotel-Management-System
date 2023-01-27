@@ -35,7 +35,7 @@ public interface UserService {
     List<Contact> fetchAllContact();
 
 
-    String save(BlogPojo blogPojo);
+//    String save(BlogPojo blogPojo);
     UserPojo findByEmail(String email);
 
 //    List<Booking> getByKeyword( String keyword);

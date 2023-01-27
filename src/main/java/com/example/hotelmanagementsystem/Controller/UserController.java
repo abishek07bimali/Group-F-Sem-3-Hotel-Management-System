@@ -1,5 +1,6 @@
 package com.example.hotelmanagementsystem.Controller;
 
+import com.example.hotelmanagementsystem.Services.BlogServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
@@ -7,6 +8,7 @@ import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.Blog;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -18,12 +20,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
+    private final BlogServices blogServices;
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -85,11 +90,20 @@ public class UserController {
         return "redirect:/laundary1";
 
     }
-      @GetMapping("/viewBlog")
-    public String viewUserBlog(Model model){
-        model.addAttribute("blog", new BlogPojo());
-        return "blog";
-    }
+//    @GetMapping("/blog")
+//    public String viewUserBlog(Model model){
+//          List<Blog> blogs = blogServices.fetchAll();
+//          model.addAttribute("blog", blogs.stream().map(blog ->
+//                  blog.builder()
+//                          .id(blog.getId())
+//                          .author(blog.getAuthor())
+//                          .topic(blog.getTopic())
+//                          .date(blog.getDate())
+//                          .phoneNum(blog.getPhoneNum())
+//                          .content(blog.getPhoneNum())
+//                  ));
+//        return "blog";
+//    }
 
     @GetMapping("/event")
     public String getEventPage() {
