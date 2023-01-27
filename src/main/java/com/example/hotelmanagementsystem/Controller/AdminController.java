@@ -7,6 +7,8 @@ import com.example.hotelmanagementsystem.UserPojo.GalleryPojo;
 import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
 import com.example.hotelmanagementsystem.entity.*;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
+import com.example.hotelmanagementsystem.UserPojo.*;
+import com.example.hotelmanagementsystem.entity.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -40,6 +42,8 @@ public class AdminController {
     private  final CabService cabService;
 
 
+
+    private final SocialMediaServices socialMediaServices;
 
     @GetMapping("/list")
     public String getUserList( Model model) {
@@ -322,5 +326,39 @@ public class AdminController {
         return base64;
     }
 
+//    ----------------
+//        Media link form
+//    ----------------
+//    ----------- Admin Side -----------
+//    ----------------------------------
 
+//    @GetMapping("/socialmedia_form")
+//    public String getMediaForm(Model model){
+//        return "media-linkForm";
+//    }
+
+//    @GetMapping("/editblog/{id}")
+//    public String editMediaLink(@PathVariable("id") Integer id, Model model) {
+//        SocialMedia socialMedia = socialMediaServices.fetchById(id);
+//        model.addAttribute("blog", new SocialMediaPojo(socialMedia));
+//        return "redirect:/admin/socialmeadia_Form";
+//    }
+//
+//
+//    @PostMapping("/savemedialink")
+//    public String saveMediaLink(@Valid SocialMediaPojo socialMediaPojo) {
+//        socialMediaServices.save(socialMediaPojo);
+//        return "redirect:/admin/bloglist";
+//    }
+
+
+
+//    ---------------------------------------
+//    -------  Admin Profile ----------------
+//    ---------------------------------------
+
+    @GetMapping("/admin_profile")
+    public String getAdminProfile(Model model){
+        return "adminProfile";
+    }
 }

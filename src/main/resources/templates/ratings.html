@@ -6,56 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Rating</title>
     <link rel="stylesheet" th:href="@{~/css/rating.css}">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Star Rating</title>-->
+<!--    <link rel="stylesheet" th:href="../static/css/rating.css">-->
 
-</head>
-<body>
-<div class="container">
-    <div class="post">
-        <div class="text">Thanks for rating us!</div>
-<!--        <div class="edit">Edit</div>-->
-    </div>
-    <!-- <h1 class="rating_heading"> 5 star Rating</h1> -->
-    <div class="star_rating">
-        <p> How was your experience?</p>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <button class="star">&#9734;</button>
-        <p class="current_rating"> 0 of 5</p><br>
-        <div class="textarea"><textarea cols="30" placeholder="Describe your experience"></textarea></div>
-        <div class="btn"> <button type="submit">Post</button></div>
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <div class="post">-->
+<!--        <div class="text">Thanks for rating us!</div>-->
+<!--&lt;!&ndash;        <div class="edit">Edit</div>&ndash;&gt;-->
+<!--    </div>-->
+<!--    &lt;!&ndash; <h1 class="rating_heading"> 5 star Rating</h1> &ndash;&gt;-->
+<!--    <div class="star_rating">-->
+<!--        <p> How was your experience?</p>-->
+<!--        <button class="star">&#9734;</button>-->
+<!--        <button class="star">&#9734;</button>-->
+<!--        <button class="star">&#9734;</button>-->
+<!--        <button class="star">&#9734;</button>-->
+<!--        <button class="star">&#9734;</button>-->
+<!--        <p class="current_rating"> 0 of 5</p><br>-->
+<!--        <div class="textarea"><textarea cols="30" placeholder="Describe your experience"></textarea></div>-->
+<!--        <div class="btn"> <button type="submit">Post</button></div>-->
 
-    </div>
-</div>
-<script>
+<!--    </div>-->
+<!--</div>-->
 
     const btn=document.querySelector(".btn");
     const post=document.querySelector(".post");
     const rating=document.querySelector(".star_rating");
     // const editBtn=document.querySelector(".edit");
+<!--<script>-->
 
-    btn.onclick = () =>{
-        rating.style.display="none";
-        post.style.display="block";
-        return false;
-    }
-    const allStar=document.querySelectorAll('.star');
-    let current_rating=document.querySelector('.current_rating');
-    allStar.forEach((star, i) => {
-        star.onclick=function(){
-            let current_rating_level= i+1;
-            current_rating.innerText=`${current_rating_level} of 5`;
-            allStar.forEach((star, j) => {
-                if(current_rating_level >= j+1)
-                {
-                    star.innerHTML='&#9733';
-                }else{
-                    star.innerHTML='&#9734'
-                }
-            })
-        }
-    })
-</script>
-</body>
-</html>
+<!--    const btn=document.querySelector(".btn");-->
+<!--    const post=document.querySelector(".post");-->
+<!--    const rating=document.querySelector(".star_rating");-->
+<!--    const editBtn=document.querySelector(".edit");-->
+
+<!--    btn.onclick = () =>{-->
+<!--        rating.style.display="none";-->
+<!--        post.style.display="block";-->
+<!--        return false;-->
+<!--    }-->
+<!--    const allStar=document.querySelectorAll('.star');-->
+<!--    let current_rating=document.querySelector('.current_rating');-->
+<!--    allStar.forEach((star, i) => {-->
+<!--        star.onclick=function(){-->
+<!--            let current_rating_level= i+1;-->
+<!--            current_rating.innerText=`${current_rating_level} of 5`;-->
+<!--            allStar.forEach((star, j) => {-->
+<!--                if(current_rating_level >= j+1)-->
+<!--                {-->
+<!--                    star.innerHTML='&#9733';-->
+<!--                }else{-->
+<!--                    star.innerHTML='&#9734'-->
+<!--                }-->
+<!--            })-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

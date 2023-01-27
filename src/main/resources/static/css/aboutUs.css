@@ -8,7 +8,7 @@
   }
 
   .about-section{
-    margin-top: 20px;
+    /*margin-top: 20px;*/
   }
 
   .about-hotel{
@@ -22,7 +22,7 @@
 
   .page{
     /*display: flex;*/
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     /*flex-direction: column;*/
     /*align-content: center;*/
     /*justify-content: center;*/
@@ -215,10 +215,13 @@
   } */
 
   .about-section {
-    padding: 50px;
+    padding: 60px;
     text-align: center;
-    background-color: #474e5d;
     color: white;
+    background-image:  linear-gradient(to bottom, rgba(140, 192, 224, 0.52), rgba(18, 47, 77, 0.73)),url(../images/gallery15.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .container1 {

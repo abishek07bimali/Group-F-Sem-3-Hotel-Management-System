@@ -26,12 +26,14 @@
 <!--    <script defer th:src="@{~/javascript/disableDate.js}"></script>-->
 
 
+
     <title>Booking</title>
 </head>
 
 <body onload="myFunction()">
+<body style="display: flex;   justify-content: center;">
 
-<div class="container">
+<div class="container" style="align-self: center;">
 
     <form  id="form" th:method="post" th:action="@{/user/savebook}" th:object="${booking}">
         <h1>Book Now</h1>
@@ -137,6 +139,11 @@
         <!--                    <input type="submit" value="SUBMIT">-->
         <div>
             <button type="submit" onclick="myFunction()">Book Now</button>
+        </div>
+        <div>
+            <a th:href="@{~/homepage}">
+                <button type="button" style="background-color: red">Cancel</button>
+            </a>
         </div>
 
 
