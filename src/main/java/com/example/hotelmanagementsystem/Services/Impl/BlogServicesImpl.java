@@ -7,6 +7,7 @@ import com.example.hotelmanagementsystem.repo.BlogRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -32,7 +33,7 @@ public class BlogServicesImpl implements BlogServices {
 
     @Override
     public List<Blog> fetchAll() {
-        return blogRepo.findAll();
+        return this.blogRepo.findAll();
 
     }
 

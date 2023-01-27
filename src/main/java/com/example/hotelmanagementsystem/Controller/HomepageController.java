@@ -1,9 +1,11 @@
 package com.example.hotelmanagementsystem.Controller;
 
 
+import com.example.hotelmanagementsystem.Services.BlogServices;
 import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
+import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,7 @@ import java.util.List;
 @RequestMapping("/homepage")
 public class HomepageController {
     private  final GalleryServices galleryServices;
+    private final BlogServices blogServices;
 
     @GetMapping("")
     public String geHomepage(Model model) {
@@ -51,8 +54,18 @@ public class HomepageController {
     }
 
     @GetMapping("/viewblog")
-    public String viewUserBlog(){
-//        model.addAttribute("blog", new BlogPojo());
+    public String viewUserBlog(Model model){
+        List<Blog> blogs = blogServices.fetchAll();
+        model.addAttribute("blog", blogs.stream().map(blog ->
+                Blog.builder()
+                        .id(blog.getId())
+                        .author(blog.getAuthor())
+                        .topic(blog.getTopic())
+                        .date(blog.getDate())
+                        .phoneNum(blog.getPhoneNum())
+                        .content(blog.getContent())
+                        .build()
+        ));
         return "blog";
     }
 

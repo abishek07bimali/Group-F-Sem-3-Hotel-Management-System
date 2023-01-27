@@ -135,20 +135,20 @@ public class UserServiceImpl implements UserService {
 
 
 
-    public String save(BlogPojo blogPojo) {
-        Blog blog =new Blog();
-        if(blogPojo.getId()!=null){
-            blog.setId(blogPojo.getId());
-        }
-        blog.setAuthor(blogPojo.getAuthor());
-        blog.setTopic(blogPojo.getTopic());
-        blog.setDate(blogPojo.getDate());
-        blog.setPhoneNum(blogPojo.getPhoneNum());
-        blog.setContent(blogPojo.getContent());
-//        blog.setImg(blogPojo.getImg());
-        blogRepo.save(blog);
-        return null;
-    }
+//    public String save(BlogPojo blogPojo) {
+//        Blog blog =new Blog();
+//        if(blogPojo.getId()!=null){
+//            blog.setId(blogPojo.getId());
+//        }
+//        blog.setAuthor(blogPojo.getAuthor());
+//        blog.setTopic(blogPojo.getTopic());
+//        blog.setDate(blogPojo.getDate());
+//        blog.setPhoneNum(blogPojo.getPhoneNum());
+//        blog.setContent(blogPojo.getContent());
+////        blog.setImg(blogPojo.getImg());
+//        blogRepo.save(blog);
+//        return null;
+//    }
 
     @Override
     public UserPojo findByEmail(String email) {

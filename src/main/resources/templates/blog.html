@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,11 +43,9 @@
           <div class="fakeimg"><img  th:src="@{~/images/bg_img.jpg}"  alt="img"></div><br>
           <div class="fakeimg"><img  th:src="@{~/images/bg_img.jpg}"  alt="img"></div>
         </div>
-        <div class="card">
-          <h3>Follow Me</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia ducimus ipsum neque!
-             Aliquam tenetur sequi reprehenderit sunt cum quo nostrum similique, aut quibusdam voluptate perferendis?
-             Ipsum aliquid provident ducimus voluptate.</p>
+        <div class="card" th:each="blogs:${blog}">
+          <h3 th:text="${blogs.topic}"></h3>
+          <p th:text="${blogs.content}"></p>
         </div>
       </div>
     </div>
