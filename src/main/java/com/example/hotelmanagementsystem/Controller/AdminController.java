@@ -238,10 +238,10 @@ public class AdminController {
 //    ----------- Admin Side -----------
 //    ----------------------------------
 
-    @GetMapping("/socialmedia_form")
-    public String getMediaForm(Model model){
-        return "media-linkForm";
-    }
+//    @GetMapping("/socialmedia_form")
+//    public String getMediaForm(Model model){
+//        return "media-linkForm";
+//    }
 
 //    @GetMapping("/editblog/{id}")
 //    public String editMediaLink(@PathVariable("id") Integer id, Model model) {
@@ -256,4 +256,15 @@ public class AdminController {
 //        socialMediaServices.save(socialMediaPojo);
 //        return "redirect:/admin/bloglist";
 //    }
+
+
+
+//    ---------------------------------------
+//    -------  Admin Profile ----------------
+//    ---------------------------------------
+
+    @GetMapping("/admin_profile")
+    public String getAdminProfile(Model model){
+        return "adminProfile";
+    }
 }
