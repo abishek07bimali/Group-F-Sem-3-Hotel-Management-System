@@ -12,7 +12,7 @@
   <link th:href="@{/css/tabstyle.css}" rel="stylesheet">
   <link rel="shortcut icon" type="x-icon" href="../static/images/ServicesImages/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <title>Services: List of the services provided to custoemr</title>
+  <title>Services: List of the services provided to customer</title>
 
 </head>
 
@@ -20,8 +20,17 @@
 
 <div th:replace="fragments/Navi_frag.html :: navigator"></div>
 
+  <div class="about-section">
+    <div class="topic-heading">
+      <h1>Our Services</h1>
+    </div>
+    <p>Here are some of the services that we provide.</p>
+  </div>
 
-  <section>
+  <br>
+  <section style="
+    margin-top: 30px;
+    margin-bottom: 100px;">
     <ul class="tabs">
       <li data-tab-target="#bar" class="active tab">Bar</li>
       <li data-tab-target="#pickup" class="tab">Pickup</li>

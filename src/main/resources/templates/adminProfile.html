@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="UTF-8">
-    <title>User Profile</title>
-<!--    <link rel="stylesheet" th:href="@{~/css/user_profile.css}">-->
-    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
-    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
-    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Admin Profile</title>
     <link rel="stylesheet" th:href="@{~/css/profile.css}">
 
-<!--    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--  css and other of nav bar-->
+    <link rel="stylesheet" th:href="@{/css/dashstyle.css}">
+    <link rel="stylesheet" th:href="@{/css/navigation.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script th:src="@{~/javascript/notification.js}" defer></script>
+
   </head>
-
   <body>
-  <div th:replace="fragments/Navi_frag.html :: navigator"></div>
+  <div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
 
+
+  <!--  Profile start here-->
   <section class="py-5 my-5">
     <div class="container">
       <h1 class="mb-5">Account Settings</h1>
       <div class="bg-white shadow rounded-lg d-block d-sm-flex">
-<!--        <div class="profile-tab-nav border-right">-->
-<!--          <div class="p-4">-->
-<!--            <div class="img-circle text-center mb-3">-->
-<!--              <img th:src="@{~/images/logo.png}" alt="Image" class="shadow">-->
-<!--            </div>-->
-<!--            <h4 class="text-center">Username</h4>-->
-<!--          </div>-->
-<!--          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
-<!--            <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">-->
-<!--              <i class="fa fa-home text-center mr-1"></i>-->
-<!--              Account-->
-<!--            </a>-->
-<!--            <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">-->
-<!--              <i class="fa fa-key text-center mr-1"></i>-->
-<!--              Password-->
-<!--            </a>-->
-<!--            <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">-->
-<!--              <i class="fa fa-user text-center mr-1"></i>-->
-<!--              Security-->
-<!--            </a>-->
-<!--            <a class="nav-link" id="history-tab" data-toggle="pill" href="#history" role="tab" aria-controls="history" aria-selected="false">-->
-<!--              <i class="fa fa-bell text-center mr-1"></i>-->
-<!--              History-->
-<!--            </a>-->
-<!--          </div>-->
-<!--        </div>-->
-
-                  <div class="p-4">
-                    <div class="img-circle text-center mb-3">
-                      <img th:src="@{~/images/logo.png}" alt="Image" class="shadow">
-                    </div>
-                    <h4 class="text-center">Username</h4>
-                  </div>
+<!--        Image section -->
+        <div class="p-4">
+          <div class="img-circle text-center mb-3">
+            <img th:src="@{~/images/logo.png}" alt="Image" class="shadow">
+          </div>
+          <h4 class="text-center">Username</h4>
+        </div>
         <br>
         <br>
 
@@ -117,16 +97,9 @@
     </div>
   </section>
 
-
-
-            <div th:replace="fragments/Footer_frag.html :: footer"></div>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </body>
   <script>
-    let myPage = "profile";
+    let myPage = "dash";
     let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
     listGroupItem.forEach(i=>{
       i.classList.remove("active")
@@ -134,4 +107,5 @@
     let activeID = document.getElementById(myPage);
     activeID.classList.add("active");
   </script>
+
 </html>

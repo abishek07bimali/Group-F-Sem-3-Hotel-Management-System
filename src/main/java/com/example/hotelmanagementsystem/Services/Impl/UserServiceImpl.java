@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
     public final ContactRepo contactRepo;
     public final FeedbackRepo feedbackRepo;
     public final BlogRepo blogRepo;
+    public final SocialMediaRepo socialMediaRepo;
 
 
 
