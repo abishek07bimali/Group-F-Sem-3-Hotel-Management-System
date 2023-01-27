@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/book_cab.css}">
-    <script defer th:src="@{~/javascript/booking.js}"></script>
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+
+    <!--    <script defer th:src="@{~/javascript/booking.js}"></script>-->
 </head>
 <body>
 <div class="container">
@@ -17,17 +19,17 @@
         <h1>Book Cab</h1>
         <div class="input-control">
             <label for="FullName">FullName</label>
-            <input id="FullName" name="FullName" type="text" th:field="*{fullname}" th:value="${cab.fullname}">
+            <input id="FullName" name="FullName" type="text" required th:field="*{fullname}" th:value="${cab.fullname}">
             <div class="error"></div>
         </div>
         <div class="input-control">
             <label for="Phone">Phone</label>
-            <input id="Phone" name="Phone"  type="text" th:field="*{phone}" th:value="${cab.phone}" >
+            <input id="Phone" name="Phone"  type="tel" required th:field="*{phone}" th:value="${cab.phone}" >
             <div class="error"></div>
         </div>
         <div class="input-control">
             <label for="CarType">Room Type</label>
-            <select name="CarType" id="CarType" type="text" th:field="*{car}" th:value="${cab.car}">
+            <select name="CarType" id="CarType" type="text" required th:field="*{car}" th:value="${cab.car}">
                 <option value="b">Bolero</option>
                 <option value="c">Toyota</option>
                 <option value="f">suzuki</option>
@@ -39,7 +41,7 @@
         <div class="input-control">
             <label for="Number">Number Of People</label>
             <!-- <input id="Number"name="Number" type="number"> -->
-            <select  id="people" type="text" th:field="*{people}" th:value="${cab.people}">
+            <select  id="people" type="text" th:field="*{people}" required th:value="${cab.people}">
                 <option value="1">1 person</option>
                 <option value="2">2 people</option>
                 <option value="3">3 people</option>
@@ -51,17 +53,88 @@
         <div class="input-control">
             <label for="date">date</label>
             <!-- <input id="date" name="date" type="number"> -->
-            <input type="date" name="date" id="date" placeholder="date"  th:field="*{date}" th:value="${cab.date}">
+            <input type="date" name="date" id="date" placeholder="date"  required th:field="*{date}" th:value="${cab.date}">
             <div class="error"></div>
         </div>
         <div class="input-control">
             <label for="time">Time</label>
             <!-- <input id="date" name="date" type="number"> -->
-            <input type="time" name="time" id="time" placeholder="Enter time" th:field="*{time}" th:value="${cab.time}">
+            <input type="time" name="time" id="time" placeholder="Enter time" required th:field="*{time}" th:value="${cab.time}">
             <div class="error"></div>
         </div>
         <button type="submit">Book Now</button>
     </form>
 </div>
+
+<script>
+    $(document).ready(function(){
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("date").setAttribute("min", today);
+    });
+
+</script>
 </body>
+    <body style="    display: flex;   justify-content: center;">
+        <div class="container" style="align-self: center;">
+            <form id="form" th:method="post" th:action="@{/cab/save}" th:object="${cab}">
+                <h1>Book Cab</h1>
+                <div class="input-control">
+                    <label for="FullName">FullName</label>
+                    <input id="FullName" name="FullName" type="text" th:field="*{fullname}" th:value="${cab.fullname}">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="Phone">Phone</label>
+                    <input id="Phone" name="Phone"  type="text" th:field="*{phone}" th:value="${cab.phone}" >
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="CarType">Room Type</label>
+                    <select name="CarType" id="CarType" type="text" th:field="*{car}" th:value="${cab.car}">
+                        <option value="b">Bolero</option>
+                        <option value="c">Toyota</option>
+                        <option value="f">suzuki</option>
+                        <option value="g">Scorpio</option>
+                        <option value="h">RangeRover</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="Number">Number Of People</label>
+                    <!-- <input id="Number"name="Number" type="number"> -->
+                    <select  id="people" type="text" th:field="*{people}" th:value="${cab.people}">
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="more">more than 4</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="date">date</label>
+                    <!-- <input id="date" name="date" type="number"> -->
+                    <input type="date" name="date" id="date" placeholder="date"  th:field="*{date}" th:value="${cab.date}">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="time">Time</label>
+                    <!-- <input id="date" name="date" type="number"> -->
+                    <input type="time" name="time" id="time" placeholder="Enter time" th:field="*{time}" th:value="${cab.time}">
+                    <div class="error"></div>
+                </div>
+                <button type="submit">Book Now</button>
+                <div>
+                    <a th:href="@{~/homepage}">
+                        <button type="button" style="background-color: red">Cancel</button>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </body>
 </html>

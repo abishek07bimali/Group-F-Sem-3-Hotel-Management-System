@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Notice form</title>
     <link rel="stylesheet" th:href="@{~/css/admin_blog.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+
 </head>
 <body>
     <div class="notice-upload">
         <h1>Add Notice</h1>
         <div class="upload_notice">
-            <form id="add-notice-form" th:method="post" th:action="@{/admin/noticeAdd}" th:object="${blog}">
+            <form id="add-notice-form" th:method="post" th:action="@{/admin/noticeAdd}" th:object="${notice}">
+                <input type="number"   hidden="hidden" th:field="*{id}" th:value="${notice.id}">
 
                 <label for="topic-name">Topic:</label><br>
-                <input type="text" id="topic-name" name="title"  th:field="*{topic}" required th:value="${blog.topic}"><br>
+                <input type="text" id="topic-name" name="title"  th:field="*{topic}" required th:value="${notice.topic}"><br>
 
                 <label for="topic-name">Publisher:</label><br>
-                <input type="text"  name="title"  th:field="*{publisher}" required th:value="${blog.publisher}"><br>
+                <input type="text"  name="title"  th:field="*{publisher}" required th:value="${notice.publisher}"><br>
 
                 <label for="published-date">Date</label><br>
-                <input type="text" id="published-date" name="title" required th:field="*{date_published}" th:value="${blog.date_published}"><br>
+                <input type="text" id="published-date" name="title" required th:field="*{date_published}" th:value="${notice.date_published}"><br>
 
                 <label for="content">Content:</label><br>
-                <textarea id="content" name="content" required th:field="*{content}" th:value="${blog.content}"></textarea><br><br>
+                <textarea id="content" name="content" required th:field="*{content}" th:value="${notice.content}"></textarea><br><br>
 
                 <button type="submit" function="submit-notice">Submit</button>
 

@@ -8,117 +8,142 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
 
     <title>Admin Blog List</title>
     <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
     <link rel="stylesheet" th:href="@{~/css/navigation.css}">
-    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script th:src="@{~/javascript/notification.js}" defer></script>
     <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">
+    <style>
+        .dataTables_filter{
+            margin-right: 60px;
+        }
+        .dataTables_paginate{
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .dataTables_length{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .dataTables_info{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .contact_button{
+            background-color: rgb(47, 160, 47);
+            border-radius:20px ;
+            padding-top:7px ;
+            padding-bottom:7px ;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
 <div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
 
+<div class="blog-top" style="margin-left: 50px">
+    <h2>Blog List</h2>
+    <button class="btn1"><a th:href="@{~/admin/addblog}">+ New Blog</a></button>
+</div>
+        <table id="table_id">
+            <thead>
+            <tr>
+            <th>Blog_Id</th>
+            <th>Author</th>
+            <th>Topic</th>
+            <th>Published Date</th>
+            <th>Phone-number</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="blog:${blog}">
+                <td th:text="${blog.id}"></td>
+                <td th:text="${blog.author}"></td>
+                <td th:text="${blog.topic}"></td>
+                <td th:text="${blog.date}"></td>
+                <td th:text="${blog.phoneNum}"></td>
+                <!--                    <td><button class="btn2">Active</button></td>-->
+                <td> <a class="contact_button" th:href="@{~/admin/editblog/}+${blog.id}" >edit</a></td>
+                <td> <a class="contact_button" th:href="@{~/admin/deleteblog/}+${blog.id}" >delete</a></td>
+            </tr>
+            </tbody>
 
-<!--    bolg and news side-->
-    <div class="blog-news-wrapper">
-        <div class="blogList">
-            <div class="blog-top">
-                <h2>Blog List</h2>
-<!--                <div class="search-icon">-->
-<!--                    <input type="text" placeholder="Search by name" name="search">-->
-<!--                    <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>-->
-<!--                </div>-->
-                <button class="btn1"><a th:href="@{~/admin/addblog}">+ New Blog</a></button>
-
-            </div>
-
-            <div style="overflow-x:auto;">
-            <table id="blog-table" style="overflow: scroll">
-                <tr>
-                    <th>Blog_Id</th>
-                    <th>Author</th>
-                    <th>Topic</th>
-                    <th>Published Date</th>
-                    <th>Phone-number</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-                <tr th:each="blog:${blog}">
-                    <td th:text="${blog.id}"></td>
-                    <td th:text="${blog.author}"></td>
-                    <td th:text="${blog.topic}"></td>
-                    <td th:text="${blog.date}"></td>
-                    <td th:text="${blog.phoneNum}"></td>
-<!--                    <td><button class="btn2">Active</button></td>-->
-                    <td> <a class="edit" th:href="@{~/admin/editblog/}+${blog.id}" >edit</a></td>
-                    <td> <a class="delete" th:href="@{~/admin/deleteblog/}+${blog.id}" >delete</a></td>
-<!--                        <div class="td1">-->
-
-<!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/editblog/}+${blog.id}"><i class="material-icons">&#xE254;</i></button>-->
-<!--
-                            <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/deleteblog/}+${blog.id}"><i class="material-icons">&#xE872;</i></button>
--->
-<!--                        </div>-->
-<!--                    </td>-->
-
-                </tr>
-
-            </table>
-            </div>
-            <br><br>
-            <hr>
-        </div>
-
+        </table>
+        <script
+                type="text/javascript"
+                charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+        ></script>
+        <script
+                type="text/javascript"
+                charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+            document.getElementsByClassName()
+        </script>
+        <script>
+            $(function() {
+                $("#table_id").dataTable();
+            });
+        </script>
 
         <br><br>
 
-        <div class="noticeList">
-            <div class="notice-top">
-                <h2>Notice List</h2>
-                <div class="search-icon">
-                    <input type="text" placeholder="Search by name" name="search">
-                    <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>
-                </div>
-                <button class="btn1"><a th:href="@{/admin/noticeform}">+ New Blog</a></button>
-            </div>
 
-            <div style="overflow-x:auto;">
-            <table id="notice-table" style="overflow: scroll">
-                <tr>
-                    <th>Notice_Id</th>
-                    <th>Publisher</th>
-                    <th>Topic</th>
-                    <th>Published Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-                <tr th:each="notice:${notice}">
-                    <td th:text="${notice.id}"></td>
-                    <td th:text="${notice.publisher}"></td>
-                    <td th:text="${notice.topic}"></td>
-                    <td th:text="${notice.date_published}"></td>
-                    <td> <a class="edit" th:href="@{~/admin/editnotice}+${notice.id}" >edit</a></td>
-                    <td><button class="btn2">Active</button></td>
-                    <td>
-                        <div class="td1">
+<div class="blog-top">
+    <h2>Notice Page</h2>
+    <button class="btn1"><a th:href="@{~/admin/noticeform}">+ New Notice</a></button>
+</div>
 
-<!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/edit/}+${booking.id}"><i class="material-icons">&#xE254;</i></button>-->
-<!--                            <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/delete/}+${booking.id}"><i class="material-icons">&#xE872;</i></button>-->
 
-                        </div>
-                    </td>
+<table id="table_id2">
+    <thead>
+        <tr>
+            <th>Notice_Id</th>
+            <th>Publisher</th>
+            <th>Topic</th>
+            <th>Published Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+        <tbody>
+        <tr th:each="notice:${notice}">
+            <td th:text="${notice.id}"></td>
+            <td th:text="${notice.publisher}"></td>
+            <td th:text="${notice.topic}"></td>
+            <td th:text="${notice.date_published}"></td>
+            <td> <a class="contact_button" th:href="@{~/admin/editnotice/}+${notice.id}" >edit</a></td>
+            <td><button class="btn2">Active</button></td>
+        </tr>
+    </tbody>
 
-                </tr>
+</table>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+></script>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+    document.getElementsByClassName()
+</script>
+<script>
+    $(function() {
+        $("#table_id2").dataTable();
+    });
+</script>
 
-            </table>
-
-        </div>
-        </div>
-
-    </div>
 
 </body>
 <script>

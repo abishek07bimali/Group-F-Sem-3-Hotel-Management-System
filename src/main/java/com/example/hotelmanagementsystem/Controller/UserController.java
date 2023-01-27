@@ -11,6 +11,9 @@ import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +45,10 @@ public class UserController {
 
     @GetMapping("/booking")
     public String BookHotel(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
         model.addAttribute("booking", new BookingPojo());
         return "booking";
     }
@@ -60,6 +67,10 @@ public class UserController {
 
     @PostMapping("/send-message")
     public String submitMessage(@Valid ContactPojo contactPojo){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
         userService.submitMsg(contactPojo);
         return "redirect:contact";
     }
@@ -102,5 +113,11 @@ public class UserController {
     @GetMapping("/pickup_request")
     public String getPickupPage() {
         return ("picked_up");
+    }
+
+
+    @GetMapping("/rating")
+    public String getRating() {
+        return ("ratings");
     }
 }

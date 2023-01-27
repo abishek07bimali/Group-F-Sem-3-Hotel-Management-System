@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Admin Gallery Image List</title>
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
     <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
     <link rel="stylesheet" th:href="@{~/css/navigation.css}">
-    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
 <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
     <style>
         .top-div form{
@@ -18,53 +18,53 @@
     </style>
 </head>
 
-<body>
-<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
-<div class="Main-wrapper">
+    <body>
+    <div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
+    <div class="Main-wrapper">
 
 
-        <div class="wrapper-top">
-            <h2>All Images</h2>
-            <button class="btn1"><a th:href="@{/admin/addImage}">+ New Images</a></button>
+            <div class="wrapper-top">
+                <h2>All Images</h2>
+                <button class="btn1"><a th:href="@{/admin/addImage}">+ New Images</a></button>
 
-        </div>
+            </div>
 
-    <div style="overflow-x:auto;"></div>
-    <table>
-        <thead>
-        <tr>
-            <th>Img_id</th>
-            <th>Image Name</th>
-            <th>Image</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="image:${imagelist}">
-            <td th:text="${image.id}"></td>
-            <td th:text="${image.name}"></td>
-            <td> <img th:src="'data:image/png;base64,'+${image.imageBase64}" width="100" height="100"></td>
-<!--            <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>-->
+        <div style="overflow-x:auto;"></div>
+        <table>
+            <thead>
+            <tr>
+                <th>Img_id</th>
+                <th>Image Name</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="image:${imagelist}">
+                <td th:text="${image.id}"></td>
+                <td th:text="${image.name}"></td>
+                <td> <img th:src="'data:image/png;base64,'+${image.imageBase64}" width="100" height="100"></td>
+    <!--            <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>-->
 
-        </tr>
-        </tbody>
+            </tr>
+            </tbody>
 
-    </table>
+        </table>
 
 
 
-</div>
+    </div>
 
-</body>
+    </body>
 
-<script>
-    let myPage = "gallery";
-    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
-    listGroupItem.forEach(i=>{
-        i.classList.remove("active")
-    })
-    let activeID = document.getElementById(myPage);
-    activeID.classList.add("active");
-</script>
+    <script>
+        let myPage = "gallery";
+        let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+        listGroupItem.forEach(i=>{
+            i.classList.remove("active")
+        })
+        let activeID = document.getElementById(myPage);
+        activeID.classList.add("active");
+    </script>
 
 </html>

@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
     <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
     <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/profile.css}">
 
 <!--    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,42 +17,46 @@
   <div th:replace="fragments/Navi_frag.html :: navigator"></div>
 
   <section class="py-5 my-5">
-
     <div class="container">
       <h1 class="mb-5">Account Settings</h1>
       <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+<!--        <div class="profile-tab-nav border-right">-->
+<!--          <div class="p-4">-->
+<!--            <div class="img-circle text-center mb-3">-->
+<!--              <img th:src="@{~/images/logo.png}" alt="Image" class="shadow">-->
+<!--            </div>-->
+<!--            <h4 class="text-center">Username</h4>-->
+<!--          </div>-->
+<!--          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
+<!--            <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">-->
+<!--              <i class="fa fa-home text-center mr-1"></i>-->
+<!--              Account-->
+<!--            </a>-->
+<!--            <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">-->
+<!--              <i class="fa fa-key text-center mr-1"></i>-->
+<!--              Password-->
+<!--            </a>-->
+<!--            <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">-->
+<!--              <i class="fa fa-user text-center mr-1"></i>-->
+<!--              Security-->
+<!--            </a>-->
+<!--            <a class="nav-link" id="history-tab" data-toggle="pill" href="#history" role="tab" aria-controls="history" aria-selected="false">-->
+<!--              <i class="fa fa-bell text-center mr-1"></i>-->
+<!--              History-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
 
-<!--        nav bar -->
-        <div class="profile-tab-nav border-right">
-          <div class="p-4">
-            <div class="img-circle text-center mb-3">
-              <img src="img/user2.jpg" alt="Image" class="shadow">
-            </div>
-            <h4 class="text-center">Username</h4>
-          </div>
-          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
-              <i class="fa fa-home text-center mr-1"></i>
-              Account
-            </a>
-            <a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
-              <i class="fa fa-key text-center mr-1"></i>
-              Password
-            </a>
-            <a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
-              <i class="fa fa-user text-center mr-1"></i>
-              Security
-            </a>
-            <a class="nav-link" id="history-tab" data-toggle="pill" href="#history" role="tab" aria-controls="history" aria-selected="false">
-              <i class="fa fa-bell text-center mr-1"></i>
-              History
-            </a>
-          </div>
-        </div>
+                  <div class="p-4">
+                    <div class="img-circle text-center mb-3">
+                      <img th:src="@{~/images/logo.png}" alt="Image" class="shadow">
+                    </div>
+                    <h4 class="text-center">Username</h4>
+                  </div>
+        <br>
+        <br>
 
-
-
-<!      right form container---->
+        <!--      right form container---->
         <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
             <h3 class="mb-4">Account Settings</h3>
@@ -76,50 +81,35 @@
               <button type="reset" class="btn btn-light">Cancel</button>
             </div>
           </div>
-
-<!--          Password update-->
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
           <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
             <h3 class="mb-4">Password Settings</h3>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Old password</label>
-                  <input type="password" class="form-control">
+              <form class="col-md-12">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" class="form-control" id="current-password" placeholder="Enter your current password">
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>New password</label>
-                  <input type="password" class="form-control">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" class="form-control" id="new-password" placeholder="Enter your new password">
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Confirm new password</label>
-                  <input type="password" class="form-control">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your new password">
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <button class="btn btn-primary">Update</button>
-              <button class="btn btn-light">Cancel</button>
-            </div>
-          </div>
-
-<!--         Booking   History -->
-          <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
-            <h3 class="mb-4">Booking History</h3>
-            <div class="form-group">
-              <div class="form-check">
-<!--        Make a table or something to display the history-->
-              </div>
-            </div>
-            <div>
-              <button class="btn btn-primary">Update</button>
-              <button class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
             </div>
           </div>
         </div>
@@ -127,7 +117,9 @@
     </div>
   </section>
 
-  <div th:replace="fragments/Footer_frag.html :: footer"></div>
+
+
+            <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

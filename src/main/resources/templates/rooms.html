@@ -9,9 +9,10 @@
 
     <script src="Bootstrap/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
-c
+
     <link rel="stylesheet" th:href="@{~/css/rooms.css}">
     <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
 
     <title>Document</title>
 </head>
@@ -29,63 +30,154 @@ c
                  large comfortable beds covered with special bedspreads that get
                   made by themselves, and bathrooms that are clean and shiny. </p>
             </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link href="Bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet">
 
+        <script src="Bootstrap/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js"></script>
+        <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+        <link rel="stylesheet" th:href="@{~/css/rooms.css}">
+        <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+
+
+        <title>Document</title>
+    </head>
+    <body>
+    <div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+        <div class="Main-Wrapper">
+            <div class="Wrapper-top">
+                <div class="top-left">
+                    <h2>OUR CHOICE -------*</h2>
+                    <h3>the best room just for you!</h3>
+                </div>
+                <div class="top-right">
+                   <p>Our hotel rooms have everything you need for a pleasant stay.
+                     large comfortable beds covered with special bedspreads that get
+                      made by themselves, and bathrooms that are clean and shiny. </p>
+                </div>
+
+            </div>
+            <div class="Wrapper-bottom">
+                <div class="bottom-up">
+                    <div class="price">$200</div>
+                    <button><a th:href="@{~/rooms/coupleroom}">Couple Room</a></button>
+                </div>
+                <div class="bottom-up1">
+                    <div class="price">$200</div>
+                    <button><a th:href="@{~/rooms/luxeroom}">Luxe Room</a></button>
+                </div>
+                <div class="bottom-up2">
+                    <div class="price">$200</div>
+                    <button><a th:href="@{~/rooms/familyroom}">Family Room</a></button>
+                </div>
+                <div class="bottom-up3">
+                    <div class="price">$200</div>
+                    <button><a  th:href="@{~/rooms/masterroom}">Master Room</a></button>
+                </div>
+                <div class="bottom-up4">
+                    <div class="price">$200</div>
+                    <button><a th:href="@{~/rooms/premiumroom}">Premium Room</a></button>
+                </div>
+            </div>
+
+
+            <div class="wrapper-botton-bottom">
+                <div class="first">
+
+                </div>
+                <div class="second">
+
+                </div>
+                <div class="third">
+
+                </div>
+            </div>
         </div>
-        <div class="Wrapper-bottom">
-            <div class="bottom-up">
-                <div class="price">$200</div>
-                <button><a th:href="@{~/rooms/coupleroom}">Couple Room</a></button>
-            </div>
-            <div class="bottom-up1">
-                <div class="price">$200</div>
-                <button><a th:href="@{~/rooms/luxeroom}">Luxe Room</a></button>
-            </div>
-            <div class="bottom-up2">
-                <div class="price">$200</div>
-                <button><a th:href="@{~/rooms/familyroom}">Family Room</a></button>
-            </div>
-            <div class="bottom-up3">
-                <div class="price">$200</div>
-                <button><a  th:href="@{~/rooms/masterroom}">Master Room</a></button>
-            </div>
-            <div class="bottom-up4">
-                <div class="price">$200</div>
-                <button><a th:href="@{~/rooms/premiumroom}">Premium Room</a></button>
-            </div>
-        </div>
 
-
-        <div class="wrapper-botton-bottom">
-            <div class="first">
-
+    <!--    <div class="mb-3" style=" width: 100%; margin-top: 20px" >-->
+    <!--&lt;!&ndash;        <label for="exampleFormControlTextarea1" class="form-label">Give Us Your Valuable Reviews</label>&ndash;&gt;-->
+    <!--        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="width: 70%;margin-left:20%"></textarea>-->
+    <!--    </div>-->
+        <div class="review-btn">
+            <a class="rev-btn">Review</a>
+            <div class="post" style="display: none;">
+                <div class="text">Thanks for rating us!</div>
+                <!--        <div class="edit">Edit</div>-->
             </div>
-            <div class="second">
-
-            </div>
-            <div class="third">
+            <!-- <h1 class="rating_heading"> 5 star Rating</h1> -->
+            <div class="star_rating" style="display: none;">
+                <p> How was your experience?</p>
+                <button class="star">&#9734;</button>
+                <button class="star">&#9734;</button>
+                <button class="star">&#9734;</button>
+                <button class="star">&#9734;</button>
+                <button class="star">&#9734;</button>
+                <p class="current_rating"> 0 of 5</p><br>
+                <div class="textarea"><textarea cols="30" placeholder="Describe your experience"></textarea></div>
+                <div class="btn"> <button type="submit">Post</button></div>
 
             </div>
         </div>
-    </div>
 
-    <div class="mb-3" style=" width: 100%; margin-top: 20px" >
-<!--        <label for="exampleFormControlTextarea1" class="form-label">Give Us Your Valuable Reviews</label>-->
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="width: 70%;margin-left:20%"></textarea>
-    </div>
+<!--    <div class="container">-->
+<!--        <a class="rev-btn">Review</a>-->
+<!--       -->
+<!--    </div>-->
+
+
+
 
 
     <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
-</body>
-<script>
-    let myPage = "rooms";
-    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
-    listGroupItem.forEach(i=>{
-        i.classList.remove("active")
-    })
-    let activeID = document.getElementById(myPage);
-    activeID.classList.add("active");
-</script>
+    </body>
+    <script>
+        let myPage = "rooms";
+        let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+        listGroupItem.forEach(i=>{
+            i.classList.remove("active")
+        })
+        let activeID = document.getElementById(myPage);
+        activeID.classList.add("active");
+    </script>
+    <!-- js for review btn -->
+    <script>
+        const revBtn = document.querySelector(".rev-btn");
+        const btn=document.querySelector(".btn");
+        const post=document.querySelector(".post");
+        const rating=document.querySelector(".star_rating");
+        const editBtn=document.querySelector(".edit");
 
+        revBtn.onclick = () => {
+            rating.style.display = "block";
+            return false;
+        }
+
+        btn.onclick = () =>{
+            rating.style.display="none";
+            post.style.display="block";
+            return false;
+        }
+        const allStar=document.querySelectorAll('.star');
+        let current_rating=document.querySelector('.current_rating');
+        allStar.forEach((star, i) => {
+            star.onclick=function(){
+                let current_rating_level= i+1;
+                current_rating.innerText=`${current_rating_level} of 5`;
+                allStar.forEach((star, j) => {
+                    if(current_rating_level >= j+1)
+                    {
+                        star.innerHTML='&#9733';
+                    }else{
+                        star.innerHTML='&#9734'
+                    }
+                })
+            }
+        })
+    </script>
 
 </html>    

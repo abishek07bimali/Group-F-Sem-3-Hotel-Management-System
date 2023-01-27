@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog Post</title>
     <link rel="stylesheet" th:href="@{~/css/admin_blog.css}">
-    <!-- <link rel="stylesheet" href="../static/css/blog.css"> -->
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
 </head>
 <body>
      <h1>Add Blog Post</h1>
@@ -16,7 +16,7 @@
             <input type="file" name="image" id="image"><br> -->
 
 <!--            <label for="blog-id"></label><br>-->
-            <input type="number" hidden th:field="*{id}" th:value="${blog.id}">
+            <input type="number" hidden="hidden" th:field="*{id}" th:value="${blog.id}">
 
             <label for="author">Author:</label><br>
             <input type="text" id="author" name="author" required th:field="*{author}" th:value="${blog.author}"><br>
