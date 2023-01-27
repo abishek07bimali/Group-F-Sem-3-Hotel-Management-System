@@ -1,6 +1,12 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.*;
+import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
+import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
+import com.example.hotelmanagementsystem.UserPojo.GalleryPojo;
+import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
+import com.example.hotelmanagementsystem.entity.*;
+import com.example.hotelmanagementsystem.repo.BookingRepo;
 import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.entity.*;
 import jakarta.validation.Valid;
@@ -32,26 +38,86 @@ public class AdminController {
     private final BlogServices blogServices;
     private  final NoticesService noticesService;
     private  final GalleryServices galleryServices;
+    private  final BookingRepo bookingRepo;
+    private  final CabService cabService;
+
+
 
     private final SocialMediaServices socialMediaServices;
 
     @GetMapping("/list")
-    public String getUserList(Model model) {
+    public String getUserList( Model model) {
         List<Booking> bookings = userService.fetchAll();
         model.addAttribute("bookinglist", bookings);
         return "viewCustomerlist";
     }
 
+//    @GetMapping("/page/{pageNo}")
+//    public String findPaginated(@PathVariable (value = "pageNo") int pageNo,
+//                                @RequestParam("sortField") String sortField,
+//                                @RequestParam("sortDir") String sortDir,
+//                                Model model) {
+//        int pageSize = 7;
+//
+//        Page<Booking> page = userService.findPaginated(pageNo, pageSize, sortField, sortDir);
+//        List<Booking> bookings = page.getContent();
+//
+//        model.addAttribute("currentPage", pageNo);
+//        model.addAttribute("totalPages", page.getTotalPages());
+//        model.addAttribute("totalItems", page.getTotalElements());
+//
+//        model.addAttribute("sortField", sortField);
+//        model.addAttribute("sortDir", sortDir);
+//        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+//
+//        model.addAttribute("bookinglist", bookings);
+//        return "viewCustomerlist";
+//    }
+//    @GetMapping("/list")
+//    public String viewHomePage(Model model) {
+//        return findPaginated(1, "fullname", "asc", model);
+//    }
 
-    @GetMapping("/alllist")
-    public String getAllBooking(Model model) {
-        List<Booking> bookings = userService.fetchAll();
-        model.addAttribute("bookinglist", bookings);
-        return "Admin/AllBooking";
+
+
+
+//    @Autowired
+//    private UserService service;
+//    @RequestMapping(path = {"/","/list"})
+//    public String home(Model model, String keyword) {
+//        if(keyword!=null) {
+//            List<Booking> bookings = service.getByKeyword(keyword);
+//            model.addAttribute("bookinglist", bookings);
+//        }else {
+//            List<Booking> bookings = service.fetchAll();
+//            model.addAttribute("bookinglist", bookings);
+//        }
+//        return "viewCustomerlist";
+//    }
+
+//
+//    @GetMapping("/alllist")
+//    public String getAllBooking(Model model) {
+//        List<Booking> bookings = userService.fetchAll();
+//        model.addAttribute("bookinglist", bookings);
+//        return "Admin/AllBooking";
+//    }
+//
+//    -----------------
+//    view contactfetch
+//    -----------
+//
+
+    @GetMapping("/contactfetch")
+    public String getContactAdmin(Model model) {
+        List<Contact> contact = userService.fetchAllContact();
+        model.addAttribute("contactlist", contact);
+        List<Feedback> feedbacks = userService.fetchAllFeedback();
+        model.addAttribute("feedback", feedbacks);
+        return "Admin/ViewContactandFeedback";
     }
 
-
-
+    //
 
 
     @GetMapping("/newbooking")
@@ -75,13 +141,19 @@ public class AdminController {
         return "newbookings";
     }
 
-
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id) {
         userService.deleteById(id);
         return "redirect:/admin/list";
     }
 
+
+    @GetMapping("/bill/{id}")
+    public String getBill(@PathVariable("id") Integer id, Model model) {
+        Booking booking = userService.fetchById(id);
+        model.addAttribute("bill", new BookingPojo(booking));
+        return "PrintBill";
+    }
 
 //    @GetMapping("/adminblogpage")
 //    public  String getPage(){
@@ -132,7 +204,7 @@ public class AdminController {
     public String editBlog(@PathVariable("id") Integer id, Model model) {
         Blog blog = blogServices.fetchById(id);
         model.addAttribute("blog", new BlogPojo(blog));
-        return "redirect:/admin/addblog";
+        return "admin_blog";
     }
 
 
@@ -161,7 +233,7 @@ public class AdminController {
     public String editNotice(@PathVariable("id") Integer id, Model model) {
         Notices notice = noticesService.fetchById(id);
         model.addAttribute("notice", new NoticePojo(notice));
-        return "redirect:/admin/noticeform";
+        return ("notice-form");
     }
 
 //gallery controller
@@ -201,6 +273,28 @@ public class AdminController {
 
         ));
         return "Admin/ViewImages";
+    }
+
+//
+//
+//------------------------------------------------------------
+//  Cab Booking
+//
+//
+//    -------------------------------------------------------------
+
+    @GetMapping("/cabBookingByCustomer")
+    public String getCabBooking(Model model) {
+        List<Cab> cabs = cabService.findAll();
+        model.addAttribute("cab", cabs);
+        return "Admin/ViewCabBooking";
+    }
+
+
+    @GetMapping("/deletecab/{id}")
+    public String detCab(@PathVariable("id") Integer id) {
+        cabService.deleteById(id);
+        return "redirect:/admin/cabBookingByCustomer";
     }
 
 

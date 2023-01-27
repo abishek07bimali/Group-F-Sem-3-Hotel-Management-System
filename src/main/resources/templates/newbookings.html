@@ -1,73 +1,195 @@
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
+
+<html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/newbookings.css}">
+
+    <title>Hotel Booking: Luxury Hotel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+    <link rel="stylesheet" th:href="@{~/css/booking.css}">
+    <script defer th:src="@{~/javascript/booking.js}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    <script defer th:src="@{~/javascript/disableDate.js}"></script>-->
+
+
     <title>Booking</title>
 </head>
 
-<body class="main_bg">
-    <div class="Main-wrapper">
-        <div class="form-text">
-            <!-- <h1><span><img src="../static/images/art-1.png" alt=""></span>Book Now <span><img src="../static/images/art-1.png" alt=""></span></h1> -->
-            <h2>The best room just for you!</h2>
+<body onload="myFunction()">
+
+<div class="container">
+
+    <form  id="form" th:method="post" th:action="@{/admin/savenewbook}" th:object="${newBooking}">
+        <h1>Book Now</h1>
+         <input type="number"   hidden="hidden" th:field="*{id}" th:value="${newBooking.id}">
+
+        <div class="input-control">
+
+            <label for="FullName">FullName</label>
+
+            <input id="FullName" name="FullName" type="text"  th:field="*{fullname}" th:value="${newBooking.fullname}">
+
+            <div class="error"></div>
+
         </div>
-        <div class="wrapper-bottom">
-            <form th:method="post" th:action="@{/admin/savenewbook}" th:object="${newBooking}">
-                <input type="number"   hidden th:field="*{id}" th:value="${newBooking.id}">
-<!--                <span th:text="${newBooking.fullname}"></span>-->
-                <div>
-                    <span>Your full name ?</span>
-                    <input type="text" name="name"  placeholder="Write your name here..." required th:field="*{fullname}" th:value="${newBooking.fullname}">
-                </div>
-                <div>
-                    <!-- <---this is the select option--->
-                    <span>How many people ?</span>
-                    <select name="people" id="people" required th:field="*{number_of_people}" th:value="${newBooking.number_of_people}">
-                        <option value="">   ---number of people---</option>
-                        <option value="1">1 person</option>
-                        <option value="2">2 person</option>
-                        <option value="3">3 person</option>
-                        <option value="4">4 person</option>
-                    </select>
-                    <!-- <---this is the select option--->
-                </div>
-                <div>
-                    <span>which room?</span>
-                    <input type="text" name="time" id="time" placeholder="Time" required th:field="*{room}" th:value="${newBooking.room}">
-                </div>
-                <div>
-                    <span>What is the checkin date ?</span>
-                    <input type="date" name="date" id="date" placeholder="date" required th:field="*{Checkin}" th:value="${newBooking.checkin}" >
-                </div>
-                <div>
-                    <span>What is the checkout  date ?</span>
-                    <input type="date" name="date" id="dateO" placeholder="date" required th:field="*{checkout}" th:value="${newBooking.checkout}">
-                </div>
-                <div>
-                    <span>What is the checkin date ?</span>
-                    <input type="date" name="date" id="dateA" placeholder="date" required th:field="*{date}" th:value="${newBooking.date}" >
-                </div>
-                <div>
-                    <span>Your phone number ?</span>
-                    <input type="number" name="number" id="number" placeholder="Write your number here..." required th:field="*{mobile_no}" th:value="${newBooking.mobile_no}">
-                </div>
-                <div>
-                    <span>Your phone number ?</span>
-                    <input type="number" name="number" id="amount" placeholder="amount" required th:field="*{amount}" th:value="${newBooking.amount}">
-                </div>
-                <div id="submit">
-                    <input type="submit" value="SUBMIT">
-                </div>
+
+        <div class="input-control">
+
+            <label for="Phone">Phone</label>
+
+            <input id="Phone" name="Phone" type="number"  th:field="*{mobile_no}" th:value="${newBooking.mobile_no}">
+
+            <div class="error"></div>
+
+        </div>
+
+        <div class="input-control">
+
+            <label for="RoomType">Room Type</label>
+
+            <select name="RoomType" id="RoomType"  th:field="*{room}" th:value="${newBooking.room}">
+
+                <option value="Single Room">Single</option>
+
+                <option value="Couple Room">Couple</option>
+
+                <option value="Family Room">Family</option>
+
+                <option value="Group Room">Group</option>
+
+                <option value="Honeymoon Room">Honeymoon</option>
+
+            </select>
+
+            <div class="error"></div>
+
+        </div>
+
+        <div class="input-control">
+
+            <label for="Number">Number Of People</label>
+
+            <!-- <input id="Number"name="Number" type="number"> -->
+
+            <select  id="people"  th:field="*{number_of_people}" th:value="${newBooking.number_of_people}">
+
+                <option value="1">1 person</option>
+
+                <option value="2">2 people</option>
+
+                <option value="3">3 people</option>
+
+                <option value="4">4 people</option>
+
+                <option value="more">more than 4</option>
+
+            </select>
+
+            <div class="error"></div>
+
+        </div>
+
+        <div class="input-control">
+
+            <label for="date">Check in</label>
+
+            <!-- <input id="date" name="date" type="number"> -->
+
+            <input type="date" name="date" id="checkInDate" placeholder="date"  th:field="*{checkin}" th:value="${newBooking.checkin}">
+
+            <div class="error"></div>
+
+        </div>
 
 
-            </form>
+        <!--        Amount -->
+        <input type="text" hidden="hidden" id="amount" th:field="*{amount}" th:value="${newBooking.amount}">
+
+        <input type="text" hidden="hidden" id="date" th:field="*{date}" th:value="${newBooking.date}">
+
+
+
+
+        <div class="input-control">
+
+            <label for="date">Check Out</label>
+
+            <!-- <input id="date" name="date" type="number"> -->
+
+            <input type="date" name="date" id="checkOutDate" placeholder="date"   th:field="*{checkout}" th:value="${newBooking.checkout}">
+            <div class="error"></div>
+
         </div>
-    </div>
+        <!--                    <input type="submit" value="SUBMIT">-->
+        <div>
+            <button type="submit" onclick="myFunction()">Book Now</button>
+        </div>
+
+
+    </form>
+
+</div>
+
+<script>
+    function myFunction() {
+        let A = document.getElementById("RoomType").value;
+        if(A=="Single Room"){
+            console.log(200);
+            var val=document.getElementById("amount");
+            val.setAttribute("value","$200");
+        }
+        else if(A=="Couple Room"){
+            var val=document.getElementById("amount");
+            val.setAttribute("value","$300");
+        }
+        else if(A=="Family Room"){
+            var val=document.getElementById("amount");
+            val.setAttribute("value","$400");          }
+        else if(A=="Group Room"){
+            var val=document.getElementById("amount");
+            val.setAttribute("value","$500");          }
+        else{
+            var val=document.getElementById("amount");
+            val.setAttribute("value","$600");          }
+
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("checkInDate").setAttribute("min", today);
+        document.getElementById("checkOutDate").setAttribute("min", today);
+    });
+
+</script>
+<script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '/' + mm + '/' + dd;
+    var val=document.getElementById("date");
+    val.setAttribute("value",today);
+
+</script>
 </body>
 
 </html>

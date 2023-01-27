@@ -7,6 +7,8 @@
 		<link th:href="@{/css/contact_us.css}" rel="stylesheet">
 		<link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
 		<link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+		<link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -39,7 +41,7 @@
 <!--								onclick="submitMessage"-->
 <!--								style="color: black; font-size: larger; font-weight: bold; background-color: #ffca00; border-color: white; width: 100%; height: 45px; border-radius: 5px; align-self: center">SUBMIT</button>-->
 					</form>
-					<script src="../static/javascript/contact_page.js"></script>
+					<script th:src="@{~/javascript/contact_page.js}"></script>
 				</div>
 				<div class="contact-in">
 					<!-- <h1>Contact us</h1> -->
