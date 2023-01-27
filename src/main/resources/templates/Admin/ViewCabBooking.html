@@ -105,6 +105,15 @@
             margin-top: 20px;
             margin-left: 30px;
         }
+         .contact_button{
+             background-color: #5041BC;
+             border-radius:20px ;
+             padding-top:7px ;
+             padding-bottom:7px ;
+             padding-left: 10px;
+             padding-right: 10px;
+             text-decoration: none;
+         }
     </style>
 </head>
 <body>
@@ -133,7 +142,7 @@
         <td th:text="${cab.people}"></td>
         <td th:text="${cab.date}"></td>
         <td th:text="${cab.time}"></td>
-        <td> <a class="edit" th:href="@{~/admin/deletecab/}+${cab.id}" >delete</a></td>
+        <td> <a class="contact_button" th:href="@{~/admin/deletecab/}+${cab.id}" >delete</a></td>
         <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
 
     </tr>
