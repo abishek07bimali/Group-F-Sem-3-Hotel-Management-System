@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name="booking")
-public class Booking {
+public class Booking extends SocialMedia {
     @Id
     @SequenceGenerator(name = "hms_book_seq_gen", sequenceName = "hms_book_id_seq", allocationSize = 1)
     @GeneratedValue(generator = "hms_book_seq_gen", strategy = GenerationType.SEQUENCE)

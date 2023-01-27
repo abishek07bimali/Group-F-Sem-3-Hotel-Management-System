@@ -10,6 +10,7 @@
   <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
   <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
   <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+  <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 
@@ -217,6 +218,21 @@
 
   </div>
   <br>
+
+  <div class="youtube-vid" id="popup-container"
+       style="display:none; position:fixed; top:10%; left:10%;
+        width:80%; height:60%; background-color:white; z-index:1;">
+    <div style="position:absolute; top:0; right:0;">
+      <button onclick="document.getElementById('popup-container').style.display='none'">X</button>
+    </div>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+  </div>
+
+  <script>
+    setTimeout(function(){
+      document.getElementById('popup-container').style.display='block';
+    }, 5000);
+  </script>
 
 
   <div th:replace="fragments/Footer_frag.html :: footer"></div>

@@ -41,6 +41,16 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.about-section{
+  /*margin-top: 20px;*/
+  padding: 60px;
+  text-align: center;
+  color: white;
+  background-image:  linear-gradient(to bottom, rgba(140, 192, 224, 0.52), rgba(18, 47, 77, 0.73)),url(../images/gallery7.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .section {
   padding: 20px;

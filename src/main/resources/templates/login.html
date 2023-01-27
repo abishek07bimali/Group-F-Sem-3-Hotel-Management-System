@@ -20,7 +20,7 @@
             <h3 class="h3-1">Welcome! Please enter your details.</h3>
             <input class="email-box" type="email" id="E-mail" name="email" placeholder="Enter your email" required autofocus/>
             <input class="password-box" type="password" id="Password" name="password" placeholder="Enter your Password" onclick="validateEmail()" onkeypress="validateEmail()" required autofocus/>
-            <a class="a-1" href="forgotPassword.html">Forgot Password?</a>
+            <a class="a-1" th:href="@{~/forgotPassword.html}">Forgot Password?</a>
             <button class="login-button" type="submit" onclick="fill()">Login</button>
             <h3 class="h3-2">Create an account
                 <a class="a-2" th:href="@{~/user/create}">Click Here!</a>
