@@ -16,14 +16,14 @@ public class FoodController {
     private final FoodServices foodServices;
     @GetMapping("/order")
     public String OrderFood(Model model){
-        model.addAttribute("order",new FoodPojo());
-        return "/order";
+        model.addAttribute("order", new FoodPojo());
+        return "/order_food_form";
     }
-    @PostMapping("/saveorder")
-    public String SaveOrder(@Valid FoodPojo foodPojo){
-        foodServices.save(foodPojo);
-        return "/order_food";
-    }
+//    @PostMapping("/saveorder")
+//    public String SaveOrder(@Valid FoodPojo foodPojo){
+//        foodServices.save(foodPojo);
+//        return "/order_food";
+//    }
 
 
 }
