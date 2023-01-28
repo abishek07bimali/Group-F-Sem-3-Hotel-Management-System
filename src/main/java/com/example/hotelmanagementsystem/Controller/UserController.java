@@ -76,7 +76,7 @@ public class UserController {
     }
     @GetMapping("/savelaundary")
     public String getlaundary( Model model){
-        model.addAttribute("laundry", new LaundaryPojo());
+        model.addAttribute("laundary", new LaundaryPojo());
         return "laundary1";
     }
 

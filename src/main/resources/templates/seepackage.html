@@ -132,6 +132,44 @@
             <button type="button" class="btn-cancel" onclick="closeForm()"><i class="fa fa-close"></i></button>
         </form>
     </div>
+    <div class="container8">
+        <div class="coupon-card">
+
+            <img th:src="@{~/images/logo1.png}" class="logo">
+
+
+            <h3> 50% off on all packages
+            </h3>
+            <div class="coupon-row">
+                <span id="cpnCode">ENJOY500</span>
+                <span id="cpnBtn">COPY CODE</span>
+            </div>
+            <p> Valid Till: 15th March, 2023</p>
+            <!--             <div class="circle1"></div>-->
+            <!--             <div class="circle2"></div>-->
+
+        </div>
+    </div>
+    <script>
+        var cpnBtn=document.getElementById("cpnBtn");
+        var cpnCode=document.getElementById("cpnCode");
+        const container8=document.querySelector('.head');
+
+        cpnBtn.onclick=function (){
+            navigator.clipboard.writeText(cpnCode.innerHTML);
+            cpnBtn.innerHTML ="COPIED";
+            setTimeout(function (){
+                cpnBtn.innerHTML="COPY CODE";
+            }, 3000)
+        }
+        window.onload = function(){
+            setTimeout(function(){
+                container8.style.display="block"
+            }, 5000)
+        }
+
+
+    </script>
 
     <br>
     <hr>
@@ -180,46 +218,6 @@
     let activeID = document.getElementById(myPage);
     activeID.classList.add("active");
 </script>
-    <body>
-    <div class="container8">
-        <div class="coupon-card">
-
-            <img th:src="@{~/images/logo1.png}" class="logo">
-
-
-            <h3> 50% off on all packages
-            </h3>
-            <div class="coupon-row">
-                <span id="cpnCode">ENJOY500</span>
-                <span id="cpnBtn">COPY CODE</span>
-            </div>
-            <p> Valid Till: 15th March, 2023</p>
-            <!--             <div class="circle1"></div>-->
-            <!--             <div class="circle2"></div>-->
-
-        </div>
-    </div>
-    <script>
-        var cpnBtn=document.getElementById("cpnBtn");
-        var cpnCode=document.getElementById("cpnCode");
-        const container8=document.querySelector('.head');
-
-        cpnBtn.onclick=function (){
-            navigator.clipboard.writeText(cpnCode.innerHTML);
-            cpnBtn.innerHTML ="COPIED";
-            setTimeout(function (){
-                cpnBtn.innerHTML="COPY CODE";
-            }, 3000)
-        }
-        window.onload = function(){
-            setTimeout(function(){
-                container8.style.display="block"
-            }, 5000)
-        }
-
-
-    </script>
-
 
 
     </body>
