@@ -42,7 +42,7 @@ public interface UserService {
     String save(BlogPojo blogPojo);
     User findByEmail(String email);
 //    String save(BlogPojo blogPojo);
-    UserPojo findByEmail(String email);
+//    UserPojo findByEmail(String email);
 
 //    List<Booking> getByKeyword( String keyword);
 //    Page<Booking> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);

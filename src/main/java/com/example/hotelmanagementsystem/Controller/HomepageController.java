@@ -72,12 +72,15 @@ public class HomepageController {
     }
 
     @GetMapping("/viewblog")
-    public String viewUserBlog(Model model,Principal principal){
+    public String viewUserBlog(Model model,Principal principal) {
 //        model.addAttribute("blog", new BlogPojo());
 //        model.addAttribute("info",userService.findByEmail(principal.getName()));
         model.addAttribute("comment", new CommentPojo());
+//        return "blog";
+//    }
 
-    public String viewUserBlog(Model model){
+
+//    public String viewUserBlog(Model model){
         List<Blog> blogs = blogServices.fetchAll();
         model.addAttribute("blog", blogs.stream().map(blog ->
                 Blog.builder()

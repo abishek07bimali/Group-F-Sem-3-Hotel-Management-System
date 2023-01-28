@@ -128,7 +128,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String submitPlanning(surprisePlanningPojo surpriseplanningPojo) {
-        surprisePlanning surpriseplanning=new surprisePlanning();
+        surprisePlanning surpriseplanning = new surprisePlanning();
         surpriseplanning.setStartdate(surpriseplanningPojo.getStartdate());
         surpriseplanning.setEnddate(surpriseplanningPojo.getEnddate());
         surpriseplanning.setEventtype(surpriseplanningPojo.getEventtype());
@@ -136,6 +136,7 @@ public class UserServiceImpl implements UserService {
         surpriseplanning.setEventdescription(surpriseplanningPojo.getEventdescription());
         surpriseplanningRepo.save(surpriseplanning);
         return "submitted";
+    }
     public List<Feedback> fetchAllFeedback() {
         return this.feedbackRepo.findAll();
     }
@@ -190,6 +191,7 @@ public class UserServiceImpl implements UserService {
         return this.contactRepo.findAll();
     }
 
+
     @Override
     public String submitLaundary(LaundaryPojo laundaryPojo) {
         Laundary laundary = new Laundary();
@@ -207,20 +209,20 @@ public class UserServiceImpl implements UserService {
 
 
 
-//    public String save(BlogPojo blogPojo) {
-//        Blog blog =new Blog();
-//        if(blogPojo.getId()!=null){
-//            blog.setId(blogPojo.getId());
-//        }
-//        blog.setAuthor(blogPojo.getAuthor());
-//        blog.setTopic(blogPojo.getTopic());
-//        blog.setDate(blogPojo.getDate());
-//        blog.setPhoneNum(blogPojo.getPhoneNum());
-//        blog.setContent(blogPojo.getContent());
-////        blog.setImg(blogPojo.getImg());
-//        blogRepo.save(blog);
-//        return null;
-//    }
+    public String save(BlogPojo blogPojo) {
+        Blog blog =new Blog();
+        if(blogPojo.getId()!=null){
+            blog.setId(blogPojo.getId());
+        }
+        blog.setAuthor(blogPojo.getAuthor());
+        blog.setTopic(blogPojo.getTopic());
+        blog.setDate(blogPojo.getDate());
+        blog.setPhoneNum(blogPojo.getPhoneNum());
+        blog.setContent(blogPojo.getContent());
+//        blog.setImg(blogPojo.getImg());
+        blogRepo.save(blog);
+        return null;
+    }
 
     @Override
     public User findByEmail(String email) {
@@ -237,6 +239,3 @@ public class UserServiceImpl implements UserService {
 //        return this.bookingRepo.findAll(pageable);
 //    }
 }
-
-
-

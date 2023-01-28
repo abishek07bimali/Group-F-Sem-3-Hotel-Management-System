@@ -195,7 +195,7 @@ public class AdminController {
     @PostMapping("/saveblog")
     public String saveBlog(@Valid BlogPojo blogPojo) {
         blogServices.save(blogPojo);
-        return "redirect:/homepage/viewblog";
+        return "redirect:/admin/bloglist";
 //    }
 //        userService.save(blogPojo);
 //        return "redirect:adminBlogPage";
@@ -224,7 +224,7 @@ public class AdminController {
 
     @GetMapping("/noticeform")
     public String getNotice( Model model) {
-        model.addAttribute("blog", new NoticePojo());
+        model.addAttribute("notice", new NoticePojo());
         return ("notice-form");
     }
 
