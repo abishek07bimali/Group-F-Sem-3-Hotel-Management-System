@@ -106,26 +106,26 @@ img{
         margin: 10px;
     }
 }
-@media(min-width: 1370px){
-    .rooms-container{
-        flex-direction: column;
-    }
-    .room{
-        display: flex;
-        padding-bottom: 0;
-        margin: 5px 0;
-    }
-    .room-image{
-        flex: 1;
-    }
-    .room-image img{
-        height: 100%;
-    }
-    .room-text{
-        flex: 1;
-    }
-    .room:nth-child(even){
-        flex-direction: row-reverse;
-    }
-}
+/*@media(min-width: 1370px){*/
+/*    .rooms-container{*/
+/*        flex-direction: column;*/
+/*    }*/
+/*    .room{*/
+/*        display: flex;*/
+/*        padding-bottom: 0;*/
+/*        margin: 5px 0;*/
+/*    }*/
+/*    .room-image{*/
+/*        flex: 1;*/
+/*    }*/
+/*    .room-image img{*/
+/*        height: 100%;*/
+/*    }*/
+/*    .room-text{*/
+/*        flex: 1;*/
+/*    }*/
+/*    .room:nth-child(even){*/
+/*        flex-direction: row-reverse;*/
+/*    }*/
+/*}*/
 

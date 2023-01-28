@@ -5,21 +5,21 @@ import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.Contact;
 import com.example.hotelmanagementsystem.entity.Feedback;
+import com.example.hotelmanagementsystem.entity.User;
 
 import java.util.List;
 
 public interface UserService {
-//    UserPojo save(UserPojo userPojo);
-//    String submitMsg(ContactPojo contactPojo);
 
-    //    UserPojo save(UserPojo userPojo);
     List<Booking> fetchAll();
 
     String save(UserPojo userPojo);
+    String update(UserPojo userPojo);
 
     Booking fetchById(Integer id);
-
+    User getById(Integer id);
     String save(BookingPojo bookingPojo);
+    String saveAdmin(AdminBooking adminBooking);
 
     String submitFeedback(FeedbackPojo feedbackPojo);
     String submitPlanning(surprisePlanningPojo surpriseplanningPojo);
@@ -34,9 +34,13 @@ public interface UserService {
 
     //    Contact fetchById(Integer id);
     void deleteById(Integer id);
+    void deleteFeedback(Integer id);
+    void deletecomment(Integer id);
     List<Contact> fetchAllContact();
 
 
+    String save(BlogPojo blogPojo);
+    User findByEmail(String email);
 //    String save(BlogPojo blogPojo);
     UserPojo findByEmail(String email);
 

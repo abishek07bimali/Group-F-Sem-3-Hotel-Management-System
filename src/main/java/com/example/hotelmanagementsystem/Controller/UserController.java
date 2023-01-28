@@ -1,5 +1,9 @@
 package com.example.hotelmanagementsystem.Controller;
 
+import com.example.hotelmanagementsystem.Services.CommentServices;
+import com.example.hotelmanagementsystem.Services.RatingServices;
+import com.example.hotelmanagementsystem.Services.UserService;
+import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.Services.BlogServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
@@ -20,6 +24,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -28,6 +33,8 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final CommentServices commentServices;
+    private final RatingServices ratingServices;
     private final BlogServices blogServices;
 
     @GetMapping("/create")
@@ -44,12 +51,18 @@ public class UserController {
 
 
     @GetMapping("/booking")
-    public String BookHotel(Model model) {
+    public String BookHotel(Integer id, Model model, Principal principal) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "login";
         }
+//        User user= userService.findByEmail(principal.getName());
         model.addAttribute("booking", new BookingPojo());
+//        model.addAttribute("userdata",userService.getById(id));
+        model.addAttribute("info",userService.findByEmail(principal.getName()));
+
+//        model.addAttribute("data",user);
+//        model.addAttribute("join",new UserPojo(user));
         return "booking";
     }
 
@@ -57,8 +70,22 @@ public class UserController {
     @PostMapping("/savebook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
-        return "homepage";
+        return "redirect:/homepage";
     }
+//
+//-------
+//    rating save
+//
+//
+    @PostMapping("/saverating")
+    public String SaveRating(@Valid RatingPojo ratingPojo) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+    ratingServices.save(ratingPojo);
+    return "redirect:/homepage";
+}
 
     @GetMapping("/contact")
     public String getPage( Model model){
@@ -72,7 +99,7 @@ public class UserController {
             return "login";
         }
         userService.submitMsg(contactPojo);
-        return "redirect:contact";
+        return "redirect:/user/contact";
     }
 
 //    @GetMapping("/surprisePlanning")
@@ -90,6 +117,10 @@ public class UserController {
 
     @PostMapping("/savefeedback")
     public String getFeedback(@Valid FeedbackPojo feedbackPojo){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
         userService.submitFeedback(feedbackPojo);
         return "redirect:/homepage";
     }
@@ -103,6 +134,10 @@ public class UserController {
         return "redirect:/laundary1";
 
     }
+//      @GetMapping("/viewBlog")
+//    public String viewUserBlog(Model model){
+////        model.addAttribute("blog", new BlogPojo());
+//        model.addAttribute("comment", new CommentPojo());
 //    @GetMapping("/blog")
 //    public String viewUserBlog(Model model){
 //          List<Blog> blogs = blogServices.fetchAll();
@@ -129,8 +164,11 @@ public class UserController {
     }
 
 
-    @GetMapping("/rating")
-    public String getRating() {
-        return ("ratings");
+    @PostMapping("/saveComment")
+    public String getComment( @Valid CommentPojo commentPojo) {
+        commentServices.save(commentPojo);
+        return ("redirect:/homepage/viewblog");
     }
+
+
 }

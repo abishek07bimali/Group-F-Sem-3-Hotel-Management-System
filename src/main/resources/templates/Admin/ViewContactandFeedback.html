@@ -16,7 +16,7 @@
 
     <style>
         .contact_button{
-            background-color: rgb(47, 160, 47);
+            background-color: #5041BC;
             border-radius:20px ;
             padding-top:7px ;
             padding-bottom:7px ;
@@ -78,8 +78,8 @@
             <th>Booking_Id</th>
             <th>Full Name</th>
             <th>Email</th>
-            <th>Message</th>
             <th>Subject</th>
+            <th>Message</th>
             <th>Action</th>
             <!--            <th>Action</th>-->
         </tr>
@@ -88,10 +88,44 @@
         <tr th:each="cab:${feedback}">
             <td th:text="${cab.id}"></td>
             <td th:text="${cab.fullname}"></td>
-            <td th:text="${cab.message}"></td>
+            <td th:text="${cab.email}"></td>
             <td th:text="${cab.subject}"></td>
+            <td th:text="${cab.message}"></td>
+            <td> <a class="contact_button" th:href="@{~/admin/deletefeed/}+${cab.id}" >delete</a></td>
+            <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
 
-<!--            <td> <a class="edit" th:href="@{~/admin/deletecab/}+${cab.id}" >delete</a></td>-->
+        </tr>
+        </tbody>
+
+    </table>
+
+
+
+</div>
+<div class="Main-wrapper">
+    <div class="wrapper-top">
+        <h2>Comments</h2>
+    </div>
+
+    <div style="overflow-x:auto;"></div>
+    <table>
+        <thead>
+        <tr>
+        <th>Comment_Id</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Comment</th>
+        <th>Action</th>
+        <!--            <th>Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="comment:${comment}">
+            <td th:text="${comment.id}"></td>
+            <td th:text="${comment.fullname}"></td>
+            <td th:text="${comment.email}"></td>
+            <td th:text="${comment.comment}"></td>
+            <td> <a class="contact_button" th:href="@{~/admin/deletecom/}+${comment.id}" >delete</a></td>
             <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
 
         </tr>

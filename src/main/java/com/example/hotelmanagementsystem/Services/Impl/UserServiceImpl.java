@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -21,6 +22,7 @@ public class UserServiceImpl implements UserService {
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
     public final FeedbackRepo feedbackRepo;
+    public final CommentRepo commentRepo;
     public final BlogRepo blogRepo;
     public final SocialMediaRepo socialMediaRepo;
 
@@ -32,6 +34,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public String save(UserPojo userPojo) {
         User user = new User();
+        if(userPojo.getId()!=null){
+            user.setId(userPojo.getId());
+        }
         user.setEmail(userPojo.getEmail());
         user.setFullname(userPojo.getFullname());
         user.setMobileNo(userPojo.getMobile_no());
@@ -40,9 +45,25 @@ public class UserServiceImpl implements UserService {
         return "created";
     }
 
+    @Override
+    public String update(UserPojo userPojo) {
+        User user = new User();
+        if(userPojo.getId()!=null){
+            user.setId(userPojo.getId());
+        }
+        user.setEmail(userPojo.getEmail());
+        user.setFullname(userPojo.getFullname());
+        user.setMobileNo(userPojo.getMobile_no());
+        userRepo.save(user);
+        return "created";
+    }
+
 
     @Override
     public String save(BookingPojo bookingPojo) {
+        User relateduser = userRepo.findById(bookingPojo.getUser_id())
+                .orElseThrow(() -> new AppException("Invalid id for user type", HttpStatus.BAD_REQUEST));
+
         Booking booking=new Booking();
         if(bookingPojo.getId()!=null){
             booking.setId(bookingPojo.getId());
@@ -55,6 +76,28 @@ public class UserServiceImpl implements UserService {
         booking.setDate(bookingPojo.getDate());
         booking.setTotal(bookingPojo.getAmount());
         booking.setRooms(bookingPojo.getRoom());
+        booking.setUser_id(relateduser);
+        bookingRepo.save(booking);
+        return null;
+    }
+    @Override
+    public String saveAdmin(AdminBooking adminBooking) {
+//        User relateduser = userRepo.findById(bookingPojo.getUser_id())
+//                .orElseThrow(() -> new AppException("Invalid id for user type", HttpStatus.BAD_REQUEST));
+
+        Booking booking=new Booking();
+        if(adminBooking.getId()!=null){
+            booking.setId(adminBooking.getId());
+        }
+        booking.setFullname(adminBooking.getFullname());
+        booking.setNumber_of_people(adminBooking.getNumber_of_people());
+        booking.setMobileNo(adminBooking.getMobile_no());
+        booking.setCheckin(adminBooking.getCheckin());
+        booking.setCheckout(adminBooking.getCheckout());
+        booking.setDate(adminBooking.getDate());
+        booking.setTotal(adminBooking.getAmount());
+        booking.setRooms(adminBooking.getRoom());
+//        booking.setUser_id(relateduser);
         bookingRepo.save(booking);
         return null;
     }
@@ -102,6 +145,22 @@ public class UserServiceImpl implements UserService {
         return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
     }
 
+    @Override
+    public User getById(Integer id) {
+        return userRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+    }
+
+//    @Override
+//    public User getById(Integer id) {
+//        User user= userRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
+//        user=User.builder()
+//                .id(user.getId())
+//                .fullname(user.getFullname())
+//                .email(user.getEmail())
+//                .mobileNo(user.getMobileNo())
+//                .build();
+//        return user;    }
+
 //    public List<Booking> getByKeyword(String keyword){
 //        return bookingRepo.findByKeyword(keyword);
 //    }
@@ -113,10 +172,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
-
-
-
     }
+
+    @Override
+    public void deleteFeedback(Integer id) {
+        feedbackRepo.deleteById(id);
+    }
+
+    @Override
+    public void deletecomment(Integer id) {
+        commentRepo.deleteById(id);
+    }
+
 
     @Override
     public List<Contact> fetchAllContact() {
@@ -156,10 +223,10 @@ public class UserServiceImpl implements UserService {
 //    }
 
     @Override
-    public UserPojo findByEmail(String email) {
+    public User findByEmail(String email) {
         User user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
-        return new UserPojo(user);
+        return user;
     }
 //    @Override
 //    public Page<Booking> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {

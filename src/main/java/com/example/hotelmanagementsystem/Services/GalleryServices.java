@@ -9,5 +9,6 @@ import java.util.List;
 public interface GalleryServices {
     GalleryPojo save(GalleryPojo galleryPojo) throws IOException;
     List<Gallery> fetchAll();
+    void deleteById(Integer id);
 
 }

@@ -15,6 +15,15 @@
         .top-div form{
             display: flex;
         }
+         .edit{
+             background-color: #5041BC;
+             border-radius:20px ;
+             padding-top:7px ;
+             padding-bottom:7px ;
+             padding-left: 10px;
+             padding-right: 10px;
+             text-decoration: none;
+         }
     </style>
 </head>
 
@@ -44,7 +53,7 @@
                 <td th:text="${image.id}"></td>
                 <td th:text="${image.name}"></td>
                 <td> <img th:src="'data:image/png;base64,'+${image.imageBase64}" width="100" height="100"></td>
-    <!--            <td> <a class="edit" th:href="@{~/admin/delete/}+${booking.id}" >delete</a></td>-->
+                <td> <a class="edit" th:href="@{~/admin/deleteImg/}+${image.id}" >Delete</a></td>
 
             </tr>
             </tbody>

@@ -12,7 +12,8 @@
       <li><a th:href="@{~/homepage/contact}" class="list-group-item" id="contact">Contact</a></li>
       <!--      <li><a th:href="@{~/homepage/booking}">Book</a></li>-->
       <!--      <li><a href="#">Contact</a></li>-->
-      <li><a th:href="@{~/user/booking}" class="list-group-item" id="book">Book</a></li>
+<!--      <li><a th:href="@{~/user/booking/}+${info.id}"class="list-group-item" id="book">Book</a></li>-->
+      <li><a th:href="@{~/user/booking}"class="list-group-item" id="book">Book</a></li>
       <div class="dropdown">
         <button class="dropbtn">See More</button>
         <div class="dropdown-content">
@@ -21,7 +22,8 @@
           <a th:href="@{~/homepage/packages}" class="list-group-item" id="packages">Packages</a>
           <a th:href="@{~/homepage/viewblog}" class="list-group-item" id="blogs">Blogs</a>
           <a th:href="@{~/homepage/cabbook}" class="list-group-item" id="cab">Cab Book</a>
-<!--          <a th:href="@{~/homepage/nearby_places}" class="list-group-item" id="nearby">Visit nearby</a>-->
+          <a th:href="@{~/homepage/culinary}" class="list-group-item" id="clu">Culinary</a>
+          <!--          <a th:href="@{~/homepage/nearby_places}" class="list-group-item" id="nearby">Visit nearby</a>-->
         </div>
       </div>
       <div class="dropdown">
@@ -31,9 +33,9 @@
         </svg></button>
         <!-- <button class="dropbtn imageButton"><img src="images/logo.png" alt=""></button> -->
         <div class="dropdown-content">
+<!--          <a th:href="@{~/homepage/profile/}+${info.id}" class="list-group-item" id="profile">Profile</a>-->
           <a th:href="@{~/homepage/profile}" class="list-group-item" id="profile">Profile</a>
           <a href="#">Settings</a>
-          <a href="#">logout</a>
         </div>
       </div>
     </ul>
