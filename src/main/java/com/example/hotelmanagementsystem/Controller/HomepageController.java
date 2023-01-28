@@ -7,6 +7,7 @@ import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
+import com.example.hotelmanagementsystem.UserPojo.surprisePlanningPojo;
 import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import lombok.RequiredArgsConstructor;
@@ -94,7 +95,8 @@ public class HomepageController {
 
 
     @GetMapping("/packages")
-    public String getpackages() {
+    public String getPackages(Model model) {
+        model.addAttribute("surprisePlanning", new surprisePlanningPojo());
         return "seepackage";
     }
 
