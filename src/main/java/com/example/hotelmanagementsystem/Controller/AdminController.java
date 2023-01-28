@@ -42,6 +42,8 @@ public class AdminController {
     private  final NoticesService noticesService;
     private  final GalleryServices galleryServices;
 
+
+
     @GetMapping("/list")
     public String getUserList(Model model) {
         List<Booking> bookings = userService.fetchAll();
@@ -238,6 +240,10 @@ public class AdminController {
         String base64 = Base64.getEncoder().encodeToString(bytes);
         return base64;
     }
+
+
+
+
 
 
 }

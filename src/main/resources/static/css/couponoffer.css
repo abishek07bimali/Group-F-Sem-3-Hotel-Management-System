@@ -13,7 +13,7 @@
     justify-content: center;
 }
 .coupon-card{
-    background: linear-gradient(135deg, #7158fe, #0b7dda);
+    background: linear-gradient(135deg, #0b7dda, #7158fe);
     color: #FFFFFF;
     text-align: center;
     padding: 40px 80px;
@@ -23,7 +23,7 @@
 
 }
 .logo{
-    width: 80px;
+    width: 100px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
@@ -64,6 +64,6 @@
 .circle1{
     left: -25px;
 }
-.circle2{
+.circle2 {
     right: -25px;
 }

@@ -8,7 +8,10 @@
 <body>
      <div class="container">
          <div class="coupon-card">
-             <img src="../static/images/logo.png" class="logo">
+
+                 <img src="../static/images/logo1.png" class="logo">
+
+
              <h3> 50% off on all packages
              </h3>
              <div class="coupon-row">
@@ -24,6 +27,7 @@
 <script>
     var cpnBtn=document.getElementById("cpnBtn");
     var cpnCode=document.getElementById("cpnCode");
+    const container=document.querySelector('.container');
 
     cpnBtn.onclick=function (){
         navigator.clipboard.writeText(cpnCode.innerHTML);
@@ -32,6 +36,12 @@
             cpnBtn.innerHTML="COPY CODE";
         }, 3000)
     }
+    window.onload = function(){
+        setTimeout(function(){
+            container.style.display="none"
+        }, 5000)
+    }
+
 
 
 </script>

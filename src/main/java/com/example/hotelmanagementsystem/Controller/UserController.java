@@ -74,6 +74,12 @@ public class UserController {
         return "redirect:/laundary1";
 
     }
+    @GetMapping("/savelaundary")
+    public String getlaundary( Model model){
+        model.addAttribute("laundry", new LaundaryPojo());
+        return "laundary1";
+    }
+
       @GetMapping("/viewBlog")
     public String viewUserBlog(Model model){
         model.addAttribute("blog", new BlogPojo());
