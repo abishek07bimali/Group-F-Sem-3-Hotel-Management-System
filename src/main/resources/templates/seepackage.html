@@ -181,10 +181,10 @@
     activeID.classList.add("active");
 </script>
     <body>
-    <div class="head">
+    <div class="container8">
         <div class="coupon-card">
 
-            <img src="../static/images/logo1.png" class="logo">
+            <img th:src="@{~/images/logo1.png}" class="logo">
 
 
             <h3> 50% off on all packages
@@ -202,7 +202,7 @@
     <script>
         var cpnBtn=document.getElementById("cpnBtn");
         var cpnCode=document.getElementById("cpnCode");
-        const head=document.querySelector('.head');
+        const container8=document.querySelector('.head');
 
         cpnBtn.onclick=function (){
             navigator.clipboard.writeText(cpnCode.innerHTML);
@@ -213,12 +213,9 @@
         }
         window.onload = function(){
             setTimeout(function(){
-                head.style.display="none"
+                container8.style.display="block"
             }, 5000)
         }
-        close.addEventListener('click' , () => {
-            head.style.display= "none";
-        })
 
 
     </script>
