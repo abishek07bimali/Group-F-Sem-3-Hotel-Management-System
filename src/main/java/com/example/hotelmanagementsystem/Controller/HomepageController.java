@@ -84,6 +84,7 @@ public class HomepageController {
     @GetMapping("/rooms")
     public String getRooms(Model model, Principal principal) {
 //        model.addAttribute("info",userService.findByEmail(principal.getName()));
+        model.addAttribute("rating", new RatingPojo());
         return "rooms";
     }
 

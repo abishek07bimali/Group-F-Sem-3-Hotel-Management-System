@@ -89,9 +89,12 @@
                 <button class="star">&#9734;</button>
                 <button class="star">&#9734;</button>
                 <p class="current_rating"> 0 of 5</p><br>
-                <div class="textarea"><textarea cols="30" placeholder="Describe your experience"></textarea></div>
-                <div class="btn"> <button type="submit">Post</button></div>
-
+                <form th:method="post" th:action="@{/user/saverating}" th:object="${rating}">
+                    <input hidden="hidden" type="text" id="saveRating" th:field="*{rating}" th:value="${rating.rating}">
+                    <div class="textarea"><textarea cols="30" placeholder="Describe your experience" th:field="*{rating}" th:value="${rating.review}"></textarea></div>
+<!--                    <div class="btn"> <button type="submit">Post</button></div>-->
+                    <button type="submit"> Post</button>
+                </form>
             </div>
         </div>
 
@@ -122,23 +125,25 @@
         const btn=document.querySelector(".btn");
         const post=document.querySelector(".post");
         const rating=document.querySelector(".star_rating");
-        const editBtn=document.querySelector(".edit");
+        // const editBtn=document.querySelector(".edit");
 
         revBtn.onclick = () => {
             rating.style.display = "block";
             return false;
         }
 
-        btn.onclick = () =>{
-            rating.style.display="none";
-            post.style.display="block";
-            return false;
-        }
+        // btn.onclick = () =>{
+        //     rating.style.display="none";
+        //     post.style.display="block";
+        //     return false;
+        // }
         const allStar=document.querySelectorAll('.star');
         let current_rating=document.querySelector('.current_rating');
         allStar.forEach((star, i) => {
             star.onclick=function(){
                 let current_rating_level= i+1;
+                var val=document.getElementById("saveRating")
+                val.setAttribute("value", current_rating_level);
                 current_rating.innerText=`${current_rating_level} of 5`;
                 allStar.forEach((star, j) => {
                     if(current_rating_level >= j+1)

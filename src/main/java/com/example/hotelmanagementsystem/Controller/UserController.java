@@ -1,6 +1,7 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.CommentServices;
+import com.example.hotelmanagementsystem.Services.RatingServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
 import jakarta.validation.Valid;
@@ -23,6 +24,7 @@ public class UserController {
 
     private final UserService userService;
     private final CommentServices commentServices;
+    private final RatingServices ratingServices;
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -59,6 +61,20 @@ public class UserController {
         userService.save(bookingPojo);
         return "redirect:/homepage";
     }
+//
+//-------
+//    rating save
+//
+//
+    @PostMapping("/saverating")
+    public String SaveRating(@Valid RatingPojo ratingPojo) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+    ratingServices.save(ratingPojo);
+    return "redirect:/homepage";
+}
 
     @GetMapping("/contact")
     public String getPage( Model model){
@@ -72,7 +88,7 @@ public class UserController {
             return "login";
         }
         userService.submitMsg(contactPojo);
-        return "redirect:contact";
+        return "redirect:/user/contact";
     }
 
 

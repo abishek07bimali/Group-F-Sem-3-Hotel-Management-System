@@ -114,7 +114,16 @@ public class AdminController {
         return "Admin/ViewContactandFeedback";
     }
 
-    //
+    @GetMapping("/deletefeed/{id}")
+    public String deleteFeedback(@PathVariable("id") Integer id) {
+        userService.deleteFeedback(id);
+        return "redirect:/admin/contactfetch";
+    }
+    @GetMapping("/deletecom/{id}")
+    public String deleteComment(@PathVariable("id") Integer id) {
+        userService.deletecomment(id);
+        return "redirect:/admin/contactfetch";
+    }
 
 
     @GetMapping("/newbooking")

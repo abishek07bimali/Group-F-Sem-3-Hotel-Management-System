@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
     public final BookingRepo bookingRepo;
     public final ContactRepo contactRepo;
     public final FeedbackRepo feedbackRepo;
+    public final CommentRepo commentRepo;
     public final BlogRepo blogRepo;
     public final SocialMediaRepo socialMediaRepo;
 
@@ -161,10 +162,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Integer id) {
         bookingRepo.deleteById(id);
-
-
-
     }
+
+    @Override
+    public void deleteFeedback(Integer id) {
+        feedbackRepo.deleteById(id);
+    }
+
+    @Override
+    public void deletecomment(Integer id) {
+        commentRepo.deleteById(id);
+    }
+
 
     @Override
     public List<Contact> fetchAllContact() {

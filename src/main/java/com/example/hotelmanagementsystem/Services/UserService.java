@@ -32,6 +32,8 @@ public interface UserService {
     String submitMsg(ContactPojo contactPojo);
     //    Contact fetchById(Integer id);
     void deleteById(Integer id);
+    void deleteFeedback(Integer id);
+    void deletecomment(Integer id);
     List<Contact> fetchAllContact();
 
 
