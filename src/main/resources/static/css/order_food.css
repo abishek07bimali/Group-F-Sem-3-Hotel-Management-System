@@ -45,10 +45,11 @@ h1, h2, h3, h4, h5, h6{
 
 .rooms-container{
     margin: 30px;
+
 }
 
 .room{
-    margin: 45px 0; 
+    margin: 45px 0;
     padding-bottom: 25px;
     background: var(--dark);
     color: #fff;
