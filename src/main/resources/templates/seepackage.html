@@ -84,7 +84,7 @@
 
     <!-- The form -->
     <div class="form-popup" id="myForm">
-        <form th:method="post" th:action="@{/user/submitPlanning}" th:object="${surprisePlanning}" action="/action_page.php" class="form-container" >
+        <form th:method="post" th:action="@{/user/surprisePlanning}" th:object="${surprisePlanning}" class="form-container" >
 
             <h1>Plan a Surprise with Luxury</h1>
 
@@ -92,13 +92,13 @@
 <!--            <input type="text" id="customer_id" name="customer_id" placeholder="Enter your customer_id..">-->
 
             <label for="date"><b>Start Date</b></label>
-            <input type="date" name="date" id="startdate" placeholder="Enter Start_date" required th:field="*{startdate}" th:value="${surprisePlanning.startdate}">
+            <input type="date"  id="startdate" placeholder="Enter Start_date" required th:field="*{startdate}" th:value ="${surprisePlanning.startdate}">
 
             <label for="date"><b>End Date</b></label>
-            <input type="date" name="date" id="date" placeholder="Enter End_date" required th:field="*{enddate}" th:value="${surprisePlanning.enddate}">
+            <input type="date" id="date" placeholder="Enter End_date" required th:field="*{enddate}" th:value ="${surprisePlanning.enddate}">
 
             <label for="event"><b>Event Type</b></label>
-            <select id="event" name="event type" required th:field="*{eventtype}" th:value="${surprisePlanning.eventtype}">
+            <select id="event"  required th:field="*{eventtype}" th:value ="${surprisePlanning.eventtype}">
                 <option value="wedding">Wedding Ceremony</option>
                 <option value="birthday">Birthday Celebration</option>
                 <option value="anniversary">Anniversary Celebration</option>
@@ -110,10 +110,10 @@
 
 
             <label for="space"><b>Event space</b></label>
-            <input type="text" id="space" placeholder="# of attendances" name="space" required th:field="*{eventspace}" th:value="${surprisePlanning.eventspace}">
+            <input type="text" id="space" placeholder="# of attendances" required th:field="*{eventspace}" th:value ="${surprisePlanning.eventspace}" >
 
             <label for="subject"><b>Event Description</b></label>
-            <textarea id="subject" name="subject" placeholder="Special instructions if any..." style="height:75px" required th:field="*{eventdescription}" th:value="${surprisePlanning.eventdescription}"></textarea>
+            <textarea id="subject" placeholder="Special instructions if any..." style="height:75px" required th:field="*{eventdescription}" th:value ="${surprisePlanning.eventdescription}" ></textarea>
 
 
 

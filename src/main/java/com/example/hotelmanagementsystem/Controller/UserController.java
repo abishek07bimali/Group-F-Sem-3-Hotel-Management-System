@@ -59,6 +59,18 @@ public class UserController {
         return "redirect:contact";
     }
 
+//    @GetMapping("/surprisePlanning")
+//    public String SurprisePlanning(Model model) {
+//        model.addAttribute("surprisePlanning", new surprisePlanningPojo());
+//        return "seepackage";
+//    }
+
+
+    @PostMapping("/surprisePlanning")
+    public String getPackages(@Valid surprisePlanningPojo surpriseplanningPojo){
+        userService.submitPlanning(surpriseplanningPojo);
+        return "redirect:/seepackage";
+    }
 
     @PostMapping("/savefeedback")
     public String getFeedback(@Valid FeedbackPojo feedbackPojo){
@@ -66,11 +78,6 @@ public class UserController {
         return "redirect:/homepage";
     }
 
-    @PostMapping("/savesurpriseplanning")
-    public String getSurprisePlanning(@Valid surprisePlanningPojo surpriseplanningPojo){
-        userService.submitPlanning(surpriseplanningPojo);
-        return "redirect:/seepackage";
-    }
 
 
 //     @GetMapping("/viewBlog")

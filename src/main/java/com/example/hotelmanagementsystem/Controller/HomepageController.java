@@ -4,6 +4,7 @@ package com.example.hotelmanagementsystem.Controller;
 import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
+import com.example.hotelmanagementsystem.UserPojo.surprisePlanningPojo;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -74,7 +75,8 @@ public class HomepageController {
 
 
     @GetMapping("/packages")
-    public String getpackages() {
+    public String getPackages(Model model) {
+        model.addAttribute("surprisePlanning", new surprisePlanningPojo());
         return "seepackage";
     }
 
