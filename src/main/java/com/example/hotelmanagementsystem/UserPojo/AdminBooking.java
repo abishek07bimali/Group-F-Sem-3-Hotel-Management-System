@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookingPojo {
+public class AdminBooking {
     private Integer id;
     private  String fullname;
     private  String checkin;
@@ -21,9 +21,7 @@ public class BookingPojo {
     private  String mobile_no;
     private  String number_of_people;
 
-    private int user_id;
-
-    public BookingPojo(Booking booking) {
+    public AdminBooking(Booking booking) {
         this.id=booking.getId();
         this.number_of_people=booking.getNumber_of_people();
         this.mobile_no=booking.getMobileNo();
@@ -33,6 +31,5 @@ public class BookingPojo {
         this.amount=booking.getTotal();
         this.date=booking.getDate();
         this.room=booking.getRooms();
-        this.user_id=booking.getUser_id().getId();
     }
 }

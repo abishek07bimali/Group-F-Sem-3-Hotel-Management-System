@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{~/css/culinary.css}">
     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/images/ServicesImages/logo.png}">
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
     <title>Culinary Delight</title>
 </head>
 <body>
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
 <section class = "rooms sec-width" id = "rooms">
-    <div class = "title">
-        <h2 >Culinary Delight</h2>
-    </div>
+<!--    <div class = "title">-->
+<!--&lt;!&ndash;        <h2 >Culinary Delight</h2>&ndash;&gt;-->
+<!--    </div>-->
     <div class = "rooms-container">
 
         <article class = "room">
             <div class = "room-image">
-                <img src = "@{images'/food3.jpg}" alt = "food image">
+                <img th:src = "@{~/images/food3.jpg}" alt = "food image">
             </div>
             <div class = "room-text">
                 <h3>Luxury Hall</h3>
@@ -47,7 +51,7 @@
 
         <article class = "room">
             <div class = "room-image">
-                <img src = "@{images'/food2.jpg}" alt = "food image" height="50%">
+                <img th:src = "@{~/images/food2.jpg}" alt = "food image" height="50%">
             </div>
             <div class = "room-text">
                 <h3>Luxury Hall</h3>
@@ -76,7 +80,7 @@
 
         <article class = "room">
             <div class = "room-image">
-                <img src = "@{images'/food1.jpg}" alt = "food image">
+                <img th:src = "@{~/images/food1.jpg}" alt = "food image">
             </div>
             <div class = "room-text">
                 <h3>Luxury Hall</h3>
@@ -104,6 +108,22 @@
         </article>
 
     </div>
+
 </section>
+<div th:replace="fragments/Footer_frag.html :: footer"></div>
+
 </body>
+
+
+<script>
+    let myPage = "clu";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
+
+
 </html>

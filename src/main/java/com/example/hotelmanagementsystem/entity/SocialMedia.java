@@ -15,8 +15,8 @@ import lombok.Setter;
 @Table(name="Media_Link")
 public class SocialMedia {
     @Id
-    @SequenceGenerator(name = "hms_book_seq_gen", sequenceName = "hms_book_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "hms_book_seq_gen", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "hms_social_seq_gen", sequenceName = "hms_social_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "hms_social_seq_gen", strategy = GenerationType.SEQUENCE)
 
     private Integer id;
 

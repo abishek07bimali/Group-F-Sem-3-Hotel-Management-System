@@ -46,4 +46,9 @@ public class GalleryServicesImpl implements GalleryServices {
     public List<Gallery> fetchAll() {
         return galleryRepo.findAll();
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        galleryRepo.deleteById(id);
+    }
 }

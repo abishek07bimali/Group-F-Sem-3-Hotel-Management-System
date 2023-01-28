@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Media link Form</title>
+    <link rel="stylesheet" th:href="@{~/css/media-linkForm.css}">
+        <link rel="stylesheet" th:href="@{~/css/profile.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+<div class="media-links">
+    <form th:method="post" th:action="@{/admin/savemedialink}" th:object="${socialLink}" >
+        <h3>Social Media Links</h3>
+        <input type="text" class="form-control" hidden="hidden"  th:field="*{id}" th:value="${socialLink.id}"/>
+        <div class="form-group">
+            <i class="fab fa-facebook"></i><label for="facebook"> Facebook:</label>
+            <input type="text" class="form-control" id="facebook" required th:field="*{facebook_link}"th:value="${socialLink.facebook_link}"/>
+        </div>
+        <div class="form-group">
+            <i class="fab fa-instagram"></i><label for="instagram"> Instagram:</label>
+            <input type="text" class="form-control" id="instagram" required th:field="*{instagram_link}" th:value="${socialLink.instagram_link}"/>
+        </div>
+        <div class="form-group">
+            <i class="fab fa-twitter"></i><label for="twitter"> Twitter:</label>
+            <input type="text" class="form-control" id="twitter" required th:field="*{twitter_link}" th:value="${socialLink.twitter_link}"/>
+        </div>
+        <div class="form-group">
+            <i class="fab fa-youtube"></i><label for="youtube"> Youtube:</label>
+            <input type="text" class="form-control" id="youtube" required th:field="*{youtube_link}" th:value="${socialLink.youtube_link}"/>
+        </div>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>

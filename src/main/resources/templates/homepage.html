@@ -119,7 +119,7 @@
             <h2>Couple room</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
               voluptatibus?</p>
-            <button><a th:href="@{~/rooms/coupleroom3}">Details</a></button>
+            <button><a th:href="@{~/rooms/coupleroom}">Details</a></button>
           </div>
           <div class="rooms">
             <!-- <div id="zoom-in"> -->
@@ -127,7 +127,7 @@
             <h2>Luxe room</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, consequatur enim, fuga quo esse
               voluptatibus?</p>
-            <button><a th:href="@{~/rooms/masterroom2}">Details</a></button>
+            <button><a th:href="@{~/rooms/luxeroom}">Details</a></button>
             <!-- </div> -->
           </div>
         </div>
@@ -292,27 +292,32 @@
       <div class="suggest-problem">
 
       </div>
-<!--        <div class="container-fluid contact" id="contact">-->
-<!--          <div class="container">-->
-<!--            <form th:method="post" th:action="@{/user/savefeedback}" th:object="${feedback}">-->
-<!--              <h2>Guest Experience Feedback</h2>-->
-<!--              <input type="email" placeholder="Email"  class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${feedback.email}">-->
-<!--              <input type="text" placeholder="Name"   class="full-half" required th:field="*{fullname}" th:value="${feedback.fullname}">-->
-<!--              <input type="text" placeholder="Subject"  required th:field="*{subject}" th:value="${feedback.subject}">-->
-<!--              <textarea placeholder="Message"  required th:field="*{message}" th:value="${feedback.message}"></textarea>-->
+        <div class="container-fluid contact" id="contact">
+          <div class="container">
+            <form th:method="post" th:action="@{/user/savefeedback}" th:object="${feedback}">
+              <h2>Guest Experience Feedback</h2>
+              <input type="email" placeholder="Email"  class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required th:field="*{email}" th:value="${feedback.email}">
+              <input type="text" placeholder="Name"   class="full-half" required th:field="*{fullname}" th:value="${feedback.fullname}">
+              <input type="text" placeholder="Subject"  required th:field="*{subject}" th:value="${feedback.subject}">
+              <textarea placeholder="Message"  required th:field="*{message}" th:value="${feedback.message}"></textarea>
 
-<!--&lt;!&ndash;              <input type="text" placeholder="Name" id="name" name="name" class="full-half" required >&ndash;&gt;-->
-<!--&lt;!&ndash;              <input type="email" placeholder="Email" id="email" name="email" class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >&ndash;&gt;-->
-<!--&lt;!&ndash;              <input type="text" placeholder="Subject" id="subject" name="subject"  required >&ndash;&gt;-->
-<!--&lt;!&ndash;              <textarea placeholder="Message" id="message" name="message" required></textarea>&ndash;&gt;-->
-<!--              <input type="submit" value="Send">-->
-<!--            </form>-->
-<!--          </div>-->
-<!--        </div>-->
+<!--              <input type="text" placeholder="Name" id="name" name="name" class="full-half" required >-->
+<!--              <input type="email" placeholder="Email" id="email" name="email" class="full-half" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >-->
+<!--              <input type="text" placeholder="Subject" id="subject" name="subject"  required >-->
+<!--              <textarea placeholder="Message" id="message" name="message" required></textarea>-->
+              <input type="submit" onclick="allert()" value="Send">
+            </form>
+          </div>
+        </div>
 
 
     <div th:replace="fragments/Footer_frag.html :: footer"></div>
     </section>
+  <script>
+    function allert(){
+      alert("Successfully Submitted")
+    }
+  </script>
   </body>
 
 

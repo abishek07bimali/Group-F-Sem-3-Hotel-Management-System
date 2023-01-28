@@ -24,7 +24,7 @@ public class SocialMediaServicesImpl implements SocialMediaServices {
         socialMedia.setFacebook_link(socialMediaPojo.getFacebook_link());
         socialMedia.setInstagram_link(socialMediaPojo.getInstagram_link());
         socialMedia.setTwitter_link(socialMediaPojo.getTwitter_link());
-        socialMedia.setDiscord_link(socialMediaPojo.getDiscord_link());
+//        socialMedia.setDiscord_link(socialMediaPojo.getDiscord_link());
         socialMedia.setYoutube_link(socialMediaPojo.getYoutube_link());
 //        SocialMedia.setImg(SocialMediaPojo.getImg());
         socialMediaRepo.save(socialMedia);

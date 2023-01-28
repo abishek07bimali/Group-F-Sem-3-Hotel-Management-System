@@ -1,12 +1,8 @@
 package com.example.hotelmanagementsystem.Controller;
 
+import com.example.hotelmanagementsystem.Services.CommentServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
-import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
-import com.example.hotelmanagementsystem.UserPojo.UserPojo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -18,12 +14,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
+    private final CommentServices commentServices;
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -39,12 +38,18 @@ public class UserController {
 
 
     @GetMapping("/booking")
-    public String BookHotel(Model model) {
+    public String BookHotel(Integer id, Model model, Principal principal) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
             return "login";
         }
+//        User user= userService.findByEmail(principal.getName());
         model.addAttribute("booking", new BookingPojo());
+//        model.addAttribute("userdata",userService.getById(id));
+        model.addAttribute("info",userService.findByEmail(principal.getName()));
+
+//        model.addAttribute("data",user);
+//        model.addAttribute("join",new UserPojo(user));
         return "booking";
     }
 
@@ -52,7 +57,7 @@ public class UserController {
     @PostMapping("/savebook")
     public String saveBooking(@Valid BookingPojo bookingPojo) {
         userService.save(bookingPojo);
-        return "homepage";
+        return "redirect:/homepage";
     }
 
     @GetMapping("/contact")
@@ -73,6 +78,10 @@ public class UserController {
 
     @PostMapping("/savefeedback")
     public String getFeedback(@Valid FeedbackPojo feedbackPojo){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
         userService.submitFeedback(feedbackPojo);
         return "redirect:/homepage";
     }
@@ -85,11 +94,12 @@ public class UserController {
         return "redirect:/laundary1";
 
     }
-      @GetMapping("/viewBlog")
-    public String viewUserBlog(Model model){
-        model.addAttribute("blog", new BlogPojo());
-        return "blog";
-    }
+//      @GetMapping("/viewBlog")
+//    public String viewUserBlog(Model model){
+////        model.addAttribute("blog", new BlogPojo());
+//        model.addAttribute("comment", new CommentPojo());
+//        return "blog";
+//    }
 
     @GetMapping("/event")
     public String getEventPage() {
@@ -102,8 +112,11 @@ public class UserController {
     }
 
 
-    @GetMapping("/rating")
-    public String getRating() {
-        return ("ratings");
+    @PostMapping("/saveComment")
+    public String getComment( @Valid CommentPojo commentPojo) {
+        commentServices.save(commentPojo);
+        return ("redirect:/homepage/viewblog");
     }
+
+
 }

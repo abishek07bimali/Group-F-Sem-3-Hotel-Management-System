@@ -1,14 +1,10 @@
 package com.example.hotelmanagementsystem.Controller;
 
 import com.example.hotelmanagementsystem.Services.*;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
-import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.GalleryPojo;
-import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
-import com.example.hotelmanagementsystem.entity.*;
-import com.example.hotelmanagementsystem.repo.BookingRepo;
+import com.example.hotelmanagementsystem.Services.Impl.Comment;
 import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.entity.*;
+import com.example.hotelmanagementsystem.repo.BookingRepo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -40,8 +36,7 @@ public class AdminController {
     private  final GalleryServices galleryServices;
     private  final BookingRepo bookingRepo;
     private  final CabService cabService;
-
-
+    private  final Comment comment;
 
     private final SocialMediaServices socialMediaServices;
 
@@ -114,6 +109,8 @@ public class AdminController {
         model.addAttribute("contactlist", contact);
         List<Feedback> feedbacks = userService.fetchAllFeedback();
         model.addAttribute("feedback", feedbacks);
+        List<Blog_Comment> blogComments = comment.fetchAll();
+        model.addAttribute("comment", blogComments);
         return "Admin/ViewContactandFeedback";
     }
 
@@ -122,22 +119,22 @@ public class AdminController {
 
     @GetMapping("/newbooking")
     public String BookHotel(Model model) {
-        model.addAttribute("newBooking", new BookingPojo());
+        model.addAttribute("newBooking", new AdminBooking());
         return "newbookings";
     }
 
 
 
     @PostMapping("/savenewbook")
-    public String saveBooking(@Valid BookingPojo bookingPojo) {
-        userService.save(bookingPojo);
+    public String saveBooking(@Valid AdminBooking adminBooking) {
+        userService.saveAdmin(adminBooking);
         return "redirect:/admin/list";
     }
 
     @GetMapping("/edit/{id}")
     public String editUser(@PathVariable("id") Integer id, Model model) {
         Booking booking = userService.fetchById(id);
-        model.addAttribute("newBooking", new BookingPojo(booking));
+        model.addAttribute("newBooking", new AdminBooking(booking));
         return "newbookings";
     }
 
@@ -151,7 +148,7 @@ public class AdminController {
     @GetMapping("/bill/{id}")
     public String getBill(@PathVariable("id") Integer id, Model model) {
         Booking booking = userService.fetchById(id);
-        model.addAttribute("bill", new BookingPojo(booking));
+        model.addAttribute("bill", new AdminBooking(booking));
         return "PrintBill";
     }
 
@@ -274,6 +271,11 @@ public class AdminController {
         ));
         return "Admin/ViewImages";
     }
+    @GetMapping("/deleteImg/{id}")
+    public String delImg(@PathVariable("id") Integer id) {
+        galleryServices.deleteById(id);
+        return "redirect:/admin/viewImage";
+    }
 
 //
 //
@@ -332,24 +334,32 @@ public class AdminController {
 //    ----------- Admin Side -----------
 //    ----------------------------------
 
+    @GetMapping("/ViewSocailLinks")
+    public String getMediaForm(Model model){
+        model.addAttribute("socialLink", new SocialMediaPojo());
+        List<SocialMedia> socialMedia = socialMediaServices.fetchAll();
+        model.addAttribute("medialink", socialMedia);
+        return "media-linkForm";
+    }
 //    @GetMapping("/socialmedia_form")
-//    public String getMediaForm(Model model){
-//        return "media-linkForm";
+//    public String getMediaLink(Model model){
+//        model.addAttribute("socialLink", new SocialMediaPojo());
+//        return "Admin/AddLinks";
 //    }
 
-//    @GetMapping("/editblog/{id}")
-//    public String editMediaLink(@PathVariable("id") Integer id, Model model) {
-//        SocialMedia socialMedia = socialMediaServices.fetchById(id);
-//        model.addAttribute("blog", new SocialMediaPojo(socialMedia));
-//        return "redirect:/admin/socialmeadia_Form";
-//    }
+    @GetMapping("/editSocialMediaLink/{id}")
+    public String editMediaLink(@PathVariable("id") Integer id, Model model) {
+        SocialMedia socialMedia = socialMediaServices.fetchById(id);
+        model.addAttribute("socialLink", new SocialMediaPojo(socialMedia));
+        return "Admin/AddLinks";
+    }
+
 //
-//
-//    @PostMapping("/savemedialink")
-//    public String saveMediaLink(@Valid SocialMediaPojo socialMediaPojo) {
-//        socialMediaServices.save(socialMediaPojo);
-//        return "redirect:/admin/bloglist";
-//    }
+    @PostMapping("/savemedialink")
+    public String saveMediaLink(@Valid SocialMediaPojo socialMediaPojo) {
+        socialMediaServices.save(socialMediaPojo);
+        return "redirect:/admin/ViewSocailLinks";
+    }
 
 
 

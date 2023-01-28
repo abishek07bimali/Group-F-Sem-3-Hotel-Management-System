@@ -61,26 +61,26 @@
 
     <h3>Leave a Comment</h3>
   
-    <form action="post_comment.php" method="post" id="commentform">
+    <form th:method="post" th:action="@{/user/saveComment}" th:object="${comment}" id="commentform">
   
       <label for="comment_author" class="required">Your name</label>
-      <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+      <input type="text"  id="comment_author" tabindex="1" required="required" th:field="*{fullname}" th:value="${comment.fullname}">
   
       <label for="email" class="required">Your email;</label>
-      <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+      <input type="email" id="email" tabindex="2" required="required" th:field="*{email}" th:value="${comment.email}">
   
       <label for="comment" class="required">Your message</label>
-      <textarea name="comment" id="newComment" rows="10" tabindex="4"  required="required"></textarea>
+      <textarea  id="newComment" rows="10" tabindex="4"  required="required" th:field="*{comment}" th:value="${comment.comment}" ></textarea>
   
        <!-- comment_post_ID value hard-coded as 1  -->
-      <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
-      <input name="submit" id="addComments" type="submit" value="Submit comment" />
-      <div id="allComments"></div>
+<!--      <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />-->
+      <button type="submit" >Submit</button>
+<!--      <div id="allComments"></div>-->
   
     </form>
   
   </div>
-  <script th:src="@{~/javascript/comment.js}"></script>
+<!--  <script th:src="@{~/javascript/comment.js}"></script>-->
 
 <!--    News section-->
     <section class="recentNews">
@@ -189,4 +189,15 @@
     <div th:replace="fragments/Footer_frag.html :: footer"></div>
 
   </body>
+
+  <script>
+    let myPage = "blogs";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+      i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+  </script>
+
 </html>

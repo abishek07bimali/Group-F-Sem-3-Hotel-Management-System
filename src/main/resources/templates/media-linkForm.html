@@ -4,42 +4,77 @@
       <meta charset="UTF-8">
       <title>Social Media link Form</title>
 <!--    <link rel="stylesheet" th:href="@{~/css/media-linkForm.css}">-->
-    <link rel="stylesheet" th:href="..static/css/media-linkForm.css">
+<!--    <link rel="stylesheet" th:href="@{~/css/profile.css}">-->
+    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+    <script th:src="@{~/javascript/notification.js}" defer></script>
+    <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+      .contact_button{
+        background-color: #5041BC;
+        border-radius:20px ;
+        padding-top:7px ;
+        padding-bottom:7px ;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+      }
+    </style>
   </head>
-  <body>
-  <div class="media-links">
-    <form >
-      <h3>Social Media Links</h3>
-      <div class="form-group">
-        <i class="fab fa-facebook"></i><label for="facebook"> Facebook:</label>
-        <input type="text" class="form-control" id="facebook" name="facebookLink" th:value="${facebookLink}"/>
-      </div>
-      <div class="form-group">
-        <i class="fab fa-instagram"></i><label for="instagram"> Instagram:</label>
-        <input type="text" class="form-control" id="instagram" name="instagramLink" th:value="${instagramLink}"/>
-      </div>
-      <div class="form-group">
-        <i class="fab fa-twitter"></i><label for="twitter"> Twitter:</label>
-        <input type="text" class="form-control" id="twitter" name="twitterLink" th:value="${twitterLink}"/>
-      </div>
-      <div class="form-group">
-        <i class="fab fa-discord"></i><label for="discord"> Discord:</label>
-        <input type="text" class="form-control" id="discord" name="discordLink" th:value="${discordLink}"/>
-      </div>
-      <div class="form-group">
-        <i class="fab fa-youtube"></i><label for="youtube"> Youtube:</label>
-        <input type="text" class="form-control" id="youtube" name="youtubeLink" th:value="${youtubeLink}"/>
-      </div>
-      <input type="submit" value="Submit"/>
-    </form>
+  <body><div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
+
+  <div class="Main-wrapper">
+    <div class="wrapper-top">
+      <h2>Social Media</h2>
+    </div>
+
+    <div style="overflow-x:auto;"></div>
+    <table>
+      <thead>
+      <tr>
+        <th>Contact_Id</th>
+        <th>Facebook</th>
+        <th>Instagram</th>
+        <th>Twitter</th>
+        <th>youTube</th>
+        <th>Action</th>
+        <!--            <th>Action</th>-->
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="cab:${medialink}">
+        <td th:text="${cab.id}"></td>
+        <td th:text="${cab.facebook_link}"></td>
+        <td th:text="${cab.instagram_link}"></td>
+        <td th:text="${cab.twitter_link}"></td>
+        <td th:text="${cab.youtube_link}"></td>
+        <td> <a class="contact_button" id="editButton" th:href="@{~/admin/editSocialMediaLink/}+${cab.id}" >Edit</a></td>
+        <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
+
+      </tr>
+      </tbody>
+
+    </table>
+
+
+
   </div>
+  <script>
 
-
-
-
+  </script>
 
   </body>
+<script>
+  let myPage = "media";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
 </html>
 
 

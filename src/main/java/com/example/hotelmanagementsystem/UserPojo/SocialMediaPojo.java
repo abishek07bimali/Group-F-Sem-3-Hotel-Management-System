@@ -17,7 +17,7 @@ public class SocialMediaPojo {
     private  String facebook_link;
     private  String instagram_link;
     private  String twitter_link;
-    private  String discord_link;
+//    private  String discord_link;
     private  String youtube_link;
 //    private  String img;
 
@@ -26,7 +26,7 @@ public class SocialMediaPojo {
         this.facebook_link= socialMedia.getFacebook_link();
         this.instagram_link=socialMedia.getInstagram_link();
         this.twitter_link=socialMedia.getTwitter_link();
-        this.discord_link=socialMedia.getDiscord_link();
+//        this.discord_link=socialMedia.getDiscord_link();
         this.youtube_link=socialMedia.getYoutube_link();
 
     }
