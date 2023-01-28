@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+  </head>
+  <body>
+    <div class="media_mainWrapper">
+        <div class="blogList">
+            <div class="blog-top">
+                <h2>Social Media Site List</h2>
+                <!--                <div class="search-icon">-->
+                <!--                    <input type="text" placeholder="Search by name" name="search">-->
+                <!--                    <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>-->
+                <!--                </div>-->
+<!--                <button class="btn1"><a th:href="@{~/admin/addblog}">+ New Blog</a></button>-->
+
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table id="blog-table" style="overflow: scroll">
+                    <tr>
+                        <th>Media_Id</th>
+                        <th>Social Media</th>
+                        <th>Link</th>
+                        <th>Published Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr th:each="blog:${blog}">
+                        <td th:text="${blog.id}"></td>
+                        <td th:text="${blog.author}"></td>
+                        <td th:text="${blog.topic}"></td>
+                        <td th:text="${blog.phoneNum}"></td>
+                        <!--                    <td><button class="btn2">Active</button></td>-->
+                        <td> <a class="edit" th:href="@{~/admin/editblog/}+${blog.id}" >edit</a></td>
+                        <td> <a class="delete" th:href="@{~/admin/deleteblog/}+${blog.id}" >delete</a></td>
+                        <!--                        <div class="td1">-->
+
+                        <!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/editblog/}+${blog.id}"><i class="material-icons">&#xE254;</i></button>-->
+                        <!--
+                                                    <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/deleteblog/}+${blog.id}"><i class="material-icons">&#xE872;</i></button>
+                        -->
+                        <!--                        </div>-->
+                        <!--                    </td>-->
+
+                    </tr>
+
+                </table>
+            </div>
+            <br><br>
+            <hr>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!--<!DOCTYPE HTML>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <title>Rooms</title>-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>-->
+<!--    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">-->
+<!--    <link rel="stylesheet" th:href="@{~/css/navigation.css}">-->
+<!--    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">-->
+<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+<!--    <script th:src="@{~/javascript/notification.js}" defer></script>-->
+<!--    <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>-->
+
+<!--<div class="Main-wrapper">-->
+<!--    <div class="wrapper-top">-->
+<!--        <h2>Bookings</h2>-->
+<!--    </div>-->
+
+<!--    <div style="overflow-x:auto;"></div>-->
+<!--    <table>-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>Booking_Id</th>-->
+<!--            <th>Full Name</th>-->
+<!--            <th>Phone</th>-->
+<!--            <th>Car</th>-->
+<!--            <th>People</th>-->
+<!--            <th>Date</th>-->
+<!--            <th>Time</th>-->
+<!--            <th>Status</th>-->
+<!--&lt;!&ndash;            <th>Action</th>&ndash;&gt;-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="cab:${cab}">-->
+<!--            <td th:text="${cab.id}"></td>-->
+<!--            <td th:text="${cab.fullname}"></td>-->
+<!--            <td th:text="${cab.phone}"></td>-->
+<!--            <td th:text="${cab.car}"></td>-->
+<!--            <td th:text="${cab.people}"></td>-->
+<!--            <td th:text="${cab.date}"></td>-->
+<!--            <td th:text="${cab.time}"></td>-->
+<!--            <td> <a class="edit" th:href="@{~/admin/deletecab/}+${cab.id}" >delete</a></td>-->
+<!--&lt;!&ndash;            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>&ndash;&gt;-->
+
+<!--        </tr>-->
+<!--        </tbody>-->
+
+<!--    </table>-->
+
+
+
+<!--</div>-->
+
+<!--</body>-->
+
+<!--<script>-->
+<!--    let myPage = "cab";-->
+<!--    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));-->
+<!--    listGroupItem.forEach(i=>{-->
+<!--        i.classList.remove("active")-->
+<!--    })-->
+<!--    let activeID = document.getElementById(myPage);-->
+<!--    activeID.classList.add("active");-->
+<!--</script>-->
+
+<!--</html>-->
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Rooms</title>
+    <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">-->
+    <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+    <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+    <!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+    <script th:src="@{~/javascript/notification.js}" defer></script>
+    <link rel="stylesheet" th:href="@{~/css/adminBlogPage.css}">
+    <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+    <style>
+        .dataTables_filter{
+            margin-right: 60px;
+        }
+        .dataTables_paginate{
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .dataTables_length{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .dataTables_info{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/AdminFrag.html :: admin_navigation"></div>
+
+<table id="table_id">
+    <thead>
+    <tr>
+        <th>Booking_Id</th>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Car</th>
+        <th>People</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <!--            <th>Action</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cab:${cab}">
+        <td th:text="${cab.id}"></td>
+        <td th:text="${cab.fullname}"></td>
+        <td th:text="${cab.phone}"></td>
+        <td th:text="${cab.car}"></td>
+        <td th:text="${cab.people}"></td>
+        <td th:text="${cab.date}"></td>
+        <td th:text="${cab.time}"></td>
+        <td> <a class="edit" th:href="@{~/admin/deletecab/}+${cab.id}" >delete</a></td>
+        <!--            <td> <a class="edit" th:href="@{~/admin/edit/}+${booking.id}" >edit</a></td>-->
+
+    </tr>
+    </tbody>
+
+</table>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+></script>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+    document.getElementsByClassName()
+</script>
+<script>
+    $(function() {
+        $("#table_id").dataTable();
+    });
+</script>
+</body>
+
+<script>
+    let myPage = "cab";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
+</html>
+

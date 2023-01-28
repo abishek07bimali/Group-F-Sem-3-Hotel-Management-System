@@ -1,55 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plan a surprise with Luxury</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/surprisePlanning.css">
-    <script src="../static/javascript/surprisePlanning.js"></script>
-</head>
-<body>
-<!-- A button to open the popup form -->
-<button class="open-button" onclick="openForm()">plan a surprise</button>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Plan a surprise with Luxury</title>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--    <link rel="stylesheet" href="../static/css/surprisePlanning.css">-->
+<!--    <script src="../static/javascript/surprisePlanning.js"></script>-->
+<!--    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">-->
 
-<!-- The form -->
-<div class="form-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash; A button to open the popup form &ndash;&gt;-->
+<!--<button class="open-button" onclick="openForm()">plan a surprise</button>-->
 
-        <h1>Plan a Surprise with Luxury</h1>
+<!--&lt;!&ndash; The form &ndash;&gt;-->
+<!--<div class="form-popup" id="myForm">-->
+<!--    <form action="/action_page.php" class="form-container">-->
 
-        <label for="customer_id"><b>Customer_Id</b></label>
-        <input type="text" id="customer_id" name="customer_id" placeholder="Enter your customer_id..">
+<!--        <h1>Plan a Surprise with Luxury</h1>-->
 
-        <label for="date"><b>Start Date</b></label>
-        <input type="date" name="date" id="startdate" placeholder="Enter Start_date" required="">
+<!--        <label for="customer_id"><b>Customer_Id</b></label>-->
+<!--        <input type="text" id="customer_id" name="customer_id" placeholder="Enter your customer_id..">-->
 
-        <label for="date"><b>End Date</b></label>
-        <input type="date" name="date" id="date" placeholder="Enter End_date" required="">
+<!--        <label for="date"><b>Start Date</b></label>-->
+<!--        <input type="date" name="date" id="startdate" placeholder="Enter Start_date" required="">-->
 
-        <label for="event"><b>Event Type</b></label>
-        <select id="event" name="event type">
-            <option value="wedding">Wedding Ceremony</option>
-            <option value="birthday">Birthday Celebration</option>
-            <option value="anniversary">Anniversary Celebration</option>
+<!--        <label for="date"><b>End Date</b></label>-->
+<!--        <input type="date" name="date" id="date" placeholder="Enter End_date" required="">-->
 
-        </select>
+<!--        <label for="event"><b>Event Type</b></label>-->
+<!--        <select id="event" name="event type">-->
+<!--            <option value="wedding">Wedding Ceremony</option>-->
+<!--            <option value="birthday">Birthday Celebration</option>-->
+<!--            <option value="anniversary">Anniversary Celebration</option>-->
 
-
-
-
-        <label for="space"><b>Event space</b></label>
-        <input type="text" id="space" placeholder="# of attendances" name="space" required>
-
-        <label for="subject"><b>Event Description</b></label>
-        <textarea id="subject" name="subject" placeholder="Special instructions if any..." style="height:75px"></textarea>
+<!--        </select>-->
 
 
 
+<!--        <label for="rooms"><b>Guest rooms</b></label>-->
+<!--        <input type="text" id="rooms" placeholder="# of rooms" name="rooms" required>-->
+
+<!--        <label for="space"><b>Event space</b></label>-->
+<!--        <input type="text" id="space" placeholder="# of attendances" name="space" required>-->
+
+<!--        <label for="subject"><b>Event Description</b></label>-->
+<!--        <textarea id="subject" name="subject" placeholder="Special instructions if any..." style="height:75px"></textarea>-->
 
 
-        <button type="submit" class="btn">Submit</button>
-        <button type="button" class="btn-cancel" onclick="closeForm()"><i class="fa fa-close"></i></button>
-    </form>
-</div>
-</body>
-</html>
+
+
+
+<!--        <button type="submit" class="btn">Submit</button>-->
+<!--        <button type="button" class="btn-cancel" onclick="closeForm()"><i class="fa fa-close"></i></button>-->
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

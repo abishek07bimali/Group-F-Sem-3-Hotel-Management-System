@@ -16,7 +16,7 @@
 body {
   background: #f2f2f2
 }
-nav{
+.navi{
   background-color: var(--primary);
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@ nav h1{
   margin-left: 20px;
 }
 /* push notification */
-nav {
+.navi {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;

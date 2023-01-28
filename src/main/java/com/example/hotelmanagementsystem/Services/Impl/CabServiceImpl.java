@@ -7,6 +7,8 @@ import com.example.hotelmanagementsystem.Services.CabService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CabServiceImpl implements CabService {
@@ -22,5 +24,16 @@ public class CabServiceImpl implements CabService {
         cab.setTime(cabPojo.getTime());
         cabRepo.save(cab);
         return "created";
+    }
+
+    @Override
+    public List<Cab> findAll() {
+        return this.cabRepo.findAll();
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        cabRepo.deleteById(id);
+
     }
 }

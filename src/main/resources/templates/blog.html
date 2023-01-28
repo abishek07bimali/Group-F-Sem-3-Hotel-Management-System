@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>User Blog</title>
     <link rel="stylesheet" th:href="@{/css/blog.css}" />
+    <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
     <link rel="stylesheet" th:href="@{~/css/footerStyle.css}">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
   </head>
 
   <body>
+    <div th:replace="fragments/Navi_frag.html :: navigator"></div>
     <div class="header">
       <h2>Hotel Blog</h2>
     </div>
@@ -43,11 +46,9 @@
           <div class="fakeimg"><img  th:src="@{~/images/bg_img.jpg}"  alt="img"></div><br>
           <div class="fakeimg"><img  th:src="@{~/images/bg_img.jpg}"  alt="img"></div>
         </div>
-        <div class="card">
-          <h3>Follow Me</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia ducimus ipsum neque!
-             Aliquam tenetur sequi reprehenderit sunt cum quo nostrum similique, aut quibusdam voluptate perferendis?
-             Ipsum aliquid provident ducimus voluptate.</p>
+        <div class="card" th:each="blogs:${blog}">
+          <h3 th:text="${blogs.topic}"></h3>
+          <p th:text="${blogs.content}"></p>
         </div>
       </div>
     </div>
