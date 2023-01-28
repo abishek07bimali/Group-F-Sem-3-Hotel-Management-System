@@ -194,8 +194,8 @@ public class AdminController {
 
     @PostMapping("/saveblog")
     public String saveBlog(@Valid BlogPojo blogPojo) {
-                blogServices.save(blogPojo);
-        return "redirect:/admin/bloglist";
+        blogServices.save(blogPojo);
+        return "redirect:/homepage/viewblog";
 //    }
 //        userService.save(blogPojo);
 //        return "redirect:adminBlogPage";

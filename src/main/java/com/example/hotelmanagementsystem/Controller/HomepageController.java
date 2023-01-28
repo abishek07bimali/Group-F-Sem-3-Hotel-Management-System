@@ -2,10 +2,15 @@ package com.example.hotelmanagementsystem.Controller;
 // npm install datatables.net    # Core library
 // npm install datatables.net-dt # Styling
 
+import com.example.hotelmanagementsystem.Services.BlogServices;
 import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.Services.SocialMediaServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
+import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
+import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
+import com.example.hotelmanagementsystem.UserPojo.surprisePlanningPojo;
+import com.example.hotelmanagementsystem.entity.Blog;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import com.example.hotelmanagementsystem.entity.SocialMedia;
 import jakarta.validation.Valid;
@@ -31,6 +36,7 @@ import java.util.List;
 @RequestMapping("/homepage")
 public class HomepageController {
     private  final GalleryServices galleryServices;
+    private final BlogServices blogServices;
     private  final UserService userService;
     private final SocialMediaServices socialMediaServices;
 
@@ -71,6 +77,18 @@ public class HomepageController {
 //        model.addAttribute("info",userService.findByEmail(principal.getName()));
         model.addAttribute("comment", new CommentPojo());
 
+    public String viewUserBlog(Model model){
+        List<Blog> blogs = blogServices.fetchAll();
+        model.addAttribute("blog", blogs.stream().map(blog ->
+                Blog.builder()
+                        .id(blog.getId())
+                        .author(blog.getAuthor())
+                        .topic(blog.getTopic())
+                        .date(blog.getDate())
+                        .phoneNum(blog.getPhoneNum())
+                        .content(blog.getContent())
+                        .build()
+        ));
         return "blog";
     }
 
@@ -96,7 +114,8 @@ public class HomepageController {
 
 
     @GetMapping("/packages")
-    public String getpackages() {
+    public String getPackages(Model model) {
+        model.addAttribute("surprisePlanning", new surprisePlanningPojo());
         return "seepackage";
     }
 
