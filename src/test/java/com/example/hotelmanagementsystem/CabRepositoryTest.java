@@ -1,7 +1,7 @@
 package com.example.hotelmanagementsystem;
 
-import com.example.hotelmanagementsystem.entity.Booking;
-import com.example.hotelmanagementsystem.repo.BookingRepo;
+import com.example.hotelmanagementsystem.entity.Cab;
+import com.example.hotelmanagementsystem.repo.CabRepo;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ import java.util.Optional;
 public class CabRepositoryTest {
 
     @Autowired
-    private BookingRepo bookingRepo;
+    private CabRepo cabRepo;
 
 
     @Test
@@ -27,64 +27,48 @@ public class CabRepositoryTest {
     @Rollback(value = false)
     public void saveBookingTest() {
 
-//        Booking booking = new Booking();
-//        booking.setFullname("rak");
 
-        Booking booking = Booking.builder()
+        Cab cab = Cab.builder()
                 .fullname("rak")
-                .rooms("single")
-                .checkin("23/1/2023")
-                .checkout("30/1/2023")
-                .mobileNo("9888888888")
-                .number_of_people("2")
+                .car("ford")
+                .date("2023/1/3")
                 .build();
-
-
-        bookingRepo.save(booking);
+        cabRepo.save(cab);
 
 //        Assumption of the above datta
 
-        Assertions.assertThat(booking.getId()).isGreaterThan(0);
+        Assertions.assertThat(cab.getId()).isGreaterThan(0);
     }
 
     @Test
     @Order(2)
     public void getBookingTest() {
 
-        Booking booking = Booking.builder()
+        Cab cab = Cab.builder()
                 .fullname("rak")
-                .rooms("single")
-                .checkin("23/1/2023")
-                .checkout("30/1/2023")
-                .mobileNo("9888888888")
-                .number_of_people("2")
+                .car("ford")
+                .date("2023/1/3")
                 .build();
+        cabRepo.save(cab);
 
 
-        bookingRepo.save(booking);
-
-
-        Booking bookingCreated = bookingRepo.findById(booking.getId()).get();
-        Assertions.assertThat(bookingCreated.getId()).isEqualTo(booking.getId());
+        Cab cabCreated = cabRepo.findById(cab.getId()).get();
+        Assertions.assertThat(cabCreated.getId()).isEqualTo(cab.getId());
 
     }
 
     @Test
     @Order(3)
     public void getListOfBookingTest(){
-        Booking booking = Booking.builder()
+        Cab cab = Cab.builder()
                 .fullname("rak")
-                .rooms("single")
-                .checkin("23/1/2023")
-                .checkout("30/1/2023")
-                .mobileNo("9888888888")
-                .number_of_people("2")
+                .car("ford")
+                .date("2023/1/3")
                 .build();
-
-
-        bookingRepo.save(booking);
-        List<Booking> Booking = bookingRepo.findAll();
-        Assertions.assertThat(Booking.size()).isGreaterThan(0);
+        cabRepo.save(cab);
+        
+        List<Cab> Cab = cabRepo.findAll();
+        Assertions.assertThat(Cab.size()).isGreaterThan(0);
     }
 
 
@@ -92,24 +76,20 @@ public class CabRepositoryTest {
     @Order(4)
     public void updateBookingTest(){
 
-        Booking booking = Booking.builder()
+        Cab cab = Cab.builder()
                 .fullname("rak")
-                .rooms("single")
-                .checkin("23/1/2023")
-                .checkout("30/1/2023")
-                .mobileNo("9888888888")
-                .number_of_people("2")
+                .car("ford")
+                .date("2023/1/3")
                 .build();
+        cabRepo.save(cab);
 
-        bookingRepo.save(booking);
+        Cab cab1  = cabRepo.findById(cab.getId()).get();
 
-        Booking booking1  = bookingRepo.findById(booking.getId()).get();
+        cab1.setFullname("new name");
 
-        booking1.setFullname("new name");
+        Cab cabUpdated  = cabRepo.save(cab);
 
-        Booking bookingUpdated  = bookingRepo.save(booking);
-
-        Assertions.assertThat(bookingUpdated.getFullname()).isEqualTo("new name");
+        Assertions.assertThat(cabUpdated.getFullname()).isEqualTo("new name");
 
     }
 
@@ -117,30 +97,26 @@ public class CabRepositoryTest {
     @Order(5)
     public void deleteBookingTest(){
 
-        Booking booking = Booking.builder()
+        Cab cab = Cab.builder()
                 .fullname("rak")
-                .rooms("single")
-                .checkin("23/1/2023")
-                .checkout("30/1/2023")
-                .mobileNo("9888888888")
-                .number_of_people("2")
+                .car("ford")
+                .date("2023/1/3")
                 .build();
-
-        bookingRepo.save(booking);
+        cabRepo.save(cab);
 
 //        @Query(value = "SELECT * from")
 
-        Booking booking1 = bookingRepo.findById(booking.getId()).get();
-        bookingRepo.delete(booking1);
+        Cab cab1 = cabRepo.findById(cab.getId()).get();
+        cabRepo.delete(cab1);
 
-        Booking booking2 = null;
-        Optional<Booking> optionalBooking = bookingRepo.findBookingByFullname("rak");
-        if(optionalBooking.isPresent()){
-            booking2 = optionalBooking.get();
+        Cab cab2 = null;
+        Optional<Cab> optionalCab = cabRepo.findCabByFullname("rak");
+        if(optionalCab.isPresent()){
+            cab2 = optionalCab.get();
         }
 
-        Assertions.assertThat(booking2).isNull();
-//        Assertions.assertThat(booking1.getId()).isNull();
+        Assertions.assertThat(cab2).isNull();
+//        Assertions.assertThat(cab1.getId()).isNull();
     }
 
 }
