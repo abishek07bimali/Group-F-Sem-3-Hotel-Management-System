@@ -3,6 +3,8 @@ package com.example.hotelmanagementsystem.Services;
 
 import com.example.hotelmanagementsystem.UserPojo.*;
 import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Contact;
+import com.example.hotelmanagementsystem.entity.Laundary;
 
 import java.util.List;
 
@@ -13,9 +15,16 @@ public interface UserService {
     //    UserPojo save(UserPojo userPojo);
     List<Booking> fetchAll();
 
+
+
     String save(UserPojo userPojo);
 
-    String submitLaundary(LaundaryPojo laundaryPojo);
+
+
+
+    List<Contact> fetchAllContact();
+
+
 
     Booking fetchById(Integer id);
 
@@ -36,7 +45,11 @@ public interface UserService {
 //    String viewBlog(BlogPojo blogpojo);
 
     String save(BlogPojo blogPojo);
+    String save(LaundaryPojo laundaryPojo);
 
     UserPojo findByEmail(String email);
+
+
 }
+
 

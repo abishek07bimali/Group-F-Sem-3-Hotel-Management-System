@@ -4,6 +4,7 @@ package com.example.hotelmanagementsystem.Controller;
 import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
+import com.example.hotelmanagementsystem.UserPojo.LaundaryPojo;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -54,6 +55,11 @@ public class HomepageController {
     public String viewUserBlog(){
 //        model.addAttribute("blog", new BlogPojo());
         return "blog";
+    }
+    @GetMapping("/viewlaundary")
+    public String viewLaundaryService(){
+      // model.addAttribute("laundary", new LaundaryPojo());
+        return "laundry";
     }
 
     @GetMapping("/nearby_places")

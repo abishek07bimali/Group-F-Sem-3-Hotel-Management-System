@@ -1,19 +1,13 @@
 package com.example.hotelmanagementsystem.Controller;
 
-import com.example.hotelmanagementsystem.Services.BlogServices;
-import com.example.hotelmanagementsystem.Services.GalleryServices;
-import com.example.hotelmanagementsystem.Services.NoticesService;
-import com.example.hotelmanagementsystem.Services.UserService;
-import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
-import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
-import com.example.hotelmanagementsystem.UserPojo.GalleryPojo;
-import com.example.hotelmanagementsystem.UserPojo.NoticePojo;
-import com.example.hotelmanagementsystem.entity.Blog;
-import com.example.hotelmanagementsystem.entity.Booking;
-import com.example.hotelmanagementsystem.entity.Gallery;
-import com.example.hotelmanagementsystem.entity.Notices;
+import com.example.hotelmanagementsystem.Services.*;
+import com.example.hotelmanagementsystem.UserPojo.*;
+import com.example.hotelmanagementsystem.entity.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,6 +35,10 @@ public class AdminController {
     private final BlogServices blogServices;
     private  final NoticesService noticesService;
     private  final GalleryServices galleryServices;
+    private  final LaundaryServices laundaryServices;
+
+
+
 
 
 
@@ -92,6 +90,9 @@ public class AdminController {
     }
 
 
+
+
+
 //    @GetMapping("/adminblogpage")
 //    public  String getPage(){
 //        return "adminBlogPage";
@@ -127,9 +128,30 @@ public class AdminController {
     public String saveBlog(@Valid BlogPojo blogPojo) {
                 blogServices.save(blogPojo);
         return "redirect:/admin/bloglist";
+    }
+
+
+    @GetMapping("/laundarylist")
+    public String getLaundaryList(Model model){
+        List<Laundary> laundaries = laundaryServices.fetchAll();
+        model.addAttribute("laundry", laundaries);
+        return "/Laundaryadmin";
+    }
+
+//    @GetMapping("/addlaundary")
+//    public String AddLaundary(Model model) {
+//        model.addAttribute("laundraay", new LaundaryPojo());
+//        return "laundry";
 //    }
-//        userService.save(blogPojo);
-//        return "redirect:adminBlogPage";
+
+    @PostMapping("/savelaundary")
+    public String saveLaundray(@Valid LaundaryPojo laundaryPojo) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+        laundaryServices.save(laundaryPojo);
+        return "redirect:/homepage";
     }
 
     @GetMapping("/dashboard")
@@ -145,12 +167,24 @@ public class AdminController {
     }
 
 
+    @GetMapping("/deletelaundary/{id}")
+    public String deleteLaundary(@PathVariable("id") Integer id) {
+        laundaryServices.deleteById(id);
+        return "redirect:/admin/laundarylist";
+    }
+//    @GetMapping("/editlaundary/{id}")
+//    public String editLaundary(@PathVariable("id") Integer id, Model model) {
+//        Laundary laundary = laundaryServices.fetchById(id);
+//        model.addAttribute("laundary", new LaundaryPojo(laundary));
+//        return "redirect:/admin/addlaundary";
+//    }
+
+
     @GetMapping("/deleteblog/{id}")
     public String deleteBlog(@PathVariable("id") Integer id) {
         blogServices.deleteById(id);
         return "redirect:/admin/bloglist";
     }
-
 
 
     @GetMapping("/noticeform")
@@ -240,6 +274,7 @@ public class AdminController {
         String base64 = Base64.getEncoder().encodeToString(bytes);
         return base64;
     }
+
 
 
 

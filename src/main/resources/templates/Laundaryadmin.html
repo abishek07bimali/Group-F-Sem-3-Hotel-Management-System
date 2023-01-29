@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Admin Laundary List</title>
+  <link rel="stylesheet" th:href="@{~/css/dashstyle.css}">
+  <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/images/logo.png}">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script th:src="@{~/javascript/notification.js}" defer></script>
+  <link rel="stylesheet" th:href="@{~/css/Laundaryadmin.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/AdminFrag.html :: admin_navigation}"></div>
+
+
+<!--    bolg and news side-->
+<div class="laundary-news-wrapper">
+  <div class="laundaryList">
+    <div class="laundary-top">
+      <h2>Laundary List</h2>
+      <!--                <div class="search-icon">-->
+      <!--                    <input type="text" placeholder="Search by name" name="search">-->
+      <!--                    <button type="submit" class ="btn4"><i class="fa fa-search"></i></button>-->
+      <!--                </div>-->
+      <button class="btn1"><a th:href="@{~/admin/addlaundary}">+ New Laundary</a></button>
+
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table id="laundary-table" style="overflow: scroll">
+        <tr>
+          <th>Laundary_Id</th>
+          <th>Roomno</th>
+          <th>Noofclothes</th>
+          <th>Price</th>
+<!--          <th>Edit</th>-->
+          <th>Delete</th>
+        </tr>
+        <tr th:each="laundary:${laundry}">
+          <td th:text="${laundary.id}"></td>
+          <td th:text="${laundary.roomno}"></td>
+          <td th:text="${laundary.noofclothes}"></td>
+          <td th:text="${laundary.price}"></td>
+          <!--                    <td><button class="btn2">Active</button></td>-->
+<!--          <td> <a class="edit" th:href="@{~/admin/editlaundary/}+${laundary.id}" >edit</a></td>-->
+          <td> <a class="delete" th:href="@{~/admin/deletelaundary/}+${laundary.id}" >delete</a></td>
+          <!--                        <div class="td1">-->
+
+          <!--                            <button class="edit" title="Edit" data-toggle="tooltip" th:href="@{~/admin/editblog/}+${blog.id}"><i class="material-icons">&#xE254;</i></button>-->
+          <!--
+                                      <button class="delete" title="Delete" data-toggle="tooltip" th:href="@{~/admin/deleteblog/}+${blog.id}"><i class="material-icons">&#xE872;</i></button>
+          -->
+          <!--                        </div>-->
+          <!--                    </td>-->
+
+        </tr>
+
+      </table>
+    </div>
+    <br><br>
+    <hr>
+  </div>
+
+  </body>
+<script>
+  let myPage = "laundary1";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+
+</html>

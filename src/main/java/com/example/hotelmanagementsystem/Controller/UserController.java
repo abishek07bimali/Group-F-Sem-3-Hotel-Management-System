@@ -6,6 +6,8 @@ import com.example.hotelmanagementsystem.UserPojo.BlogPojo;
 import com.example.hotelmanagementsystem.UserPojo.BookingPojo;
 import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
 import com.example.hotelmanagementsystem.UserPojo.UserPojo;
+import com.example.hotelmanagementsystem.entity.Booking;
+import com.example.hotelmanagementsystem.entity.Laundary;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,13 +16,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
-    private final UserService laundaryService;
+
 
     @GetMapping("/create")
     public String createUser(Model model) {
@@ -68,17 +72,13 @@ public class UserController {
 
 
 
-    @PostMapping("/savelaundary")
-    public String getLaundary(@Valid LaundaryPojo laundaryPojo) {
-        userService.submitLaundary(laundaryPojo);
-        return "redirect:/laundary1";
+    @GetMapping("/viewlaundary")
+    public String viewLaundaryService( Model model){
+        model.addAttribute("laundry", new LaundaryPojo());
+        return "laundry";
+    }
 
-    }
-    @GetMapping("/savelaundary")
-    public String getlaundary( Model model){
-        model.addAttribute("laundary", new LaundaryPojo());
-        return "laundary1";
-    }
+
 
       @GetMapping("/viewBlog")
     public String viewUserBlog(Model model){
