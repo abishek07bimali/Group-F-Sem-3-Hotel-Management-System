@@ -44,6 +44,7 @@ public class HomepageController {
     @GetMapping("")
     public String geHomepage(Model model, Principal principal) {
         model.addAttribute("feedback", new FeedbackPojo());
+
 //        model.addAttribute("info",userService.findByEmail(principal.getName()));
         return ("homepage");
     }

@@ -1,15 +1,15 @@
 package com.example.hotelmanagementsystem.UserPojo;
 
 import com.example.hotelmanagementsystem.entity.Booking;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Builder
+
 public class BookingPojo {
     private Integer id;
     private  String fullname;
