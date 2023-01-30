@@ -69,28 +69,28 @@ public class surprisePlanningRepositoryTests {
 
     }
 
-//    @Test
-//    @org.springframework.core.annotation.Order(5)
-//    public void deleteUserTest(){
-//
-//        surprisePlanning surprise = surprisePlanning.builder()
-//                .eventtype("birthday")
-//                .startdate("2023/4/5")
-//                .build();
-//        surpriseplanningrepo.save(surprise);
-//
-//
-//        surprisePlanning surprise1 = surpriseplanningrepo.findById(surprise.getUser_id()).get();
-//        surpriseplanningrepo.delete(surprise1);
-//
-//        surprisePlanning surprise2 = null;
-//        Optional<surprisePlanning> optionalSurprise = surpriseplanningrepo.findsurprisePlanningBy("2023/4/5");
-//        if(optionalSurprise.isPresent()){
-//            surprise2 = optionalSuprprise.get();
-//        }
-//
-//        Assertions.assertThat(surprise2).isNull();
-////        Assertions.assertThat(User1.getId()).isNull();
-//    }
+    @Test
+    @Order(5)
+    public void deleteUserTest(){
+
+        surprisePlanning surprise = surprisePlanning.builder()
+                .eventtype("birthday")
+                .startdate("2023/4/5")
+                .build();
+        surpriseplanningrepo.save(surprise);
+
+
+        surprisePlanning surprise1 = surpriseplanningrepo.findById(surprise.getUser_id()).get();
+        surpriseplanningrepo.delete(surprise1);
+
+        surprisePlanning surprise2 = null;
+        Optional<surprisePlanning> optionalSurprise = surpriseplanningrepo.findByEventtype("2023/4/5");
+        if(optionalSurprise.isPresent()){
+            surprise2 = optionalSurprise.get();
+        }
+
+        Assertions.assertThat(surprise2).isNull();
+//        Assertions.assertThat(User1.getId()).isNull();
+    }
 }
 

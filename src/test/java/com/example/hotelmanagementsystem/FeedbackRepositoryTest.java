@@ -9,6 +9,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.core.annotation.Order;
+import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +24,7 @@ public class FeedbackRepositoryTest {
 
     @Test
     @Order(1)
+    @Rollback(value = false)
     public void saveContactTest() {
 
 

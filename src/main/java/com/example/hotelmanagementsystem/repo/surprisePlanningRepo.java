@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 public interface surprisePlanningRepo extends JpaRepository<surprisePlanning, Integer> {
 
-//    Optional<surprisePlanning> findsurprisePlanningBy(String startdate);
+    Optional<surprisePlanning> findByEventtype(String eventtype);
 }
