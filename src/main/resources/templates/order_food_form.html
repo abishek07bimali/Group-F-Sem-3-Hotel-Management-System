@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hotel Booking</title>
+  <title>Order Food</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -17,12 +17,12 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-<!--  <link rel="stylesheet" th:href="@{~/css/booking.css}">-->
-<!--  <script defer th:src="@{~/javascript/booking.js}"></script>-->
+  <!--  <link rel="stylesheet" th:href="@{/css/booking.css}">-->
+  <!--  <script defer th:src="@{~/javascript/booking.js}"></script>-->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" th:href="@{~/css/booking.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/booking.css}">
 
   <title>order food</title>
 </head>
@@ -31,23 +31,23 @@
 
 <div class="container">
 
-  <form  id="form" th:method="post" th:action="@{/order_food/saveorder}" th:object="${order_food}">
+  <form  id="form" th:method="post" th:action="@{/orderFood/saveorder}" th:object="${order}">
     <h1>Book Now</h1>
 
     <div class="input-control">
 
-      <label for="FullName">item</label>
+      <label for="item">item</label>
 
-      <input id="FullName" name="item" type="text"  th:field="*{item}" th:value="${order_food.item}">
+      <input id="item" name="item" type="text"  th:field="*{item}" th:value="${order.item}">
 
       <div class="error"></div>
 
     </div>
     <div class="input-control">
 
-      <label for="FullName">Room No</label>
+      <label for="room">Room No</label>
 
-      <input id="FullName" name="Room No" type="text"  th:field="*{room_no}" th:value="${order_food.room_no}">
+      <input id="room" name="Room No" type="text"  th:field="*{room_no}" th:value="${order.room_no}">
 
       <div class="error"></div>
 
@@ -57,7 +57,7 @@
 
       <label for="Phone">Phone</label>
 
-      <input id="Phone" name="Phone" type="number"  th:field="*{mobile_no}" th:value="${order_food.mobile_no}">
+      <input id="Phone" name="Phone" type="number"  th:field="*{mobile_no}" th:value="${order.mobile_no}">
 
       <div class="error"></div>
 
@@ -67,7 +67,7 @@
 
       <label for="Number">Quantity</label>
 
-      <select  id="people"  th:field="*{quantity}" th:value="${order_food.quantity}">
+      <select  id="people"  th:field="*{quantity}" th:value="${order.quantity}">
 
         <option value="1">1</option>
 
@@ -77,15 +77,15 @@
 
         <option value="4">4</option>
 
-        <option value="more">more than 4</option>
+        <option value="5">5</option>
 
       </select>
 
       <div class="error"></div>
 
-    <div>
-      <button type="submit">Order Now</button>
-    </div>
+      <div>
+        <button type="submit">Order Now</button>
+      </div>
 
     </div>
   </form>

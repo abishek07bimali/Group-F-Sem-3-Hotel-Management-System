@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/order_food")
+@RequestMapping("/orderFood")
 public class FoodController {
     private final FoodServices foodServices;
+
     @GetMapping("/order")
     public String OrderFood(Model model){
         model.addAttribute("order", new FoodPojo());
-        return "/order_food_form";
+        return "order_food_form";
     }
     @PostMapping("/saveorder")
     public String SaveOrder(@Valid FoodPojo foodPojo){
         foodServices.save(foodPojo);
-        return "/order_food";
+        return "order_food";
     }
-
-
 }
+
