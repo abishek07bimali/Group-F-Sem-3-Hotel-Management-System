@@ -161,10 +161,7 @@ public class AdminController {
         return "PrintBill";
     }
 
-//    @GetMapping("/adminblogpage")
-//    public  String getPage(){
-//        return "adminBlogPage";
-//    }
+
 
 //
 //

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="shortcut icon" type="x-icon" th:href="@{/images/ServicesImages/logo.png}">
+  <link rel="stylesheet" th:href="@{~/css/home_navigationStyle.css}">
+  <link rel="stylesheet" th:href="@{/css/viewCustomerlist.css}">
+<style>
+  .cancel_button{
+    background-color: #5041BC;
+    border-radius:20px ;
+    padding-top:7px ;
+    padding-bottom:7px ;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+  }
+</style>
+  <title>See all past booking made by you: Luxury Hotel</title>
+</head>
+<body>
+<div th:replace="fragments/Navi_frag.html :: navigator"></div>
+
+<div style="overflow: scroll">
+<table>
+  <thead>
+
+  <tr>
+    <th>Cust_Id</th>
+    <th>Full Name</th>
+    <th>Room</th>
+    <th>Date</th>
+    <th>Checkin_date</th>
+    <th>Checkout_date</th>
+    <th>Total_payment</th>
+    <th>Phone-number</th>
+    <th>Number</th>
+    <th>Action</th>
+    <th>Payment</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="booking:${applicationData}">
+    <td th:text="${booking.id}"></td>
+    <td th:text="${booking.fullname}"></td>
+    <td th:text="${booking.rooms}"></td>
+    <td th:text="${booking.date}"></td>
+    <td th:text="${booking.checkin}"></td>
+    <td th:text="${booking.checkout}"></td>
+    <td th:text="${booking.total}"></td>
+    <td th:text="${booking.mobileNo}"></td>
+    <td th:text="${booking.number_of_people}"></td>
+    <td> <a class="cancel_button" th:href="@{~/homepage/deletebooking/}+${booking.id}" >Cancel</a></td>
+    <td> <a class="cancel_button" th:href="@{~/homepage/pay}">Pay</a></td>
+<!--    <td> <a class="bill_button" th:href="@{~/admin/bill/}+${booking.id}">Bill</a></td>-->
+
+  </tr>
+
+  </tr>
+  </tbody>
+</table>
+</div>
+</body>
+
+<script>
+  let myPage = "";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+
+</html>

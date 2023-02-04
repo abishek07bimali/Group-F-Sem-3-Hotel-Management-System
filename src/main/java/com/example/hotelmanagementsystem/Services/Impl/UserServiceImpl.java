@@ -142,6 +142,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<Booking> findApplicationById(Integer id) {
+        return bookingRepo.findApplicationById(id);
+    }
+
+    @Override
     public Booking fetchById(Integer id) {
         return bookingRepo.findById(id).orElseThrow(()->new RuntimeException("not found"));
     }

@@ -7,10 +7,8 @@ import com.example.hotelmanagementsystem.Services.GalleryServices;
 import com.example.hotelmanagementsystem.Services.SocialMediaServices;
 import com.example.hotelmanagementsystem.Services.UserService;
 import com.example.hotelmanagementsystem.UserPojo.*;
-import com.example.hotelmanagementsystem.UserPojo.ContactPojo;
-import com.example.hotelmanagementsystem.UserPojo.FeedbackPojo;
-import com.example.hotelmanagementsystem.UserPojo.surprisePlanningPojo;
 import com.example.hotelmanagementsystem.entity.Blog;
+import com.example.hotelmanagementsystem.entity.Booking;
 import com.example.hotelmanagementsystem.entity.Gallery;
 import com.example.hotelmanagementsystem.entity.SocialMedia;
 import jakarta.validation.Valid;
@@ -21,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -174,8 +173,24 @@ public class HomepageController {
         userService.save(userpojo);
         return "redirect:/homepage/profile";
     }
+    @GetMapping("/appledjobs/{id}")
+    public  String getBookingById(@PathVariable("id") Integer id, Model model, Principal principal){
+        List<Booking> bookings= userService.findApplicationById(id);
+        model.addAttribute("applicationData",bookings);
+        model.addAttribute("userdata",userService.findByEmail(principal.getName()));
+        return "seeHistory";
 
+    }
+    @GetMapping("/deletebooking/{id}")
+    public String deleteUserBooking(@PathVariable("id") Integer id) {
+        userService.deleteById(id);
+        return "redirect:/homepage/profile";
+    }
 
+    @GetMapping("/pay")
+    public  String qrScan(){
+        return "qrscanner";
+    }
     public String getImageBase64(String fileName) {
         String filePath = System.getProperty("user.dir") + "/Gallery/";
         File file = new File(filePath + fileName);

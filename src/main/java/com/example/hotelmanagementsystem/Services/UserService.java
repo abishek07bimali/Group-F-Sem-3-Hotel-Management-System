@@ -24,6 +24,8 @@ public interface UserService {
     String submitFeedback(FeedbackPojo feedbackPojo);
     String submitPlanning(surprisePlanningPojo surpriseplanningPojo);
     List<Feedback> fetchAllFeedback();
+    List<Booking> findApplicationById(Integer id);
+
 
 
 

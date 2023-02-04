@@ -94,7 +94,7 @@ img {
     border: 1px solid #e9ecef;
 }
 /* Styling for the update and cancel buttons */
-button[type="submit"] {
+button{
     background-color: #007bff;
     color: white;
     font-size: 1.2rem;
@@ -103,7 +103,7 @@ button[type="submit"] {
     border: none;
     margin: 10px;
 }
-button[type="submit"]:hover{
+button:hover{
     background-color: #0051ff;
     color: white;
     box-shadow: 1px 2px 35px rgb(0 11 254 / 35%);
