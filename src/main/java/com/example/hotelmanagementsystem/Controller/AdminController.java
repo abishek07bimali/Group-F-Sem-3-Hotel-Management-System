@@ -129,6 +129,11 @@ public class AdminController {
         laundaryServices.save(laundaryPojo);
         return "redirect:/homepage";
     }
+//    @GetMapping("/deletelaun/{id}")
+//    public String deleteLaundary(@PathVariable("id") Integer id) {
+//        laundaryServices.deleteLaundary(id);
+//        return "redirect:/admin/laundarylist";
+//    }
 
     @GetMapping("/contactfetch")
     public String getContactAdmin(Model model) {

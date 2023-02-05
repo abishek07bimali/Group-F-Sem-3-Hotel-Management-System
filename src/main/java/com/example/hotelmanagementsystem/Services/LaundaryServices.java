@@ -9,5 +9,6 @@ public interface LaundaryServices {
     String save(LaundaryPojo laundaryPojo);
     List<Laundary> fetchAll();
     Laundary fetchById(Integer id);
-    void deleteById(Integer id);
+
+    void deleteLaundary(Integer id);
 }

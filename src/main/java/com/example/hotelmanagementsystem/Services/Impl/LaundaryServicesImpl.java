@@ -41,8 +41,10 @@ public class LaundaryServicesImpl implements LaundaryServices {
 
     }
 
+
+
     @Override
-    public void deleteById(Integer id) {
+    public void deleteLaundary(Integer id) {
         laundaryRepo.deleteById(id);
     }
 
