@@ -15,6 +15,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +29,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.security.Principal;
 import java.util.Base64;
+import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -41,7 +43,16 @@ public class HomepageController {
 
 
     @GetMapping("")
-    public String geHomepage(Model model, Principal principal) {
+    public String geHomepage(Model model, Principal principal, Authentication authentication) {
+
+        if (authentication!=null){
+            Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+            for (GrantedAuthority grantedAuthority : authorities) {
+                if (grantedAuthority.getAuthority().equals("Admin")) {
+                    return "redirect:/admin/list";
+                }
+            }
+        }
         model.addAttribute("feedback", new FeedbackPojo());
 
 //        model.addAttribute("info",userService.findByEmail(principal.getName()));
