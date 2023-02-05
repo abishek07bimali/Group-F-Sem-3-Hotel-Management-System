@@ -6,11 +6,22 @@ import com.example.hotelmanagementsystem.config.PasswordEncoderUtil;
 import com.example.hotelmanagementsystem.entity.*;
 import com.example.hotelmanagementsystem.exception.AppException;
 import com.example.hotelmanagementsystem.repo.*;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
 
 @Service
@@ -23,13 +34,39 @@ public class UserServiceImpl implements UserService {
     public final ContactRepo contactRepo;
     public final FeedbackRepo feedbackRepo;
     public final CommentRepo commentRepo;
+    private final JavaMailSender getJavaMailSender;
     public final BlogRepo blogRepo;
     public final SocialMediaRepo socialMediaRepo;
+    private final ThreadPoolTaskExecutor taskExecutor;
+    @Autowired
+    @Qualifier("emailConfigBean")
+    private Configuration emailConfig;
+    @Override
+    public void sendEmail() {
+        try {
+            Map<String, String> model = new HashMap<>();
 
+            MimeMessage message = getJavaMailSender.createMimeMessage();
+            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
 
+            Template template = emailConfig.getTemplate("emailTemp.ftl");
+            String html = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
 
+            mimeMessageHelper.setTo("sendfrom@yopmail.com");
+            mimeMessageHelper.setText(html, true);
+            mimeMessageHelper.setSubject("Registration");
+            mimeMessageHelper.setFrom("sendTo@yopmail.com");
 
+            taskExecutor.execute(new Thread() {
+                public void run() {
+                    getJavaMailSender.send(message);
+                }
+            });
+        } catch (Exception e) {
 
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public String save(UserPojo userPojo) {
@@ -198,15 +235,18 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public String submitLaundary(LaundaryPojo laundaryPojo) {
-        Laundary laundary = new Laundary();
-        laundary .setRoomno(laundaryPojo.getRoomno());
-        laundary .setNoofclothes(laundaryPojo.getNoofclothes());
-        laundary .setPrint(laundaryPojo.getPrint());
-        laundaryRepo .save(laundary );
-        return "sent";
-    }
+    public String save(LaundaryPojo laundaryPojo) {
+        Laundary laundary=new Laundary();
+        if(laundaryPojo.getId()!=null) {
+            laundary.setId(laundaryPojo.getId());
+        }
+        laundary.setRoomno(laundaryPojo.getRoomno());
+        laundary.setNoofclothes(laundaryPojo.getNoofclothes());
+        laundary.setPrice(laundaryPojo.getPrice());
+        laundaryRepo.save(laundary );
+        return null;
 
+    }
 
 
  
@@ -234,6 +274,48 @@ public class UserServiceImpl implements UserService {
         User user = userRepo.findByEmail(email)
                 .orElseThrow(() -> new AppException("Invalid User email", HttpStatus.BAD_REQUEST));
         return user;
+    }
+
+
+    @Override
+    public void processPasswordResetRequest(String email) {
+        Optional<User> optionalUser = userRepo.findByEmail(email);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            String OTP = generateOTP();
+            user.setOTP(OTP);
+            userRepo.save(user);
+            sendOTPEmail(email, OTP);
+        }
+    }
+
+    @Override
+    public void resetPassword(String email, String OTP, String password) {
+        User user = userRepo.findByEmailAndOTP(email, OTP);
+        if (user != null) {
+            if (password == null) {
+                throw new IllegalArgumentException("Password cannot be null");
+            }
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodedPassword = passwordEncoder.encode(password);
+            user.setPassword(encodedPassword);
+            user.setOTP(null);
+            userRepo.save(user);
+        } else {
+            throw new RuntimeException();
+        }
+    }
+
+    private String generateOTP() {
+        return String.format("%06d", new Random().nextInt(1000000));
+    }
+
+    private void sendOTPEmail(String email, String OTP) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(email);
+        message.setSubject("Password Reset OTP");
+        message.setText("Your OTP for resetting your password is: " + OTP);
+        getJavaMailSender.send(message);
     }
 //    @Override
 //    public Page<Booking> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {

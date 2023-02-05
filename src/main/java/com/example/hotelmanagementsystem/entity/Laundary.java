@@ -13,7 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name="laundary")
-
 public class Laundary {
     @Id
     @SequenceGenerator(name = "hms_book_seq_gen", sequenceName = "hms_book_id_seq", allocationSize = 1)
@@ -21,13 +20,13 @@ public class Laundary {
     private Integer id;
 
     @Column(name = "roomno")
-    private Integer roomno;
+    private String roomno;
 
     @Column(name = "noofclothes")
-    private Integer noofclothes;
+    private String noofclothes;
 
-    @Column(name = "print")
-    private Integer print;
+    @Column(name = "price")
+    private String price;
 
 
 

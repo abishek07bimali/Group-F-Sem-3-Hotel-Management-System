@@ -7,6 +7,9 @@ import com.example.hotelmanagementsystem.entity.*;
 import com.example.hotelmanagementsystem.repo.BookingRepo;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +38,7 @@ public class AdminController {
     private  final NoticesService noticesService;
     private  final GalleryServices galleryServices;
     private  final BookingRepo bookingRepo;
+    private  final LaundaryServices laundaryServices;
     private  final CabService cabService;
     private  final Comment comment;
 
@@ -102,6 +106,34 @@ public class AdminController {
 //    view contactfetch
 //    -----------
 //
+
+        @GetMapping("/laundarylist")
+    public String getLaundaryList(Model model){
+        List<Laundary> laundaries = laundaryServices.fetchAll();
+        model.addAttribute("laundry", laundaries);
+        return "/Laundaryadmin";
+    }
+
+    @GetMapping("/addlaundary")
+    public String AddLaundary(Model model) {
+        model.addAttribute("laundraay", new LaundaryPojo());
+        return "laundry";
+    }
+
+    @PostMapping("/savelaundary")
+    public String saveLaundray(@Valid com.example.hotelmanagementsystem.UserPojo.LaundaryPojo laundaryPojo) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+        laundaryServices.save(laundaryPojo);
+        return "redirect:/homepage";
+    }
+//    @GetMapping("/deletelaun/{id}")
+//    public String deleteLaundary(@PathVariable("id") Integer id) {
+//        laundaryServices.deleteLaundary(id);
+//        return "redirect:/admin/laundarylist";
+//    }
 
     @GetMapping("/contactfetch")
     public String getContactAdmin(Model model) {
