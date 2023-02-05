@@ -101,6 +101,12 @@ public class UserController {
         userService.submitMsg(contactPojo);
         return "redirect:/user/contact";
     }
+    @GetMapping("/viewlaundary")
+    public String viewLaundaryService( Model model){
+        model.addAttribute("laundry", new LaundaryPojo());
+        return "laundry";
+    }
+
 
 //    @GetMapping("/surprisePlanning")
 //    public String SurprisePlanning(Model model) {
@@ -128,12 +134,7 @@ public class UserController {
 
 
 //     @GetMapping("/viewBlog")
-    @PostMapping("/savelaundary")
-    public String getLaundary(@Valid LaundaryPojo laundaryPojo) {
-        userService.submitLaundary(laundaryPojo);
-        return "redirect:/laundary1";
 
-    }
 //      @GetMapping("/viewBlog")
 //    public String viewUserBlog(Model model){
 ////        model.addAttribute("blog", new BlogPojo());

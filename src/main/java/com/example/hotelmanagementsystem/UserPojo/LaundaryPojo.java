@@ -1,6 +1,6 @@
 package com.example.hotelmanagementsystem.UserPojo;
+
 import com.example.hotelmanagementsystem.entity.Laundary;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,19 +15,17 @@ public class LaundaryPojo {
 
     private Integer id;
 
-    private  Integer roomno;
+    private  String roomno;
 
-    private Integer noofclothes;
-    private Integer print;
+    private String noofclothes;
+    private String price;
 
     public LaundaryPojo(Laundary laundary) {
         this.id=laundary.getId();
         this.roomno=laundary.getRoomno();
         this.noofclothes=laundary.getNoofclothes();
-        this.print=laundary.getPrint();
+        this.price=laundary.getPrice();
 
     }
-
-
 }
 
