@@ -13,6 +13,8 @@ public interface UserService {
 
     List<Booking> fetchAll();
 
+    void sendEmail();
+
     String save(UserPojo userPojo);
     String update(UserPojo userPojo);
 
@@ -39,6 +41,12 @@ public interface UserService {
     void deleteFeedback(Integer id);
     void deletecomment(Integer id);
     List<Contact> fetchAllContact();
+
+
+
+    void processPasswordResetRequest(String email);
+
+    void resetPassword(String email, String OTP, String password);
 
 
     String save(LaundaryPojo laundaryPojo);

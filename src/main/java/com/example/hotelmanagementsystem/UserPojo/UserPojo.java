@@ -16,6 +16,7 @@ public class UserPojo {
     private  String mobile_no;
     private  String fullname;
     private  String password;
+    private String OTP;
 
     public UserPojo(User user) {
       this.id=user.getId();
@@ -23,6 +24,7 @@ public class UserPojo {
       this.mobile_no=user.getMobileNo();
       this.fullname=user.getFullname();
       this.password=user.getPassword();
+      this.OTP = user.getOTP();
     }
 //    public class LaundaryPojo {
 //        private Integer id;

@@ -34,6 +34,8 @@ public class User implements UserDetails {
 
     @Column(name = "password",nullable = false)
     private String password;
+    @Column(name = "OTP")
+    private String OTP;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
