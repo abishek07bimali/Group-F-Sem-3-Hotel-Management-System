@@ -6,8 +6,10 @@ Welcome to the Luxury Hotel Website! This project was developed by Group F for t
 ## Getting Started
 ### To access the website, 
 ### You can also this repository to your local machine using the following command:
-### git clone https://github.com/Group-F-Sem-3-Hotel-Management-System/Luxury-Hotel-Website.git
 
+```
+git clone https://github.com/Group-F-Sem-3-Hotel-Management-System/Luxury-Hotel-Website.git
+```
 ## Features
 ### The Luxury Hotel Website offers a range of features to enhance the guest experience, including:
 
@@ -30,7 +32,7 @@ Welcome to the Luxury Hotel Website! This project was developed by Group F for t
 4. CSS
 5. Bootstrap
 6. Figma
-7. Postgres SQL
+7. Postgres PSQL
 
 ------------------------------------------------------------
 
