@@ -10,6 +10,21 @@ Welcome to the Luxury Hotel Website! This project was developed by Group F for t
 ```
 git clone https://github.com/Group-F-Sem-3-Hotel-Management-System/Luxury-Hotel-Website.git
 ```
+---------------------------------------------------------------
+
+## Links
+
+### Youtube link:  https://youtu.be/L266IRqSf1Q
+
+### Trello link:  https://trello.com/b/v1pwvCJD/group-f
+
+### Excel Sheet link:  https://docs.google.com/spreadsheets/d/1XKkhGtkS7o8csmRCJ6Cv4CF8Cp3IZYII7ZBUhM_R1F0/edit#gid=0
+
+### Figma link: https://www.figma.com/file/LPORPlxWMIqELEUmytfr9D/3rd-SEM-team-library?node-id=0%3A1&t=cJ7ML8K0CcK2Vj9R-1
+
+
+
+----------------------------------------------------------------
 ## Features
 ### The Luxury Hotel Website offers a range of features to enhance the guest experience, including:
 
